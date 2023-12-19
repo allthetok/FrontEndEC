@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { ultraBoost } from '../helpers/mockdata'
+import { formatDate } from '@/helpers/fctns'
 import { CarouselProvider, Slider, Slide, Image, Dot } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
@@ -53,8 +54,9 @@ const Product = () => {
 
 							</div>
 							<div className='lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0'>
-								<h2 className='text-sm title-font uppercase text-gray-500 tracking-widest'>{ultraBoost[1].brand}</h2>
-								<h1 className='text-gray-900 text-4xl title=font font-bold mb-1'>{ultraBoost[1].name}</h1>
+								<h2 className='text-sm title-font uppercase text-gray-500 tracking-widest mb-2'>{ultraBoost[1].brand}</h2>
+								<h1 className='text-gray-900 text-4xl title=font font-bold'>{ultraBoost[1].name}</h1>
+								<h2 className='text-sm title-font upper case text-gray-500 tracking-widest mt-2'>Released: {formatDate(new Date(ultraBoost[1].releaseDate))}</h2>
 								<div className='flex mb-4'>
 									<span className='flex py-2 gap-1'>
 										<Link className='text-gray-500 hover:text-indigo-500' href='https://github.com/allthetok'/>
