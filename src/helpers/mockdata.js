@@ -9,7 +9,7 @@ const ultraBoost = [
 			'Cloud White/Cloud White/Crystal White',
 			'Dark Blue/Cream White/Core Black'
 		],
-		images: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/c608f554cb3b4d12b392af000188c513_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_01_standard.jpg', 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/333d70cd5438497e8171af4501038746_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_010_hover_standard.jpg', 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/bf7846b566e24a318217af000188a4d4_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_012_hover_standard.jpg'],
+		images: [],
 		price: '260',
 		description: `Experience epic energy with the new Ultraboost Light, our lightest Ultraboost ever. 
 	The magic lies in the Light BOOST midsole, a new generation of adidas BOOST. Its unique molecule design achieves the lightest BOOST foam to date. 
@@ -25,7 +25,7 @@ const ultraBoost = [
 			'Core Black / Core Black / Beam Green F22',
 			'Grey Three / Grey Five / Core Black'
 		],
-		images: [],
+		images: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/c608f554cb3b4d12b392af000188c513_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_01_standard.jpg', 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/333d70cd5438497e8171af4501038746_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_010_hover_standard.jpg', 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/bf7846b566e24a318217af000188a4d4_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_012_hover_standard.jpg'],
 		price: '260',
 		description: `From a walk in the park to a weekend run with friends, these adidas Ultraboost 1.0 shoes are designed to keep you comfortable. 
 		An adidas PRIMEKNIT upper gently hugs your feet while BOOST on the midsole cushions from the first step to the last mile. 
