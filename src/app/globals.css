@@ -25,3 +25,16 @@ body {
     )
     rgb(var(--background-start-rgb));
 } */
+
+.bg-home-brown {
+	background: url(../../public/nike-brown.jpg);
+	height: 550px;
+	background-position: center;
+}
+
+.bg-home-white {
+	background: url(../../public/nike-white.jpg);
+	height: 600px;
+	background-position: 45% 50%;
+
+}

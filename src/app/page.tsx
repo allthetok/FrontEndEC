@@ -1,9 +1,10 @@
+import { HomeContent } from '@/components/HomeContent'
 import React from 'react'
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			Home
+		<main className="p-8 bg-gray-100 flex-1">
+			<HomeContent />
 		</main>
 	)
 }
