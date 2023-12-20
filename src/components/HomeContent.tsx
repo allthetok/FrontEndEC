@@ -21,29 +21,19 @@ const HomeContent = () => {
 					Shop Shoes
 						<LoginIcon sx={Font25Sx} />
 					</Link>
-					{/* Adidas Yeezy Nike Air Jordan New Balance */}
 				</div>
 			</header>
 			<div className='pt-16'>
 				<section className='grid grid-flow-row md:grid-cols-3 lg:grid-cols-5 gap-6'>
 					{homeLinks.map((item: any, index: number) => (
-						<Link href={item.link} key={index} >
-							{/* <span className='group rounded overflow-hidden pb-2/3 relative h-0'>
-								<div className='absolute w-full h-full flex justify-center items-center'>
-									<div className='rounded text-white bg-black font-bold tracking-wider text-xl uppercase px-5 py-2'>{item.name}</div>
-									<img src={item.src} alt={item.name} width={550} height={1}/>
-								</div>
-							</span> */}
-							<Image src={item.src} alt={item.name} width={650} height={0} className='max-h-[433.33px] overflow-hidden'/>
-							{/* <div className='absolute w-full h-full flex justify-center items-center'> */}
-							<p className='rounded text-white bg-black font-bold tracking-wider text-xl uppercase px-5 py-2'>
-								{item.name}
-							</p>
-							{/* </div> */}
-
+						<Link href={item.link} key={index} style={{ backgroundImage: `url(${item.src})`, backgroundPosition: 'center', backgroundSize: 'cover', minHeight: '433.33px' }}>
+							<div className='flex w-auto items-center flex-col'>
+								<p className='rounded text-white bg-black font-bold tracking-wider text-xl uppercase px-5 py-2'>
+									{item.name}
+								</p>
+							</div>
 						</Link>
 					))}
-					{/* <img src={homeLinks[0].src} /> */}
 				</section>
 			</div>
 		</>
