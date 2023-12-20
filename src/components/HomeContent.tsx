@@ -2,10 +2,9 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import LoginIcon from '@mui/icons-material/Login'
 import { Font25Sx } from '../sx/styling'
-import { homeLinks } from '../helpers/pageconfig'
+import { homeLinks, modelNames } from '../helpers/pageconfig'
 import '../app/globals.css'
 
 
@@ -35,6 +34,20 @@ const HomeContent = () => {
 						</Link>
 					))}
 				</section>
+				<ul className='pt-24 grid grid-cols-4 gap-4'>
+					{modelNames.map((item: any, index: number) => (
+						<li className='block' key={index}>
+							<Link className='font-bold tracking-wider uppercase bg-indigo-500 text-white rounded-lg px-4 h-24 flex justify-center items-center text-center hover:bg-indigo-600' href={item.link}>
+								<span>
+									{item.name}&nbsp;
+									<span className='text-xs font-normal'>
+										(4 products)
+									</span>
+								</span>
+							</Link>
+						</li>
+					))}
+				</ul>
 			</div>
 		</>
 	)
