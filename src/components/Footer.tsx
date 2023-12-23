@@ -1,4 +1,4 @@
-import { Font50Sx } from '@/sx/styling'
+import { Font30Sx, Font50Sx, PaddingNoneSx } from '@/sx/styling'
 import { IconButton, Link } from '@mui/material'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import GitHubIcon from '@mui/icons-material/GitHub'
@@ -9,8 +9,8 @@ const Footer = () => {
 	return (
 		<div className='flex flex-col items-center'>
 			<footer className='w-full'>
-				<div className='container px-8 h-full py-16 flex justify-center lg:block'>
-					<div className='grid grid-cols-2 sm:grid-colos-3 lg-grid-cols-4 row-gap-8 col-gap-16'>
+				<div className='container px-8 h-full py-16 flex justify-center lg:block mx-auto'>
+					<div className='grid grid-cols-3 row-gap-8 col-gap-16'>
 						<div className='sm:col-span-3 lg:col-span-1 flex sm:justify-center lg:justify-start items-start'>
 							<IconButton onClick={() => console.log('clicked cart')}>
 								<ShoppingCartIcon sx={Font50Sx} htmlColor='black'/>
@@ -27,7 +27,7 @@ const Footer = () => {
 									</li>
 									<li>
 										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative no-underline' href='https://github.com/allthetok' >
-											About the Developer
+											AT Kicks Dev
 										</Link>
 									</li>
 								</ul>
@@ -61,15 +61,19 @@ const Footer = () => {
 			<div className='py-4 w-full'>
 				<div className='px-6'>
 					<div className='container mx-auto flex text-gray-600 text-sm items-center justify-center'>
-						<div className='grid grid-flow-col gap-3'>
+						<div className='grid grid-flow-col'>
 							<Link className='hover:text-indigo-500' href='https://github.com/allthetok'>
-								<GitHubIcon />
+								<IconButton sx={PaddingNoneSx}>
+									<GitHubIcon sx={Font30Sx} htmlColor='purple'/>
+								</IconButton>
 							</Link>
 							<Link className='hover:text-indigo-500' href='https://www.linkedin.com/in/allen-tokjuman-97b531131/'>
-								<LinkedInIcon />
+								<IconButton sx={PaddingNoneSx}>
+									<LinkedInIcon sx={Font30Sx} htmlColor='blue'/>
+								</IconButton>
 							</Link>
 						</div>
-						<span className='ml-8'>
+						<span className='ml-2 text-center'>
 							Copyright ©
 							<Link href='https://github.com/allthetok' className='text-gray-600 hover:text-gray-800 no-underline'>
 								Allen Tokjuman
