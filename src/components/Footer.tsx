@@ -21,12 +21,12 @@ const Footer = () => {
 							<nav className='pt-2 leading-loose'>
 								<ul>
 									<li>
-										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative' href='/' >
+										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative no-underline' href='/' >
 											About Us
 										</Link>
 									</li>
 									<li>
-										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative' href='https://github.com/allthetok' >
+										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative no-underline' href='https://github.com/allthetok' >
 											About the Developer
 										</Link>
 									</li>
@@ -38,17 +38,17 @@ const Footer = () => {
 							<nav className='pt-2 leading-loose'>
 								<ul>
 									<li>
-										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative' href='/order'>
+										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative no-underline' href='/order'>
 											Order Status
 										</Link>
 									</li>
 									<li>
-										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative' href='/wishlist'>
+										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative no-underline' href='/wishlist'>
 											Wishlist
 										</Link>
 									</li>
 									<li>
-										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative' href='/userinfo'>
+										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative no-underline' href='/userinfo'>
 											My Account
 										</Link>
 									</li>
@@ -71,7 +71,7 @@ const Footer = () => {
 						</div>
 						<span className='ml-8'>
 							Copyright ©
-							<Link href='https://github.com/allthetok'>
+							<Link href='https://github.com/allthetok' className='text-gray-600 hover:text-gray-800 no-underline'>
 								Allen Tokjuman
 							</Link>
 						</span>
