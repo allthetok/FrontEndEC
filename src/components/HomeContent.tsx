@@ -3,8 +3,9 @@
 import React from 'react'
 import Link from 'next/link'
 import LoginIcon from '@mui/icons-material/Login'
-import { Font25Sx } from '../sx/styling'
 import { homeLinks, modelNames } from '../helpers/pageconfig'
+import { Footer } from './Footer'
+import { Font25Sx } from '../sx/styling'
 import '../app/globals.css'
 
 
@@ -49,6 +50,7 @@ const HomeContent = () => {
 					))}
 				</ul>
 			</div>
+			<Footer />
 		</>
 	)
 }
