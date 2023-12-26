@@ -754,6 +754,124 @@ const AJ5 = [
 	},
 ]
 
+const NB2002R = [
+	{
+		id: 31,
+		brand: 'New Balance',
+		modelName: 'New Balance 2002R',
+		name: `New Balance 2002R Protection Shoes`,
+		releaseDate: '2023-10-26',
+		colors: [
+			'Taupe/Angora/Silver Metallic',
+			'Black/Phantom/Gunmetal',
+			'Slate Grey/Raincloud/Black'
+		],
+		images: [
+			'https://nb.scene7.com/is/image/NB/m2002rcc_nb_02_i?$pdpflexf2$&wid=440&hei=440',
+			'https://nb.scene7.com/is/image/NB/m2002rcc_nb_05_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440',
+			'https://nb.scene7.com/is/image/NB/m2002rcc_nb_04_i?$pdpflexf2$&wid=440&hei=440',
+			'https://nb.scene7.com/is/image/NB/m2002rbk_nb_02_i?$pdpflexf2$&wid=440&hei=440',
+			'https://nb.scene7.com/is/image/NB/m2002rbk_nb_05_i?$pdpflexf2$&wid=440&hei=440',
+			'https://nb.scene7.com/is/image/NB/m2002rbk_nb_04_i?$pdpflexf2$&wid=440&hei=440',
+			'https://nb.scene7.com/is/image/NB/m2002rsg_nb_02_i?$pdpflexf2$&wid=440&hei=440',
+			'https://nb.scene7.com/is/image/NB/m2002rsg_nb_05_i?$pdpflexf2$&wid=440&hei=440',
+			'https://nb.scene7.com/is/image/NB/m2002rsg_nb_04_i?$pdpflexf2$&wid=440&hei=440'
+		],
+		price: '180',
+		description: `Launched in 2010, New Balance’s 2002R silhouette experienced a cultural rediscovery in the 2020s as “dad shoes” continued to exert influence across the footwear landscape. Rooted in performance running, the mixed-material upper comprises leather, suede and mesh, with an ABZORB midsole and N-ergy outsole underfoot. Discover the New Balance 2002R, featuring styles created in collaboration with Salehe Bembury, Joe Freshgoods, atmos, JJJJound and more.`
+	},
+	{
+		id: 32,
+		brand: 'New Balance',
+		modelName: 'New Balance 2002R',
+		name: `New Balance 2002R Gore-Tex Shoes`,
+		releaseDate: '2023-04-03',
+		colors: [
+			'Navy/Arctic Grey/Vintage Indigo'
+		],
+		images: [
+			'https://rockit-sneakers.com/cdn/shop/products/New-Balance-2002R-Gore-Tex-Navy-Arctic-Grey-1_1.png?v=1689457343&width=700',
+			'https://rockit-sneakers.com/cdn/shop/products/New-Balance-2002R-Gore-Tex-Navy-Arctic-Grey-2_1.png?v=1689457343&width=700',
+			'https://rockit-sneakers.com/cdn/shop/products/New-Balance-2002R-Gore-Tex-Navy-Arctic-Grey-3_1.png?v=1689457343&width=700'
+		],
+		price: '180',
+		description: `Launched in 2010, New Balance’s 2002R silhouette experienced a cultural rediscovery in the 2020s as “dad shoes” continued to exert influence across the footwear landscape. Rooted in performance running, the mixed-material upper comprises leather, suede and mesh, with an ABZORB midsole and N-ergy outsole underfoot. Discover the New Balance 2002R, featuring styles created in collaboration with Salehe Bembury, Joe Freshgoods, atmos, JJJJound and more.`
+	},
+]
 
+const NB530 = [
+	{
+		id: 33,
+		brand: 'New Balance',
+		modelName: 'New Balance 530',
+		name: `New Balance 530 Shoes`,
+		releaseDate: '2022-04-15',
+		colors: [
+			'Moonbeam/Sea Salt/White',
+			'White/Natural Indigo',
+			'Raincloud/Shadow Grey',
+			'Grey Matter/Harbor Grey'
+		],
+		images: [
+			'https://cdn.flightclub.com/750/TEMPLATE/265435/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/223935/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/223935/2.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/223935/3.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/370863/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/370863/2.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/370863/3.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/359290/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/359290/2.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/359290/3.jpg'
+		],
+		price: '160',
+		description: `The 530 men’s sneaker is a throwback of one of our classic running shoes. This casual kick combines everyday style with modern tech. ABZORB cushioning underfoot adds superior comfort. Put a retro spin on your step with the 530 men’s sneaker.`
+	}
+]
 
-export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy750, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk, nikeBlazer, NMD, AJ1, AJ4, AJ5 }
+const NB5740 = [
+	{
+		id: 34,
+		brand: 'New Balance',
+		modelName: 'New Balance 57/40',
+		name: `New Balance 57/40 Shoes`,
+		releaseDate: '2022-10-01',
+		colors: [
+			'White/Sea Salt/Silver Metallic',
+			'Moonbeam/Sea Salt'
+		],
+		images: [
+			'https://cdn.flightclub.com/750/TEMPLATE/356116/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/356116/2.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/356116/3.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/291257/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/291257/2.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/291257/3.jpg'
+		],
+		price: '120',
+		description: `In 2021, New Balance debuted the 57/40, building on the iconic styling of the 574 silhouette. Exaggerated “N” logos and reflective accents adorn the suede uppers, with an undulating, stacked foam midsole incorporated as a nod to the brand’s ’90s heritage. From 'Au Lait' to 'Sea Salt,' explore a selection of New Balance 57/40 sneakers.`
+	},
+	{
+		id: 35,
+		brand: 'New Balance',
+		modelName: 'New Balance 57/40',
+		name: `New Balance x BAPE 57/40 Shoes`,
+		releaseDate: '2022-07-30',
+		colors: [
+			'Multi-Color/Multi-Color',
+			'Grey/White/Black'
+		],
+		images: [
+			'https://cdn.flightclub.com/750/TEMPLATE/324605/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/324605/2.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/324605/3.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/325862/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/325862/2.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/325862/3.jpg'
+		],
+		price: '300',
+		description: `The BAPE x New Balance 57/40 is taken from the ‘Training Camp’ collection, featuring ‘pre-sport’ apparel and footwear intended to be worn on the way to the gym. This modern interpretation of the classic 574 silhouette features a mesh upper with black suede overlays and an oversized ‘N’ logo in a camo print. ‘A BATHING APE’ is inscribed on the lateral heel of the left shoe, while an Ape Head graphic adorns the right. Crimson shark tooth detailing on the heel tab delivers an unexpected pop of color. The lifestyle runner is mounted on a stacked EVA midsole that offers lightweight cushioning with each step.`
+	}
+]
+
+export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy750, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk, nikeBlazer, NMD, AJ1, AJ4, AJ5, NB2002R, NB530, NB5740 }
