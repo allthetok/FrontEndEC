@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 /* eslint-disable no-irregular-whitespace */
 /* eslint-disable indent */
 /* eslint-disable no-trailing-spaces */
@@ -494,9 +495,19 @@ const nikeAirM97 = [
 		colors: [
 			'White/White/White',
 			'Black/Black/Black',
-			'Metallic Gold/Varsity Red/White-Black'
+			'Black/White/Opti Yellow'
 		],
-		images: [],
+		images: [
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a25a1901-a687-4dd3-94f7-472e7af433aa/air-max-97-shoes-HdNjNN.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3e98ecdc-f0d6-424f-9096-f077c2d561a4/air-max-97-shoes-HdNjNN.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/602edc9d-5992-45d2-bc6f-35b5b062b908/air-max-97-shoes-HdNjNN.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a47b2ef9-8239-4e82-99fd-e6159c0df489/air-max-97-shoes-z3TlrlVN.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7a717540-b712-486d-8612-acd2a8905d5f/air-max-97-shoes-z3TlrlVN.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/33aea626-bb43-4091-805c-ba12cf978f2d/air-max-97-shoes-z3TlrlVN.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cj2jbeomutdbn0tcrbza/air-max-97-shoes-h6hqBR.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/kyjosqxnxtcmy9dhjazm/air-max-97-shoes-h6hqBR.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ngzqrjuoaghukvmgdn3d/air-max-97-shoes-h6hqBR.png'
+		],
 		price: '160',
 		description: `Inspired by nature, the Air Max 97 ushered in a new era in footwear for a modern world. The silhouette was introduced with a full-length Air unit all around the midsole for maximum comfort for both 
 		runners and everyday wear. Like the 95, it maintained its layered look, but the 3M detail was what sealed the deal. Browse our selection of AM97, including the latest releases.`
@@ -507,21 +518,215 @@ const nikeDunk = [
 	{
 		id: 20,
 		brand: 'Nike',
-		modelName: 'Nike Air Max 97',
-		name: 'Nike Air Max 97',
+		modelName: 'Nike Dunk',
+		name: 'Nike Dunk High Retro',
 		releaseDate: '2018-12-14',
 		colors: [
-			'White/White/White',
-			'Black/Black/Black',
-			'Metallic Gold/Varsity Red/White-Black'
+			'White/Total Orange/Black'
 		],
-		images: [],
-		price: '160',
-		description: `Inspired by nature, the Air Max 97 ushered in a new era in footwear for a modern world. The silhouette was introduced with a full-length Air unit all around the midsole for maximum comfort for both 
-		runners and everyday wear. Like the 95, it maintained its layered look, but the 3M detail was what sealed the deal. Browse our selection of AM97, including the latest releases.`
+		images: [
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5e7687f1-c13e-4bac-8ffa-a6f863ae9157/dunk-high-retro-shoe-1PhQRw.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ac4c2d4d-06fc-4e92-9fec-c78cbb110c5f/dunk-high-retro-shoe-1PhQRw.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/811b9857-d626-46d0-b2ff-7a8858717fc6/dunk-high-retro-shoe-1PhQRw.png'
+		],
+		price: '170',
+		description: `Created for the hardwood but taken to the streets, the '80s basketball icon returns with perfectly sheened overlays and original university colours. With its classic hoops design, 
+		the Nike Dunk High Retro channels '80s vintage back onto the streets while its padded, high-top collar adds an old-school look rooted in comfort.`
 	},
+	{
+		id: 21,
+		brand: 'Nike',
+		modelName: 'Nike Dunk',
+		name: 'Nike Dunk Low',
+		releaseDate: '2018-12-14',
+		colors: [
+			'Anthracite/Cool Grey/Industrial Blue/Pure Platinum',
+			'Midnight Navy/Desert Ochre/Sail/Midnight Navy'
+		],
+		images: [
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/938273c4-d731-4fe6-b2c7-1a75002a1536/dunk-low-shoes-6NtmS9.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a9323b98-8a90-4b2e-9051-6a508d053836/dunk-low-shoes-6NtmS9.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/39f2357d-12b7-4e4c-89e0-f9f9f563abed/dunk-low-shoes-6NtmS9.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f95fbcaa-aaa6-4c67-8e6c-779a75d1c692/sb-dunk-low-pro-shoes-Vl4NDZ.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/143c0d30-4138-48ff-90d7-92e4e2532d39/sb-dunk-low-pro-shoes-Vl4NDZ.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/bad2cc5b-c91c-4300-b160-df8e47777c50/sb-dunk-low-pro-shoes-Vl4NDZ.png'
+		],
+		price: '165',
+		description: `Created for the hardwood but taken to the streets, the '80s basketball icon returns with classic details and throwback hoops flair. Durable leather and Ripstop textiles are paired 
+		with reflective design details and a frosted blue outsole for a sturdy construction that helps you face harsh conditions. And its padded, low-cut collar lets you take your game anywhere—in comfort.`
+	},
+]
+
+const nikeBlazer = [
+	{
+		id: 22,
+		brand: 'Nike',
+		modelName: 'Nike Blazer',
+		name: `Nike Mid '77 Vintage`,
+		releaseDate: '2020-09-18',
+		colors: [
+			'White/Total Orange/Black',
+			'White/Pure Platinum/Game Royal'
+		],
+		images: [
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/fb7eda3c-5ac8-4d05-a18f-1c2c5e82e36e/blazer-mid-77-vintage-shoes-CBDjT0.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8bc7d689-de2c-4b49-986c-b42153895bc0/blazer-mid-77-vintage-shoes-CBDjT0.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ef4dbed6-c621-4879-8db3-f87296bfb570/blazer-mid-77-vintage-shoes-CBDjT0.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/889ef520-349a-49da-80d4-8d75f9651feb/blazer-mid-77-vintage-shoes-CBDjT0.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e4fca072-a847-46f3-829b-e827eab1941d/blazer-mid-77-vintage-shoes-CBDjT0.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a4f37b92-2f8c-4b14-8119-609eeb57e719/blazer-mid-77-vintage-shoes-CBDjT0.png'
+		],
+		price: '140',
+		description: `In the '70s, Nike was the new shoe on the block. So new in fact, we were still breaking into the basketball scene and testing prototypes on the feet of our local team. Of course, the design improved over the years, but the name stuck. The Nike Blazer Mid '77 Vintage—classic since the beginning.`
+	},
+	{
+		id: 23,
+		brand: 'Nike',
+		modelName: 'Nike Blazer',
+		name: `Nike Blazer Low '77 Jumbo`,
+		releaseDate: '2018-12-14',
+		colors: [
+			'White/White/Sail/Black'
+		],
+		images: [
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8bd81405-bbe2-4516-aecb-665e22981785/blazer-low-77-jumbo-shoes-gRBtmC.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f7ab9fec-4ec9-4338-a2a7-97caabdd664c/blazer-low-77-jumbo-shoes-gRBtmC.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e594bc27-ebd3-4441-b4bd-77a6cd4c46e3/blazer-low-77-jumbo-shoes-gRBtmC.png'
+		],
+		price: '165',
+		description: `They say, "Don't fix what works". We say, "Perfect it". The classic, streetwear superstar gets rethought with the Nike Blazer Low '77 Jumbo. Harnessing the old-school look you love, it now features an oversized Swoosh design and jumbo laces. Its plush foam tongue and thicker stitching embolden the iconic look that's been praised by the streets since '77.`
+	},
+	{
+		id: 24,
+		brand: 'Nike',
+		modelName: 'Nike Blazer',
+		name: `Nike X Off-White Blazer Mid`,
+		releaseDate: '2018-10-03',
+		colors: [
+			'Canvas/Total Orange-Pale/Vanilla-Black',
+			'Black/White-Cone/Black'
+		],
+		images: [
+			'https://stayfresh.ca/cdn/shop/products/SF_Nike_The_10-_Nike_Blazer_Mid_Pale_Vanilla_AA3832-700-1_600x.jpg?v=1571278187',
+			'https://stayfresh.ca/cdn/shop/products/SF_Nike_The_10-_Nike_Blazer_Mid_Pale_Vanilla_AA3832-700-6_600x.jpg?v=1571278187',
+			'https://stayfresh.ca/cdn/shop/products/SF_Nike_The_10-_Nike_Blazer_Mid_Pale_Vanilla_AA3832-700-2_600x.jpg?v=1571278187',
+			'https://stayfresh.ca/cdn/shop/products/SF_Nike_The_10-_Nike_Blazer_Mid_Grim_Reepers_AA3832-001-1_600x.jpg?v=1571278187',
+			'https://stayfresh.ca/cdn/shop/products/SF_Nike_The_10-_Nike_Blazer_Mid_Grim_Reepers_AA3832-001-2_600x.jpg?v=1571278187',
+			'https://stayfresh.ca/cdn/shop/products/SF_Nike_The_10-_Nike_Blazer_Mid_Grim_Reepers_AA3832-001-6_600x.jpg?v=1571278187',
+
+		],
+		price: '450',
+		description: `Don’t sleep because Virgil Abloh continues to give the shoe game a nightmare with the Nike Blazer Mid Off-White All Hallow’s Eve. This pumpkin inspired half of the "Spooky Pack" comes with a pale vanilla upper, total orange "Swoosh", and pale vanilla sole. These released in September 2018 and retailed at $130. Get in the holiday spirit and cop now on StockX.`
+	},
+]
+
+const AJ1 = [
+	{
+		id: 25,
+		brand: 'Air Jordan',
+		modelName: 'Air Jordan 1',
+		name: `Air Jordan 1 Low Shoes`,
+		releaseDate: '2020-09-20',
+		colors: [
+			'Black/White/Yellow Ochre'
+		],
+		images: [
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/525eacce-5bfe-48b5-b6de-4ce71c6ba657/air-jordan-1-low-mens-shoes-9xSzrW.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a48f0a03-6639-4452-bf10-3c362182adbd/air-jordan-1-low-mens-shoes-9xSzrW.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/11ed99b7-0486-4fee-bdf5-78dffda009b6/air-jordan-1-low-mens-shoes-9xSzrW.png'
+		],
+		price: '115',
+		description: `Inspired by the original that debuted in 1985, the Air Jordan 1 Low offers a clean, classic look that's familiar yet always fresh. With an iconic design that pairs perfectly with any 'fit, these kicks ensure you'll always be on point.`
+	},
+	{
+		id: 26,
+		brand: 'Air Jordan',
+		modelName: 'Air Jordan 1',
+		name: `Air Jordan 1 Mid Shoes`,
+		releaseDate: '2023-08-29',
+		colors: [
+			'White/White/Black/Black',
+			'White/Black/Gym Red'
+		],
+		images: [
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/288a2235-54ce-4f8e-a133-0117cbc381b4/air-jordan-1-mid-mens-shoes-X5pM09.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/852a384c-a6ef-45af-9bf7-2ed47d64ae4f/air-jordan-1-mid-mens-shoes-X5pM09.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ce623fbc-daeb-47ea-ae70-1ffa4847c569/air-jordan-1-mid-mens-shoes-X5pM09.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/31ff59e2-89d0-4a83-839a-656618674782/air-jordan-1-mid-mens-shoes-X5pM09.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2838806d-22c6-4cba-b015-8478a6ce6d64/air-jordan-1-mid-mens-shoes-X5pM09.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/82d26c28-58a2-464f-881e-b20d2b5eafa8/air-jordan-1-mid-mens-shoes-X5pM09.png'
+		],
+		price: '125',
+		description: `Inspired by the original AJ1, this mid-top edition maintains the iconic look you love while choice colors and crisp leather give it a distinct identity.`
+	},
+	{
+		id: 27,
+		brand: 'Air Jordan',
+		modelName: 'Air Jordan 1',
+		name: `Air Jordan 1 Retro High OG`,
+		releaseDate: '2023-07-22',
+		colors: [
+			'University Blue/Black/White',
+			'Taxi/Black/Sail'
+		],
+		images: [
+			'https://stayfresh.ca/cdn/shop/products/AIRJORDAN1RETROHIGHOGTAXIa555088-711_600x.jpg?v=1668543640',
+			'https://stayfresh.ca/cdn/shop/products/AIRJORDAN1RETROHIGHOGTAXIb555088-711_600x.jpg?v=1668543640',
+			'https://stayfresh.ca/cdn/shop/products/AIRJORDAN1RETROHIGHOGTAXIc555088-711_600x.jpg?v=1668545663',
+			'https://cdn.flightclub.com/750/TEMPLATE/358111/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/358111/3.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/358111/4.jpg',
+		],
+		price: '250',
+		description: `The Air Jordan 1 Retro High OG pays homage to Michael Jordan’s college with a color scheme that recalls the 2018 ‘Bred Toe’ AJ1 release. The shoe features white quarter panels and black overlays on the Swoosh and forefoot against an all-leather base. The toe box, heel, and collar flap are adorned with University Blue accents, with a lateral-side classic Wings logo. The breathable nylon tongue has a retro Nike tag, and lightweight cushioning is provided by a white rubber midsole with an Air-sole heel unit within a polyurethane wedge. Underfoot, sturdy traction is ensured by the blue rubber outsole.`
+	}
+]
+
+const AJ4 = [
+	{
+		id: 28,
+		brand: 'Air Jordan',
+		modelName: 'Air Jordan 4',
+		name: `Air Jordan 4 Retro Travis Scott Cactus Jack`,
+		releaseDate: '2018-06-09',
+		colors: [
+			'University Blue/Black/Varsity Red'
+		],
+		images: [
+			'https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/tfcnf6xbezatpegexxx7/air-jordan-4-travis-scott-cactus-jack-release-date.jpg',
+			'https://static.nike.com/a/images/t_prod_sc/w_640,c_limit,f_auto/zj7bmitm7dh80fxnayu9/air-jordan-4-travis-scott-cactus-jack-release-date.jpg',
+			'https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/hl5u7kku1dlurbgborm6/air-jordan-4-travis-scott-cactus-jack-release-date.jpg'
+		],
+		price: '1200',
+		description: `The only way to describe the Travis Scott Air Jordan 4 Retros properly would be to use the rappers own adlib: la flame. These Jordan 4s were made in collaboration with rapper, Travis Scott and nicknamed the "Cactus Jack" edition. Similar in design to the infamous Eminem pair, these feature a lighter shade of blue suede on the upper. Black accents, a red liner, paint splatter detailing, a white midsole and "Cactus Jack" branding on the back heel tab finish things off for this pair. These dropped in June of 2018 for $225 and came exclusively in men’s sizes. If you’re a fan of Travis Scott and the AJ 4, this pair is another must-have. Straight up!`
+	},
+	{
+		id: 29,
+		brand: 'Air Jordan',
+		modelName: 'Air Jordan 4',
+		name: `Air Jordan 4 Retro OG`,
+		releaseDate: '2023-09-09',
+		colors: [
+			'White/Fire Red/Black/Neutral Grey',
+			'Black/Tour Yellow'
+		],
+		images: [
+			'https://cdn.flightclub.com/750/TEMPLATE/367078/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/367078/2.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/367078/3.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/353523/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/353523/2.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/353523/3.jpg'
+		],
+		price: '300',
+		description: `The Air Jordan 4 is a classic sneaker in the Air Jordan line. It was released in 1989 and designed by Nike designer Tinker Hatfield, paying homage to the original Air Jordan design while introducing new colorways and design features.
+		The sneaker is known for its distinctive design, with visible Air unit technology and top-quality leather construction. The Air Jordan 4 was created to offer superior comfort, durability, and style to come up with an extraordinary product. In our opinion, one of the most notable features of the Air Jordan 4 is the “Wings” on the side of the shoe, which represent Michael Jordan's soaring abilities on the basketball court. The shoes also feature a unique lacing system with plastic Wing eyelets, which provide added support and durability.
+		Over the years, the Air Jordan 4 has been released in a range of colors and collaborations, including the Jordan 4 Retro Undefeated (2018 Sample), which was released as part of a collaboration between Nike and LA-based streetwear brand Undefeated. These collaborations and limited-edition releases have only added to the sneaker's popularity.
+		The brand comprises a range of other products, including clothing and accessories. The line includes t-shirts, hoodies, shorts, and hats, among other items. The Air Jordan 4 works best with other products in the Air Jordan. The brand's clothing and accessories are compatible with the shoe's style and design. A perfect example of this is the Air Jordan Hoodie, which perfectly complements the style and design of the Air Jordan 4.`
+	}
 ]
 
 
 
-export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy750, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk, NMD }
+
+export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy750, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk, nikeBlazer, NMD, AJ1, AJ4 }
