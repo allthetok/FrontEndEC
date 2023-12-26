@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 /* eslint-disable indent */
 /* eslint-disable no-trailing-spaces */
 const ultraBoost = [
@@ -149,16 +150,20 @@ const stanSmith = [
 	{
 		id: 7,
 		brand: 'Adidas',
-		modelName: 'Stan Smith Shoes (Special)',
-		name: 'Bape 30th Anniversary Black',
+		modelName: 'Stan Smith',
+		name: 'Bape 30th Anniversary Black Stan Smith Shoes',
 		releaseDate: '2023-11-18',
 		colors: [
 			'CORE BLACK/CORE BLACK/GOLD METALLIC',
 		],
-		images: [],
+		images: [
+			'https://images.stockx.com/360/adidas-Stan-Smith-Bape-30th-Anniversary-Black/Images/adidas-Stan-Smith-Bape-30th-Anniversary-Black/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1700666677&h=384&q=57',
+			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi3uSqfo1qpUwDD8VNuyAS8SxDZQRBK3NRnw&usqp=CAU',
+			'https://image.goat.com/transform/v1/attachments/product_template_pictures/images/095/038/922/original/IG1116.png.png?action=crop&width=750'
+		],
 		price: '160',
-		description: `Timeless appeal. Effortless style. Everyday versatility. For over 50 years and counting, adidas Stan Smith Shoes have continued to hold their place as an icon. This pair shows off a fresh redesign as part of adidas' commitment to use only recycled polyester by 2024. With a vegan upper and an outsole made from rubber waste, they still have iconic style, they're just made with the planet in mind.
-		This product is made with vegan alternatives to animal-derived ingredients or materials. It is also made with Primegreen, a series of high-performance recycled materials. 50% of upper is recycled content. No virgin polyester.`
+		description: `Sporting an immaculate Cloud White and Core Black, these renditions of the Stan Smith are an ode to understated sophistication with bursts of signature BAPE flair. The shoe's leather upper boasts an embossed BAPE camo print, offering a subtle nod to the brand's heritage. The heel tab proudly showcases BAPE's vibrant camo, contrasting the subtle detail.
+		Glistening touches of metallic gold adorn the shoe, from the midfoot's Stan Smith inscription to the special 30th Anniversary BAPE lace dubrae. The iconic Stan Smith portrait on the tongue tag is replaced with BAPE's unmistakable APE logo, bathed in the same luxe gold. Complementary golden BAPE branding graces the heel tab and insole, while a rich creamy midsole and outsole seal the design's elegance.`
 	},
 	{
 		id: 8,
@@ -168,18 +173,76 @@ const stanSmith = [
 		releaseDate: '2019-11-01',
 		colors: [
 			'Cloud White / Cloud White / Collegiate Navy',
-			'Cloud White / Cloud White / Green'
+			'Cloud White / Cloud White / Green',
+			'Cloud White / Cloud White / Core Black'
 		],
-		images: [],
-		price: '160',
+		images: [
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/e01dea68cf93434bae5aac0900af99e8_9366/Stan_Smith_Shoes_White_FX5500_01_standard.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/dcc8b21f893a457886d8ac0900afa80b_9366/Stan_Smith_Shoes_White_FX5500_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/7070d7f34b284c91ac1fac0900afb687_9366/Stan_Smith_Shoes_White_FX5500_04_standard.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/b47d77eba6f945ea8dabac210127b11e_9366/Stan_Smith_Shoes_White_FX5501_01_standard.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/817c815ba1db46629f89ac210127bebb_9366/Stan_Smith_Shoes_White_FX5501_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/f633a0c9cb124e16914cac210127ca62_9366/Stan_Smith_Shoes_White_FX5501_04_standard.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/68ae7ea7849b43eca70aac1e00f5146d_9366/Stan_Smith_Shoes_White_FX5502_01_standard.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/ac706d8555244a6e8ea7ac1e00f521d1_9366/Stan_Smith_Shoes_White_FX5502_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/f86168171d2a4644a8eeac1e00f52f85_9366/Stan_Smith_Shoes_White_FX5502_04_standard.jpg'
+		],
+		price: '130',
 		description: `Timeless appeal. Effortless style. Everyday versatility. For over 50 years and counting, adidas Stan Smith Shoes have continued to hold their place as an icon. This pair shows off a fresh redesign as part of adidas' commitment to use only recycled polyester by 2024. With a vegan upper and an outsole made from rubber waste, they still have iconic style, they're just made with the planet in mind.
-		This product is made with vegan alternatives to animal-derived ingredients or materials. It is also made with Primegreen, a series of high-performance recycled materials. 50% of upper is recycled content. No virgin polyester.`
+		This product is made with vegan alternatives to animal-derived ingredients or materials. It is also made with Primegreen, a series of high-performance recycled materials. 50% of upper is recycled content. No virgin polyester`
+	},
+]
+
+const NMD = [
+	{
+		id: 9,
+		brand: 'Adidas',
+		modelName: 'NMD',
+		name: 'NMD_R1 Shoes',
+		releaseDate: '2020-10-18',
+		colors: [
+			'Core Black / Core Black / Core Black',
+			'White Tint / Glory Red / Semi Lucid Blue'
+		],
+		images: [
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/62d96641e799450fbbdfad0800cb06ed_9366/NMD_R1_Shoes_Black_GZ9256_01_standard.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/3373d7a437dd4e6688ccad0800cb1291_9366/NMD_R1_Shoes_Black_GZ9256_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/8975c8cd84524d568552ad0800cb207e_9366/NMD_R1_Shoes_Black_GZ9256_04_standard.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/76752172861843209f02aef900fd6858_9366/NMD_R1_Shoes_White_HQ4451_01_standard.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/1c3d884f0e0043408142aef900fd8116_9366/NMD_R1_Shoes_White_HQ4451_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/256d930ec0ce4579aed3aef900fd99ca_9366/NMD_R1_Shoes_White_HQ4451_04_standard.jpg'
+		],
+		price: '200',
+		description: `Pack your bag, lace up and get going. City adventures beckon in these NMD_R1 shoes. An update to an acclaimed '80s runner from the adidas archive, these modern sneakers have a soft, stretchy knit upper and energy-returning Boost cushioning for all-day comfort. Bold color and signature midsole plugs make a statement, so wherever you're headed, you're sure to show up in style.
+		This product is made with a yarn that features 50% recycled polyester and 50% Parley Ocean Plastic — plastic waste which we intercepted from remote islands, beaches, coastal communities and shorelines in order to prevent it from polluting our oceans. In total, this product has 20% recycled content.`
+	},
+	{
+		id: 10,
+		brand: 'Adidas',
+		modelName: 'NMD',
+		name: 'NMD_R2 Shoes',
+		releaseDate: '2022-09-27',
+		colors: [
+			'Cloud White / Core Black / Cloud White',
+			'Core Black / Cloud White / Cloud White'
+		],
+		images: [
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/c2a18c4e3f104d52a697ad6a01477bb7_9366/NMD_R1_V2_Shoes_Black_GX6367_01_standard.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/ba6af5f7bba845849d64ad6a0147888f_9366/NMD_R1_V2_Shoes_Black_GX6367_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/afbb213da7444aa38d9ead6a0147955c_9366/NMD_R1_V2_Shoes_Black_GX6367_04_standard.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/aa6658fcf2c9436b882fae790049b298_9366/NMD_R1_V2_Shoes_White_GZ1999_01_standard.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/6d5a2166de314e92a9c1ae79004bdabe_9366/NMD_R1_V2_Shoes_White_GZ1999_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/5b0629f79bea4e94a117ae79004cac3f_9366/NMD_R1_V2_Shoes_White_GZ1999_04_standard.jpg'
+		],
+		price: '190',
+		description: `Head into the future with confidence. Not to mention style. Inspired by running silhouettes from the '80s archive, NMD was born in 2015 to merge sleek style with modern technologies and comfort. These juniors' adidas NMD_R1 V2 shoes keep your feet cushioned with a responsive BOOST midsole. Chic transparent overlays add a cyberpunk vibe. The future is yours. Go and get it.
+		This shoe's upper is made with a high-performance yarn which contains at least 50% Parley Ocean Plastic — reimagined plastic waste, intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our ocean. The other 50% of the yarn is recycled polyester.`
 	},
 ]
 
 const yeezy350 = [
 	{
-		id: 8,
+		id: 11,
 		brand: 'Yeezy',
 		modelName: 'Yeezy Boost 350',
 		name: 'Yeezy Boost 350 V2',
@@ -191,16 +254,27 @@ const yeezy350 = [
 			'Beluga Reflective/Steeple Gray/Solar Red'
 
 		],
-		images: [],
-		price: '230',
+		images: [
+			'https://stayfresh.ca/cdn/shop/products/YEEZYBOOST350V2BONEaHQ6316_600x.jpg?v=1653542654',
+			'https://stayfresh.ca/cdn/shop/products/YEEZYBOOST350V2BONEbHQ6316_600x.jpg?v=1653542654',
+			'https://stayfresh.ca/cdn/shop/products/YEEZYBOOST350V2BONEcHQ6316_300x.jpg?v=1653542654',
+			'https://stayfresh.ca/cdn/shop/products/YEEZYBOOST350V2ONYX2022aHQ4540_600x.jpg?v=1657061101',
+			'https://stayfresh.ca/cdn/shop/products/YEEZYBOOST350V2ONYX2022bHQ4540_600x.jpg?v=1657061101',
+			'https://stayfresh.ca/cdn/shop/products/ADIDASYEEZYBOOST350V2BLACKREDbCP9652_600x.jpg?v=1667867388',
+			'https://stayfresh.ca/cdn/shop/products/ADIDASYEEZYBOOST350V2BLACKREDaCP9652_600x.jpg?v=1667867388',
+			'https://stayfresh.ca/cdn/shop/products/ADIDASYEEZYBOOST350V2BLACKREDbCP9652_300x.jpg?v=1667867388',
+			'https://stayfresh.ca/cdn/shop/products/YeezyBoost350V2BelugaReflectiveaGW1229_600x.jpg?v=1659467371',
+			'https://stayfresh.ca/cdn/shop/products/YeezyBoost350V2BelugaReflectivebGW1229_600x.jpg?v=1659467371'
+		],
+		price: '450',
 		description: `The YEEZY BOOST 350 V2 is the lifestyle runner from adidas and Kanye West. It features an upper composed of re-engineered Primeknit. The post-dyed 
-		monofilament side stripe is woven into the upper. Reflective threads are woven into the laces. The midsole utilizes adidas’ innovative BOOST™ technology.`
+		monofilament side stripe is woven into the upper. Reflective threads are woven into the laces. The midsole utilizes adidas’ innovative BOOST™ technology. The Yeezy Boost 350 V2 treats the lifestyle runner to a refined makeover. A monofilament side stripe adds a see-through element to the minimalist design, while a webbing pull tab at the heel provides easy on and off. Inside the shoe, three-stripe branding on the interior heel is accompanied by ‘Yeezy’ stamped on the sockliner. Responsive cushioning comes courtesy of a TPU-wrapped full-length Boost midsole.`
 	}
 ]
 
 const yeezy500 = [
 	{
-		id: 9,
+		id: 12,
 		brand: 'Yeezy',
 		modelName: 'Yeezy 500',
 		name: 'Yeezy Boost 500',
@@ -209,29 +283,37 @@ const yeezy500 = [
 			'Utility Black/Utility Black/Utility Black',
 			'Bone White/Bone White/Bone White',
 		],
-		images: [],
+		images: [
+			'https://stayfresh.ca/cdn/shop/products/SF_Adidas_Yeezy_500_Utility_Black_F36640-1_600x.jpg?v=1571278055',
+			'https://stayfresh.ca/cdn/shop/products/SF_Adidas_Yeezy_500_Utility_Black_F36640-4_600x.jpg?v=1571278055',
+			'https://stayfresh.ca/cdn/shop/products/adidasYeezy500BoneWhiteFV3573-1_600x.jpg?v=1610674749',
+			'https://stayfresh.ca/cdn/shop/products/adidasYeezy500BoneWhiteFV3573-1_600x.jpg?v=1610674749',
+			'https://stayfresh.ca/cdn/shop/products/adidasYeezy500BoneWhiteFV3573-4_600x.jpg?v=1610674761'
+		],
 		price: '200',
 		description: `In July 2018, Kanye West and adidas released the Yeezy 500. The retro-inspired silhouette counterbalances a sleek design with its bulky form. 
 		What distinguishes this colorway from the standard triple-black finish is a unique use of tone – it's a semi-faded black that coats the combination of mesh 
 		and upper suede, as opposed to the pitch-black variety more common in the firmament of the sneaker.`
 	},
 	{
-		id: 10,
+		id: 13,
 		brand: 'Yeezy',
 		modelName: 'Yeezy 500',
 		name: 'Yeezy Boost 500 High Boot',
 		releaseDate: '2023-08-14',
 		colors: [
-			'Utility Black/Utility Black/Utility Black'
+			'Tyrian/Tyrian/Tyrian'
 		],
-		images: [],
+		images: [
+			'https://stayfresh.ca/cdn/shop/products/FY4269_600x.jpg?v=1591403009'
+		],
 		price: '300',
 		description: `The adidas Yeezy 500 Tactical Boot 'Utility Black' showcases a black ballistic mesh upper with matching suede overlays, and is fastened with speed 
 		lacing for quick adjustments. The rubber mudguard seamlessly integrates with the podular adiPRENE+ midsole, which is borrowed from the original Yeezy 500 design. 
 		The boot’s extended padded collar reaches up to the calf for optimal fit.`
 	},
 	{
-		id: 11,
+		id: 14,
 		brand: 'Yeezy',
 		modelName: 'Yeezy 500',
 		name: 'Yeezy Boost 500 High',
@@ -239,7 +321,9 @@ const yeezy500 = [
 		colors: [
 			'Slate/Slate/Slate'
 		],
-		images: [],
+		images: [
+			'https://cdn.flightclub.com/750/TEMPLATE/160081/1.jpg'
+		],
 		price: '220',
 		description: `Celebrity Kanye West retools the 500 profile with the adidas Yeezy 500 High. Debuted in December 2019, this revamp boasts a Slate-colored neoprene base 
 		layered with suede and tumbled leather elements. Utility laces secure the tongue and a patterned mudguard bolsters the sidewall. The molded midsole is supported by 
@@ -249,7 +333,7 @@ const yeezy500 = [
 
 const yeezy750 = [
 	{
-		id: 12,
+		id: 15,
 		brand: 'Yeezy',
 		modelName: 'Yeezy Boost 700',
 		name: 'Yeezy Boost 700 V2 Tephra',
@@ -257,7 +341,11 @@ const yeezy750 = [
 		colors: [
 			'Tephra/Tephra/Tephra'
 		],
-		images: [],
+		images: [
+			'https://stayfresh.ca/cdn/shop/products/SF_Yeezy_Boost_700_V2_Tephra_FU7914-1_600x.jpg?v=1571278647',
+			'https://stayfresh.ca/cdn/shop/products/SF_Yeezy_Boost_700_V2_Tephra_FU7914-4_600x.jpg?v=1571278647',
+			'https://stayfresh.ca/cdn/shop/products/SF_Yeezy_Boost_700_V2_Tephra_FU7914-5_600x.jpg?v=1571278647'
+		],
 		price: '300',
 		description: `The Yeezy Boost 700 V2 'Tephra' brings a subdued colorway to the second iteration of the Yeezy 700 line. The shoe's upper is built with a layered mix of mesh and suede, 
 		finished in neutral hues. A darker look emerges on the signature bulky sole unit, which houses a full-length Boost midsole for cushioning. Underfoot, a gum rubber outsole provides 
@@ -272,7 +360,10 @@ const yeezy750 = [
 		colors: [
 			'Fade Carbon/Fade Carbon-Fade Carbon'
 		],
-		images: [],
+		images: [
+			'https://stayfresh.ca/cdn/shop/files/FRONT-WEB-ADIDAS-YEEZY-700-V3-FADE-CARBON_600x.jpg?v=1694542672',
+			'https://stayfresh.ca/cdn/shop/files/SIDE-WEB-ADIDAS-YEEZY-700-V3-FADE-CARBON_600x.jpg?v=1694542672'
+		],
 		price: '210',
 		description: `Distinguished by a fade gradient that moves from a mauve hue to a bright magenta at the heel, the adidas Yeezy 700 V3 ‘Fade Carbon’ is a lifestyle runner in an eyecatching colorway.
 		A translucent RPU cage overlays the engineered mesh upper. An interior bootie offers a snug, comfortable fit while traction and grip are assured from the herringbone-patterned rubber outsole.`
@@ -287,7 +378,9 @@ const yeezy750 = [
 			'Hi-Res Blue/Hi-Res Blue-Hi-Res Blue',
 			'Hi-Res Red/Hi-Res Red/Hi-Res Red'
 		],
-		images: [],
+		images: [
+			'https://stayfresh.ca/cdn/shop/products/ezgif-4-0dff0c086b_600x.jpg?v=1678130147'
+		],
 		price: '300',
 		description: `The adidas Yeezy Boost 700 'Hi-Res Blue'/'Hi-Res Red' features a vibrant shade across most of the lifestyle runner designed by Kanye West. Hi-Res Blue/Red appears on parts of the upper and midsole, 
 		contrasted by black suede overlays and grey near the front of the shoe and toe cap. The sculpted midsole features a hit of red near the front, while full-length Boost cushioning is embedded right 
@@ -307,7 +400,15 @@ const yeezyOpen = [
 			'Granite/Granite/Granite',
 			'Bone/Bone/Bone'
 		],
-		images: [],
+		images: [
+			'https://stayfresh.ca/cdn/shop/files/adidas-yeezy-slides-slate-grey-ID2350-release-date-4_600x.jpg?v=1692392595',
+			'https://stayfresh.ca/cdn/shop/products/YeezySlidePureAGZ5554_4476b59f-e892-4fd2-a085-8caa4143371c_600x.jpg?v=1642794272',
+			'https://stayfresh.ca/cdn/shop/products/YeezySlidePureCGZ5554_876119bc-b976-454a-939c-1ddedd910aba_600x.jpg?v=1642794272',
+			'https://stayfresh.ca/cdn/shop/products/YeezySlidePureDGZ5554_8ce2827f-aa1d-4fe9-9f80-a7b2bf906a0f_600x.jpg?v=1642794272',
+			'https://stayfresh.ca/cdn/shop/files/FRONT-WEB-ADIDAS-YEEZY-SLIDE-AZURE-2023_600x.jpg?v=1686890698',
+			'https://stayfresh.ca/cdn/shop/files/SIDE-WEB-ADIDAS-YEEZY-SLIDE-AZURE-2023_600x.jpg?v=1686890698',
+			'https://stayfresh.ca/cdn/shop/files/BACK-WEB-ADIDAS-YEEZY-SLIDE-AZURE-2023_600x.jpg?v=1686890911'
+		],
 		price: '60',
 		description: `As part of Yeezy’s sixth collection, Kanye West and adidas introduced the Yeezy Slide in 2018. Featuring monotone colorways, the Yeezy Slide is an elevated pool slide design, featuring injection-molded 
 		construction, a shark-tooth outsole, and a forefoot strap. The Yeezy Slides maintain the look and feel of a classic sandal, but with a few design touches to set them apart. Key colorways of the Yeezy Slides include 
@@ -320,11 +421,15 @@ const yeezyOpen = [
 		name: 'Yeezy Foam Runner',
 		releaseDate: '2022-04-16',
 		colors: [
-			'Sulfur/Sulfur/Sulfur',
-			'Stone Sage/Stone Sage/Stone Sage',
-			'Vermillion/Vermillion/Vermillion'
+			'Slate Grey/Slate Grey/ Slate Grey',
+			'Pure/Pure/Pure',
+			'Azure/Azure/Azure'
 		],
-		images: [],
+		images: [
+			'https://stayfresh.ca/cdn/shop/products/ezgif.com-gif-maker_32_600x.jpg?v=1654716126',
+			'https://stayfresh.ca/cdn/shop/products/ipad_adidas-yeezy-foam-runner-mx-sand-grey_600x.jpg?v=1648660004',
+			'https://stayfresh.ca/cdn/shop/files/ezgif-1-fe30e3d09a_600x.jpg?v=1691526188'
+		],
 		price: '90',
 		description: `The Yeezy Foam Runner features a unique look, utilizing a one-piece foam upper with a porous design, crafted from environmentally friendly algae. Kanye West and adidas unleashed a lifestyle slip-on with
 		no shoelaces, arriving in many different colorways. Explore a selection of Foam RNRs including 'Carbon,' 'Stone Salt,' 'Stone Taupe' and 'Desert Sand.'`
@@ -342,7 +447,14 @@ const nikeAF1 = [
 			'White/White/White',
 			'Black/Black/Black',
 		],
-		images: [],
+		images: [
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-rWtqPn.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/33533fe2-1157-4001-896e-1803b30659c8/air-force-1-07-shoes-rWtqPn.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-rWtqPn.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-rWtqPn.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c331ff82-87dd-453f-b6d4-1c81ef5e29aa/air-force-1-07-shoes-rWtqPn.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-rWtqPn.png'
+		],
 		price: '90',
 		description: `Air Force 1s have come a long way since their debut as the first on-court shoe to feature Nike Air technology. But despite this, the cultural icon stays true to its roots with the same soft and springy 
 		cushioning that changed sneaker history. This sneaker-head favourite delivers lasting comfort, while its padded ankle and tongue make for a soft ride. The rubber sole features the iconic circular pattern for durable 
@@ -355,10 +467,17 @@ const nikeAF1 = [
 		name: 'Nike Air Force 1 07 LV8',
 		releaseDate: '2023-01-03',
 		colors: [
-			'White/Stadium Green/Pale Ivory/University Red',
-			'Tour Yellow/Sail-Black-Tour Yellow'
+			'Anthracite/Cool Grey/Black/Wolf Grey',
+			'White/Platinum Tint/Sail'
 		],
-		images: [],
+		images: [
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5dd4d11f-44bb-4df5-aca5-5c44f1aec127/air-force-1-lv8-shoe-vXKF0h.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/55e0cc58-a8b0-4c5d-9a74-9316e016f55d/air-force-1-lv8-shoe-vXKF0h.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f78d6c3d-4bc0-4979-9062-350b14cab780/air-force-1-lv8-shoe-vXKF0h.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/i1-bf108f08-590a-4de7-94d2-f70b22b7f6b6/air-force-1-lv8-shoe-vXKF0h.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/i1-d27b96a9-5426-46f0-8dfc-4ab05b18fbb3/air-force-1-lv8-shoe-vXKF0h.png',
+			'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/i1-4c711cec-eb12-47ce-a454-f7f34db76e22/air-force-1-lv8-shoe-vXKF0h.png'
+		],
 		price: '130',
 		description: `Never mistaken, the Nike Air Force 1 LV8 is the hardwood classic that redefined basketball shoes and sneaker culture forever. Suede details atop synthetic leather on the upper deliver the iconic style 
 		that landed it at the pinnacle of street, sport and culture for decades.`
@@ -405,4 +524,4 @@ const nikeDunk = [
 
 
 
-export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy750, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk }
+export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy750, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk, NMD }
