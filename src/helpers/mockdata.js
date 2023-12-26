@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable no-trailing-spaces */
 const ultraBoost = [
 	{
 		id: 1,
@@ -9,7 +11,11 @@ const ultraBoost = [
 			'Cloud White/Cloud White/Crystal White',
 			'Dark Blue/Cream White/Core Black'
 		],
-		images: [],
+		images: ['https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3f2ad6a5b8ba493e8e8c8243dfb4933c_9366/Ultraboost_Light_Shoes_White_GY9350_HM1.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f97d22f5b3af403ab63a5ba083e9edef_9366/Ultraboost_Light_Shoes_White_GY9350_HM3_hover.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ea6edbe456d3435e969eb28b1540c0ad_9366/Ultraboost_Light_Shoes_Blue_HP9203_HM1.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/433b72e099874fd5a5fdcdded897be8b_9366/Ultraboost_Light_Shoes_Blue_HP9203_HM3_hover.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fb54aa0de68b4098a24c4ac30e20c940_9366/Ultraboost_Light_Shoes_Blue_HP9203_HM4.jpg'],
 		price: '260',
 		description: `Experience epic energy with the new Ultraboost Light, our lightest Ultraboost ever. 
 	The magic lies in the Light BOOST midsole, a new generation of adidas BOOST. Its unique molecule design achieves the lightest BOOST foam to date. 
@@ -25,7 +31,13 @@ const ultraBoost = [
 			'Core Black / Core Black / Beam Green F22',
 			'Grey Three / Grey Five / Core Black'
 		],
-		images: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/c608f554cb3b4d12b392af000188c513_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_01_standard.jpg', 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/333d70cd5438497e8171af4501038746_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_010_hover_standard.jpg', 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/bf7846b566e24a318217af000188a4d4_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_012_hover_standard.jpg'],
+		images: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/c608f554cb3b4d12b392af000188c513_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_01_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/333d70cd5438497e8171af4501038746_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_010_hover_standard.jpg', 
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/bf7846b566e24a318217af000188a4d4_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_012_hover_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3f93892573de4e0485d9af160004127c_9366/Ultraboost_1.0_Shoes_Grey_HQ4200_03_standard.jpg',
+		'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1f8ec76490c048ac89a2af1600044d8b_9366/Ultraboost_1.0_Shoes_Grey_HQ4200_02_standard.jpg',
+	'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8b844830395c4f88bf16af1600036906_9366/Ultraboost_1.0_Shoes_Grey_HQ4200_012_hover_standard.jpg',
+	'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/60f94aa4ca62471eaa39af1600038cc2_9366/Ultraboost_1.0_Shoes_Grey_HQ4200_01_standard.jpg'],
 		price: '260',
 		description: `From a walk in the park to a weekend run with friends, these adidas Ultraboost 1.0 shoes are designed to keep you comfortable. 
 		An adidas PRIMEKNIT upper gently hugs your feet while BOOST on the midsole cushions from the first step to the last mile. 
@@ -41,7 +53,16 @@ const ultraBoost = [
 			'Core Black / Core Black / Core Black',
 			'Core Black / Core Black / Lucid Blue S23'
 		],
-		images: [],
+		images: [
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2cf5e0fd2e184d26b746ad7800abed79_9366/Ultraboost_22_Shoes_Black_GZ0127_04_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/659a5eb44a8747c397dbad7800abe68f_9366/Ultraboost_22_Shoes_Black_GZ0127_03_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5ae921bb08034aa2803fad7800abdd7f_9366/Ultraboost_22_Shoes_Black_GZ0127_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7cca464eddf84df9a26aaf70010f1476_9366/Ultraboost_22_Shoes_Black_HQ8593_04_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/51c83ccaf9bc41278ae7af70010dfcad_9366/Ultraboost_22_Shoes_Black_HQ8593_03_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c8379919489d477eb087af70010e375f_9366/Ultraboost_22_Shoes_Black_HQ8593_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/2ca56ffeb5554f9dad08af70010d84c3_9366/Ultraboost_22_Shoes_Black_HQ8593_01_standard.jpg'
+		],
 		price: '175',
 		description: `Even on your busiest days, running is a priority. These adidas trainers make every mile count, 
 		thanks to the incredible energy return of BOOST cushioning. The Linear Energy Push system increases stability 
@@ -57,7 +78,16 @@ const ultraBoost = [
 			'Core Black / Core Black / Active Red',
 			'Cloud White / Cloud White / Core Black'
 		],
-		images: [],
+		images: [
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8c1fa86309c94e6594beac55009169ab_9366/Ultraboost_4.0_DNA_Shoes_Black_FY9121_04_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8906fe0c2b3b48af9486ac55009162ba_9366/Ultraboost_4.0_DNA_Shoes_Black_FY9121_03_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4df6a4c2c1a6459eb8a1ac5500915c8e_9366/Ultraboost_4.0_DNA_Shoes_Black_FY9121_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/584670fb39cd4f1aa70fac5500914ec4_9366/Ultraboost_4.0_DNA_Shoes_Black_FY9121_01_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/deaea76b47ee49cc9e3aac6701158cef_9366/Ultraboost_4.0_DNA_Shoes_White_FY9120_03_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e465482f3bc548858192ac670115932a_9366/Ultraboost_4.0_DNA_Shoes_White_FY9120_04_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/6b6042e962b046d6a597ac670115868f_9366/Ultraboost_4.0_DNA_Shoes_White_FY9120_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b56f062b132c400ab494ac67011578a5_9366/Ultraboost_4.0_DNA_Shoes_White_FY9120_01_standard.jpg'
+		],
 		price: '200',
 		description: `A young legend. The adidas Ultraboost debuted in 2015, and it became a go-to far beyond the realm of running. 
 		These shoes have a soft knit upper that offers ventilation where you need it most. 
@@ -77,7 +107,17 @@ const superStar = [
 			'Core Black / Cloud White / Core Black',
 			'Cloud White / Collegiate Green / Cloud White',
 		],
-		images: [],
+		images: [
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3708ab90979a4ba59535aad6009a2fa8_9366/Superstar_Shoes_White_EG4958_03_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8a358bcd5e3d453da815aad6009a249e_9366/Superstar_Shoes_White_EG4958_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7ed0855435194229a525aad6009a0497_9366/Superstar_Shoes_White_EG4958_01_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4bc064f2ff6c4d848308aad801165d86_9366/Superstar_Shoes_Black_EG4957_04_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cb33bd67c8c64ebd96f8aad801164853_9366/Superstar_Shoes_Black_EG4957_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/af405adab99747708f01aad8011626ff_9366/Superstar_Shoes_Black_EG4957_01_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/51eb79c0f0f24d27808aada8003f5dee_9366/Superstar_Shoes_White_GZ3742_04_standard.jpg',
+			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a27c0d02125e43bfbe33ada800419eec_9366/Superstar_Shoes_White_GZ3742_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/0e48a33b2baa41beaceeada800413d50_9366/Superstar_Shoes_White_GZ3742_01_standard.jpg'
+		],
 		price: '130',
 		description: `Built for basketball, adopted by hip hop and skate, the classic leather Superstar changed the game the moment it stepped off the court. 
 		The serrated 3-Stripes mark, iconic shell style toe, and box logo makes this one of the true Originals.`
@@ -91,7 +131,12 @@ const superStar = [
 		colors: [
 			'Core Black / Core Black / Cloud White',
 		],
-		images: [],
+		images: [
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/ca6f798521b344c8b16d744cd1bdce34_9366/Superstar_Gore-Tex_Shoes_Black_IF6162_01_standard.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/dc80374d580b41fc946efa5d84c375b2_9366/Superstar_Gore-Tex_Shoes_Black_IF6162_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/452870ebe2fe4869a834c524a6861772_9366/Superstar_Gore-Tex_Shoes_Black_IF6162_03_standard.jpg',
+			'https://assets.adidas.com/images/w_600,f_auto,q_auto/8e9f8438797b412687ab7dca0d610ef1_9366/Superstar_Gore-Tex_Shoes_Black_IF6162_04_standard.jpg'
+		],
 		price: '180',
 		description: `Whether the day brings rain or snow, these adidas Superstar sneakers have you covered. A GORE-TEX membrane provides breathable protection 
 		from the elements without sacrificing the classic style these shoes are known for. First hitting the court in 1970, the Superstar has spent decades exploring
@@ -104,7 +149,7 @@ const stanSmith = [
 	{
 		id: 7,
 		brand: 'Adidas',
-		modelName: 'Stan Smith',
+		modelName: 'Stan Smith Shoes (Special)',
 		name: 'Bape 30th Anniversary Black',
 		releaseDate: '2023-11-18',
 		colors: [
@@ -112,9 +157,24 @@ const stanSmith = [
 		],
 		images: [],
 		price: '160',
-		description: `The YEEZY BOOST 350 V2 features an upper composed of re-engineered Primeknit. The post-dyed monofilament side stripe is woven into the upper. 
-		Reflective threads are woven into the laces. The midsole utilizes adidas’ innovative BOOST™ technology.`
-	}
+		description: `Timeless appeal. Effortless style. Everyday versatility. For over 50 years and counting, adidas Stan Smith Shoes have continued to hold their place as an icon. This pair shows off a fresh redesign as part of adidas' commitment to use only recycled polyester by 2024. With a vegan upper and an outsole made from rubber waste, they still have iconic style, they're just made with the planet in mind.
+		This product is made with vegan alternatives to animal-derived ingredients or materials. It is also made with Primegreen, a series of high-performance recycled materials. 50% of upper is recycled content. No virgin polyester.`
+	},
+	{
+		id: 8,
+		brand: 'Adidas',
+		modelName: 'Stan Smith',
+		name: 'Stan Smith Shoes',
+		releaseDate: '2019-11-01',
+		colors: [
+			'Cloud White / Cloud White / Collegiate Navy',
+			'Cloud White / Cloud White / Green'
+		],
+		images: [],
+		price: '160',
+		description: `Timeless appeal. Effortless style. Everyday versatility. For over 50 years and counting, adidas Stan Smith Shoes have continued to hold their place as an icon. This pair shows off a fresh redesign as part of adidas' commitment to use only recycled polyester by 2024. With a vegan upper and an outsole made from rubber waste, they still have iconic style, they're just made with the planet in mind.
+		This product is made with vegan alternatives to animal-derived ingredients or materials. It is also made with Primegreen, a series of high-performance recycled materials. 50% of upper is recycled content. No virgin polyester.`
+	},
 ]
 
 const yeezy350 = [
