@@ -726,7 +726,34 @@ const AJ4 = [
 	}
 ]
 
+const AJ5 = [
+	{
+		id: 30,
+		brand: 'Air Jordan',
+		modelName: 'Air Jordan 5',
+		name: `Air Jordan 5 Retro Shoes`,
+		releaseDate: '2023-03-04',
+		colors: [
+			'University Blue/Black/White',
+			'Deep Burgundy/Light Graphite/Metallic Silver',
+			'Black/Racer Blue/Reflective Silver'
+		],
+		images: [
+			'https://cdn.flightclub.com/750/TEMPLATE/343845/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/343845/2.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/343845/3.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/365489/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/365489/2.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/365489/3.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/284019/1.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/284019/2.jpg',
+			'https://cdn.flightclub.com/750/TEMPLATE/284019/3.jpg'
+		],
+		price: '275',
+		description: `The Air Jordan 5 hit shelves in 1990. It maintained the mesh side panels with its predecessor and took another bold step with its look—it included the first appearance of a translucent sole on a Jordan signature sneaker. Tinker Hatfield drew inspiration from World War II era fighter planes when he implemented the infamous “shark-teeth” look into the sneaker's design along the midsole. The AJ5 was first brought back in 2000, with great retro colorways arriving including the 'UNC,'  A Ma Maniére 'Dawn' and A Ma Maniére 'Dusk' releases.`
+	},
+]
 
 
 
-export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy750, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk, nikeBlazer, NMD, AJ1, AJ4 }
+export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy750, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk, nikeBlazer, NMD, AJ1, AJ4, AJ5 }
