@@ -5,7 +5,24 @@ import React from 'react'
 const ProductList = () => {
 	return (
 		<main className='p-8 bg-gray-100 flex-1'>
-			<section className='text-gray-700 body-font overflow-hidden'>
+			<div>
+				<div className='px-4 pt-20 text-center'>
+					<h1 className='text-4xl font-extrabold tracking-normal'>
+							AT Kicks
+					</h1>
+					<p className='mx-auto mt-4 max-w-3xl text-xl whitespace-nowrap'>
+							The best selection of shoes for any setting. Sport, Home, Travel. AT Kicks has you covered.
+					</p>
+				</div>
+			</div>
+		</main>
+	)
+}
+
+
+
+
+{/* <section className='text-gray-700 body-font overflow-hidden'>
 				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6'>
 					{ultraBoost.map((item: any, index: number) => (
 						<Link href='' key={index}>
@@ -28,9 +45,7 @@ const ProductList = () => {
 						</Link>
 					))}
 				</div>
-			</section>
-		</main>
-	)
-}
+			</section> */}
+
 
 export { ProductList }
