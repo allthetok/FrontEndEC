@@ -1,3 +1,4 @@
+'use client'
 import { Font30Sx, Font50Sx, PaddingNoneSx } from '@/sx/styling'
 import { IconButton, Link } from '@mui/material'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'

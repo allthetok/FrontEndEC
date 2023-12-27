@@ -50,7 +50,7 @@ const HomeContent = () => {
 					))}
 				</ul>
 			</div>
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	)
 }
