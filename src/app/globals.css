@@ -26,6 +26,13 @@ body {
     rgb(var(--background-start-rgb));
 } */
 
+.auto-comp {
+    display: flex;
+    margin-left: auto;
+	margin-right: 1.25rem;
+	margin-top: 0.5rem;
+}
+
 .bg-home-brown {
 	background: url(../../public/nike-brown.jpg);
 	height: 550px;

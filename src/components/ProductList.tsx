@@ -1,8 +1,16 @@
+'use client'
 import { ultraBoost } from '@/helpers/mockdata'
 import Link from 'next/link'
-import React from 'react'
+import React, { SyntheticEvent, useState } from 'react'
+import { DropDown } from './DropDown'
 
 const ProductList = () => {
+	const [sortBy, setSortBy] = useState('Newest')
+
+	const onSortChange = (e: SyntheticEvent<Element, Event>, value: string | null): void => {
+		e.preventDefault()
+		setSortBy(value!)
+	}
 	return (
 		<main className='p-8 bg-gray-100 flex-1'>
 			<div>
@@ -14,6 +22,12 @@ const ProductList = () => {
 							The best selection of shoes for any setting. Sport, Home, Travel. AT Kicks has you covered.
 					</p>
 				</div>
+			</div>
+			<div className='flex items-center justify-between border-b border-gray-200 pb-4 pt-24 dark:border-gray-800'>
+				<h1 className='text-xl font-bold tracking-tight sm:text-2xl'>
+					10 results
+				</h1>
+				<DropDown sortBy={sortBy} onSortChange={onSortChange} />
 			</div>
 		</main>
 	)

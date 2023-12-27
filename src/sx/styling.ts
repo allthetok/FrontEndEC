@@ -14,4 +14,10 @@ const Font50Sx = {
 	fontSize: '50px'
 }
 
-export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx }
+const AutoCompleteSx = {
+	width: 250,
+	borderRadius: '10px',
+	marginRight: '0.75rem'
+}
+
+export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, AutoCompleteSx }
