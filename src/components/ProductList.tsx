@@ -19,7 +19,7 @@ const ProductList = () => {
 							AT Kicks
 					</h1>
 					<p className='mx-auto mt-4 max-w-3xl text-xl whitespace-nowrap'>
-							The best selection of shoes for any setting. Sport, Home, Travel. AT Kicks has you covered.
+							Walk into the next new style. Sport, Home, Travel. AT Kicks is a step above the rest.
 					</p>
 				</div>
 			</div>
