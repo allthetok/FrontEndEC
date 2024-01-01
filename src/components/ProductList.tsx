@@ -5,11 +5,14 @@ import React, { SyntheticEvent, useState } from 'react'
 import { DropDown } from './DropDown'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
-import { Button, IconButton } from '@mui/material'
-import { DropDownOptionsSx } from '@/sx/styling'
+import { Button, Checkbox, FormControlLabel, FormGroup, IconButton } from '@mui/material'
+import { CheckBoxSx, DropDownOptionsSx } from '@/sx/styling'
 
 const ProductList = () => {
 	const [sortBy, setSortBy] = useState('Newest')
+	const [brandOptions, setBrandOptions] = useState(false)
+	const [modelOptions, setModelOptions] = useState(false)
+	const [colorOptions, setColorOptions] = useState(false)
 
 	const onSortChange = (e: SyntheticEvent<Element, Event>, value: string | null): void => {
 		e.preventDefault()
@@ -36,13 +39,62 @@ const ProductList = () => {
 			<section className='pb=24 pt-6' aria-labelledby='products-heading'>
 				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
 					<div className='hidden lg:block'>
-						<div>
-							<Button variant='text' sx={DropDownOptionsSx}>
-								<span className='font-bold'>
+						<div className='border-b border-gray-200 dark:border-gray-800 py-4'>
+							<Button variant='text' sx={DropDownOptionsSx} onClick={() => setBrandOptions(!brandOptions)}>
+								<div className='flex flex-row items-center justify-stretch gap-32'>
+									<span className='font-bold'>
 										Brand
-									<KeyboardArrowDownIcon fontSize='medium' />
-								</span>
+									</span>
+									{brandOptions === false ? <KeyboardArrowDownIcon fontSize='medium' /> : <KeyboardArrowUpIcon fontSize='medium' />}
+								</div>
 							</Button>
+							{brandOptions === false ? <></> :
+								<FormGroup>
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Adidas' />
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Air Jordan' />
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='New Balance' />
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Yeezy' />
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Nike' />
+								</FormGroup>
+							}
+						</div>
+						<div className='border-b border-gray-200 dark:border-gray-800 py-4'>
+							<Button variant='text' sx={DropDownOptionsSx} onClick={() => setModelOptions(!modelOptions)}>
+								<div className='flex flex-row items-center justify-stretch gap-32'>
+									<span className='font-bold'>
+										Model
+									</span>
+									{modelOptions === false ? <KeyboardArrowDownIcon fontSize='medium' /> : <KeyboardArrowUpIcon fontSize='medium' />}
+								</div>
+							</Button>
+							{modelOptions === false ? <></> :
+								<FormGroup>
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Adidas' />
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Air Jordan' />
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='New Balance' />
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Yeezy' />
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Nike' />
+								</FormGroup>
+							}
+						</div>
+						<div className='border-b border-gray-200 dark:border-gray-800 py-4'>
+							<Button variant='text' sx={DropDownOptionsSx} onClick={() => setColorOptions(!colorOptions)}>
+								<div className='flex flex-row items-center justify-stretch gap-32'>
+									<span className='font-bold'>
+										Color
+									</span>
+									{colorOptions === false ? <KeyboardArrowDownIcon fontSize='medium' /> : <KeyboardArrowUpIcon fontSize='medium' />}
+								</div>
+							</Button>
+							{colorOptions === false ? <></> :
+								<FormGroup>
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Adidas' />
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Air Jordan' />
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='New Balance' />
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Yeezy' />
+									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Nike' />
+								</FormGroup>
+							}
 						</div>
 					</div>
 				</div>

@@ -22,6 +22,7 @@ const AutoCompleteSx = {
 
 const DropDownOptionsSx = {
 	color: '#000',
+	paddingLeft: '0',
 	fontSize: '1rem',
 	textTransform: 'capitalize',
 	'&:hover': {
@@ -30,4 +31,14 @@ const DropDownOptionsSx = {
 	}
 }
 
-export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, AutoCompleteSx, DropDownOptionsSx }
+const CheckBoxSx = {
+	paddingRight: '0.25rem',
+	'&:hover': {
+		bgcolor: 'transparent'
+	},
+	'&.Mui-checked': {
+		color: '#000'
+	}
+}
+
+export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx }
