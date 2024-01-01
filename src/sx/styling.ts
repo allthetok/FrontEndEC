@@ -20,4 +20,14 @@ const AutoCompleteSx = {
 	marginRight: '0.75rem'
 }
 
-export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, AutoCompleteSx }
+const DropDownOptionsSx = {
+	color: '#000',
+	fontSize: '1rem',
+	textTransform: 'capitalize',
+	'&:hover': {
+		textDecoration: 'underline',
+		bgcolor: 'transparent'
+	}
+}
+
+export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, AutoCompleteSx, DropDownOptionsSx }

@@ -3,6 +3,10 @@ import { ultraBoost } from '@/helpers/mockdata'
 import Link from 'next/link'
 import React, { SyntheticEvent, useState } from 'react'
 import { DropDown } from './DropDown'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import { Button, IconButton } from '@mui/material'
+import { DropDownOptionsSx } from '@/sx/styling'
 
 const ProductList = () => {
 	const [sortBy, setSortBy] = useState('Newest')
@@ -29,6 +33,21 @@ const ProductList = () => {
 				</h1>
 				<DropDown sortBy={sortBy} onSortChange={onSortChange} />
 			</div>
+			<section className='pb=24 pt-6' aria-labelledby='products-heading'>
+				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
+					<div className='hidden lg:block'>
+						<div>
+							<Button variant='text' sx={DropDownOptionsSx}>
+								<span className='font-bold'>
+										Brand
+									<KeyboardArrowDownIcon fontSize='medium' />
+								</span>
+							</Button>
+						</div>
+					</div>
+				</div>
+
+			</section>
 		</main>
 	)
 }
