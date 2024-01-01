@@ -21,12 +21,14 @@ const AutoCompleteSx = {
 }
 
 const DropDownOptionsSx = {
+	minWidth: '250px',
 	color: '#000',
 	paddingLeft: '0',
 	fontSize: '1rem',
 	textTransform: 'capitalize',
 	'&:hover': {
 		textDecoration: 'underline',
+		textUnderlineOffset: '0.375rem',
 		bgcolor: 'transparent'
 	}
 }
@@ -40,5 +42,6 @@ const CheckBoxSx = {
 		color: '#000'
 	}
 }
+
 
 export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx }

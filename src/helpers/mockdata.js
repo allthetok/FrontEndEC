@@ -33,7 +33,7 @@ const ultraBoost = [
 			'Core Black / Core Black / Beam Green F22',
 			'Grey Three / Grey Five / Core Black'
 		],
-		images: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/c608f554cb3b4d12b392af000188c513_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_01_standard.jpg',
+		images: ['https://assets.adidas.com/images/w_840,f_auto,q_auto/c608f554cb3b4d12b392af000188c513_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_01_standard.jpg',
 			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/333d70cd5438497e8171af4501038746_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_010_hover_standard.jpg', 
 			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/bf7846b566e24a318217af000188a4d4_9366/Chaussure_Ultraboost_1.0_noir_HQ4199_012_hover_standard.jpg',
 			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3f93892573de4e0485d9af160004127c_9366/Ultraboost_1.0_Shoes_Grey_HQ4200_03_standard.jpg',
@@ -118,7 +118,7 @@ const superStar = [
 			'https://assets.adidas.com/images/w_600,f_auto,q_auto/af405adab99747708f01aad8011626ff_9366/Superstar_Shoes_Black_EG4957_01_standard.jpg',
 			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/51eb79c0f0f24d27808aada8003f5dee_9366/Superstar_Shoes_White_GZ3742_04_standard.jpg',
 			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a27c0d02125e43bfbe33ada800419eec_9366/Superstar_Shoes_White_GZ3742_02_standard_hover.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/0e48a33b2baa41beaceeada800413d50_9366/Superstar_Shoes_White_GZ3742_01_standard.jpg'
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/0e48a33b2baa41beaceeada800413d50_9366/Superstar_Shoes_White_GZ3742_01_standard.jpg'
 		],
 		price: '130',
 		description: `Built for basketball, adopted by hip hop and skate, the classic leather Superstar changed the game the moment it stepped off the court. 
