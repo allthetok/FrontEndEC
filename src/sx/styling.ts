@@ -43,5 +43,26 @@ const CheckBoxSx = {
 	}
 }
 
+const SizeButtonSx = {
+	color: '#000',
+	fontWeight: 'bold',
+	border: '1px solid gray',
+	'&:hover': {
+		color: '#fff',
+		backgroundColor: '#4F46E5 !important',
+		border: '1px solid black '
+	}
+}
 
-export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx }
+const ActiveSizeButtonSx = {
+	color: '#fff',
+	fontWeight: 'bold',
+	border: '2px solid black',
+	backgroundColor: '#4F46E5 !important'
+}
+
+const AddToCartSx = {
+	textTransform: 'capitalize'
+}
+
+export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx, SizeButtonSx, ActiveSizeButtonSx, AddToCartSx }

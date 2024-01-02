@@ -876,4 +876,30 @@ const NB5740 = [
 	}
 ]
 
-export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy750, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk, nikeBlazer, NMD, AJ1, AJ4, AJ5, NB2002R, NB530, NB5740 }
+const sizes = [
+	'M 4.5',
+	'M 5.0',
+	'M 5.5',
+	'M 6.0',
+	'M 6.5',
+	'M 7.0',
+	'M 7.5',
+	'M 8.0',
+	'M 8.5',
+	'M 9.0',
+	'M 9.5',
+	'M 10.0',
+	'M 10.5',
+	'M 11.0',
+	'M 11.5',
+	'M 12.0',
+	'M 12.5',
+	'M 13.0',
+	'M 14.0',
+	'M 15.0',
+	'M 16.0',
+	'M 17.0',
+	'M 18.0',
+]
+
+export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy750, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk, nikeBlazer, NMD, AJ1, AJ4, AJ5, NB2002R, NB530, NB5740, sizes }

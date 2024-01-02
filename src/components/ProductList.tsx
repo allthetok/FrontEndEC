@@ -1,9 +1,8 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import { ultraBoost } from '@/helpers/mockdata'
-import Image from 'next/image'
-import Link from 'next/link'
 import React, { SyntheticEvent, useState } from 'react'
 import { FullProduct } from '@/helpers/types/fetypes'
 import { DropDown } from './DropDown'

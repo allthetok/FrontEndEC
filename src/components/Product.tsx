@@ -13,7 +13,6 @@ const Product = ({ product }: ProductProps) => {
 	return (
 		<Link className='group text-sm' href=''>
 			<div className='w-full overflow-hidden rounded-lg border-2 border-gray-200 bg-gray-100 group-hover:opacity-75'>
-				{/* <Image className='h-full w-full object-cover object-center' src={ultraBoost[1].images[0]} alt={`${item.name}`} loading='lazy' width={255} height={280}/> */}
 				<img className='h-full w-full object-cover object-center product-image' src={product.images[0]} alt={`${product.name}`}/>
 			</div>
 			<h3 className='mt-4 font-medium flex flex-1 items-center justify-between'>
