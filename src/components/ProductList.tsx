@@ -5,8 +5,10 @@ import { ultraBoost } from '@/helpers/mockdata'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { SyntheticEvent, useState } from 'react'
+import { FullProduct } from '@/helpers/types/fetypes'
 import { DropDown } from './DropDown'
 import { ProductFilter } from './ProductFilter'
+import { Product } from './Product'
 import './ProductList.css'
 
 const ProductList = () => {
@@ -39,20 +41,8 @@ const ProductList = () => {
 				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
 					<ProductFilter />
 					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8'>
-						{ultraBoost.map((item: any, index: number) => (
-							<Link className='group text-sm' href='' key={index}>
-								<div className='w-full overflow-hidden rounded-lg border-2 border-gray-200 bg-gray-100 group-hover:opacity-75'>
-									{/* <Image className='h-full w-full object-cover object-center' src={ultraBoost[1].images[0]} alt={`${item.name}`} loading='lazy' width={255} height={280}/> */}
-									<img className='h-full w-full object-cover object-center product-image' src={ultraBoost[1].images[0]} alt={`${item.name}`}/>
-								</div>
-								<h3 className='mt-4 font-medium flex flex-1 items-center justify-between'>
-									<div className='hover:underline'>{item.name}</div>
-									<span className='pt-1 text-xs text-gray-500 uppercase'>{item.brand}</span>
-								</h3>
-								<p className='mt-2 font-medium text-sm'>
-									${Number(item.price).toFixed(2)}
-								</p>
-							</Link>
+						{ultraBoost.map((product: FullProduct, index: number) => (
+							<Product product={product} key={index}/>
 						))}
 					</div>
 				</div>
@@ -89,5 +79,17 @@ const ProductList = () => {
 				</div>
 			</section> */}
 
+{/* <Link className='group text-sm' href='' key={index}>
+							<div className='w-full overflow-hidden rounded-lg border-2 border-gray-200 bg-gray-100 group-hover:opacity-75'>
+								<img className='h-full w-full object-cover object-center product-image' src={ultraBoost[1].images[0]} alt={`${item.name}`}/>
+							</div>
+							<h3 className='mt-4 font-medium flex flex-1 items-center justify-between'>
+								<div className='hover:underline'>{item.name}</div>
+								<span className='pt-1 text-xs text-gray-500 uppercase'>{item.brand}</span>
+							</h3>
+							<p className='mt-2 font-medium text-sm'>
+								${Number(item.price).toFixed(2)}
+							</p>
+						</Link> */}
 
 export { ProductList }

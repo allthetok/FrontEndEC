@@ -1,9 +1,20 @@
 interface ProductPreview {
-	index: number,
-	image: string,
+	images: string | string[],
 	name: string,
 	brand: string,
-	price: string
+	price: number
 }
 
-export { type ProductPreview }
+interface FullProduct {
+	id: number,
+	brand: string,
+	modelName: string,
+	name: string,
+	releaseDate: string,
+	colors: string[],
+	images: string[],
+	price: number,
+	description: string
+}
+
+export { type ProductPreview, type FullProduct  }
