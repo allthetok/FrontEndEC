@@ -6,17 +6,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { SyntheticEvent, useState } from 'react'
 import { DropDown } from './DropDown'
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
-import { Button, Checkbox, FormControlLabel, FormGroup } from '@mui/material'
-import { CheckBoxSx, DropDownOptionsSx } from '@/sx/styling'
+import { ProductFilter } from './ProductFilter'
 import './ProductList.css'
 
 const ProductList = () => {
 	const [sortBy, setSortBy] = useState('Newest')
-	const [brandOptions, setBrandOptions] = useState(false)
-	const [modelOptions, setModelOptions] = useState(false)
-	const [editionOptions, setEditionOptions] = useState(false)
 
 	const onSortChange = (e: SyntheticEvent<Element, Event>, value: string | null): void => {
 		e.preventDefault()
@@ -43,63 +37,7 @@ const ProductList = () => {
 			</div>
 			<section className='pb=24 pt-6' aria-labelledby='products-heading'>
 				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
-					<div className='hidden lg:block'>
-						<div className='border-b border-gray-200 dark:border-gray-800 py-4'>
-							<Button variant='text' sx={DropDownOptionsSx} onClick={() => setBrandOptions(!brandOptions)}>
-								<div className='flex flex-1 items-center justify-between'>
-									<span className='font-extrabold text-lg'>
-										Brand
-									</span>
-									{brandOptions === false ? <KeyboardArrowDownIcon fontSize='medium' /> : <KeyboardArrowUpIcon fontSize='medium' />}
-								</div>
-							</Button>
-							{brandOptions === false ? <></> :
-								<FormGroup>
-									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Adidas' />
-									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Air Jordan' />
-									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='New Balance' />
-									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Yeezy' />
-									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Nike' />
-								</FormGroup>
-							}
-						</div>
-						<div className='border-b border-gray-200 dark:border-gray-800 py-4'>
-							<Button variant='text' sx={DropDownOptionsSx} onClick={() => setModelOptions(!modelOptions)}>
-								<div className='flex flex-1 items-center justify-between'>
-									<span className='font-extrabold text-lg'>
-										Model
-									</span>
-									{modelOptions === false ? <KeyboardArrowDownIcon fontSize='medium' /> : <KeyboardArrowUpIcon fontSize='medium' />}
-								</div>
-							</Button>
-							{modelOptions === false ? <></> :
-								<FormGroup>
-									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='UltraBoost' />
-									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Superstar' />
-									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Stan Smith' />
-									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='NMD' />
-								</FormGroup>
-							}
-						</div>
-						<div className='border-b border-gray-200 dark:border-gray-800 py-4'>
-							<Button variant='text' sx={DropDownOptionsSx} onClick={() => setEditionOptions(!editionOptions)}>
-								<div className='flex flex-1 items-center justify-between'>
-									<span className='font-extrabold text-lg'>
-										Edition
-									</span>
-									{editionOptions === false ? <KeyboardArrowDownIcon fontSize='medium' /> : <KeyboardArrowUpIcon fontSize='medium' />}
-								</div>
-							</Button>
-							{editionOptions === false ? <></> :
-								<FormGroup>
-									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='UltraBoost Light' />
-									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='UltraBoost 1.0 Shoes' />
-									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='UltraBoost 22 Shoes' />
-									<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='UltraBoost 4.0 Shoes' />
-								</FormGroup>
-							}
-						</div>
-					</div>
+					<ProductFilter />
 					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8'>
 						{ultraBoost.map((item: any, index: number) => (
 							<Link className='group text-sm' href='' key={index}>
