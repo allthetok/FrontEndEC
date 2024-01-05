@@ -117,7 +117,7 @@ const superStar = [
 			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7ed0855435194229a525aad6009a0497_9366/Superstar_Shoes_White_EG4958_01_standard.jpg',
 			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4bc064f2ff6c4d848308aad801165d86_9366/Superstar_Shoes_Black_EG4957_04_standard.jpg',
 			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cb33bd67c8c64ebd96f8aad801164853_9366/Superstar_Shoes_Black_EG4957_02_standard_hover.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/af405adab99747708f01aad8011626ff_9366/Superstar_Shoes_Black_EG4957_01_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/af405adab99747708f01aad8011626ff_9366/Superstar_Shoes_Black_EG4957_01_standard.jpg',
 			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/51eb79c0f0f24d27808aada8003f5dee_9366/Superstar_Shoes_White_GZ3742_04_standard.jpg',
 			'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a27c0d02125e43bfbe33ada800419eec_9366/Superstar_Shoes_White_GZ3742_02_standard_hover.jpg',
 			'https://assets.adidas.com/images/w_840,f_auto,q_auto/0e48a33b2baa41beaceeada800413d50_9366/Superstar_Shoes_White_GZ3742_01_standard.jpg'
@@ -136,10 +136,10 @@ const superStar = [
 			'Core Black / Core Black / Cloud White',
 		],
 		images: [
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/ca6f798521b344c8b16d744cd1bdce34_9366/Superstar_Gore-Tex_Shoes_Black_IF6162_01_standard.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/dc80374d580b41fc946efa5d84c375b2_9366/Superstar_Gore-Tex_Shoes_Black_IF6162_02_standard_hover.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/452870ebe2fe4869a834c524a6861772_9366/Superstar_Gore-Tex_Shoes_Black_IF6162_03_standard.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/8e9f8438797b412687ab7dca0d610ef1_9366/Superstar_Gore-Tex_Shoes_Black_IF6162_04_standard.jpg'
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/ca6f798521b344c8b16d744cd1bdce34_9366/Superstar_Gore-Tex_Shoes_Black_IF6162_01_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/dc80374d580b41fc946efa5d84c375b2_9366/Superstar_Gore-Tex_Shoes_Black_IF6162_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/452870ebe2fe4869a834c524a6861772_9366/Superstar_Gore-Tex_Shoes_Black_IF6162_03_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/8e9f8438797b412687ab7dca0d610ef1_9366/Superstar_Gore-Tex_Shoes_Black_IF6162_04_standard.jpg'
 		],
 		price: 180,
 		description: `Whether the day brings rain or snow, these adidas Superstar sneakers have you covered. A GORE-TEX membrane provides breathable protection 
@@ -180,15 +180,15 @@ const stanSmith = [
 			'Cloud White / Cloud White / Core Black'
 		],
 		images: [
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/e01dea68cf93434bae5aac0900af99e8_9366/Stan_Smith_Shoes_White_FX5500_01_standard.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/dcc8b21f893a457886d8ac0900afa80b_9366/Stan_Smith_Shoes_White_FX5500_02_standard_hover.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/7070d7f34b284c91ac1fac0900afb687_9366/Stan_Smith_Shoes_White_FX5500_04_standard.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/b47d77eba6f945ea8dabac210127b11e_9366/Stan_Smith_Shoes_White_FX5501_01_standard.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/817c815ba1db46629f89ac210127bebb_9366/Stan_Smith_Shoes_White_FX5501_02_standard_hover.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/f633a0c9cb124e16914cac210127ca62_9366/Stan_Smith_Shoes_White_FX5501_04_standard.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/68ae7ea7849b43eca70aac1e00f5146d_9366/Stan_Smith_Shoes_White_FX5502_01_standard.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/ac706d8555244a6e8ea7ac1e00f521d1_9366/Stan_Smith_Shoes_White_FX5502_02_standard_hover.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/f86168171d2a4644a8eeac1e00f52f85_9366/Stan_Smith_Shoes_White_FX5502_04_standard.jpg'
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/e01dea68cf93434bae5aac0900af99e8_9366/Stan_Smith_Shoes_White_FX5500_01_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/dcc8b21f893a457886d8ac0900afa80b_9366/Stan_Smith_Shoes_White_FX5500_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/7070d7f34b284c91ac1fac0900afb687_9366/Stan_Smith_Shoes_White_FX5500_04_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/b47d77eba6f945ea8dabac210127b11e_9366/Stan_Smith_Shoes_White_FX5501_01_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/817c815ba1db46629f89ac210127bebb_9366/Stan_Smith_Shoes_White_FX5501_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/f633a0c9cb124e16914cac210127ca62_9366/Stan_Smith_Shoes_White_FX5501_04_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/68ae7ea7849b43eca70aac1e00f5146d_9366/Stan_Smith_Shoes_White_FX5502_01_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/ac706d8555244a6e8ea7ac1e00f521d1_9366/Stan_Smith_Shoes_White_FX5502_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/f86168171d2a4644a8eeac1e00f52f85_9366/Stan_Smith_Shoes_White_FX5502_04_standard.jpg'
 		],
 		price: 130,
 		description: `Timeless appeal. Effortless style. Everyday versatility. For over 50 years and counting, adidas Stan Smith Shoes have continued to hold their place as an icon. This pair shows off a fresh redesign as part of adidas' commitment to use only recycled polyester by 2024. With a vegan upper and an outsole made from rubber waste, they still have iconic style, they're just made with the planet in mind.
@@ -208,12 +208,12 @@ const NMD = [
 			'White Tint / Glory Red / Semi Lucid Blue'
 		],
 		images: [
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/62d96641e799450fbbdfad0800cb06ed_9366/NMD_R1_Shoes_Black_GZ9256_01_standard.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/3373d7a437dd4e6688ccad0800cb1291_9366/NMD_R1_Shoes_Black_GZ9256_02_standard_hover.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/8975c8cd84524d568552ad0800cb207e_9366/NMD_R1_Shoes_Black_GZ9256_04_standard.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/76752172861843209f02aef900fd6858_9366/NMD_R1_Shoes_White_HQ4451_01_standard.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/1c3d884f0e0043408142aef900fd8116_9366/NMD_R1_Shoes_White_HQ4451_02_standard_hover.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/256d930ec0ce4579aed3aef900fd99ca_9366/NMD_R1_Shoes_White_HQ4451_04_standard.jpg'
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/62d96641e799450fbbdfad0800cb06ed_9366/NMD_R1_Shoes_Black_GZ9256_01_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/3373d7a437dd4e6688ccad0800cb1291_9366/NMD_R1_Shoes_Black_GZ9256_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/8975c8cd84524d568552ad0800cb207e_9366/NMD_R1_Shoes_Black_GZ9256_04_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/76752172861843209f02aef900fd6858_9366/NMD_R1_Shoes_White_HQ4451_01_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/1c3d884f0e0043408142aef900fd8116_9366/NMD_R1_Shoes_White_HQ4451_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/256d930ec0ce4579aed3aef900fd99ca_9366/NMD_R1_Shoes_White_HQ4451_04_standard.jpg'
 		],
 		price: 200,
 		description: `Pack your bag, lace up and get going. City adventures beckon in these NMD_R1 shoes. An update to an acclaimed '80s runner from the adidas archive, these modern sneakers have a soft, stretchy knit upper and energy-returning Boost cushioning for all-day comfort. Bold color and signature midsole plugs make a statement, so wherever you're headed, you're sure to show up in style.
@@ -230,12 +230,12 @@ const NMD = [
 			'Core Black / Cloud White / Cloud White'
 		],
 		images: [
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/c2a18c4e3f104d52a697ad6a01477bb7_9366/NMD_R1_V2_Shoes_Black_GX6367_01_standard.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/ba6af5f7bba845849d64ad6a0147888f_9366/NMD_R1_V2_Shoes_Black_GX6367_02_standard_hover.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/afbb213da7444aa38d9ead6a0147955c_9366/NMD_R1_V2_Shoes_Black_GX6367_04_standard.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/aa6658fcf2c9436b882fae790049b298_9366/NMD_R1_V2_Shoes_White_GZ1999_01_standard.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/6d5a2166de314e92a9c1ae79004bdabe_9366/NMD_R1_V2_Shoes_White_GZ1999_02_standard_hover.jpg',
-			'https://assets.adidas.com/images/w_600,f_auto,q_auto/5b0629f79bea4e94a117ae79004cac3f_9366/NMD_R1_V2_Shoes_White_GZ1999_04_standard.jpg'
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/c2a18c4e3f104d52a697ad6a01477bb7_9366/NMD_R1_V2_Shoes_Black_GX6367_01_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/ba6af5f7bba845849d64ad6a0147888f_9366/NMD_R1_V2_Shoes_Black_GX6367_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/afbb213da7444aa38d9ead6a0147955c_9366/NMD_R1_V2_Shoes_Black_GX6367_04_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/aa6658fcf2c9436b882fae790049b298_9366/NMD_R1_V2_Shoes_White_GZ1999_01_standard.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/6d5a2166de314e92a9c1ae79004bdabe_9366/NMD_R1_V2_Shoes_White_GZ1999_02_standard_hover.jpg',
+			'https://assets.adidas.com/images/w_840,f_auto,q_auto/5b0629f79bea4e94a117ae79004cac3f_9366/NMD_R1_V2_Shoes_White_GZ1999_04_standard.jpg'
 		],
 		price: 190,
 		description: `Head into the future with confidence. Not to mention style. Inspired by running silhouettes from the '80s archive, NMD was born in 2015 to merge sleek style with modern technologies and comfort. These juniors' adidas NMD_R1 V2 shoes keep your feet cushioned with a responsive BOOST midsole. Chic transparent overlays add a cyberpunk vibe. The future is yours. Go and get it.
@@ -290,7 +290,6 @@ const yeezy500 = [
 			'https://stayfresh.ca/cdn/shop/products/SF_Adidas_Yeezy_500_Utility_Black_F36640-1_600x.jpg?v=1571278055',
 			'https://stayfresh.ca/cdn/shop/products/SF_Adidas_Yeezy_500_Utility_Black_F36640-4_600x.jpg?v=1571278055',
 			'https://stayfresh.ca/cdn/shop/products/adidasYeezy500BoneWhiteFV3573-1_600x.jpg?v=1610674749',
-			'https://stayfresh.ca/cdn/shop/products/adidasYeezy500BoneWhiteFV3573-1_600x.jpg?v=1610674749',
 			'https://stayfresh.ca/cdn/shop/products/adidasYeezy500BoneWhiteFV3573-4_600x.jpg?v=1610674761'
 		],
 		price: 200,
@@ -334,7 +333,7 @@ const yeezy500 = [
 	},
 ]
 
-const yeezy750 = [
+const yeezy700 = [
 	{
 		id: 15,
 		brand: 'Yeezy',
@@ -399,9 +398,9 @@ const yeezyOpen = [
 		name: 'Yeezy Slides',
 		releaseDate: '2022-03-07',
 		colors: [
-			'Onyx/Onyx/Onyx',
-			'Granite/Granite/Granite',
-			'Bone/Bone/Bone'
+			'Slate Grey/Slate Grey/ Slate Grey',
+			'Pure/Pure/Pure',
+			'Azure/Azure/Azure'
 		],
 		images: [
 			'https://stayfresh.ca/cdn/shop/files/adidas-yeezy-slides-slate-grey-ID2350-release-date-4_600x.jpg?v=1692392595',
@@ -425,8 +424,8 @@ const yeezyOpen = [
 		releaseDate: '2022-04-16',
 		colors: [
 			'Slate Grey/Slate Grey/ Slate Grey',
-			'Pure/Pure/Pure',
-			'Azure/Azure/Azure'
+			'Granite/Granite/Granite',
+			'Bone/Bone/Bone'
 		],
 		images: [
 			'https://stayfresh.ca/cdn/shop/products/ezgif.com-gif-maker_32_600x.jpg?v=1654716126',
@@ -902,4 +901,4 @@ const sizes = [
 	'M 18.0',
 ]
 
-export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy750, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk, nikeBlazer, NMD, AJ1, AJ4, AJ5, NB2002R, NB530, NB5740, sizes }
+export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy700, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk, nikeBlazer, NMD, AJ1, AJ4, AJ5, NB2002R, NB530, NB5740, sizes }
