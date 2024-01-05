@@ -5,16 +5,42 @@ interface ProductPreview {
 	price: number
 }
 
-interface FullProduct {
+interface ProductObj {
 	id: number,
 	brand: string,
+	brandId: number,
+	modelId: number,
 	modelName: string,
 	name: string,
-	releaseDate: string,
-	colors: string[],
-	images: string[],
+	releaseDate: Date | string,
+	colors: Colors[],
 	price: number,
-	description: string
+	description: string,
+	sizes: ColorSizes[]
 }
 
-export { type ProductPreview, type FullProduct  }
+interface FullProductConfig {
+	method: string,
+	url: string,
+	headers: object,
+	data: {
+		productReq: string
+	}
+}
+
+interface Colors {
+	color: string,
+	images: string[]
+}
+
+interface ProductSizes {
+	size: string,
+	amount: number
+}
+
+interface ColorSizes {
+	color: string,
+	sizes: ProductSizes[]
+}
+
+export { type ProductPreview, type ProductObj, type FullProductConfig  }

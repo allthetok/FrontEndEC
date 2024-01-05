@@ -4,7 +4,7 @@
 'use client'
 import { ultraBoost } from '@/helpers/mockdata'
 import React, { SyntheticEvent, useState } from 'react'
-import { FullProduct } from '@/helpers/types/fetypes'
+import { ProductObj } from '@/helpers/types/fetypes'
 import { DropDown } from './DropDown'
 import { ProductFilter } from './ProductFilter'
 import { Product } from './Product'
@@ -40,7 +40,7 @@ const ProductList = () => {
 				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
 					<ProductFilter />
 					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8'>
-						{ultraBoost.map((product: FullProduct, index: number) => (
+						{ultraBoost.map((product: ProductObj, index: number) => (
 							<Product product={product} key={index}/>
 						))}
 					</div>
