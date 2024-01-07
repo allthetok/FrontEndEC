@@ -24,7 +24,7 @@ interface FullProductConfig {
 	url: string,
 	headers: object,
 	data: {
-		productReq: string
+		product: string
 	}
 }
 

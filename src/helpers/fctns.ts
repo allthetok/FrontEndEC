@@ -11,12 +11,12 @@ const createProductDtlConfig = (method: string, endpoint: string, productReq: st
 	}
 	return {
 		method: method,
-		url: `https://localhost:3002/api/shoes/${endpoint}`,
+		url: `http://localhost:3002/api/shoes/${endpoint}`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
 		data: {
-			productReq: productSpec(productReq)
+			product: productSpec(productReq)
 		}
 	}
 }
