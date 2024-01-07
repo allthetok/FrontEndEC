@@ -2,7 +2,7 @@
 import React from 'react'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { GetServerSideProps, GetServerSidePropsContext  } from 'next'
-import { createProductDtlConfig } from '@/helpers/fctns'
+import { createProductDtlConfig, formatPageQuery } from '@/helpers/fctns'
 import { FullProductConfig, ProductObj } from '@/helpers/types/fetypes'
 import { FullProductServer } from '@/components/Server/FullProductServer'
 
@@ -85,6 +85,7 @@ export default function ProductPage(props: any) {
 	console.log(props)
 	console.log(props.params)
 	console.log(props.params.productReq)
+	console.log(formatPageQuery(props.params.productReq))
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
 			<div>

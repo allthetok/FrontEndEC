@@ -26,7 +26,7 @@ const formatPageQuery = (inputQuery: string | string []) => {
 	if (typeof inputQuery !== 'string') {
 		inputQuery = inputQuery.join('')
 	}
-	inputQuery = inputQuery.replace('%20', '')
+	inputQuery = inputQuery.replaceAll('%20', ' ')
 	return inputQuery
 }
 
