@@ -5,8 +5,8 @@ import { createProductDtlConfig, formatPageQuery } from '@/helpers/fctns'
 import { FullProductConfig, ProductObj } from '@/helpers/types/fetypes'
 import { FullProductServer } from '@/components/Server/FullProductServer'
 
-export default async function ProductPage({ params }: { params: { productReq: string | string[] }}) {
-	const { productObj } = await getData(params.productReq)
+const ProductPage = async ({ params }: { params: { product: string | string[] }}) => {
+	const { productObj } = await getData(params.product)
 	console.log(productObj)
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -28,10 +28,11 @@ const getProductDtl = async (productConfig: FullProductConfig) => {
 	return resultProductObj
 }
 
-const getData = async (productReq: string | string[]) => {
-	const productSearchConfig = createProductDtlConfig('post', 'product', formatPageQuery(productReq))
+const getData = async (product: string | string[]) => {
+	const productSearchConfig = createProductDtlConfig('post', 'product', formatPageQuery(product))
 	return {
 		productObj: await getProductDtl(productSearchConfig)
 	}
 }
 
+export default ProductPage
