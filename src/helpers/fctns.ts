@@ -21,4 +21,13 @@ const createProductDtlConfig = (method: string, endpoint: string, productReq: st
 	}
 }
 
-export { formatDate, createProductDtlConfig }
+const formatPageQuery = (inputQuery: string | string []) => {
+	// let outputStr: string
+	if (typeof inputQuery !== 'string') {
+		inputQuery = inputQuery.join('')
+	}
+	inputQuery = inputQuery.replace('%20', '')
+	return inputQuery
+}
+
+export { formatDate, createProductDtlConfig, formatPageQuery }

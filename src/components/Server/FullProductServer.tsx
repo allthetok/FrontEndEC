@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-key */
+'use client'
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { ultraBoost } from '../../helpers/mockdata'
@@ -12,19 +13,21 @@ import { AddToCartSx } from '@/sx/styling'
 import { ProductObj } from '@/helpers/types/fetypes'
 
 type FullProductProps = {
-	productDtl: ProductObj
+	productDtl: ProductObj,
+	productSearch: string | string[]
 }
-const FullProductServer = ({ productDtl }: FullProductProps) => {
-	// const [selectedOption, setSelectedOption] = useState(ultraBoost[1].colors[0])
-	// const [sizeOption ,setSizeOption] = useState('')
+const FullProductServer = ({ productDtl, productSearch }: FullProductProps) => {
+	const [selectedOption, setSelectedOption] = useState(ultraBoost[1].colors[0])
+	const [sizeOption ,setSizeOption] = useState('')
 
 	console.log(productDtl)
+	console.log(productSearch)
 
 
-	// const handleOptionChange = (e: any) => {
-	// 	e.preventDefault()
-	// 	setSelectedOption(e.target.value)
-	// }
+	const handleOptionChange = (e: any) => {
+		e.preventDefault()
+		setSelectedOption(e.target.value)
+	}
 
 	const handleAdd = (e: any) => {
 		e.preventDefault()
@@ -33,12 +36,16 @@ const FullProductServer = ({ productDtl }: FullProductProps) => {
 
 	return (
 		<main className='p-8 bg-gray-100 flex-1'>
-			<div className='carousel'>
+			<div>
+				{productSearch}
+			</div>
+
+			{/* <div className='carousel'>
 				<section className='text-gray-700 body-font overflow-hidden'>
 					<div className='container px-5 py-25 mx-auto'>
 						<div className='mx-auto flex flex-wrap'>
 							<div className='lg:w-1/2 w-full lg:h-auto h-64'>
-								{/* <CarouselProvider
+								<CarouselProvider
 									naturalSlideWidth={496}
 									naturalSlideHeight={496}
 									totalSlides={ultraBoost[1].images.length}
@@ -61,7 +68,7 @@ const FullProductServer = ({ productDtl }: FullProductProps) => {
 											</Dot>
 										))}
 									</div>
-								</CarouselProvider> */}
+								</CarouselProvider>
 
 							</div>
 							<div className='lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0'>
@@ -80,7 +87,7 @@ const FullProductServer = ({ productDtl }: FullProductProps) => {
 								<p className='leading-relaxed'>
 									{ultraBoost[1].description}
 								</p>
-								{/* <div className='flex flex-col gap-6 mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5'>
+								<div className='flex flex-col gap-6 mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5'>
 									<select className='form-select' value={selectedOption} onChange={handleOptionChange}>
 										{ultraBoost[1].colors.map((color: string) => (
 											<option value={color}>{color}</option>
@@ -89,18 +96,15 @@ const FullProductServer = ({ productDtl }: FullProductProps) => {
 									<span className='leading-10 title-font text-2xl text-gray-900'>
 										Size:&nbsp;{sizeOption}
 									</span>
-								</div> */}
+								</div>
 								<div className='flex flex-col gap-6 items-center'>
-									{/* <span className='title-font font-bold text-2xl text-gray-900'>
-										$&nbsp;{ultraBoost[1].price}
-									</span> */}
-									{/* <div className='flex'>
+									<div className='flex'>
 										<SizeButton sizeOption={sizeOption} setSizeOption={setSizeOption}/>
-									</div> */}
+									</div>
 									<div className='mx-auto flex flex-col items-center'>
-										{/* <Button className='font-bold flex text-white bg-indigo-500 border-0 py-3 px-10 text-lg focus:outline-none hover:bg-indigo-600 rounded-full' disabled={sizeOption === ''} sx={AddToCartSx} onClick={handleAdd}>
+										<Button className='font-bold flex text-white bg-indigo-500 border-0 py-3 px-10 text-lg focus:outline-none hover:bg-indigo-600 rounded-full' disabled={sizeOption === ''} sx={AddToCartSx} onClick={handleAdd}>
 											Add to Cart
-										</Button> */}
+										</Button>
 										<p className='text-gray-600 text-center pt-2 text-xs'>
 											12 In stock
 										</p>
@@ -110,7 +114,7 @@ const FullProductServer = ({ productDtl }: FullProductProps) => {
 						</div>
 					</div>
 				</section>
-			</div>
+			</div> */}
 		</main>
 	)
 }
