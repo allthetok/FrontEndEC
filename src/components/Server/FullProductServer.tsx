@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-key */
-'use client'
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { ultraBoost } from '../../helpers/mockdata'
@@ -11,66 +10,33 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 import { Button } from '@mui/material'
 import { AddToCartSx } from '@/sx/styling'
 import { ProductObj } from '@/helpers/types/fetypes'
+import { ImageCarousel } from '../ImageCarousel'
 
 type FullProductProps = {
-	productDtl: ProductObj,
-	productSearch: string | string[]
+	productDtl: ProductObj
 }
-const FullProductServer = ({ productDtl, productSearch }: FullProductProps) => {
-	const [selectedOption, setSelectedOption] = useState(ultraBoost[1].colors[0])
-	const [sizeOption ,setSizeOption] = useState('')
-
-	console.log(productDtl)
-	console.log(productSearch)
+const FullProductServer = ({ productDtl }: FullProductProps) => {
+	// const [selectedOption, setSelectedOption] = useState(ultraBoost[1].colors[0])
+	// const [sizeOption ,setSizeOption] = useState('')
 
 
-	const handleOptionChange = (e: any) => {
-		e.preventDefault()
-		setSelectedOption(e.target.value)
-	}
+	// const handleOptionChange = (e: any) => {
+	// 	e.preventDefault()
+	// 	setSelectedOption(e.target.value)
+	// }
 
-	const handleAdd = (e: any) => {
-		e.preventDefault()
-		console.log('added to cart')
-	}
+	// const handleAdd = (e: any) => {
+	// 	e.preventDefault()
+	// 	console.log('added to cart')
+	// }
 
 	return (
 		<main className='p-8 bg-gray-100 flex-1'>
-			<div>
-				{productSearch}
-			</div>
-
-			{/* <div className='carousel'>
+			<div className='carousel'>
 				<section className='text-gray-700 body-font overflow-hidden'>
 					<div className='container px-5 py-25 mx-auto'>
 						<div className='mx-auto flex flex-wrap'>
-							<div className='lg:w-1/2 w-full lg:h-auto h-64'>
-								<CarouselProvider
-									naturalSlideWidth={496}
-									naturalSlideHeight={496}
-									totalSlides={ultraBoost[1].images.length}
-									infinite>
-									<Slider>
-										{ultraBoost[1].images.map((image: string, index: number) => (
-											<Slide index={index}>
-												<Image
-													src={image}
-													hasMasterSpinner={false}
-													alt={`Image ${index}`}
-													className='object-cover object-center rounded-lg'/>
-											</Slide>
-										))}
-									</Slider>
-									<div className='flex justify-center gap-4 py-4'>
-										{ultraBoost[1].images.map((image: string, index: number) => (
-											<Dot key={index} slide={index} className='h-20 w-20 disabled:opacity-50 rounded-lg overflow-hidden'>
-												<Image className='object-cover h-full w-full' src={image} alt={`Image ${index}`} hasMasterSpinner={false} />
-											</Dot>
-										))}
-									</div>
-								</CarouselProvider>
-
-							</div>
+							<ImageCarousel colors={productDtl.colors}/>
 							<div className='lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0'>
 								<h2 className='text-sm title-font uppercase text-gray-500 tracking-widest mb-2'>{ultraBoost[1].brand} - {ultraBoost[1].modelName}</h2>
 								<h1 className='text-gray-900 text-4xl title=font font-bold'>{ultraBoost[1].name}</h1>
@@ -85,9 +51,9 @@ const FullProductServer = ({ productDtl, productSearch }: FullProductProps) => {
 									</span>
 								</div>
 								<p className='leading-relaxed'>
-									{ultraBoost[1].description}
+									{productDtl.description}
 								</p>
-								<div className='flex flex-col gap-6 mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5'>
+								{/* <div className='flex flex-col gap-6 mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5'>
 									<select className='form-select' value={selectedOption} onChange={handleOptionChange}>
 										{ultraBoost[1].colors.map((color: string) => (
 											<option value={color}>{color}</option>
@@ -109,12 +75,12 @@ const FullProductServer = ({ productDtl, productSearch }: FullProductProps) => {
 											12 In stock
 										</p>
 									</div>
-								</div>
+										</div> */}
 							</div>
 						</div>
 					</div>
 				</section>
-			</div> */}
+			</div>
 		</main>
 	)
 }
