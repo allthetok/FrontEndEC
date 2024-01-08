@@ -4,18 +4,28 @@ import { Button } from '@mui/material'
 import { SizeButton } from './SizeButton'
 import { AddToCartSx } from '@/sx/styling'
 import { ColorSizes } from '@/helpers/types/fetypes'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 type OptionsProps = {
-	sizes: ColorSizes[]
+	sizes: ColorSizes[],
+	selectedColor: string,
+	modelName: string
 }
 
-const Options = ({ sizes }: OptionsProps) => {
-	const [selectedOption, setSelectedOption] = useState(sizes[0].color)
+const Options = ({ sizes, selectedColor, modelName }: OptionsProps) => {
+	const [selectedOption, setSelectedOption] = useState(selectedColor)
 	const [sizeOption ,setSizeOption] = useState('')
+	const router = useRouter()
+	const path = usePathname()
+	const params = useSearchParams()
+	console.log(path)
+	console.log(params.get('color'))
 
 
 	const handleOptionChange = (e: any) => {
 		e.preventDefault()
+		router.push(`/product/${modelName}?color=${e.target.value}`)
+		console.log(path)
 		setSelectedOption(e.target.value)
 	}
 

@@ -41,7 +41,7 @@ const FullProductServer = ({ productDtl }: FullProductProps) => {
 									<p className='leading-relaxed'>
 										{productDtl.description}
 									</p>
-									<Options sizes={productDtl.sizes}/>
+									<Options sizes={productDtl.sizes} selectedColor={productDtl.colors[0].color} modelName={productDtl.name}/>
 								</div>
 							</div>
 						</div>
