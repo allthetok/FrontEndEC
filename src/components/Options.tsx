@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 import { Button } from '@mui/material'
 import { SizeButton } from './SizeButton'
@@ -34,7 +35,7 @@ const Options = ({ sizes }: OptionsProps) => {
 					))}
 				</select>
 				<span className='leading-10 title-font text-2xl text-gray-900'>
-										Size:&nbsp;{sizeOption}
+					Size:&nbsp;{sizeOption}
 				</span>
 			</div>
 			<div className='flex flex-col gap-6 items-center'>
@@ -46,7 +47,7 @@ const Options = ({ sizes }: OptionsProps) => {
 					Add to Cart
 					</Button>
 					<p className='text-gray-600 text-center pt-2 text-xs'>
-					12 In stock
+						{sizeOption !== '' ? `${sizes.filter((size: ColorSizes) => size.color === selectedOption)[0].sizes.filter((shoeSize: any) => shoeSize.size === sizeOption)[0].amount}` : ''} In stock
 					</p>
 				</div>
 			</div>

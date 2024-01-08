@@ -1,0 +1,35 @@
+.center-button {
+	margin-right: 42.75%;
+	overflow: hidden;
+    white-space: nowrap;
+}
+
+@media (max-width: 2560px) and (min-width: 2350px) {
+	.center-button {
+		margin-right: 57.5%;
+	}
+}
+
+@media (max-width: 2350px) and (min-width: 2120px) {
+	.center-button {
+		margin-right: 70%;
+	}
+}
+
+@media (max-width: 2120px) and (min-width: 1920px) {
+	.center-button {
+		margin-right: 76.25%;
+	}
+}
+
+@media (max-width: 1919px) and (min-width: 1720px) {
+	.center-button {
+		margin-right: 80%;
+	}
+}
+
+@media (max-width: 1720px) {
+	.center-button {
+		margin-right: 85%;
+	}
+}
