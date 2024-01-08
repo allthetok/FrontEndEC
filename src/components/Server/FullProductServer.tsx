@@ -38,9 +38,9 @@ const FullProductServer = ({ productDtl }: FullProductProps) => {
 						<div className='mx-auto flex flex-wrap'>
 							<ImageCarousel colors={productDtl.colors}/>
 							<div className='lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0'>
-								<h2 className='text-sm title-font uppercase text-gray-500 tracking-widest mb-2'>{ultraBoost[1].brand} - {ultraBoost[1].modelName}</h2>
+								<h2 className='text-sm title-font uppercase text-gray-500 tracking-widest mb-2'>{productDtl.brand} - {productDtl.modelName}</h2>
 								<h1 className='text-gray-900 text-4xl title=font font-bold'>{ultraBoost[1].name}</h1>
-								<h2 className='text-sm title-font text-gray-500 tracking-widest mt-2'>Released - {formatDate(new Date(ultraBoost[1].releaseDate))}</h2>
+								<h2 className='text-sm title-font text-gray-500 tracking-widest mt-2'>Released - {formatDate(new Date(productDtl.releaseDate))}</h2>
 								<span className='leading-10 title-font font-bold text-2xl text-gray-900'>
 										${ultraBoost[1].price.toFixed(2)}
 								</span>

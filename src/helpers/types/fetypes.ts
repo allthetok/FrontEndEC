@@ -43,4 +43,4 @@ interface ColorSizes {
 	sizes: ProductSizes[]
 }
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors }
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes }
