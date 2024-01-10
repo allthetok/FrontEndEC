@@ -3,32 +3,24 @@ import React, { useState } from 'react'
 import { Button } from '@mui/material'
 import { SizeButton } from './SizeButton'
 import { AddToCartSx } from '@/sx/styling'
-import { ColorSizes } from '@/helpers/types/fetypes'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { ColorSizes, ProductSizes } from '@/helpers/types/fetypes'
+import { useRouter } from 'next/navigation'
 
 type OptionsProps = {
 	sizes: ColorSizes[],
-	selectedColor: string,
 	modelName: string,
-	colorQuery: string | string[] | undefined | null
+	colorQuery: string | string[]
 }
 
-const Options = ({ sizes, selectedColor, modelName, colorQuery }: OptionsProps) => {
-	const [selectedOption, setSelectedOption] = useState(selectedColor)
+const Options = ({ sizes, modelName, colorQuery }: OptionsProps) => {
 	const [sizeOption ,setSizeOption] = useState('')
-	const router = useRouter()
-	const path = usePathname()
-	const params = useSearchParams()
-	// console.log(path)
-	// console.log(params.get('color'))
-	console.log(colorQuery)
 
+	const router = useRouter()
+	const sizesFiltered: ColorSizes[] = sizes.filter((indSize: ColorSizes) => indSize.color === colorQuery)
 
 	const handleOptionChange = (e: any) => {
 		e.preventDefault()
 		router.push(`/product/${modelName}?color=${e.target.value}`)
-		console.log(path)
-		setSelectedOption(e.target.value)
 	}
 
 	const handleAdd = (e: any) => {
@@ -39,10 +31,10 @@ const Options = ({ sizes, selectedColor, modelName, colorQuery }: OptionsProps) 
 	return (
 		<>
 			<div className='flex flex-col gap-6 mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5'>
-				<select className='form-select' value={selectedOption} onChange={handleOptionChange}>
-					{sizes.map((size: ColorSizes, index: number) => (
-						<option value={size.color} key={index}>
-							{size.color}
+				<select className='form-select' value={colorQuery} onChange={handleOptionChange}>
+					{sizes.map((indSize: ColorSizes) => indSize.color).map((size: string, index: number) => (
+						<option value={size} key={index}>
+							{size}
 						</option>
 					))}
 				</select>
@@ -59,7 +51,7 @@ const Options = ({ sizes, selectedColor, modelName, colorQuery }: OptionsProps) 
 					Add to Cart
 					</Button>
 					<p className='text-gray-600 text-center pt-2 text-xs'>
-						{sizeOption !== '' ? `${sizes.filter((size: ColorSizes) => size.color === selectedOption)[0].sizes.filter((shoeSize: any) => shoeSize.size === sizeOption)[0].amount}` : ''} In stock
+						{sizeOption !== '' ? `${sizesFiltered[0].sizes.filter((shoeSize: ProductSizes) => shoeSize.size === sizeOption)[0].amount}` : ''} In stock
 					</p>
 				</div>
 			</div>

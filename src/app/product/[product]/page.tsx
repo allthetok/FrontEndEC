@@ -5,7 +5,7 @@ import { createProductDtlConfig, formatPageQuery } from '@/helpers/fctns'
 import { FullProductConfig, ProductObj } from '@/helpers/types/fetypes'
 import { FullProductServer } from '@/components/Server/FullProductServer'
 
-const ProductPage = async ({ params, searchParams }: { params: { product: string | string[] }, searchParams: { searchParams: { color: string | string[] | undefined }} }) => {
+const ProductPage = async ({ params, searchParams }: { params: { product: string | string[] }, searchParams: { color: string | string[] } }) => {
 	const { productObj } = await getData(params.product)
 	console.log(productObj)
 	return (

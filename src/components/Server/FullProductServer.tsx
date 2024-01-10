@@ -10,7 +10,7 @@ import '../FullProduct.css'
 
 type FullProductProps = {
 	productDtl: ProductObj,
-	colorQuery: string | string[] | undefined | null
+	colorQuery: string | string[]
 }
 
 const FullProductServer = ({ productDtl, colorQuery }: FullProductProps) => {
@@ -42,7 +42,7 @@ const FullProductServer = ({ productDtl, colorQuery }: FullProductProps) => {
 									<p className='leading-relaxed'>
 										{productDtl.description}
 									</p>
-									<Options sizes={productDtl.sizes} selectedColor={productDtl.colors[0].color} modelName={productDtl.name} colorQuery={colorQuery}/>
+									<Options sizes={productDtl.sizes} modelName={productDtl.name} colorQuery={colorQuery}/>
 								</div>
 							</div>
 						</div>
