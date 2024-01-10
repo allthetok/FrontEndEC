@@ -5,10 +5,12 @@ import { CarouselProvider, Slider, Slide, Image, Dot } from 'pure-react-carousel
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
 type ImageProps = {
-	colors: Colors[]
+	colors: Colors[],
+	colorQuery: string | string[] | undefined | null
 }
 
-const ImageCarousel = ({ colors }: ImageProps ) => {
+const ImageCarousel = ({ colors, colorQuery }: ImageProps ) => {
+	console.log(colorQuery)
 	return (
 		<div className='lg:w-1/2 w-full lg:h-auto h-64'>
 			<CarouselProvider

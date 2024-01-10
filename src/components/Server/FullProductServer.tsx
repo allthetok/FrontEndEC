@@ -9,10 +9,11 @@ import { Font25Sx } from '@/sx/styling'
 import '../FullProduct.css'
 
 type FullProductProps = {
-	productDtl: ProductObj
+	productDtl: ProductObj,
+	colorQuery: string | string[] | undefined | null
 }
 
-const FullProductServer = ({ productDtl }: FullProductProps) => {
+const FullProductServer = ({ productDtl, colorQuery }: FullProductProps) => {
 	return (
 		<>
 			<Link href='/products' className='flex flex-row flex-1 justify-start items-start self-center text-center leading-5 center-button pt-6'>
@@ -24,7 +25,7 @@ const FullProductServer = ({ productDtl }: FullProductProps) => {
 					<section className='text-gray-700 body-font overflow-hidden'>
 						<div className='container px-5 py-25 mx-auto'>
 							<div className='mx-auto flex flex-wrap'>
-								<ImageCarousel colors={productDtl.colors}/>
+								<ImageCarousel colors={productDtl.colors} colorQuery={colorQuery}/>
 								<div className='lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0'>
 									<h2 className='text-sm title-font uppercase text-gray-500 tracking-widest mb-2'>{productDtl.brand} - {productDtl.modelName}</h2>
 									<h1 className='text-gray-900 text-4xl title=font font-bold'>{productDtl.name}</h1>
@@ -41,7 +42,7 @@ const FullProductServer = ({ productDtl }: FullProductProps) => {
 									<p className='leading-relaxed'>
 										{productDtl.description}
 									</p>
-									<Options sizes={productDtl.sizes} selectedColor={productDtl.colors[0].color} modelName={productDtl.name}/>
+									<Options sizes={productDtl.sizes} selectedColor={productDtl.colors[0].color} modelName={productDtl.name} colorQuery={colorQuery}/>
 								</div>
 							</div>
 						</div>

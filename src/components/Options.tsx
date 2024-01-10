@@ -9,17 +9,19 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 type OptionsProps = {
 	sizes: ColorSizes[],
 	selectedColor: string,
-	modelName: string
+	modelName: string,
+	colorQuery: string | string[] | undefined | null
 }
 
-const Options = ({ sizes, selectedColor, modelName }: OptionsProps) => {
+const Options = ({ sizes, selectedColor, modelName, colorQuery }: OptionsProps) => {
 	const [selectedOption, setSelectedOption] = useState(selectedColor)
 	const [sizeOption ,setSizeOption] = useState('')
 	const router = useRouter()
 	const path = usePathname()
 	const params = useSearchParams()
-	console.log(path)
-	console.log(params.get('color'))
+	// console.log(path)
+	// console.log(params.get('color'))
+	console.log(colorQuery)
 
 
 	const handleOptionChange = (e: any) => {
