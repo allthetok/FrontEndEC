@@ -1,10 +1,12 @@
 'use client'
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { ColorSizes, ProductSizes } from '@/helpers/types/fetypes'
 import { Button } from '@mui/material'
 import { SizeButton } from './SizeButton'
 import { AddToCartSx } from '@/sx/styling'
-import { ColorSizes, ProductSizes } from '@/helpers/types/fetypes'
-import { useRouter } from 'next/navigation'
+import './FullProduct.css'
+
 
 type OptionsProps = {
 	sizes: ColorSizes[],
@@ -18,7 +20,7 @@ const Options = ({ sizes, modelName, colorQuery }: OptionsProps) => {
 	const router = useRouter()
 	const sizesFiltered: ColorSizes[] = sizes.filter((indSize: ColorSizes) => indSize.color === colorQuery)
 
-	const handleOptionChange = (e: any) => {
+	const handleOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		e.preventDefault()
 		router.push(`/product/${modelName}?color=${e.target.value}`)
 	}
@@ -47,7 +49,7 @@ const Options = ({ sizes, modelName, colorQuery }: OptionsProps) => {
 					<SizeButton sizeOption={sizeOption} setSizeOption={setSizeOption}/>
 				</div>
 				<div className='mx-auto flex flex-col items-center'>
-					<Button className='font-bold flex text-white bg-indigo-500 border-0 py-3 px-10 text-lg focus:outline-none hover:bg-indigo-600 rounded-full' disabled={sizeOption === ''} sx={AddToCartSx} onClick={handleAdd}>
+					<Button className='font-bold flex text-white bg-indigo-500 border-0 py-3 px-10 text-lg focus:outline-none hover:bg-indigo-600 rounded-full' disabled={sizeOption === '' || (sizeOption !== '' ? sizesFiltered[0].sizes.filter((shoeSize: ProductSizes) => shoeSize.size === sizeOption)[0].amount === 0 : true)} sx={AddToCartSx} onClick={handleAdd}>
 					Add to Cart
 					</Button>
 					<p className='text-gray-600 text-center pt-2 text-xs'>

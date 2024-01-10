@@ -4,6 +4,11 @@
     white-space: nowrap;
 }
 
+.Mui-disabled {
+	cursor: not-allowed !important;
+	pointer-events: auto !important;
+}
+
 @media (max-width: 2560px) and (min-width: 2350px) {
 	.center-button {
 		margin-right: 57.5%;

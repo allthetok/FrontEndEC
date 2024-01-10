@@ -5,12 +5,14 @@ import { createProductDtlConfig, formatPageQuery } from '@/helpers/fctns'
 import { FullProductConfig, ProductObj } from '@/helpers/types/fetypes'
 import { FullProductServer } from '@/components/Server/FullProductServer'
 
-const ProductPage = async ({ params, searchParams }: { params: { product: string | string[] }, searchParams: { color: string | string[] } }) => {
+const ProductPage = async ({ params, searchParams }: { params: { product: string | string[] }, searchParams: { color: string | string[] | undefined } }) => {
 	const { productObj } = await getData(params.product)
-	console.log(productObj)
+	const color = searchParams.color !== undefined ? searchParams.color : productObj.colors[0].color
+	// console.log(productObj)
+	// console.log(searchParams.color)
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<FullProductServer productDtl={productObj} colorQuery={searchParams.color} />
+			<FullProductServer productDtl={productObj} colorQuery={color} />
 		</main>
 	)
 }
