@@ -10,10 +10,11 @@ import '../FullProduct.css'
 
 type FullProductProps = {
 	productDtl: ProductObj,
-	colorQuery: string | string[]
+	colorQuery: string | string[],
+	similarProducts: ProductObj[]
 }
 
-const FullProductServer = ({ productDtl, colorQuery }: FullProductProps) => {
+const FullProductServer = ({ productDtl, colorQuery, similarProducts }: FullProductProps) => {
 	return (
 		<>
 			<Link href='/products' className='flex flex-row flex-1 justify-start items-start self-center text-center leading-5 center-button pt-6'>
@@ -48,6 +49,10 @@ const FullProductServer = ({ productDtl, colorQuery }: FullProductProps) => {
 						</div>
 					</section>
 				</div>
+				{/* <div>
+					<h2>Explore these Similar Products:</h2>
+				</div> */}
+				{/* <ProductList productArray={similarProducts} /> */}
 			</main>
 		</>
 	)

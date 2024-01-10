@@ -43,4 +43,9 @@ interface ColorSizes {
 	sizes: ProductSizes[]
 }
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes }
+interface ProductResponseObj {
+	productReq: ProductObj,
+	similarProducts: ProductObj[]
+}
+
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj }
