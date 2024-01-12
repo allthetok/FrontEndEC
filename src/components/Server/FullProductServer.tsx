@@ -15,6 +15,7 @@ type FullProductProps = {
 }
 
 const FullProductServer = ({ productDtl, colorQuery, similarProducts }: FullProductProps) => {
+	console.log(similarProducts)
 	return (
 		<>
 			<Link href='/products' className='flex flex-row flex-1 justify-start items-start self-center text-center leading-5 center-button pt-6'>
