@@ -11,7 +11,8 @@ type ProductProps = {
 
 const Product = ({ product }: ProductProps) => {
 	return (
-		<Link className='group text-sm' href=''>
+		// <Link className='group text-sm' href={from === 'product' ? `/product/${product.name}` : `product/${product.name}`}>
+		<Link className='group text-sm' href={`/product/${product.name}`}>
 			<div className='w-full overflow-hidden rounded-lg border-2 border-gray-200 bg-gray-100 group-hover:opacity-75'>
 				<img className='h-full w-full object-cover object-center product-image' src={product.colors[0].images[0]} alt={`${product.name}`}/>
 			</div>

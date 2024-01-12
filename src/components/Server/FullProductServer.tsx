@@ -4,6 +4,7 @@ import { formatDate } from '@/helpers/fctns'
 import { ProductObj } from '@/helpers/types/fetypes'
 import { ImageCarousel } from '../ImageCarousel'
 import { Options } from '../Options'
+import { Product } from '../Product'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import { Font25Sx } from '@/sx/styling'
 import '../FullProduct.css'
@@ -15,7 +16,6 @@ type FullProductProps = {
 }
 
 const FullProductServer = ({ productDtl, colorQuery, similarProducts }: FullProductProps) => {
-	console.log(similarProducts)
 	return (
 		<>
 			<Link href='/products' className='flex flex-row flex-1 justify-start items-start self-center text-center leading-5 center-button pt-6'>
@@ -50,10 +50,17 @@ const FullProductServer = ({ productDtl, colorQuery, similarProducts }: FullProd
 						</div>
 					</section>
 				</div>
-				{/* <div>
-					<h2>Explore these Similar Products:</h2>
-				</div> */}
-				{/* <ProductList productArray={similarProducts} /> */}
+				{
+					similarProducts.length !== 0 ? (
+						<><div className='flex justify-center text-gray-900 text-4xl title=font font-bold pb-5 mt-12'>
+							<h2>Explore Similar Products:</h2>
+						</div><div className='flex flex-row justify-center gap-10'>
+							{similarProducts.map((indProduct: ProductObj, index: number) => (
+								<Product product={indProduct} key={index}/>
+							))}
+						</div></>)
+						: <></>
+				}
 			</main>
 		</>
 	)
