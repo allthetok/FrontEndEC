@@ -1,15 +1,26 @@
 'use client'
 import React, { useState } from 'react'
+import Link from 'next/link'
+import { homeLinks } from '@/helpers/pageconfig'
 import { Button, FormGroup, FormControlLabel, Checkbox } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { DropDownOptionsSx, CheckBoxSx } from '@/sx/styling'
 import './ProductList.css'
+import { usePathname, useRouter } from 'next/navigation'
 
-const ProductFilter = () => {
-	const [brandOptions, setBrandOptions] = useState(false)
+// type ProductFilterProps = {}
+
+const ProductFilter = ({ brandReq }: any) => {
+	const [brandOptions, setBrandOptions] = useState(true)
 	const [modelOptions, setModelOptions] = useState(false)
 	const [editionOptions, setEditionOptions] = useState(false)
+
+	const curPath= usePathname().replaceAll('%20', ' ').replace('/products/','')
+	const router = useRouter()
+	console.log(curPath)
+	// console.log(router)
+
 	return (
 		<div className='hidden lg:block'>
 			<div className='border-b border-gray-200 dark:border-gray-800 py-4'>
@@ -23,11 +34,11 @@ const ProductFilter = () => {
 				</Button>
 				{brandOptions === false ? <></> :
 					<FormGroup>
-						<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Adidas' />
-						<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Air Jordan' />
-						<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='New Balance' />
-						<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Yeezy' />
-						<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Nike' />
+						{homeLinks.map((indBrand: any, index: number) => (
+							<Link href={indBrand.link} key={index}>
+								<FormControlLabel checked={curPath.includes(indBrand.name) || curPath === ''} control={<Checkbox sx={CheckBoxSx} />} label={indBrand.name}/>
+							</Link>
+						))}
 					</FormGroup>
 				}
 			</div>

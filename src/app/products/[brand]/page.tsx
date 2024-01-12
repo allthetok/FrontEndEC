@@ -13,14 +13,6 @@ const ProductsPage = async ({ params, searchParams }: { params: { brand: string 
 			<BrandServer brandDtl={brandObj.brandReq} />
 		</main>
 	)
-
-
-	// const color = searchParams.color !== undefined ? searchParams.color : productObj.productReq.colors[0].color
-	// return (
-	// 	<main className="flex min-h-screen flex-col items-center justify-between p-24">
-	// 		<FullProductServer productDtl={productObj.productReq} colorQuery={color} similarProducts={productObj.similarProducts}/>
-	// 	</main>
-	// )
 }
 
 const getData = async (brand: string | string[]) => {

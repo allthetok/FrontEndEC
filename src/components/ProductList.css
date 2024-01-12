@@ -3,6 +3,7 @@
 }
 
 .product-image {
-	width: 250px;
+	/* width: 250px; */
+	width: 350px;
 	height: 290px;
 }
