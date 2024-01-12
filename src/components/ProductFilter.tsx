@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 import { Button, FormGroup, FormControlLabel, Checkbox } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'

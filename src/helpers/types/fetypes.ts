@@ -28,6 +28,15 @@ interface FullProductConfig {
 	}
 }
 
+interface FullBrandConfig {
+	method: string,
+	url: string,
+	headers: object,
+	data: {
+		brand: string
+	}
+}
+
 interface Colors {
 	color: string,
 	images: string[]
@@ -48,4 +57,19 @@ interface ProductResponseObj {
 	similarProducts: ProductObj[]
 }
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj }
+// interface Brands {
+// 	id: number,
+// 	name: string,
+// 	allModels: Models[]
+// }
+
+// interface Models {
+// 	id: number,
+// 	name: string,
+// 	brandId: number,
+// 	brand: string,
+// 	allProducts: IndProduct[]
+// }
+
+
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig }

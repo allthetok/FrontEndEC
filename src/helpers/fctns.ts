@@ -1,4 +1,4 @@
-import { FullProductConfig } from './types/fetypes'
+import { FullBrandConfig, FullProductConfig } from './types/fetypes'
 
 const formatDate = (inpDate: Date) => `${inpDate.toLocaleDateString('default', { month: 'long' })} ${inpDate.getUTCDate()}, ${inpDate.getFullYear()}`
 
@@ -21,8 +21,26 @@ const createProductDtlConfig = (method: string, endpoint: string, productReq: st
 	}
 }
 
+const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string | string[]): FullBrandConfig => {
+	const brandSpec = (brandReq: string | string[]) => {
+		if (typeof brandReq !== 'string') {
+			return brandReq.join('')
+		}
+		return brandReq
+	}
+	return {
+		method: method,
+		url: `http://localhost:3002/api/shoes/${endpoint}`,
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		data: {
+			brand: brandSpec(brandReq)
+		}
+	}
+}
+
 const formatPageQuery = (inputQuery: string | string []) => {
-	// let outputStr: string
 	if (typeof inputQuery !== 'string') {
 		inputQuery = inputQuery.join('')
 	}
@@ -30,4 +48,4 @@ const formatPageQuery = (inputQuery: string | string []) => {
 	return inputQuery
 }
 
-export { formatDate, createProductDtlConfig, formatPageQuery }
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, formatPageQuery }

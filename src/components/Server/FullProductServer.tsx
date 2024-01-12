@@ -51,14 +51,19 @@ const FullProductServer = ({ productDtl, colorQuery, similarProducts }: FullProd
 					</section>
 				</div>
 				{
-					similarProducts.length !== 0 ? (
-						<><div className='flex justify-center text-gray-900 text-4xl title=font font-bold pb-5 mt-12'>
-							<h2>Explore Similar Products:</h2>
-						</div><div className='flex flex-row justify-center gap-10'>
-							{similarProducts.map((indProduct: ProductObj, index: number) => (
-								<Product product={indProduct} key={index}/>
-							))}
-						</div></>)
+					similarProducts.length !== 0 ?
+						(
+							<>
+								<div className='flex justify-center text-gray-900 text-4xl title=font font-bold pb-8 mt-12'>
+									<h2>Explore Similar Products:</h2>
+								</div>
+								<div className='flex flex-row justify-center gap-10'>
+									{similarProducts.map((indProduct: ProductObj, index: number) => (
+										<Product product={indProduct} key={index}/>
+									))}
+								</div>
+							</>
+						)
 						: <></>
 				}
 			</main>
