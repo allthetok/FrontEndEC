@@ -5,19 +5,18 @@ import { createBrandDtlConfig, createProductDtlConfig, formatPageQuery } from '@
 import { FullBrandConfig, ProductObj, ProductResponseObj } from '@/helpers/types/fetypes'
 import { BrandServer } from '@/components/Server/BrandServer'
 
-const ProductsPage = async ({ params, searchParams }: { params: { brand: string | string[] }, searchParams: { brandReq: string[] | undefined } }) => {
-	const { brandObj } = await getData(searchParams.brandReq)
-	// console.log(params.brand)
-	console.log(searchParams.brandReq)
+const ProductsPage = async ({ searchParams }: { searchParams: { brand: string[] | undefined } }) => {
+	const { brandObj } = await getData(searchParams.brand)
+	console.log(searchParams.brand)
 	// console.log(brandObj.brandReq)
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			{/* <BrandServer brandDtl={brandObj.brandReq} /> */}
+			<BrandServer brandDtl={brandObj.brandReq} />
 		</main>
 	)
 }
 
-const getData = async (brand: string[] | undefined) => {
+const getData = async (brand: string | string[] | undefined) => {
 	const brandSearchConfig = createBrandDtlConfig('post', 'brand', brand)
 	return {
 		brandObj: await getBrandDtl(brandSearchConfig)

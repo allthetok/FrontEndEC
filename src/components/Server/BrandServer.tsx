@@ -1,21 +1,22 @@
 'use client'
-import { ultraBoost } from '@/helpers/mockdata'
-import { ProductObj } from '@/helpers/types/fetypes'
 import React, { SyntheticEvent, useState } from 'react'
+import { Brands, ProductObj } from '@/helpers/types/fetypes'
 import { DropDown } from '../DropDown'
 import { Product } from '../Product'
 import { ProductFilter } from '../ProductFilter'
 
 type BrandProps = {
-	brandDtl: any
+	brandDtl: Brands[]
 }
 
 const BrandServer = ({ brandDtl }: BrandProps) => {
 	const [filteredResults, setFilteredResults] = useState(() => {
 		const productsFiltered: ProductObj[] = []
-		for (let i = 0; i < brandDtl.allModels.length; i++) {
-			for (let j = 0; j < brandDtl.allModels[i].allProducts.length; j++) {
-				productsFiltered.push(brandDtl.allModels[i].allProducts[j])
+		for (let i = 0; i < brandDtl.length; i++) {
+			for (let j = 0; j < brandDtl[i].allModels.length; j++) {
+				for (let k = 0; k < brandDtl[i].allModels[j].allProducts.length; k++) {
+					productsFiltered.push(brandDtl[i].allModels[j].allProducts[k])
+				}
 			}
 		}
 		return productsFiltered
@@ -27,8 +28,8 @@ const BrandServer = ({ brandDtl }: BrandProps) => {
 		e.preventDefault()
 		setSortBy(value!)
 	}
-	console.log(brandDtl)
-	console.log(filteredResults)
+	// console.log(filteredResults)
+	// console.log(brandDtl)
 	return (
 		<main className='p-8 bg-gray-100 flex-1'>
 			<div>
@@ -51,10 +52,6 @@ const BrandServer = ({ brandDtl }: BrandProps) => {
 				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
 					<ProductFilter />
 					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8'>
-						{/* <div> */}
-						{/* {ultraBoost.map((product: ProductObj, index: number) => (
-							<Product product={product} key={index}/>
-						))} */}
 						{filteredResults.map((product: ProductObj, index: number) => (
 							<Product product={product} key={index} />
 						))}

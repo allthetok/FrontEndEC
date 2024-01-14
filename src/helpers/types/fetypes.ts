@@ -57,19 +57,19 @@ interface ProductResponseObj {
 	similarProducts: ProductObj[]
 }
 
-// interface Brands {
-// 	id: number,
-// 	name: string,
-// 	allModels: Models[]
-// }
+interface Brands {
+	id: number,
+	name: string,
+	allModels: Models[]
+}
 
-// interface Models {
-// 	id: number,
-// 	name: string,
-// 	brandId: number,
-// 	brand: string,
-// 	allProducts: IndProduct[]
-// }
+interface Models {
+	id: number,
+	name: string,
+	brandId: number,
+	brand: string,
+	allProducts: ProductObj[]
+}
 
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig }
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type Brands, type Models }

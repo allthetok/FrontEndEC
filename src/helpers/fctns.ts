@@ -40,7 +40,13 @@ const createDeprecatedBrandDtlConfig = (method: string, endpoint: string, brandR
 	}
 }
 
-const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string[] | undefined): FullBrandConfig => {
+const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string | string[] | undefined): FullBrandConfig => {
+	const brandSpec = (brandReq: string | string[]) => {
+		if (typeof brandReq === 'string') {
+			return [brandReq]
+		}
+		return brandReq
+	}
 	return brandReq ? {
 		method: method,
 		url: `http://localhost:3002/api/shoes/${endpoint}`,
@@ -48,7 +54,7 @@ const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string
 			'Content-Type': 'application/json'
 		},
 		data: {
-			brand: brandReq
+			brand: brandSpec(brandReq)
 		}
 	} : {
 		method: method,
