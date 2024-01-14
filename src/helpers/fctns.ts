@@ -21,7 +21,7 @@ const createProductDtlConfig = (method: string, endpoint: string, productReq: st
 	}
 }
 
-const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string | string[]): FullBrandConfig => {
+const createDeprecatedBrandDtlConfig = (method: string, endpoint: string, brandReq: string | string[]): FullBrandConfig => {
 	const brandSpec = (brandReq: string | string[]) => {
 		if (typeof brandReq !== 'string') {
 			return brandReq.join('')
@@ -40,6 +40,29 @@ const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string
 	}
 }
 
+const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string[] | undefined): FullBrandConfig => {
+	return brandReq ? {
+		method: method,
+		url: `http://localhost:3002/api/shoes/${endpoint}`,
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		data: {
+			brand: brandReq
+		}
+	} : {
+		method: method,
+		url: `http://localhost:3002/api/shoes/${endpoint}`,
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		data: {
+			brand: ['all']
+		}
+	}
+
+}
+
 const formatPageQuery = (inputQuery: string | string []) => {
 	if (typeof inputQuery !== 'string') {
 		inputQuery = inputQuery.join('')
@@ -48,4 +71,4 @@ const formatPageQuery = (inputQuery: string | string []) => {
 	return inputQuery
 }
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, formatPageQuery }
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, formatPageQuery }

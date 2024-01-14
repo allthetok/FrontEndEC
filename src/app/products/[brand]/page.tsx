@@ -5,18 +5,20 @@ import { createBrandDtlConfig, createProductDtlConfig, formatPageQuery } from '@
 import { FullBrandConfig, ProductObj, ProductResponseObj } from '@/helpers/types/fetypes'
 import { BrandServer } from '@/components/Server/BrandServer'
 
-const ProductsPage = async ({ params, searchParams }: { params: { brand: string | string[] }, searchParams: { color: string | string[] | undefined } }) => {
+const ProductsPage = async ({ params, searchParams }: { params: { brand: string | string[] }, searchParams: { brandReq: string | string[] | undefined } }) => {
 	const { brandObj } = await getData(params.brand)
+	console.log(params.brand)
+	console.log(searchParams)
 	// console.log(brandObj.brandReq)
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<BrandServer brandDtl={brandObj.brandReq} />
+			{/* <BrandServer brandDtl={brandObj.brandReq} /> */}
 		</main>
 	)
 }
 
 const getData = async (brand: string | string[]) => {
-	const brandSearchConfig = createBrandDtlConfig('post', 'brand', formatPageQuery(brand))
+	const brandSearchConfig = createDeprecatedBrandDtlConfig('post', 'brand', formatPageQuery(brand))
 	return {
 		brandObj: await getBrandDtl(brandSearchConfig)
 	}

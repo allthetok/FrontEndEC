@@ -24,7 +24,7 @@ const ProductFilter = ({ brandReq }: any) => {
 	return (
 		<div className='hidden lg:block'>
 			<div className='border-b border-gray-200 dark:border-gray-800 py-4'>
-				<Button variant='text' sx={DropDownOptionsSx} onClick={() => setBrandOptions(!brandOptions)}>
+				<Button variant='text' className='w-full' sx={DropDownOptionsSx} onClick={() => setBrandOptions(!brandOptions)}>
 					<div className='flex flex-1 items-center justify-between'>
 						<span className='font-extrabold text-lg'>
 							Brand
@@ -43,7 +43,7 @@ const ProductFilter = ({ brandReq }: any) => {
 				}
 			</div>
 			<div className='border-b border-gray-200 dark:border-gray-800 py-4'>
-				<Button variant='text' sx={DropDownOptionsSx} onClick={() => setModelOptions(!modelOptions)}>
+				<Button variant='text' className='w-full' sx={DropDownOptionsSx} onClick={() => setModelOptions(!modelOptions)}>
 					<div className='flex flex-1 items-center justify-between'>
 						<span className='font-extrabold text-lg'>
 							Model
@@ -61,7 +61,7 @@ const ProductFilter = ({ brandReq }: any) => {
 				}
 			</div>
 			<div className='border-b border-gray-200 dark:border-gray-800 py-4'>
-				<Button variant='text' sx={DropDownOptionsSx} onClick={() => setEditionOptions(!editionOptions)}>
+				<Button variant='text' className='w-full' sx={DropDownOptionsSx} onClick={() => setEditionOptions(!editionOptions)}>
 					<div className='flex flex-1 items-center justify-between'>
 						<span className='font-extrabold text-lg'>
 							Edition

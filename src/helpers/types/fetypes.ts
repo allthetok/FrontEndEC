@@ -33,7 +33,7 @@ interface FullBrandConfig {
 	url: string,
 	headers: object,
 	data: {
-		brand: string
+		brand: string | string[]
 	}
 }
 

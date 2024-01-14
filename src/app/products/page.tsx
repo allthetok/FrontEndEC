@@ -1,10 +1,41 @@
-import { ProductList } from '@/components/ProductList'
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react'
+import axios, { AxiosError, AxiosResponse } from 'axios'
+import { createBrandDtlConfig, createProductDtlConfig, formatPageQuery } from '@/helpers/fctns'
+import { FullBrandConfig, ProductObj, ProductResponseObj } from '@/helpers/types/fetypes'
+import { BrandServer } from '@/components/Server/BrandServer'
 
-export default function Home() {
+const ProductsPage = async ({ params, searchParams }: { params: { brand: string | string[] }, searchParams: { brandReq: string[] | undefined } }) => {
+	const { brandObj } = await getData(searchParams.brandReq)
+	// console.log(params.brand)
+	console.log(searchParams.brandReq)
+	// console.log(brandObj.brandReq)
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<ProductList />
+			{/* <BrandServer brandDtl={brandObj.brandReq} /> */}
 		</main>
 	)
 }
+
+const getData = async (brand: string[] | undefined) => {
+	const brandSearchConfig = createBrandDtlConfig('post', 'brand', brand)
+	return {
+		brandObj: await getBrandDtl(brandSearchConfig)
+	}
+}
+
+const getBrandDtl = async (brandConfig: FullBrandConfig) => {
+	const resultBrandObj = await axios(brandConfig)
+		.then((response: AxiosResponse) => {
+			const brandObj = {
+				brandReq: response.data.brandReq
+			}
+			return brandObj
+		})
+		// .catch((err: AxiosError) => {
+		// 	console.error(err)
+		// })
+	return resultBrandObj
+}
+
+export default ProductsPage
