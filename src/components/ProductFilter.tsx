@@ -1,5 +1,7 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
+import { Brands } from '@/helpers/types/fetypes'
 import Link from 'next/link'
 import { homeLinks } from '@/helpers/pageconfig'
 import { Button, FormGroup, FormControlLabel, Checkbox } from '@mui/material'
@@ -7,8 +9,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { DropDownOptionsSx, CheckBoxSx } from '@/sx/styling'
 import './ProductList.css'
-import { usePathname, useRouter } from 'next/navigation'
-import { Brands } from '@/helpers/types/fetypes'
+
 
 type ProductFilterProps = {
 	brandReq: Brands[]
@@ -23,8 +24,13 @@ const ProductFilter = ({ brandReq, brandSelect }: ProductFilterProps) => {
 
 	const curPath= usePathname().replaceAll('%20', ' ').replace('/products/','')
 	const router = useRouter()
-	// console.log(curPath)
-	// console.log(router)
+
+	const handleRefresh = (brandName: string) => {
+		router.replace(`?brand=${brandName}`, { scroll: false })
+		setTimeout(() => {
+			window.location.reload()
+		}, 200)
+	}
 
 	return (
 		<div className='hidden lg:block'>
@@ -40,10 +46,12 @@ const ProductFilter = ({ brandReq, brandSelect }: ProductFilterProps) => {
 				{brandOptions === false ? <></> :
 					<FormGroup>
 						{homeLinks.map((indBrand: any, index: number) => (
-							<Link href={indBrand.link} key={index}>
+							// <Link href={{ pathname: '/products', query: { brand: indBrand.name } }} replace key={index}>
+							// <div key={index} onClick={() => router.push(`?brand=${indBrand.name}`)}>
+							<div key={index} onClick={() => handleRefresh(indBrand.name)}>
 								{/* <FormControlLabel checked={curPath.includes(indBrand.name) || curPath === ''} control={<Checkbox sx={CheckBoxSx} />} label={indBrand.name}/> */}
 								<FormControlLabel checked={brandSelect.includes(indBrand.name)} control={<Checkbox sx={CheckBoxSx} />} label={indBrand.name}/>
-							</Link>
+							</div>
 						))}
 					</FormGroup>
 				}

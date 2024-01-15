@@ -1,26 +1,26 @@
 const homeLinks = [
 	{
-		link: '/products/Adidas',
+		link: '/products?brand=Adidas',
 		name: 'Adidas',
 		src: '/adbanner.jpg'
 	},
 	{
-		link: '/products/Air Jordan',
+		link: '/products/?brand=Air Jordan',
 		name: 'Air Jordan',
 		src: '/ajbanner.jpg'
 	},
 	{
-		link: '/products/New Balance',
+		link: '/products/?brand=New Balance',
 		name: 'New Balance',
 		src: '/nbbanner.jpg'
 	},
 	{
-		link: '/products/Yeezy',
+		link: '/products/?brand=Yeezy',
 		name: 'Yeezy',
 		src: '/yzybanner.jpg'
 	},
 	{
-		link: '/products/Nike',
+		link: '/products/?brand=Nike',
 		name: 'Nike',
 		src: '/nikebanner.jpg'
 	}

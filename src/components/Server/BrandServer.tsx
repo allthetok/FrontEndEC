@@ -6,10 +6,11 @@ import { Product } from '../Product'
 import { ProductFilter } from '../ProductFilter'
 
 type BrandProps = {
-	brandDtl: Brands[]
+	brandDtl: Brands[],
+	brandsParam: string[]
 }
 
-const BrandServer = ({ brandDtl }: BrandProps) => {
+const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 	const [filteredResults, setFilteredResults] = useState(() => {
 		const productsFiltered: ProductObj[] = []
 		for (let i = 0; i < brandDtl.length; i++) {
@@ -50,7 +51,7 @@ const BrandServer = ({ brandDtl }: BrandProps) => {
 			</div>
 			<section className='pb=24 pt-6' aria-labelledby='products-heading'>
 				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
-					<ProductFilter brandSelect={brandDtl.map((indBrand: Brands) => indBrand.name)} />
+					<ProductFilter brandReq={brandDtl} brandSelect={brandsParam} />
 					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8'>
 						{filteredResults.map((product: ProductObj, index: number) => (
 							<Product product={product} key={index} />
