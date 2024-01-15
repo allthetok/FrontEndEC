@@ -25,8 +25,30 @@ const ProductFilter = ({ brandReq, brandSelect }: ProductFilterProps) => {
 	const curPath= usePathname().replaceAll('%20', ' ').replace('/products/','')
 	const router = useRouter()
 
-	const handleRefresh = (brandName: string) => {
-		router.replace(`?brand=${brandName}`, { scroll: false })
+	// console.log(brandSelect.join('?brand='))
+
+	const handleRefresh = (brandName: string, checked: boolean) => {
+		if (checked) {
+			if (brandSelect.filter((name: string) => name !== brandName).length === 0) { //only current brand active
+				router.replace('/products')
+			}
+			else if (brandSelect.length === 5) { //all products are selected
+				router.replace(`/products?brand=${brandName}`, { scroll: false })
+			}
+			else { //other brands are selected, remove this from path
+				const queryPath = '/products?brand=' + brandSelect.filter((name: string) => name !== brandName).join('&brand=')
+				router.replace(queryPath, { scroll: false })
+			}
+		}
+		else {
+			if (brandSelect.filter((name: string) => name !== brandName).length !== 0) { //other brand active, update current path to include them and now include new brand to filter on
+				const queryPath = '/products?brand=' + brandSelect.join('&brand=') + `&brand=${brandName}`
+				router.replace(queryPath, { scroll: false })
+			}
+			else { //no brands active (edge case that may never occur)
+				router.replace(`?brand=${brandName}`, { scroll: false })
+			}
+		}
 		setTimeout(() => {
 			window.location.reload()
 		}, 200)
@@ -48,7 +70,7 @@ const ProductFilter = ({ brandReq, brandSelect }: ProductFilterProps) => {
 						{homeLinks.map((indBrand: any, index: number) => (
 							// <Link href={{ pathname: '/products', query: { brand: indBrand.name } }} replace key={index}>
 							// <div key={index} onClick={() => router.push(`?brand=${indBrand.name}`)}>
-							<div key={index} onClick={() => handleRefresh(indBrand.name)}>
+							<div key={index} onClick={() => handleRefresh(indBrand.name, brandSelect.includes(indBrand.name))}>
 								{/* <FormControlLabel checked={curPath.includes(indBrand.name) || curPath === ''} control={<Checkbox sx={CheckBoxSx} />} label={indBrand.name}/> */}
 								<FormControlLabel checked={brandSelect.includes(indBrand.name)} control={<Checkbox sx={CheckBoxSx} />} label={indBrand.name}/>
 							</div>

@@ -30,7 +30,6 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		setSortBy(value!)
 	}
 	// console.log(filteredResults)
-	console.log(brandDtl.map((indBrand: Brands) => indBrand.name))
 	return (
 		<main className='p-8 bg-gray-100 flex-1'>
 			<div>
