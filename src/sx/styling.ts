@@ -65,4 +65,8 @@ const AddToCartSx = {
 	textTransform: 'capitalize'
 }
 
-export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx, SizeButtonSx, ActiveSizeButtonSx, AddToCartSx }
+const LabelSx = {
+	maxWidth: '320px'
+}
+
+export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx, SizeButtonSx, ActiveSizeButtonSx, AddToCartSx, LabelSx }

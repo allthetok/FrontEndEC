@@ -1,6 +1,6 @@
 'use client'
 import React, { SyntheticEvent, useEffect, useState } from 'react'
-import { Brands, ProductObj } from '@/helpers/types/fetypes'
+import { Brands, Models, ProductObj } from '@/helpers/types/fetypes'
 import { DropDown } from '../DropDown'
 import { Product } from '../Product'
 import { ProductFilter } from '../ProductFilter'
@@ -23,7 +23,22 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		}
 		return productsFiltered
 	})
+	const [modelResults, setModelResults] = useState(() => {
+		const modelsFiltered: Models[] = []
+		for (let i = 0; i < brandDtl.length; i++) {
+			for (let j = 0; j < brandDtl[i].allModels.length; j++) {
+				modelsFiltered.push(brandDtl[i].allModels[j])
+			}
+		}
+		return modelsFiltered
+	})
+
 	const [sortBy, setSortBy] = useState('Newest')
+
+
+	// console.log(brandDtl.map((indBrand: Brands) => indBrand.allModels.map((indModel: Models) => indModel.allProducts)))
+	console.log(filteredResults)
+	// console.log(modelResults)
 
 	useEffect(() => {
 		const sortedList: ProductObj[] = [...filteredResults]
@@ -35,7 +50,7 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		e.preventDefault()
 		setSortBy(value!)
 	}
-	console.log(filteredResults)
+	// console.log(filteredResults)
 	return (
 		<main className='p-8 bg-gray-100 flex-1'>
 			<div>
@@ -52,11 +67,11 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 				<h1 className='text-xl font-bold tracking-tight sm:text-2xl'>
 					{filteredResults.length} results
 				</h1>
-				<DropDown sortBy={sortBy} onSortChange={onSortChange} />
+				<DropDown sortBy={sortBy} onSortChange={onSortChange}/>
 			</div>
 			<section className='pb=24 pt-6' aria-labelledby='products-heading'>
 				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
-					<ProductFilter brandReq={brandDtl} brandSelect={brandsParam} />
+					<ProductFilter brandReq={brandDtl} brandSelect={brandsParam} modelsAvailable={modelResults} productsAvailable={filteredResults}/>
 					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8'>
 						{filteredResults.map((product: ProductObj, index: number) => (
 							<Product product={product} key={index} />

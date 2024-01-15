@@ -1,23 +1,25 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import { Brands } from '@/helpers/types/fetypes'
+import { Brands, Models, ProductObj } from '@/helpers/types/fetypes'
 import Link from 'next/link'
 import { homeLinks } from '@/helpers/pageconfig'
 import { Button, FormGroup, FormControlLabel, Checkbox } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
-import { DropDownOptionsSx, CheckBoxSx } from '@/sx/styling'
+import { DropDownOptionsSx, CheckBoxSx, LabelSx } from '@/sx/styling'
 import './ProductList.css'
 
 
 type ProductFilterProps = {
 	brandReq: Brands[]
-	brandSelect: string[]
+	brandSelect: string[],
+	modelsAvailable: Models[],
+	productsAvailable: ProductObj[]
 }
 
 
-const ProductFilter = ({ brandReq, brandSelect }: ProductFilterProps) => {
+const ProductFilter = ({ brandReq, brandSelect, modelsAvailable, productsAvailable }: ProductFilterProps) => {
 	const [brandOptions, setBrandOptions] = useState(true)
 	const [modelOptions, setModelOptions] = useState(false)
 	const [editionOptions, setEditionOptions] = useState(false)
@@ -73,7 +75,7 @@ const ProductFilter = ({ brandReq, brandSelect }: ProductFilterProps) => {
 							// <div key={index} onClick={() => router.push(`?brand=${indBrand.name}`)}>
 							<div key={index} onClick={() => handleRefresh(indBrand.name, brandSelect.includes(indBrand.name))}>
 								{/* <FormControlLabel checked={curPath.includes(indBrand.name) || curPath === ''} control={<Checkbox sx={CheckBoxSx} />} label={indBrand.name}/> */}
-								<FormControlLabel checked={brandSelect.includes(indBrand.name)} control={<Checkbox sx={CheckBoxSx} />} label={indBrand.name}/>
+								<FormControlLabel checked={brandSelect.includes(indBrand.name)} control={<Checkbox sx={CheckBoxSx} />} label={indBrand.name} sx={LabelSx}/>
 							</div>
 						))}
 					</FormGroup>
@@ -90,10 +92,11 @@ const ProductFilter = ({ brandReq, brandSelect }: ProductFilterProps) => {
 				</Button>
 				{modelOptions === false ? <></> :
 					<FormGroup>
-						<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='UltraBoost' />
-						<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Superstar' />
-						<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='Stan Smith' />
-						<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='NMD' />
+						{modelsAvailable.map((indModel: Models, index: number) => (
+							<div key={index}>
+								<FormControlLabel checked={true} control={<Checkbox sx={CheckBoxSx} />} label={indModel.name} sx={LabelSx}/>
+							</div>
+						))}
 					</FormGroup>
 				}
 			</div>
@@ -108,10 +111,11 @@ const ProductFilter = ({ brandReq, brandSelect }: ProductFilterProps) => {
 				</Button>
 				{editionOptions === false ? <></> :
 					<FormGroup>
-						<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='UltraBoost Light' />
-						<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='UltraBoost 1.0 Shoes' />
-						<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='UltraBoost 22 Shoes' />
-						<FormControlLabel control={<Checkbox sx={CheckBoxSx} />} label='UltraBoost 4.0 Shoes' />
+						{productsAvailable.map((indProduct: ProductObj, index: number) => (
+							<div key={index}>
+								<FormControlLabel checked={true} control={<Checkbox sx={CheckBoxSx} />} label={indProduct.name} sx={LabelSx}/>
+							</div>
+						))}
 					</FormGroup>
 				}
 			</div>
