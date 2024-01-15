@@ -1,9 +1,10 @@
 'use client'
-import React, { SyntheticEvent, useState } from 'react'
+import React, { SyntheticEvent, useEffect, useState } from 'react'
 import { Brands, ProductObj } from '@/helpers/types/fetypes'
 import { DropDown } from '../DropDown'
 import { Product } from '../Product'
 import { ProductFilter } from '../ProductFilter'
+import { comparePrice, compareName, compareDate } from '@/helpers/fctns'
 
 type BrandProps = {
 	brandDtl: Brands[],
@@ -22,14 +23,20 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		}
 		return productsFiltered
 	})
-
 	const [sortBy, setSortBy] = useState('Newest')
+
+	useEffect(() => {
+		const sortedList: ProductObj[] = [...filteredResults]
+		sortedList.sort(compareName)
+		setFilteredResults(sortedList)
+		// setFilteredResults(sortedList)
+	}, [sortBy])
 
 	const onSortChange = (e: SyntheticEvent<Element, Event>, value: string | null): void => {
 		e.preventDefault()
 		setSortBy(value!)
 	}
-	// console.log(filteredResults)
+	console.log(filteredResults)
 	return (
 		<main className='p-8 bg-gray-100 flex-1'>
 			<div>

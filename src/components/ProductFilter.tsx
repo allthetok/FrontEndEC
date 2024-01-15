@@ -28,27 +28,28 @@ const ProductFilter = ({ brandReq, brandSelect }: ProductFilterProps) => {
 	// console.log(brandSelect.join('?brand='))
 
 	const handleRefresh = (brandName: string, checked: boolean) => {
+		let queryPath = ''
 		if (checked) {
 			if (brandSelect.filter((name: string) => name !== brandName).length === 0) { //only current brand active
-				router.replace('/products')
+				queryPath = '/products'
 			}
 			else if (brandSelect.length === 5) { //all products are selected
-				router.replace(`/products?brand=${brandName}`, { scroll: false })
+				queryPath = `/products?brand=${brandName}`
 			}
 			else { //other brands are selected, remove this from path
-				const queryPath = '/products?brand=' + brandSelect.filter((name: string) => name !== brandName).join('&brand=')
-				router.replace(queryPath, { scroll: false })
+				queryPath = '/products?brand=' + brandSelect.filter((name: string) => name !== brandName).join('&brand=')
 			}
 		}
 		else {
 			if (brandSelect.filter((name: string) => name !== brandName).length !== 0) { //other brand active, update current path to include them and now include new brand to filter on
-				const queryPath = '/products?brand=' + brandSelect.join('&brand=') + `&brand=${brandName}`
-				router.replace(queryPath, { scroll: false })
+				queryPath = '/products?brand=' + brandSelect.join('&brand=') + `&brand=${brandName}`
 			}
 			else { //no brands active (edge case that may never occur)
-				router.replace(`?brand=${brandName}`, { scroll: false })
+				queryPath = `?brand=${brandName}`
 			}
 		}
+
+		router.replace(queryPath, { scroll: false })
 		setTimeout(() => {
 			window.location.reload()
 		}, 200)
