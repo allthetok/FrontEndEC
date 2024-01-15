@@ -8,17 +8,22 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { DropDownOptionsSx, CheckBoxSx } from '@/sx/styling'
 import './ProductList.css'
 import { usePathname, useRouter } from 'next/navigation'
+import { Brands } from '@/helpers/types/fetypes'
 
-// type ProductFilterProps = {}
+type ProductFilterProps = {
+	brandReq: Brands[]
+	brandSelect: string[]
+}
 
-const ProductFilter = ({ brandReq }: any) => {
+
+const ProductFilter = ({ brandReq, brandSelect }: ProductFilterProps) => {
 	const [brandOptions, setBrandOptions] = useState(true)
 	const [modelOptions, setModelOptions] = useState(false)
 	const [editionOptions, setEditionOptions] = useState(false)
 
 	const curPath= usePathname().replaceAll('%20', ' ').replace('/products/','')
 	const router = useRouter()
-	console.log(curPath)
+	// console.log(curPath)
 	// console.log(router)
 
 	return (
@@ -36,7 +41,8 @@ const ProductFilter = ({ brandReq }: any) => {
 					<FormGroup>
 						{homeLinks.map((indBrand: any, index: number) => (
 							<Link href={indBrand.link} key={index}>
-								<FormControlLabel checked={curPath.includes(indBrand.name) || curPath === ''} control={<Checkbox sx={CheckBoxSx} />} label={indBrand.name}/>
+								{/* <FormControlLabel checked={curPath.includes(indBrand.name) || curPath === ''} control={<Checkbox sx={CheckBoxSx} />} label={indBrand.name}/> */}
+								<FormControlLabel checked={brandSelect.includes(indBrand.name)} control={<Checkbox sx={CheckBoxSx} />} label={indBrand.name}/>
 							</Link>
 						))}
 					</FormGroup>

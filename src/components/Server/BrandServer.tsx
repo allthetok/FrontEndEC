@@ -29,7 +29,7 @@ const BrandServer = ({ brandDtl }: BrandProps) => {
 		setSortBy(value!)
 	}
 	// console.log(filteredResults)
-	// console.log(brandDtl)
+	console.log(brandDtl.map((indBrand: Brands) => indBrand.name))
 	return (
 		<main className='p-8 bg-gray-100 flex-1'>
 			<div>
@@ -50,7 +50,7 @@ const BrandServer = ({ brandDtl }: BrandProps) => {
 			</div>
 			<section className='pb=24 pt-6' aria-labelledby='products-heading'>
 				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
-					<ProductFilter />
+					<ProductFilter brandSelect={brandDtl.map((indBrand: Brands) => indBrand.name)} />
 					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8'>
 						{filteredResults.map((product: ProductObj, index: number) => (
 							<Product product={product} key={index} />
