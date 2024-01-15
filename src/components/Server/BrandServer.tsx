@@ -4,7 +4,7 @@ import { Brands, ProductObj } from '@/helpers/types/fetypes'
 import { DropDown } from '../DropDown'
 import { Product } from '../Product'
 import { ProductFilter } from '../ProductFilter'
-import { comparePrice, compareName, compareDate } from '@/helpers/fctns'
+import { compareBySortOption } from '@/helpers/fctns'
 
 type BrandProps = {
 	brandDtl: Brands[],
@@ -27,9 +27,8 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 
 	useEffect(() => {
 		const sortedList: ProductObj[] = [...filteredResults]
-		sortedList.sort(compareName)
+		sortedList.sort(compareBySortOption(sortBy))
 		setFilteredResults(sortedList)
-		// setFilteredResults(sortedList)
 	}, [sortBy])
 
 	const onSortChange = (e: SyntheticEvent<Element, Event>, value: string | null): void => {

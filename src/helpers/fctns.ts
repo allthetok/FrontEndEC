@@ -78,7 +78,7 @@ const formatPageQuery = (inputQuery: string | string []) => {
 
 const comparePriceHigh = (ind1: ProductObj, ind2: ProductObj) => {
 	if (ind1.price > ind2.price) {
-		return 1
+		return -1
 	}
 	else if (ind1.price < ind2.price) {
 		return 1
@@ -114,10 +114,10 @@ const compareName = (ind1: ProductObj, ind2: ProductObj) => {
 
 const compareDate = (ind1: ProductObj, ind2: ProductObj) => {
 	if (ind1.releaseDate > ind2.releaseDate) {
-		return 1
+		return -1
 	}
 	else if (ind1.releaseDate < ind2.releaseDate) {
-		return -1
+		return 1
 	}
 	else {
 		return 0
