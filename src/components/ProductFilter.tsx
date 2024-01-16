@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { SyntheticEvent, useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { Brands, Models, ProductObj } from '@/helpers/types/fetypes'
 import Link from 'next/link'
@@ -15,11 +15,12 @@ type ProductFilterProps = {
 	brandReq: Brands[]
 	brandSelect: string[],
 	modelsAvailable: Models[],
+	handleModelClick: (value: string | null) => void,
 	productsAvailable: ProductObj[]
 }
 
 
-const ProductFilter = ({ brandReq, brandSelect, modelsAvailable, productsAvailable }: ProductFilterProps) => {
+const ProductFilter = ({ brandReq, brandSelect, modelsAvailable, handleModelClick, productsAvailable }: ProductFilterProps) => {
 	const [brandOptions, setBrandOptions] = useState(true)
 	const [modelOptions, setModelOptions] = useState(false)
 	const [editionOptions, setEditionOptions] = useState(false)
@@ -93,8 +94,8 @@ const ProductFilter = ({ brandReq, brandSelect, modelsAvailable, productsAvailab
 				{modelOptions === false ? <></> :
 					<FormGroup>
 						{modelsAvailable.map((indModel: Models, index: number) => (
-							<div key={index}>
-								<FormControlLabel checked={true} control={<Checkbox sx={CheckBoxSx} />} label={indModel.name} sx={LabelSx}/>
+							<div key={index} onClick={() => handleModelClick(indModel.name)}>
+								<FormControlLabel checked={indModel.active} control={<Checkbox sx={CheckBoxSx} />} label={indModel.name} sx={LabelSx}/>
 							</div>
 						))}
 					</FormGroup>

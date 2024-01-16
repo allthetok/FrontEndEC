@@ -27,7 +27,7 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		const modelsFiltered: Models[] = []
 		for (let i = 0; i < brandDtl.length; i++) {
 			for (let j = 0; j < brandDtl[i].allModels.length; j++) {
-				modelsFiltered.push(brandDtl[i].allModels[j])
+				modelsFiltered.push( { ...brandDtl[i].allModels[j], active: true })
 			}
 		}
 		return modelsFiltered
@@ -35,22 +35,31 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 
 	const [sortBy, setSortBy] = useState('Newest')
 
-
-	// console.log(brandDtl.map((indBrand: Brands) => indBrand.allModels.map((indModel: Models) => indModel.allProducts)))
-	console.log(filteredResults)
-	// console.log(modelResults)
-
 	useEffect(() => {
 		const sortedList: ProductObj[] = [...filteredResults]
 		sortedList.sort(compareBySortOption(sortBy))
 		setFilteredResults(sortedList)
 	}, [sortBy])
 
+
+	// console.log(brandDtl.map((indBrand: Brands) => indBrand.allModels.map((indModel: Models) => indModel.allProducts)))
+	// console.log(filteredResults)
+	console.log(modelResults)
+
 	const onSortChange = (e: SyntheticEvent<Element, Event>, value: string | null): void => {
 		e.preventDefault()
 		setSortBy(value!)
 	}
-	// console.log(filteredResults)
+	const handleModelClick = (value: string | null): void => {
+		// e.preventDefault()
+		const oldModelResults: Models[] = [...modelResults]
+		const toUpdateMod = oldModelResults.findIndex((indModel: Models) => indModel.name === value)
+		oldModelResults[toUpdateMod].active = !oldModelResults[toUpdateMod].active
+		setModelResults(oldModelResults)
+	}
+
+
+
 	return (
 		<main className='p-8 bg-gray-100 flex-1'>
 			<div>
@@ -71,7 +80,7 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 			</div>
 			<section className='pb=24 pt-6' aria-labelledby='products-heading'>
 				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
-					<ProductFilter brandReq={brandDtl} brandSelect={brandsParam} modelsAvailable={modelResults} productsAvailable={filteredResults}/>
+					<ProductFilter brandReq={brandDtl} brandSelect={brandsParam} modelsAvailable={modelResults} handleModelClick={handleModelClick} productsAvailable={filteredResults}/>
 					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8'>
 						{filteredResults.map((product: ProductObj, index: number) => (
 							<Product product={product} key={index} />

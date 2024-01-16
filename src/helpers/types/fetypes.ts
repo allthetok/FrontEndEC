@@ -68,7 +68,8 @@ interface Models {
 	name: string,
 	brandId: number,
 	brand: string,
-	allProducts: ProductObj[]
+	allProducts: ProductObj[],
+	active?: boolean
 }
 
 
