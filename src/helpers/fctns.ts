@@ -1,4 +1,4 @@
-import { FullBrandConfig, FullProductConfig, ProductObj } from './types/fetypes'
+import { Brands, FullBrandConfig, FullProductConfig, ProductObj } from './types/fetypes'
 
 const formatDate = (inpDate: Date) => `${inpDate.toLocaleDateString('default', { month: 'long' })} ${inpDate.getUTCDate()}, ${inpDate.getFullYear()}`
 
@@ -137,4 +137,16 @@ const compareBySortOption = (sortBy: string) => {
 	}
 }
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, formatPageQuery, compareBySortOption }
+const retrieveOriginalResults = (brandDtl: Brands[]) => {
+	const allProducts: ProductObj[] = []
+	for (let i = 0; i < brandDtl.length; i++) {
+		for (let j = 0; j < brandDtl[i].allModels.length; j++) {
+			for (let k = 0; k < brandDtl[i].allModels[j].allProducts.length; k++) {
+				allProducts.push(brandDtl[i].allModels[j].allProducts[k])
+			}
+		}
+	}
+	return allProducts
+}
+
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, formatPageQuery, compareBySortOption, retrieveOriginalResults }

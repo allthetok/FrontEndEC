@@ -4,7 +4,7 @@ import { Brands, Models, ProductObj } from '@/helpers/types/fetypes'
 import { DropDown } from '../DropDown'
 import { Product } from '../Product'
 import { ProductFilter } from '../ProductFilter'
-import { compareBySortOption } from '@/helpers/fctns'
+import { compareBySortOption, retrieveOriginalResults } from '@/helpers/fctns'
 
 type BrandProps = {
 	brandDtl: Brands[],
@@ -12,17 +12,18 @@ type BrandProps = {
 }
 
 const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
-	const [filteredResults, setFilteredResults] = useState(() => {
-		const productsFiltered: ProductObj[] = []
-		for (let i = 0; i < brandDtl.length; i++) {
-			for (let j = 0; j < brandDtl[i].allModels.length; j++) {
-				for (let k = 0; k < brandDtl[i].allModels[j].allProducts.length; k++) {
-					productsFiltered.push(brandDtl[i].allModels[j].allProducts[k])
-				}
-			}
-		}
-		return productsFiltered
-	})
+	const [filteredResults, setFilteredResults] = useState(retrieveOriginalResults(brandDtl))
+	// () => {
+	// 	const productsFiltered: ProductObj[] = []
+	// 	for (let i = 0; i < brandDtl.length; i++) {
+	// 		for (let j = 0; j < brandDtl[i].allModels.length; j++) {
+	// 			for (let k = 0; k < brandDtl[i].allModels[j].allProducts.length; k++) {
+	// 				productsFiltered.push(brandDtl[i].allModels[j].allProducts[k])
+	// 			}
+	// 		}
+	// 	}
+	// 	return productsFiltered
+	// })
 	const [modelResults, setModelResults] = useState(() => {
 		const modelsFiltered: Models[] = []
 		for (let i = 0; i < brandDtl.length; i++) {
@@ -35,11 +36,35 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 
 	const [sortBy, setSortBy] = useState('Newest')
 
+	// const retrieveOriginalResults = () => {
+	// 	const allProducts: ProductObj[] = []
+	// 	for (let i = 0; i < brandDtl.length; i++) {
+	// 		for (let j = 0; j < brandDtl[i].allModels.length; j++) {
+	// 			for (let k = 0; k < brandDtl[i].allModels[j].allProducts.length; k++) {
+	// 				allProducts.push(brandDtl[i].allModels[j].allProducts[k])
+	// 			}
+	// 		}
+	// 	}
+	// 	return allProducts
+	// }
+
+	const originalProducts = retrieveOriginalResults(brandDtl)
+	console.log(originalProducts)
+
 	useEffect(() => {
 		const sortedList: ProductObj[] = [...filteredResults]
 		sortedList.sort(compareBySortOption(sortBy))
 		setFilteredResults(sortedList)
 	}, [sortBy])
+
+	useEffect(() => {
+		const oldResults: ProductObj[] = [...originalProducts]
+		console.log(filteredResults)
+		const currentActiveModels: string[] = modelResults.filter((indModel: Models) => indModel.active).map((activeModel: Models) => activeModel.name)
+		const activeResults: ProductObj[] = oldResults.filter((indProduct: ProductObj) => currentActiveModels.includes(indProduct.modelName))
+		activeResults.sort(compareBySortOption(sortBy))
+		setFilteredResults(activeResults)
+	}, [modelResults])
 
 
 	// console.log(brandDtl.map((indBrand: Brands) => indBrand.allModels.map((indModel: Models) => indModel.allProducts)))
@@ -51,7 +76,6 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		setSortBy(value!)
 	}
 	const handleModelClick = (value: string | null): void => {
-		// e.preventDefault()
 		const oldModelResults: Models[] = [...modelResults]
 		const toUpdateMod = oldModelResults.findIndex((indModel: Models) => indModel.name === value)
 		oldModelResults[toUpdateMod].active = !oldModelResults[toUpdateMod].active
