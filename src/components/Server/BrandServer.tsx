@@ -77,14 +77,11 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		oldModelResults[toUpdateMod].active = !oldModelResults[toUpdateMod].active
 
 		const editionsMatch = oldEditionResults.filter((indEdition: ProductObj) => indEdition.modelName === value)
-		// if (editionsMatch.length === 1) {
-
-		// }
 		for (let i = 0; i < oldEditionResults.length; i++) {
 			if (editionsMatch.includes(oldEditionResults[i])) {
 				oldEditionResults[i] = {
 					...oldEditionResults[i],
-					active: false
+					active: oldModelResults[toUpdateMod].active
 				}
 			}
 		}
