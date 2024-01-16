@@ -13,17 +13,6 @@ type BrandProps = {
 
 const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 	const [filteredResults, setFilteredResults] = useState(retrieveOriginalResults(brandDtl))
-	// () => {
-	// 	const productsFiltered: ProductObj[] = []
-	// 	for (let i = 0; i < brandDtl.length; i++) {
-	// 		for (let j = 0; j < brandDtl[i].allModels.length; j++) {
-	// 			for (let k = 0; k < brandDtl[i].allModels[j].allProducts.length; k++) {
-	// 				productsFiltered.push(brandDtl[i].allModels[j].allProducts[k])
-	// 			}
-	// 		}
-	// 	}
-	// 	return productsFiltered
-	// })
 	const [modelResults, setModelResults] = useState(() => {
 		const modelsFiltered: Models[] = []
 		for (let i = 0; i < brandDtl.length; i++) {
@@ -36,18 +25,6 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 
 	const [sortBy, setSortBy] = useState('Newest')
 
-	// const retrieveOriginalResults = () => {
-	// 	const allProducts: ProductObj[] = []
-	// 	for (let i = 0; i < brandDtl.length; i++) {
-	// 		for (let j = 0; j < brandDtl[i].allModels.length; j++) {
-	// 			for (let k = 0; k < brandDtl[i].allModels[j].allProducts.length; k++) {
-	// 				allProducts.push(brandDtl[i].allModels[j].allProducts[k])
-	// 			}
-	// 		}
-	// 	}
-	// 	return allProducts
-	// }
-
 	const originalProducts = retrieveOriginalResults(brandDtl)
 	console.log(originalProducts)
 
@@ -59,7 +36,6 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 
 	useEffect(() => {
 		const oldResults: ProductObj[] = [...originalProducts]
-		console.log(filteredResults)
 		const currentActiveModels: string[] = modelResults.filter((indModel: Models) => indModel.active).map((activeModel: Models) => activeModel.name)
 		const activeResults: ProductObj[] = oldResults.filter((indProduct: ProductObj) => currentActiveModels.includes(indProduct.modelName))
 		activeResults.sort(compareBySortOption(sortBy))
@@ -79,7 +55,17 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		const oldModelResults: Models[] = [...modelResults]
 		const toUpdateMod = oldModelResults.findIndex((indModel: Models) => indModel.name === value)
 		oldModelResults[toUpdateMod].active = !oldModelResults[toUpdateMod].active
-		setModelResults(oldModelResults)
+		if (oldModelResults.filter((indModel: Models) => indModel.active).length === 0) {
+			setModelResults(oldModelResults.map((indModel: Models) => (
+				{
+					...indModel,
+					active: true
+				}
+			)))
+		}
+		else {
+			setModelResults(oldModelResults)
+		}
 	}
 
 
