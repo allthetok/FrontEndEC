@@ -9,6 +9,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { DropDownOptionsSx, CheckBoxSx, LabelSx } from '@/sx/styling'
 import './ProductList.css'
+import { compareBySortOption, compareName } from '@/helpers/fctns'
 
 
 type ProductFilterProps = {
@@ -22,7 +23,7 @@ type ProductFilterProps = {
 
 const ProductFilter = ({ brandReq, brandSelect, modelsAvailable, handleModelClick, productsAvailable }: ProductFilterProps) => {
 	const [brandOptions, setBrandOptions] = useState(true)
-	const [modelOptions, setModelOptions] = useState(false)
+	const [modelOptions, setModelOptions] = useState(true)
 	const [editionOptions, setEditionOptions] = useState(false)
 
 	const curPath= usePathname().replaceAll('%20', ' ').replace('/products/','')
@@ -93,7 +94,7 @@ const ProductFilter = ({ brandReq, brandSelect, modelsAvailable, handleModelClic
 				</Button>
 				{modelOptions === false ? <></> :
 					<FormGroup>
-						{modelsAvailable.map((indModel: Models, index: number) => (
+						{modelsAvailable.sort(compareName).map((indModel: Models, index: number) => (
 							<div key={index} onClick={() => handleModelClick(indModel.name)}>
 								<FormControlLabel checked={indModel.active} control={<Checkbox sx={CheckBoxSx} />} label={indModel.name} sx={LabelSx}/>
 							</div>

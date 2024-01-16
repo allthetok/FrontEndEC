@@ -17,7 +17,9 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		const modelsFiltered: Models[] = []
 		for (let i = 0; i < brandDtl.length; i++) {
 			for (let j = 0; j < brandDtl[i].allModels.length; j++) {
+				// if (!modelsFiltered.includes( { ...brandDtl[i].allModels[j], active: true } )) {
 				modelsFiltered.push( { ...brandDtl[i].allModels[j], active: true })
+				// }
 			}
 		}
 		return modelsFiltered
@@ -26,7 +28,8 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 	const [sortBy, setSortBy] = useState('Newest')
 
 	const originalProducts = retrieveOriginalResults(brandDtl)
-	console.log(originalProducts)
+	// console.log(originalProducts)
+	console.log(filteredResults)
 
 	useEffect(() => {
 		const sortedList: ProductObj[] = [...filteredResults]
@@ -37,6 +40,7 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 	useEffect(() => {
 		const oldResults: ProductObj[] = [...originalProducts]
 		const currentActiveModels: string[] = modelResults.filter((indModel: Models) => indModel.active).map((activeModel: Models) => activeModel.name)
+		console.log(currentActiveModels)
 		const activeResults: ProductObj[] = oldResults.filter((indProduct: ProductObj) => currentActiveModels.includes(indProduct.modelName))
 		activeResults.sort(compareBySortOption(sortBy))
 		setFilteredResults(activeResults)
