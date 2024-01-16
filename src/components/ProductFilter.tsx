@@ -25,7 +25,7 @@ type ProductFilterProps = {
 const ProductFilter = ({ brandReq, brandSelect, modelsAvailable, handleModelClick, editionsAvailable, handleEditionClick }: ProductFilterProps) => {
 	const [brandOptions, setBrandOptions] = useState(true)
 	const [modelOptions, setModelOptions] = useState(true)
-	const [editionOptions, setEditionOptions] = useState(false)
+	const [editionOptions, setEditionOptions] = useState(true)
 
 	const curPath= usePathname().replaceAll('%20', ' ').replace('/products/','')
 	const router = useRouter()

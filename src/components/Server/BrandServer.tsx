@@ -30,9 +30,6 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 	const [sortBy, setSortBy] = useState('Newest')
 
 	const originalProducts = retrieveOriginalResults(brandDtl)
-	// console.log(originalProducts)
-	// console.log(filteredResults)
-	console.log(editionResults)
 
 	useEffect(() => {
 		const sortedList: ProductObj[] = [...filteredResults]
@@ -43,25 +40,29 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 	useEffect(() => {
 		const oldResults: ProductObj[] = [...originalProducts]
 		const currentActiveModels: string[] = modelResults.filter((indModel: Models) => indModel.active).map((activeModel: Models) => activeModel.name)
-		console.log(currentActiveModels)
+		// console.log(currentActiveModels)
 		const activeResults: ProductObj[] = oldResults.filter((indProduct: ProductObj) => currentActiveModels.includes(indProduct.modelName))
 		activeResults.sort(compareBySortOption(sortBy))
 		setFilteredResults(activeResults)
 	}, [modelResults])
 
-	// useEffect(() => {
-	// 	const oldResults: ProductObj[] = [...originalProducts]
-	// 	const currentActiveEditions: string[] = editionResults.filter((indEdition: ProductObj) => indEdition.active).map((activeEdition: ProductObj) => activeEdition.name)
-	// 	console.log(currentActiveModels)
-	// 	const activeResults: ProductObj[] = oldResults.filter((indProduct: ProductObj) => currentActiveModels.includes(indProduct.modelName))
-	// 	activeResults.sort(compareBySortOption(sortBy))
-	// 	setFilteredResults(activeResults)
-	// }, [editionResults])
+	useEffect(() => {
+		const oldResults: ProductObj[] = [...originalProducts]
+		const currentActiveEditions: string[] = editionResults.filter((indEdition: ProductObj) => indEdition.active).map((activeEdition: ProductObj) => activeEdition.name)
+		const currentActiveModels: string[] = modelResults.filter((indModel: Models) => indModel.active).map((activeModel: Models) => activeModel.name)
+		console.log(currentActiveEditions)
+		const activeResults: ProductObj[] = oldResults.filter((indProduct: ProductObj) => currentActiveEditions.includes(indProduct.name) && currentActiveModels.includes(indProduct.modelName))
+		activeResults.sort(compareBySortOption(sortBy))
+		setFilteredResults(activeResults)
+	}, [editionResults])
 
 
+	// console.log(originalProducts)
+	// console.log(filteredResults)
+	// console.log(editionResults)
 	// console.log(brandDtl.map((indBrand: Brands) => indBrand.allModels.map((indModel: Models) => indModel.allProducts)))
 	// console.log(filteredResults)
-	console.log(modelResults)
+	// console.log(modelResults)
 
 	const onSortChange = (e: SyntheticEvent<Element, Event>, value: string | null): void => {
 		e.preventDefault()
@@ -70,8 +71,24 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 
 	const handleModelClick = (value: string | null): void => {
 		const oldModelResults: Models[] = [...modelResults]
+		const oldEditionResults: ProductObj[] = [...editionResults]
+
 		const toUpdateMod = oldModelResults.findIndex((indModel: Models) => indModel.name === value)
 		oldModelResults[toUpdateMod].active = !oldModelResults[toUpdateMod].active
+
+		const editionsMatch = oldEditionResults.filter((indEdition: ProductObj) => indEdition.modelName === value)
+		// if (editionsMatch.length === 1) {
+
+		// }
+		for (let i = 0; i < oldEditionResults.length; i++) {
+			if (editionsMatch.includes(oldEditionResults[i])) {
+				oldEditionResults[i] = {
+					...oldEditionResults[i],
+					active: false
+				}
+			}
+		}
+
 		if (oldModelResults.filter((indModel: Models) => indModel.active).length === 0) {
 			setModelResults(oldModelResults.map((indModel: Models) => (
 				{
@@ -79,9 +96,11 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 					active: true
 				}
 			)))
+			setEditionResults(retrieveSubOptions(brandDtl, 'editions') as ProductObj[])
 		}
 		else {
 			setModelResults(oldModelResults)
+			setEditionResults(oldEditionResults)
 		}
 	}
 
