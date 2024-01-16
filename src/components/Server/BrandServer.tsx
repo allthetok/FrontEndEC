@@ -40,6 +40,10 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 	useEffect(() => {
 		const oldResults: ProductObj[] = [...originalProducts]
 		const currentActiveModels: string[] = modelResults.filter((indModel: Models) => indModel.active).map((activeModel: Models) => activeModel.name)
+
+		const currentActiveEditions: string[] = editionResults.filter((indEdition: ProductObj) => indEdition.active).map((activeEdition: ProductObj) => activeEdition.name)
+
+
 		// console.log(currentActiveModels)
 		const activeResults: ProductObj[] = oldResults.filter((indProduct: ProductObj) => currentActiveModels.includes(indProduct.modelName))
 		activeResults.sort(compareBySortOption(sortBy))
@@ -104,8 +108,18 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 	const handleEditionClick = (value: string | null): void => {
 		const oldEditionResults: ProductObj[] = [...editionResults]
 		const toUpdateMod = oldEditionResults.findIndex((indEdition: ProductObj) => indEdition.name === value)
+
+		const oldModelResults: Models[] = [...modelResults]
+		const modelsMatch = oldModelResults.findIndex((indModel: Models) => indModel.name === oldEditionResults[toUpdateMod].modelName)
+
 		oldEditionResults[toUpdateMod].active = !oldEditionResults[toUpdateMod].active
 		if (oldEditionResults.filter((indEdition: ProductObj) => indEdition.active).length === 0) {
+			setModelResults(oldModelResults.map((indModel: Models) => (
+				{
+					...indModel,
+					active: true
+				}
+			)))
 			setEditionResults(oldEditionResults.map((indEdition: ProductObj) => (
 				{
 					...indEdition,
@@ -114,6 +128,16 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 			)))
 		}
 		else {
+			if (oldEditionResults[toUpdateMod].active && !oldModelResults[modelsMatch].active) { //edition is active, model is inactive
+				oldModelResults[modelsMatch].active = true
+				setModelResults(oldModelResults)
+			}
+			else if (oldModelResults[modelsMatch].active && oldEditionResults.filter((indEdition: ProductObj) => indEdition.active && indEdition.modelName === oldModelResults[modelsMatch].name).length === 0) { //model is active,
+				console.log('model is active')
+				console.log(oldEditionResults.filter((indEdition: ProductObj) => indEdition.active && indEdition.name === value))
+				oldModelResults[modelsMatch].active = false
+				setModelResults(oldModelResults)
+			}
 			setEditionResults(oldEditionResults)
 		}
 	}
