@@ -17,19 +17,18 @@ type ProductFilterProps = {
 	brandSelect: string[],
 	modelsAvailable: Models[],
 	handleModelClick: (value: string | null) => void,
-	productsAvailable: ProductObj[]
+	editionsAvailable: ProductObj[],
+	handleEditionClick: (value: string | null) => void,
 }
 
 
-const ProductFilter = ({ brandReq, brandSelect, modelsAvailable, handleModelClick, productsAvailable }: ProductFilterProps) => {
+const ProductFilter = ({ brandReq, brandSelect, modelsAvailable, handleModelClick, editionsAvailable, handleEditionClick }: ProductFilterProps) => {
 	const [brandOptions, setBrandOptions] = useState(true)
 	const [modelOptions, setModelOptions] = useState(true)
 	const [editionOptions, setEditionOptions] = useState(false)
 
 	const curPath= usePathname().replaceAll('%20', ' ').replace('/products/','')
 	const router = useRouter()
-
-	// console.log(brandSelect.join('?brand='))
 
 	const handleRefresh = (brandName: string, checked: boolean) => {
 		let queryPath = ''
@@ -113,9 +112,9 @@ const ProductFilter = ({ brandReq, brandSelect, modelsAvailable, handleModelClic
 				</Button>
 				{editionOptions === false ? <></> :
 					<FormGroup>
-						{productsAvailable.map((indProduct: ProductObj, index: number) => (
-							<div key={index}>
-								<FormControlLabel checked={true} control={<Checkbox sx={CheckBoxSx} />} label={indProduct.name} sx={LabelSx}/>
+						{editionsAvailable.sort(compareName).map((indEdition: ProductObj, index: number) => (
+							<div key={index} onClick={() => handleEditionClick(indEdition.name)}>
+								<FormControlLabel checked={indEdition.active} control={<Checkbox sx={CheckBoxSx} />} label={indEdition.name} sx={LabelSx}/>
 							</div>
 						))}
 					</FormGroup>

@@ -16,7 +16,8 @@ interface ProductObj {
 	colors: Colors[],
 	price: number,
 	description: string,
-	sizes: ColorSizes[]
+	sizes: ColorSizes[],
+	active?: boolean
 }
 
 interface FullProductConfig {

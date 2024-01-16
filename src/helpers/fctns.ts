@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import { Brands, FullBrandConfig, FullProductConfig, Models, ProductObj } from './types/fetypes'
 
 const formatDate = (inpDate: Date) => `${inpDate.toLocaleDateString('default', { month: 'long' })} ${inpDate.getUTCDate()}, ${inpDate.getFullYear()}`
@@ -149,6 +150,23 @@ const retrieveOriginalResults = (brandDtl: Brands[]) => {
 	return allProducts
 }
 
+const retrieveSubOptions: (brandDtl: Brands[], specified: string) => Models[] | ProductObj[] = (brandDtl: Brands[], specified: string) =>  {
+	switch (specified) {
+	case 'models':
+		const modelsFiltered: Models[] = []
+		for (let i = 0; i < brandDtl.length; i++) {
+			for (let j = 0; j < brandDtl[i].allModels.length; j++) {
+				modelsFiltered.push({ ...brandDtl[i].allModels[j], active: true })
+			}
+		}
+		return modelsFiltered
+	case 'editions':
+		const editionsFiltered: ProductObj[] = retrieveOriginalResults(brandDtl)
+		return editionsFiltered.map((indProduct: ProductObj) => ({ ...indProduct, active: true }))
+	default:
+		return []
+	}
+}
 
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults }
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions }

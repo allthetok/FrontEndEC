@@ -4,7 +4,7 @@ import { Brands, Models, ProductObj } from '@/helpers/types/fetypes'
 import { DropDown } from '../DropDown'
 import { Product } from '../Product'
 import { ProductFilter } from '../ProductFilter'
-import { compareBySortOption, retrieveOriginalResults } from '@/helpers/fctns'
+import { compareBySortOption, retrieveOriginalResults, retrieveSubOptions } from '@/helpers/fctns'
 
 type BrandProps = {
 	brandDtl: Brands[],
@@ -12,24 +12,27 @@ type BrandProps = {
 }
 
 const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
-	const [filteredResults, setFilteredResults] = useState(retrieveOriginalResults(brandDtl))
-	const [modelResults, setModelResults] = useState(() => {
-		const modelsFiltered: Models[] = []
-		for (let i = 0; i < brandDtl.length; i++) {
-			for (let j = 0; j < brandDtl[i].allModels.length; j++) {
-				// if (!modelsFiltered.includes( { ...brandDtl[i].allModels[j], active: true } )) {
-				modelsFiltered.push( { ...brandDtl[i].allModels[j], active: true })
-				// }
-			}
-		}
-		return modelsFiltered
-	})
+	const [filteredResults, setFilteredResults] = useState(retrieveOriginalResults(brandDtl) as ProductObj[])
+	const [modelResults, setModelResults] = useState(retrieveSubOptions(brandDtl, 'models') as Models[])
+	const [editionResults, setEditionResults] = useState(retrieveSubOptions(brandDtl, 'editions') as ProductObj[])
+
+
+	// const [modelResults, setModelResults] = useState(() => {
+	// 	const modelsFiltered: Models[] = []
+	// 	for (let i = 0; i < brandDtl.length; i++) {
+	// 		for (let j = 0; j < brandDtl[i].allModels.length; j++) {
+	// 			modelsFiltered.push( { ...brandDtl[i].allModels[j], active: true })
+	// 		}
+	// 	}
+	// 	return modelsFiltered
+	// })
 
 	const [sortBy, setSortBy] = useState('Newest')
 
 	const originalProducts = retrieveOriginalResults(brandDtl)
 	// console.log(originalProducts)
-	console.log(filteredResults)
+	// console.log(filteredResults)
+	console.log(editionResults)
 
 	useEffect(() => {
 		const sortedList: ProductObj[] = [...filteredResults]
@@ -46,6 +49,15 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		setFilteredResults(activeResults)
 	}, [modelResults])
 
+	// useEffect(() => {
+	// 	const oldResults: ProductObj[] = [...originalProducts]
+	// 	const currentActiveEditions: string[] = editionResults.filter((indEdition: ProductObj) => indEdition.active).map((activeEdition: ProductObj) => activeEdition.name)
+	// 	console.log(currentActiveModels)
+	// 	const activeResults: ProductObj[] = oldResults.filter((indProduct: ProductObj) => currentActiveModels.includes(indProduct.modelName))
+	// 	activeResults.sort(compareBySortOption(sortBy))
+	// 	setFilteredResults(activeResults)
+	// }, [editionResults])
+
 
 	// console.log(brandDtl.map((indBrand: Brands) => indBrand.allModels.map((indModel: Models) => indModel.allProducts)))
 	// console.log(filteredResults)
@@ -55,6 +67,7 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		e.preventDefault()
 		setSortBy(value!)
 	}
+
 	const handleModelClick = (value: string | null): void => {
 		const oldModelResults: Models[] = [...modelResults]
 		const toUpdateMod = oldModelResults.findIndex((indModel: Models) => indModel.name === value)
@@ -69,6 +82,23 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		}
 		else {
 			setModelResults(oldModelResults)
+		}
+	}
+
+	const handleEditionClick = (value: string | null): void => {
+		const oldEditionResults: ProductObj[] = [...editionResults]
+		const toUpdateMod = oldEditionResults.findIndex((indEdition: ProductObj) => indEdition.name === value)
+		oldEditionResults[toUpdateMod].active = !oldEditionResults[toUpdateMod].active
+		if (oldEditionResults.filter((indEdition: ProductObj) => indEdition.active).length === 0) {
+			setEditionResults(oldEditionResults.map((indEdition: ProductObj) => (
+				{
+					...indEdition,
+					active: true
+				}
+			)))
+		}
+		else {
+			setEditionResults(oldEditionResults)
 		}
 	}
 
@@ -94,7 +124,7 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 			</div>
 			<section className='pb=24 pt-6' aria-labelledby='products-heading'>
 				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
-					<ProductFilter brandReq={brandDtl} brandSelect={brandsParam} modelsAvailable={modelResults} handleModelClick={handleModelClick} productsAvailable={filteredResults}/>
+					<ProductFilter brandReq={brandDtl} brandSelect={brandsParam} modelsAvailable={modelResults} handleModelClick={handleModelClick} editionsAvailable={editionResults} handleEditionClick={handleEditionClick}/>
 					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8'>
 						{filteredResults.map((product: ProductObj, index: number) => (
 							<Product product={product} key={index} />
