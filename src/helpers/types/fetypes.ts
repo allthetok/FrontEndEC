@@ -38,6 +38,15 @@ interface FullBrandConfig {
 	}
 }
 
+interface FullModelConfig {
+	method: string,
+	url: string,
+	headers: object,
+	data: {
+		model: string
+	}
+}
+
 interface Colors {
 	color: string,
 	images: string[]
@@ -74,4 +83,4 @@ interface Models {
 }
 
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type Brands, type Models }
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type Brands, type Models }

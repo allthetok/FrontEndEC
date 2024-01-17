@@ -1,15 +1,9 @@
 /* eslint-disable no-case-declarations */
-import { Brands, FullBrandConfig, FullProductConfig, Models, ProductObj } from './types/fetypes'
+import { Brands, FullBrandConfig, FullModelConfig, FullProductConfig, Models, ProductObj } from './types/fetypes'
 
 const formatDate = (inpDate: Date) => `${inpDate.toLocaleDateString('default', { month: 'long' })} ${inpDate.getUTCDate()}, ${inpDate.getFullYear()}`
 
 const createProductDtlConfig = (method: string, endpoint: string, productReq: string | string[]): FullProductConfig => {
-	const productSpec = (productReq: string | string[]) => {
-		if (typeof productReq !== 'string') {
-			return productReq.join('')
-		}
-		return productReq
-	}
 	return {
 		method: method,
 		url: `http://localhost:3002/api/shoes/${endpoint}`,
@@ -17,18 +11,13 @@ const createProductDtlConfig = (method: string, endpoint: string, productReq: st
 			'Content-Type': 'application/json'
 		},
 		data: {
-			product: productSpec(productReq)
+			product: handleParamConform(productReq)
 		}
 	}
 }
 
 const createDeprecatedBrandDtlConfig = (method: string, endpoint: string, brandReq: string | string[]): FullBrandConfig => {
-	const brandSpec = (brandReq: string | string[]) => {
-		if (typeof brandReq !== 'string') {
-			return brandReq.join('')
-		}
-		return brandReq
-	}
+
 	return {
 		method: method,
 		url: `http://localhost:3002/api/shoes/${endpoint}`,
@@ -36,18 +25,12 @@ const createDeprecatedBrandDtlConfig = (method: string, endpoint: string, brandR
 			'Content-Type': 'application/json'
 		},
 		data: {
-			brand: brandSpec(brandReq)
+			brand: handleParamConform(brandReq)
 		}
 	}
 }
 
 const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string | string[] | undefined): FullBrandConfig => {
-	const brandSpec = (brandReq: string | string[]) => {
-		if (typeof brandReq === 'string') {
-			return [brandReq]
-		}
-		return brandReq
-	}
 	return brandReq ? {
 		method: method,
 		url: `http://localhost:3002/api/shoes/${endpoint}`,
@@ -55,7 +38,7 @@ const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string
 			'Content-Type': 'application/json'
 		},
 		data: {
-			brand: brandSpec(brandReq)
+			brand: handleParamConform(brandReq)
 		}
 	} : {
 		method: method,
@@ -67,6 +50,26 @@ const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string
 			brand: ['all']
 		}
 	}
+}
+
+const createModelDtlConfig = (method: string, endpoint: string, modelReq: string | string[]): FullModelConfig => {
+	return {
+		method: method,
+		url: `http://localhost:3002/api/shoes/${endpoint}`,
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		data: {
+			model: handleParamConform(modelReq)
+		}
+	}
+}
+
+const handleParamConform = (inputReq: string | string[]) => {
+	if (typeof inputReq !== 'string') {
+		return inputReq.join('')
+	}
+	return inputReq
 }
 
 const formatPageQuery = (inputQuery: string | string []) => {
@@ -169,4 +172,4 @@ const retrieveSubOptions: (brandDtl: Brands[], specified: string) => Models[] | 
 }
 
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions }
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions }
