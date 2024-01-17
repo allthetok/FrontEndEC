@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react'
 import axios, { AxiosError, AxiosResponse } from 'axios'
-import { createProductDtlConfig, formatPageQuery } from '@/helpers/fctns'
-import { FullProductConfig, ProductObj, ProductResponseObj } from '@/helpers/types/fetypes'
+import { createModelDtlConfig, formatPageQuery } from '@/helpers/fctns'
+import { FullModelConfig, Models } from '@/helpers/types/fetypes'
 import { ModelServer } from '@/components/Server/ModelsServer'
 
 const ModelPage = async ({ params }: { params: { model: string | string[] } }) => {
@@ -15,25 +15,22 @@ const ModelPage = async ({ params }: { params: { model: string | string[] } }) =
 }
 
 const getData = async (model: string | string[]) => {
-	const productSearchConfig = createProductDtlConfig('post', 'model', formatPageQuery(model))
+	const modelSearchConfig = createModelDtlConfig('post', 'model', formatPageQuery(model))
 	return {
-		modelObj: await getModelDtl(productSearchConfig)
+		modelObj: await getModelDtl(modelSearchConfig)
 	}
 }
 
-const getModelDtl = async (productConfig: FullProductConfig) => {
-	const resultProductObj = await axios(productConfig)
+const getModelDtl = async (modelConfig: FullModelConfig) => {
+	const resultModelObj = await axios(modelConfig)
 		.then((response: AxiosResponse) => {
-			const productObj: ProductResponseObj = {
-				productReq: response.data.productReq,
-				similarProducts: response.data.similarProducts
-			}
-			return productObj
+			const modelObj: Models = response.data.modelReq
+			return modelObj
 		})
 		// .catch((err: AxiosError) => {
 		// 	console.error(err)
 		// })
-	return resultProductObj
+	return resultModelObj
 }
 
 export default ModelPage
