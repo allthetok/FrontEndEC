@@ -13,7 +13,7 @@ const DropDown = ({ sortBy, onSortChange }: DropDownProps) => {
 	return (
 		<>
 			<Autocomplete
-				className='auto-comp'
+				// className='auto-comp'
 				disablePortal
 				id='filter-combo'
 				options={sortOptions}

@@ -20,7 +20,9 @@ const Product = ({ product }: ProductProps) => {
 			</div>
 			<h3 className='mt-4 font-medium flex flex-1 items-center justify-between'>
 				<div className='hover:underline'>{product.name}</div>
-				<span className='pt-1 text-xs text-gray-500 uppercase'>{product.brand}</span>
+				<Link href={`/products/?brand=${product.brand}`}>
+					<span className='pt-1 text-xs text-gray-500 uppercase'>{product.brand}</span>
+				</Link>
 			</h3>
 			<p className='mt-2 font-medium text-sm'>
 				${product.price.toFixed(2)}

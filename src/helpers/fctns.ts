@@ -52,34 +52,6 @@ const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string
 	}
 }
 
-// const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string | string[] | undefined): FullBrandConfig => {
-// 	const brandSpec = (brandReq: string | string[]) => {
-// 		if (typeof brandReq === 'string') {
-// 			return [brandReq]
-// 		}
-// 		return brandReq
-// 	}
-// 	return brandReq ? {
-// 		method: method,
-// 		url: `http://localhost:3002/api/shoes/${endpoint}`,
-// 		headers: {
-// 			'Content-Type': 'application/json'
-// 		},
-// 		data: {
-// 			brand: brandSpec(brandReq)
-// 		}
-// 	} : {
-// 		method: method,
-// 		url: `http://localhost:3002/api/shoes/${endpoint}`,
-// 		headers: {
-// 			'Content-Type': 'application/json'
-// 		},
-// 		data: {
-// 			brand: ['all']
-// 		}
-// 	}
-// }
-
 const createModelDtlConfig = (method: string, endpoint: string, modelReq: string | string[]): FullModelConfig => {
 	return {
 		method: method,

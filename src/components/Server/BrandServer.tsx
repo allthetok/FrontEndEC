@@ -148,6 +148,9 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 				<h1 className='text-xl font-bold tracking-tight sm:text-2xl'>
 					{filteredResults.length} results
 				</h1>
+				<h1 className='text-2xl title-font uppercase text-gray-500 tracking-widest pl-20'>
+					{brandsParam.join(' | ')}
+				</h1>
 				<DropDown sortBy={sortBy} onSortChange={onSortChange}/>
 			</div>
 			<section className='pb-24 pt-6' aria-labelledby='products-heading'>

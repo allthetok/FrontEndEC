@@ -4,6 +4,7 @@ import { compareBySortOption } from '@/helpers/fctns'
 import { ProductObj } from '@/helpers/types/fetypes'
 import { Product } from '../Product'
 import { DropDown } from '../DropDown'
+import Link from 'next/link'
 
 type ModelServerProps = {
 	brandName: string,
@@ -37,35 +38,43 @@ const ModelServer = ({ brandName, modelName, modelProducts }: ModelServerProps) 
 					</p>
 				</div>
 			</div>
-			<div className='flex items-center justify-between border-b border-gray-200 pb-4 pt-24 dark:border-gray-800'>
+			<div className='flex flex-row items-center justify-between border-b border-gray-200 pb-4 pt-24 dark:border-gray-800'>
 				<h1 className='text-xl font-bold tracking-tight sm:text-2xl'>
 					{modelProducts.length} results
+				</h1>
+				<h1 className='text-2xl title-font uppercase text-gray-500 tracking-widest pl-20 flex flex-row justify-start'>
+					<Link href={`/products/?brand=${brandName}`}>
+						{brandName}
+					</Link>
+					&nbsp;-&nbsp;
+					<p>{modelName}</p>
 				</h1>
 				<DropDown sortBy={sortBy} onSortChange={onSortChange}/>
 			</div>
 			<section className='pb-24 pt-6' aria-labelledby='products-heading'>
-				<h1 className='flex flex-row justify-center text-4xl font-bold tracking-normal '>
+				{/* <h1 className='flex flex-row justify-center text-3xl font-bold tracking-normal pb-6'> */}
+				{/* <h1 className='text-2xl title-font uppercase text-gray-500 tracking-widest mb-2'>
 					{brandName} - {modelName}
-				</h1>
-				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
-					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8'>
-						{fullProducts.map((product: ProductObj, index: number) => (
-							<Product product={product} key={index} />
-						))}
-					</div>
+				</h1> */}
+				{/* <div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'> */}
+				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-1'>
+					{modelProducts.length === 4 ?
+						<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-4 lg:col-span-4 lg:gap-x-8'>
+							{fullProducts.map((product: ProductObj, index: number) => (
+								<Product product={product} key={index} />
+							))}
+						</div>
+						:
+						<div className='flex flex-row gap-x-6 gap-y-10 justify-center self-center content-center min-w-[1532px]'>
+							{fullProducts.map((product: ProductObj, index: number) => (
+								<Product product={product} key={index} />
+							))}
+						</div>
+					}
 				</div>
 			</section>
 		</main>
 	)
 }
-
-{/* <h2>
-				{brandName} - {modelName}
-			</h2>
-			<div>
-				{modelProducts.map((indProduct: ProductObj, index: number) => (
-					<Product key={index} product={indProduct} />
-				))}
-			</div> */}
 
 export { ModelServer }
