@@ -9,7 +9,7 @@ const ModelPage = async ({ params }: { params: { model: string | string[] } }) =
 	const { modelObj } = await getData(params.model)
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<ModelServer modelProducts={modelObj.allProducts} />
+			<ModelServer brandName={modelObj.brand} modelName={modelObj.name} modelProducts={modelObj.allProducts} />
 		</main>
 	)
 }
