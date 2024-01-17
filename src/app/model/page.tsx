@@ -3,26 +3,25 @@ import React from 'react'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { createProductDtlConfig, formatPageQuery } from '@/helpers/fctns'
 import { FullProductConfig, ProductObj, ProductResponseObj } from '@/helpers/types/fetypes'
-import { FullProductServer } from '@/components/Server/FullProductServer'
+import { ModelServer } from '@/components/Server/ModelsServer'
 
-const ModelPage = async ({ params }: { params: { product: string | string[] } }) => {
-	const { productObj } = await getData(params.product)
-	const color = searchParams.color !== undefined ? searchParams.color : productObj.productReq.colors[0].color
+const ModelPage = async ({ params }: { params: { model: string | string[] } }) => {
+	const { modelObj } = await getData(params.model)
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<FullProductServer productDtl={productObj.productReq} colorQuery={color} similarProducts={productObj.similarProducts}/>
+			<ModelServer modelProducts={modelObj.allProducts} />
 		</main>
 	)
 }
 
-const getData = async (product: string | string[]) => {
-	const productSearchConfig = createProductDtlConfig('post', 'product', formatPageQuery(product))
+const getData = async (model: string | string[]) => {
+	const productSearchConfig = createProductDtlConfig('post', 'model', formatPageQuery(model))
 	return {
-		productObj: await getProductDtl(productSearchConfig)
+		modelObj: await getModelDtl(productSearchConfig)
 	}
 }
 
-const getProductDtl = async (productConfig: FullProductConfig) => {
+const getModelDtl = async (productConfig: FullProductConfig) => {
 	const resultProductObj = await axios(productConfig)
 		.then((response: AxiosResponse) => {
 			const productObj: ProductResponseObj = {
