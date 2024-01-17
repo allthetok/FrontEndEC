@@ -150,7 +150,7 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 				</h1>
 				<DropDown sortBy={sortBy} onSortChange={onSortChange}/>
 			</div>
-			<section className='pb=24 pt-6' aria-labelledby='products-heading'>
+			<section className='pb-24 pt-6' aria-labelledby='products-heading'>
 				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
 					<ProductFilter brandReq={brandDtl} brandSelect={brandsParam} modelsAvailable={modelResults} handleModelClick={handleModelClick} editionsAvailable={editionResults} handleEditionClick={handleEditionClick}/>
 					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8'>

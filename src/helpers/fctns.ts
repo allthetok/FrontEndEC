@@ -11,7 +11,7 @@ const createProductDtlConfig = (method: string, endpoint: string, productReq: st
 			'Content-Type': 'application/json'
 		},
 		data: {
-			product: handleParamConform(productReq)
+			product: handleParamConform(productReq, 'string') as string
 		}
 	}
 }
@@ -25,7 +25,7 @@ const createDeprecatedBrandDtlConfig = (method: string, endpoint: string, brandR
 			'Content-Type': 'application/json'
 		},
 		data: {
-			brand: handleParamConform(brandReq)
+			brand: handleParamConform(brandReq, 'string')
 		}
 	}
 }
@@ -38,7 +38,7 @@ const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string
 			'Content-Type': 'application/json'
 		},
 		data: {
-			brand: handleParamConform(brandReq)
+			brand: handleParamConform(brandReq, 'array') as string[]
 		}
 	} : {
 		method: method,
@@ -52,6 +52,34 @@ const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string
 	}
 }
 
+// const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string | string[] | undefined): FullBrandConfig => {
+// 	const brandSpec = (brandReq: string | string[]) => {
+// 		if (typeof brandReq === 'string') {
+// 			return [brandReq]
+// 		}
+// 		return brandReq
+// 	}
+// 	return brandReq ? {
+// 		method: method,
+// 		url: `http://localhost:3002/api/shoes/${endpoint}`,
+// 		headers: {
+// 			'Content-Type': 'application/json'
+// 		},
+// 		data: {
+// 			brand: brandSpec(brandReq)
+// 		}
+// 	} : {
+// 		method: method,
+// 		url: `http://localhost:3002/api/shoes/${endpoint}`,
+// 		headers: {
+// 			'Content-Type': 'application/json'
+// 		},
+// 		data: {
+// 			brand: ['all']
+// 		}
+// 	}
+// }
+
 const createModelDtlConfig = (method: string, endpoint: string, modelReq: string | string[]): FullModelConfig => {
 	return {
 		method: method,
@@ -60,16 +88,26 @@ const createModelDtlConfig = (method: string, endpoint: string, modelReq: string
 			'Content-Type': 'application/json'
 		},
 		data: {
-			model: handleParamConform(modelReq)
+			model: handleParamConform(modelReq, 'string') as string
 		}
 	}
 }
 
-const handleParamConform = (inputReq: string | string[]) => {
-	if (typeof inputReq !== 'string') {
-		return inputReq.join('')
+const handleParamConform = (inputReq: string | string[], spec: string) => {
+	switch (spec) {
+	case 'string':
+		if (typeof inputReq !== 'string') {
+			return inputReq.join('')
+		}
+		return inputReq
+	case 'array':
+		if (typeof inputReq === 'string') {
+			return [inputReq]
+		}
+		return inputReq
+	default:
+		return inputReq
 	}
-	return inputReq
 }
 
 const formatPageQuery = (inputQuery: string | string []) => {
