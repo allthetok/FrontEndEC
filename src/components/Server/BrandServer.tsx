@@ -15,18 +15,6 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 	const [filteredResults, setFilteredResults] = useState(retrieveOriginalResults(brandDtl) as ProductObj[])
 	const [modelResults, setModelResults] = useState(retrieveSubOptions(brandDtl, 'models') as Models[])
 	const [editionResults, setEditionResults] = useState(retrieveSubOptions(brandDtl, 'editions') as ProductObj[])
-
-
-	// const [modelResults, setModelResults] = useState(() => {
-	// 	const modelsFiltered: Models[] = []
-	// 	for (let i = 0; i < brandDtl.length; i++) {
-	// 		for (let j = 0; j < brandDtl[i].allModels.length; j++) {
-	// 			modelsFiltered.push( { ...brandDtl[i].allModels[j], active: true })
-	// 		}
-	// 	}
-	// 	return modelsFiltered
-	// })
-
 	const [sortBy, setSortBy] = useState('Newest')
 
 	const originalProducts = retrieveOriginalResults(brandDtl)
