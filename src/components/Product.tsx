@@ -25,9 +25,14 @@ const Product = ({ product }: ProductProps) => {
 					<span className='pt-1 text-xs text-gray-500 uppercase hover:underline'>{product.brand}</span>
 				</Link>
 			</h3>
-			<p className='mt-2 font-medium text-sm'>
-				${product.price.toFixed(2)}
-			</p>
+			<div className='mt-2 font-medium flex flex-1 items-center justify-between text-sm'>
+				<p>
+					${product.price.toFixed(2)}
+				</p>
+				<Link href={`/model/${product.modelName}`}>
+					<span className='pt-1 text-xs text-gray-500 uppercase hover:underline'>{product.modelName}</span>
+				</Link>
+			</div>
 		</div>
 	)
 }

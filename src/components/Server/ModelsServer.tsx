@@ -43,7 +43,7 @@ const ModelServer = ({ brandName, modelName, modelProducts }: ModelServerProps) 
 					{modelProducts.length} results
 				</h1>
 				<h1 className='text-2xl title-font uppercase text-gray-500 tracking-widest pl-20 flex flex-row justify-start'>
-					<Link href={`/products/?brand=${brandName}`}>
+					<Link href={`/products/?brand=${brandName}`} className='hover:underline'>
 						{brandName}
 					</Link>
 					&nbsp;-&nbsp;
@@ -53,9 +53,6 @@ const ModelServer = ({ brandName, modelName, modelProducts }: ModelServerProps) 
 			</div>
 			<section className='pb-24 pt-6' aria-labelledby='products-heading'>
 				{/* <h1 className='flex flex-row justify-center text-3xl font-bold tracking-normal pb-6'> */}
-				{/* <h1 className='text-2xl title-font uppercase text-gray-500 tracking-widest mb-2'>
-					{brandName} - {modelName}
-				</h1> */}
 				{/* <div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'> */}
 				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-1'>
 					{modelProducts.length === 4 ?
