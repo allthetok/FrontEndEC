@@ -34,7 +34,7 @@ const Navbar = () => {
 {/* <Search />
 	<h1 className='font-bold text-6xl ml-[-1000px]'>
 		AT KICKS
-	</h1> 
+	</h1>
 */}
 
 export { Navbar }
