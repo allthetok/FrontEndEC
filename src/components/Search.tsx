@@ -41,6 +41,7 @@ const Search = () => {
 				</IconButton>
 			</form>
 		</div>
+		// <ProductSuggestList onClick={handleClear} searchterm={searchProduct} />
 	)
 }
 

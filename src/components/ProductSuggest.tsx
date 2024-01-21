@@ -10,7 +10,7 @@ type ProductSuggestProps = {
 	productDtl: ProductObj
 }
 
-const Suggestion = ({ onClick, productDtl }: ProductSuggestProps ) => {
+const ProductSuggest = ({ onClick, productDtl }: ProductSuggestProps ) => {
 	return (
 		<Link href={`/product/${productDtl.name}`} className='no-text-dec' onClick={onClick}>
 			<div className='ind-suggest'>
@@ -44,4 +44,4 @@ const Suggestion = ({ onClick, productDtl }: ProductSuggestProps ) => {
 }
 // <img key={val.id} className='suggest-platform' alt={`${val.name} Logo`} src={val.url !== '' ? val.url : placeholderImages.NoLogo} />
 
-export { Suggestion }
+export { ProductSuggest }

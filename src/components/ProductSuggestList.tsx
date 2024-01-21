@@ -1,21 +1,26 @@
 import { ProductObj } from '@/helpers/types/fetypes'
-import React, { useState } from 'react'
-import { Suggestion } from './ProductSuggest'
+import React, { useState, useEffect } from 'react'
+import { ProductSuggest } from './ProductSuggest'
 
-const ProductSuggestList = () => {
+type ProductSuggestListProps = {
+	onClick: (e: React.MouseEvent<HTMLElement>) => void,
+	searchterm: string
+}
+
+const ProductSuggestList = ({ onClick, searchterm }: ProductSuggestListProps) => {
 	const [productSearchData, setProductSearchData] = useState<ProductObj[]>([])
 	return (
 		<div>
 			<>
-			{productSearchData.length !== 0 ?
-				<div className='search-suggest'>
-					{productSearchData.map((item: ProductObj) => (
-						<Suggestion onClick={onClick} key={item.id} id={item.id} cover={item.cover!} platforms={item.platforms} rating={item.rating} releaseDate={item.releaseDate} title={item.title} category={item.category} companies={item.involved_companies} />
-					))}
-				</div>
-				: <></>
-			}
-		</>
+				{productSearchData.length !== 0 ?
+					<div className='search-suggest'>
+						{productSearchData.map((product: ProductObj, index: number) => (
+							<ProductSuggest key={index} onClick={onClick} productDtl={product}/>
+						))}
+					</div>
+					: <></>
+				}
+			</>
 		</div>
 	)
 }
