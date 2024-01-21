@@ -787,6 +787,10 @@ video {
   max-width: 413px;
 }
 
+.max-w-\[403px\] {
+  max-width: 403px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -879,6 +883,10 @@ video {
 
 .gap-16 {
   gap: 4rem;
+}
+
+.gap-0 {
+  gap: 0px;
 }
 
 .gap-x-6 {
