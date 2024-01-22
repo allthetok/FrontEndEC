@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import IconButton from '@mui/material/IconButton'
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded'
@@ -7,25 +7,31 @@ import { ProductSuggestList } from './ProductSuggestList'
 import { OpacitySx } from '@/sx/styling'
 import './Search.css'
 
+type SearchProps = {
+	searchProduct: string,
+	handleSubmit: (e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLElement>) => void,
+	handleClear: (e: React.MouseEvent<HTMLElement>) => void,
+	handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
 
-const Search = () => {
-	const [searchProduct, setSearchProduct] = useState('')
-	const router = useRouter()
+const Search = ({ searchProduct, handleSubmit, handleClear, handleChange }: SearchProps) => {
+	// const [searchProduct, setSearchProduct] = useState('')
+	// const router = useRouter()
 
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLElement>) => {
-		e.preventDefault()
-		router.push(`/product/${searchProduct}`)
-		setSearchProduct('')
-	}
+	// const handleSubmit = (e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLElement>) => {
+	// 	e.preventDefault()
+	// 	router.push(`/product/${searchProduct}`)
+	// 	setSearchProduct('')
+	// }
 
-	const handleClear = (e: React.MouseEvent<HTMLElement>) => {
-		e.preventDefault()
-		setSearchProduct('')
-	}
+	// const handleClear = (e: React.MouseEvent<HTMLElement>) => {
+	// 	e.preventDefault()
+	// 	setSearchProduct('')
+	// }
 
-	const handleChange= (e: React.ChangeEvent<HTMLInputElement>) => {
-		setSearchProduct(e.target.value)
-	}
+	// const handleChange= (e: React.ChangeEvent<HTMLInputElement>) => {
+	// 	setSearchProduct(e.target.value)
+	// }
 
 	return (
 		<div className='flex flex-col gap-0 min-w-[403px] max-w-[403px]'>
@@ -43,7 +49,7 @@ const Search = () => {
 					</IconButton>
 				</form>
 			</div>
-			<ProductSuggestList onClick={handleClear} searchterm={searchProduct} />
+			{/* <ProductSuggestList onClick={handleClear} searchterm={searchProduct} /> */}
 		</div>
 	)
 }
