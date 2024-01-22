@@ -594,6 +594,10 @@ video {
   z-index: 10;
 }
 
+.z-0 {
+  z-index: 0;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -681,6 +685,66 @@ video {
 
 .ml-\[-1000px\] {
   margin-left: -1000px;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.ml-0 {
+  margin-left: 0px;
+}
+
+.ml-\[50\%\] {
+  margin-left: 50%;
+}
+
+.mr-\[70\%\] {
+  margin-right: 70%;
+}
+
+.ml-\[40\%\] {
+  margin-left: 40%;
+}
+
+.ml-\[42\%\] {
+  margin-left: 42%;
+}
+
+.ml-\[38\%\] {
+  margin-left: 38%;
+}
+
+.ml-\[35\%\] {
+  margin-left: 35%;
+}
+
+.ml-\[37\.5\%\] {
+  margin-left: 37.5%;
+}
+
+.mt-\[-5rem\] {
+  margin-top: -5rem;
+}
+
+.mt-\[0rem\] {
+  margin-top: 0rem;
+}
+
+.mt-\[-2rem\] {
+  margin-top: -2rem;
+}
+
+.mt-\[-1\.5rem\] {
+  margin-top: -1.5rem;
+}
+
+.mt-\[-1rem\] {
+  margin-top: -1rem;
 }
 
 .block {
@@ -1140,6 +1204,18 @@ video {
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
+.pt-\[-5rem\] {
+  padding-top: -5rem;
+}
+
+.pt-\[-10rem\] {
+  padding-top: -10rem;
 }
 
 .text-center {

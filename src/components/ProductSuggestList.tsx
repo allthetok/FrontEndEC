@@ -5,14 +5,16 @@ import { searchResults } from '@/helpers/mockdata'
 
 type ProductSuggestListProps = {
 	onClick: (e: React.MouseEvent<HTMLElement>) => void,
-	searchterm: string
+	searchTerm: string
 }
 
-const ProductSuggestList = ({ onClick, searchterm }: ProductSuggestListProps) => {
+const ProductSuggestList = ({ onClick, searchTerm }: ProductSuggestListProps) => {
 	// const [productSearchData, setProductSearchData] = useState<ProductObj[]>([])
 	const [productSearchData, setProductSearchData] = useState<ProductObj[]>(searchResults)
+	// const [productSearchData, setProductSearchData] = useState<ProductObj[]>([])
+
 	return (
-		<>
+		<div className='mt-[-1rem] z-10 fixed ml-[37.5%] mr-[70%]'>
 			{productSearchData.length !== 0 ?
 				<div className='search-suggest'>
 					{productSearchData.map((product: ProductObj, index: number) => (
@@ -21,7 +23,7 @@ const ProductSuggestList = ({ onClick, searchterm }: ProductSuggestListProps) =>
 				</div>
 				: <></>
 			}
-		</>
+		</div>
 	)
 }
 
