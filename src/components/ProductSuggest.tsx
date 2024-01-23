@@ -15,26 +15,44 @@ const ProductSuggest = ({ onClick, productDtl }: ProductSuggestProps ) => {
 		<Link href={`/product/${productDtl.name}`} className='no-text-dec' onClick={onClick}>
 			<div className='ind-suggest'>
 				<div className='cover-wrap'>
-					<img className='cover-logo' alt={`${productDtl.name} image`} src={productDtl.colors[0].images[0]}/>
+					{/* <img className='cover-logo' alt={`${productDtl.name} image`} src={productDtl.colors[0].images[0]}/> */}
 					<p className='title-text'>{productDtl.name}</p>
 				</div>
+				<img className='cover-logo' alt={`${productDtl.name} image`} src={productDtl.colors[0].images[0]}/>
 				{/* {companies.length !== 0 ? companies.map((val: Companies) => (
 					<p key={val.name} className='tag-link-dev'> {val.name} </p>
 
 				)) */}
 				{/* : <p key={'None'} className='tag-link-dev'></p>} */}
-				<p className='tag-link-category'>{productDtl.brand}</p>
+				<div className='flex flex-col'>
+					<p className='tag-link-generic'>
+						{productDtl.brand}
+					</p>
+					<p className='tag-link-generic'>
+						{productDtl.modelName}
+					</p>
+				</div>
 				<div className='suggest-platforms'>
+					{productDtl.colors.map((val: Colors, index: number) => (
+						<p key={index} className='tag-link-dev'>
+							{val.color.substring(0, val.color.indexOf('/'))}
+						</p>
+					))}
+				</div>
+				{/* <div className='suggest-platforms'>
 					{productDtl.colors.map((val: Colors, index: number) => (
 						<p key={index} className='suggest-platform'>{val.color}</p>
 					))}
-				</div>
+				</div> */}
 				<div className='suggest-formatted'>
 					{/* <span className='suggest-rating'>
 						{rating > 0 ? Math.round(rating) : 'N'}
 					</span> */}
+					<span className='text-sm font-bold'>
+						${productDtl.price}
+					</span>
 					<span className='suggest-release'>
-						{formatDate(new Date(productDtl.releaseDate))}
+						{productDtl.releaseDate.toLocaleString()}
 					</span>
 				</div>
 			</div>

@@ -14,7 +14,7 @@ const ProductSuggestList = ({ onClick, searchTerm }: ProductSuggestListProps) =>
 	// const [productSearchData, setProductSearchData] = useState<ProductObj[]>([])
 
 	return (
-		<div className='mt-[-1rem] z-10 fixed ml-[37.5%] mr-[70%]'>
+		<div className='mt-[-1.275rem] z-10 fixed ml-[37.5%] mr-[70%]'>
 			{productSearchData.length !== 0 ?
 				<div className='search-suggest'>
 					{productSearchData.map((product: ProductObj, index: number) => (
