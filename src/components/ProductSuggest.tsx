@@ -32,13 +32,25 @@ const ProductSuggest = ({ onClick, productDtl }: ProductSuggestProps ) => {
 						{productDtl.modelName}
 					</p>
 				</div>
-				<div className='suggest-platforms'>
-					{productDtl.colors.map((val: Colors, index: number) => (
-						<p key={index} className='tag-link-dev'>
-							{val.color.substring(0, val.color.indexOf('/'))}
-						</p>
-					))}
-				</div>
+				{/* <div className='suggest-platforms'> */}
+				{/* <div className='colors-container'> */}
+				{productDtl.colors.length <= 2 ?
+					<div className='suggest-colors'>
+						{productDtl.colors.map((val: Colors, index: number) => (
+							<p key={index} className='tag-link-dev'>
+								{val.color.substring(0, val.color.indexOf('/'))}
+							</p>
+						))}
+					</div>
+					:
+					<div className='colors-container'>
+						{productDtl.colors.map((val: Colors, index: number) => (
+							<p key={index} className='tag-link-dev'>
+								{val.color.substring(0, val.color.indexOf('/'))}
+							</p>
+						))}
+					</div>
+				}
 				{/* <div className='suggest-platforms'>
 					{productDtl.colors.map((val: Colors, index: number) => (
 						<p key={index} className='suggest-platform'>{val.color}</p>

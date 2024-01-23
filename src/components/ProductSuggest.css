@@ -124,6 +124,29 @@
     margin-bottom: 0.25rem;
 }
 
+.suggest-colors {
+	/* display: flex;
+	max-width: 90px;
+    align-items: center;
+    flex-direction: row; */
+	display: grid;
+	grid-template-columns: repeat(2,75px);
+    gap: 0.125rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.colors-container {
+	margin: 10px auto;
+	width: 150px;
+	height: 70px;
+	display: grid;
+	grid-template-columns: 75px 75px;
+	grid-row: auto auto;
+	grid-column-gap: 5px;
+	grid-row-gap: 5px;
+}
+
 .suggest-release {
 	display: inline-block;
     white-space: nowrap;
