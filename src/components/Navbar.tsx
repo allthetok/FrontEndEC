@@ -48,7 +48,7 @@ const Navbar = () => {
 					</div>
 				</div>
 			</header>
-			<ProductSuggestList onClick={handleClear} searchTerm={searchProduct} />
+			<ProductSuggestList searchTerm={searchProduct} />
 		</>
 	)
 }
