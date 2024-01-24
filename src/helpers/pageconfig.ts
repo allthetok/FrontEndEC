@@ -28,11 +28,11 @@ const homeLinks = [
 
 const modelNames = [
 	{
-		link: '/products',
+		link: '/model/UltraBoost',
 		name: 'Adidas Ultraboost'
 	},
 	{
-		link: '/products',
+		link: '/model/Superstar',
 		name: 'Adidas Superstar'
 	},
 	{
