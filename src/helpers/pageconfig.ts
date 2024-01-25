@@ -36,70 +36,70 @@ const modelNames = [
 		name: 'Adidas Superstar'
 	},
 	{
-		link: '/products',
+		link: '/model/Stan Smith',
 		name: 'Adidas Stan Smith'
 	},
 	{
-		link: '/products',
+		link: '/model/NMD',
 		name: 'Adidas NMD'
 	},
 	{
-		link: '/products',
+		link: '/model/Yeezy Boost 350',
 		name: 'Yeezy 350'
 	},
 	{
-		link: '/products',
+		link: '/model/Yeezy Boost 500',
 		name: 'Yeezy 500'
 	},
 	{
-		link: '/products',
+		link: '/model/Yeezy Boost 700',
 		name: 'Yeezy 700'
 	},
 	{
-		link: '/products',
+		link: '/model/Yeezy Foam Runner | Yeezy Slides',
 		name: 'Yeezy Slides/Foam Runner'
 	},
 	{
-		link: '/products',
+		link: '/model/Nike Air Force 1',
 		name: 'Nike Air Force 1'
 	},
 
 	{
-		link: '/products',
+		link: '/model/Nike Air Max 97',
 		name: 'Nike Air Max 97'
 	},
 	{
-		link: '/products',
+		link: '/model/Nike Dunk',
 		name: 'Nike Dunk'
 	},
 	{
-		link: '/products',
+		link: '/model/Nike Blazer',
 		name: 'Nike Blazer'
 	},
 
 	{
-		link: '/products',
+		link: '/model/Air Jordan 1',
 		name: 'Air Jordan 1'
 	},
 	{
-		link: '/products',
+		link: '/model/Air Jordan 4',
 		name: 'Air Jordan 4'
 	},
 	{
-		link: '/products',
+		link: '/model/Air Jordan 5',
 		name: 'Air Jordan 5'
 	},
 
 	{
-		link: '/products',
+		link: '/model/New Balance 2002R',
 		name: 'New Balance 2002R'
 	},
 	{
-		link: '/products',
+		link: '/model/New Balance 530',
 		name: 'New Balance 530'
 	},
 	{
-		link: '/products',
+		link: '/model/New Balance 57/40',
 		name: 'New Balance 57/40'
 	}
 ]
