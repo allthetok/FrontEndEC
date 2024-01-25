@@ -82,5 +82,11 @@ interface Models {
 	active?: boolean
 }
 
+interface ModelPageConfig {
+	link: string,
+	name: string,
+	prodCount: number
+}
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type Brands, type Models }
+
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type Brands, type Models, type ModelPageConfig }

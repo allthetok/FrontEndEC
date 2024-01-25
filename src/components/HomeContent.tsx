@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import Link from 'next/link'
+import { ModelPageConfig } from '@/helpers/types/fetypes'
 import LoginIcon from '@mui/icons-material/Login'
 import { homeLinks, modelNames } from '../helpers/pageconfig'
 import { Font25Sx } from '../sx/styling'
@@ -35,13 +36,13 @@ const HomeContent = () => {
 					))}
 				</section>
 				<ul className='pt-24 grid grid-cols-4 gap-4'>
-					{modelNames.map((item: any, index: number) => (
+					{modelNames.map((item: ModelPageConfig, index: number) => (
 						<li className='block' key={index}>
 							<Link className='font-bold tracking-wider uppercase bg-indigo-500 text-white rounded-lg px-4 h-24 flex justify-center items-center text-center hover:bg-indigo-600' href={item.link}>
 								<span>
 									{item.name}&nbsp;
 									<span className='text-xs font-normal'>
-										(4 products)
+										({item.prodCount} products)
 									</span>
 								</span>
 							</Link>
