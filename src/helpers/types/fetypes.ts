@@ -88,5 +88,10 @@ interface ModelPageConfig {
 	prodCount: number
 }
 
+interface HomePageConfig {
+	name: string,
+	src: string
+}
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type Brands, type Models, type ModelPageConfig }
+
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig }

@@ -1,32 +1,35 @@
-import { ModelPageConfig } from './types/fetypes'
+import { HomePageConfig, ModelPageConfig } from './types/fetypes'
 
-const homeLinks = [
+const homeLinks: HomePageConfig[] = [
 	{
-		link: '/products?brand=Adidas',
 		name: 'Adidas',
 		src: '/adbanner.jpg'
 	},
 	{
-		link: '/products/?brand=Air Jordan',
 		name: 'Air Jordan',
 		src: '/ajbanner.jpg'
 	},
 	{
-		link: '/products/?brand=New Balance',
 		name: 'New Balance',
 		src: '/nbbanner.jpg'
 	},
 	{
-		link: '/products/?brand=Yeezy',
 		name: 'Yeezy',
 		src: '/yzybanner.jpg'
 	},
 	{
-		link: '/products/?brand=Nike',
 		name: 'Nike',
 		src: '/nikebanner.jpg'
 	}
 ]
+
+const homeLinkMap = new Map<string, string>([
+	['Adidas', '/adbanner.jpg'],
+	['Yeezy', '/ajbanner.jpg'],
+	['Nike', '/nikebanner.jpg'],
+	['Air Jordan', '/ajbanner.jpg'],
+	['New Balance', '/nbbanner.jpg']
+])
 
 const modelNames: ModelPageConfig[] = [
 	{
@@ -124,4 +127,4 @@ const modelNames: ModelPageConfig[] = [
 	}
 ]
 
-export { homeLinks, modelNames }
+export { homeLinks, modelNames, homeLinkMap }

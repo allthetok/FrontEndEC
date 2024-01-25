@@ -2,9 +2,9 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import Link from 'next/link'
-import { ModelPageConfig } from '@/helpers/types/fetypes'
+import { HomePageConfig, ModelPageConfig } from '@/helpers/types/fetypes'
 import LoginIcon from '@mui/icons-material/Login'
-import { homeLinks, modelNames } from '../helpers/pageconfig'
+import { homeLinkMap, homeLinks, modelNames } from '../helpers/pageconfig'
 import { Font25Sx } from '../sx/styling'
 import '../app/globals.css'
 
@@ -25,11 +25,20 @@ const HomeContent = () => {
 			</header>
 			<div className='pt-16'>
 				<section className='grid grid-flow-row md:grid-cols-3 lg:grid-cols-5 gap-6'>
-					{homeLinks.map((item: any, index: number) => (
-						<Link href={item.link} key={index} style={{ backgroundImage: `url(${item.src})`, backgroundPosition: 'center', backgroundSize: 'cover', minHeight: '433.33px' }}>
+					{/* {homeLinks.map((item: HomePageConfig, index: number) => (
+						<Link href={`/products?brand=${item.name}`} key={index} style={{ backgroundImage: `url(${item.src})`, backgroundPosition: 'center', backgroundSize: 'cover', minHeight: '433.33px' }}>
 							<div className='flex w-auto items-center flex-col'>
 								<p className='rounded text-white bg-black font-bold tracking-wider text-xl uppercase px-5 py-2'>
 									{item.name}
+								</p>
+							</div>
+						</Link>
+					))} */}
+					{Array.from(homeLinkMap.keys()).map((key: string, index: number) => (
+						<Link href={`/products?brand=${key}`} key={index} style={{ backgroundImage: `url(${homeLinkMap.get(key)})`, backgroundPosition: 'center', backgroundSize: 'cover', minHeight: '433.33px' }}>
+							<div className='flex w-auto items-center flex-col'>
+								<p className='rounded text-white bg-black font-bold tracking-wider text-xl uppercase px-5 py-2'>
+									{key}
 								</p>
 							</div>
 						</Link>
