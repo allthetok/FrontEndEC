@@ -56,7 +56,7 @@ const modelNames = [
 		name: 'Yeezy 700'
 	},
 	{
-		link: '/model/Yeezy Foam Runner | Yeezy Slides',
+		link: '/model/Yeezy Foam Runner - Yeezy Slides',
 		name: 'Yeezy Slides/Foam Runner'
 	},
 	{
@@ -99,8 +99,8 @@ const modelNames = [
 		name: 'New Balance 530'
 	},
 	{
-		link: '/model/New Balance 57/40',
-		name: 'New Balance 57/40'
+		link: '/model/New Balance 5740',
+		name: 'New Balance 5740'
 	}
 ]
 
