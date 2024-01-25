@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ProductObj } from '@/helpers/types/fetypes'
 import { ProductSuggest } from './ProductSuggest'
 import { searchResults } from '@/helpers/mockdata'
+import './ProductSuggestList.css'
 
 type ProductSuggestListProps = {
 	// onClick: (e: React.MouseEvent<HTMLElement>) => void,
@@ -14,7 +15,8 @@ const ProductSuggestList = ({ searchTerm }: ProductSuggestListProps) => {
 	// const [productSearchData, setProductSearchData] = useState<ProductObj[]>([])
 
 	return (
-		<div className='mt-[-1.275rem] z-10 fixed ml-[37.5%] mr-[70%]'>
+		// <div className='mt-[-1.275rem] z-10 fixed ml-[37.5%] mr-[70%]'>
+		<div className='mt-[-1.275rem] z-10 fixed search-x-y-align'>
 			{productSearchData.length !== 0 ?
 				<div className='search-suggest'>
 					{productSearchData.map((product: ProductObj, index: number) => (
