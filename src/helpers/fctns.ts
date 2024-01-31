@@ -6,7 +6,7 @@ const formatDate = (inpDate: Date) => `${inpDate.toLocaleDateString('default', {
 const createProductDtlConfig = (method: string, endpoint: string, productReq: string | string[]): FullProductConfig => {
 	return {
 		method: method,
-		url: `http://localhost:3002/api/shoes/${endpoint}`,
+		url: `http://localhost:4000/api/shoes/${endpoint}`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -20,7 +20,7 @@ const createDeprecatedBrandDtlConfig = (method: string, endpoint: string, brandR
 
 	return {
 		method: method,
-		url: `http://localhost:3002/api/shoes/${endpoint}`,
+		url: `http://localhost:4000/api/shoes/${endpoint}`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -33,7 +33,7 @@ const createDeprecatedBrandDtlConfig = (method: string, endpoint: string, brandR
 const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string | string[] | undefined): FullBrandConfig => {
 	return brandReq ? {
 		method: method,
-		url: `http://localhost:3002/api/shoes/${endpoint}`,
+		url: `http://localhost:4000/api/shoes/${endpoint}`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -42,7 +42,7 @@ const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string
 		}
 	} : {
 		method: method,
-		url: `http://localhost:3002/api/shoes/${endpoint}`,
+		url: `http://localhost:4000/api/shoes/${endpoint}`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -55,7 +55,7 @@ const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string
 const createModelDtlConfig = (method: string, endpoint: string, modelReq: string | string[]): FullModelConfig => {
 	return {
 		method: method,
-		url: `http://localhost:3002/api/shoes/${endpoint}`,
+		url: `http://localhost:4000/api/shoes/${endpoint}`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
