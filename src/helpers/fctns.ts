@@ -65,6 +65,19 @@ const createModelDtlConfig = (method: string, endpoint: string, modelReq: string
 	}
 }
 
+const createProductSearchConfig = (method: string, endpoint: string, searchterm: string) => {
+	return {
+		method: method,
+		url: `http://localhost:4000/api/shoes/${endpoint}`,
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		data: {
+			searchterm: searchterm
+		}
+	}
+}
+
 const handleParamConform = (inputReq: string | string[], spec: string) => {
 	switch (spec) {
 	case 'string':
