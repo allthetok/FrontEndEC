@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import axios, { AxiosResponse } from 'axios'
+import axios, { AxiosError, AxiosResponse } from 'axios'
 import { ProductObj, SearchConfig } from '@/helpers/types/fetypes'
+import { createProductSearchConfig } from '@/helpers/fctns'
 import { ProductSuggest } from './ProductSuggest'
 import './ProductSuggestList.css'
-import { createProductSearchConfig } from '@/helpers/fctns'
 
 type ProductSuggestListProps = {
 	searchTerm: string,
@@ -17,9 +17,9 @@ const ProductSuggestList = ({ searchTerm, handleClear }: ProductSuggestListProps
 		const searchConfig: SearchConfig = createProductSearchConfig('post', 'productSearch', searchterm)
 		await axios(searchConfig)
 			.then((response: AxiosResponse) => {
-				setProductSearchData(response.data.products)
+				setProductSearchData(response.data.products as ProductObj[])
 			})
-			.catch((err: any) => {
+			.catch((err: AxiosError) => {
 				console.error(err)
 				setProductSearchData([])
 			})
@@ -28,6 +28,8 @@ const ProductSuggestList = ({ searchTerm, handleClear }: ProductSuggestListProps
 	useEffect(() => {
 		searchTerm !== '' ? fetchSearchResults(searchTerm) : setProductSearchData([])
 	}, [searchTerm])
+
+	// useEffect(() => { searchTerm !== '' ? fetchSearchResults(searchTerm) : setProductSearchData([]) }, [searchTerm])
 
 
 	return (
