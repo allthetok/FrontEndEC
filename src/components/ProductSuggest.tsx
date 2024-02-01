@@ -35,23 +35,13 @@ const ProductSuggest = ({ productDtl }: ProductSuggestProps ) => {
 						{productDtl.modelName}
 					</p>
 				</div>
-				{productDtl.colors.length <= 2 ?
-					<div className='grid grid-cols-[repeat(2,75px)] gap-[0.125rem] my-1'>
-						{productDtl.colors.map((val: Colors, index: number) => (
-							<p key={index} className='inline-block leading-[30px] text-[0.625rem] text-gray-700 bg-[#c4c6d3] font-bold px-[10px] py-0 rounded-[6px] overflow-hidden whitespace-nowrap overflow-ellipsis mt-0 mb-[0.125rem] text-center'>
-								{val.color.substring(0, val.color.indexOf('/'))}
-							</p>
-						))}
-					</div>
-					:
-					<div className='my-[10px] mx-auto w-[150px] h-[70px] grid grid-cols-[(75px,75px)] row-start-auto row-end-auto gap-x-[5px] gap-y-[5px]'>
-						{productDtl.colors.map((val: Colors, index: number) => (
-							<p key={index} className='inline-block leading-[30px] text-[0.625rem] text-gray-700 bg-[#c4c6d3] font-bold px-[10px] py-0 rounded-[6px] overflow-hidden whitespace-nowrap overflow-ellipsis mt-0 mb-[0.125rem] text-center'>
-								{val.color.substring(0, val.color.indexOf('/'))}
-							</p>
-						))}
-					</div>
-				}
+				<div className='grid grid-cols-[repeat(2,75px)] gap-[0.125rem] my-1'>
+					{productDtl.colors.map((val: Colors, index: number) => (
+						<p key={index} className='inline-block leading-[30px] text-[0.625rem] text-gray-700 bg-[#c4c6d3] font-bold px-[10px] py-0 rounded-[6px] overflow-hidden whitespace-nowrap overflow-ellipsis mt-0 mb-[0.125rem] text-center'>
+							{val.color.substring(0, val.color.indexOf('/'))}
+						</p>
+					))}
+				</div>
 				<div className='flex flex-col items-center gap-1'>
 					<span className='text-sm font-bold'>
 						${productDtl.price}
