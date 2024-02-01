@@ -33,9 +33,10 @@ const ProductSuggestList = ({ searchTerm, handleClear }: ProductSuggestListProps
 
 
 	return (
-		<div className='mt-[-1.275rem] z-10 fixed search-x-y-align'>
+		// <div className='mt-[-1.275rem] z-10 fixed search-x-y-align'>
+		<div className='mt-[-1.275rem] z-10 absolute search-x-y-align'>
 			{productSearchData.length !== 0 ?
-				<div className='search-suggest'>
+				<div>
 					{productSearchData.map((product: ProductObj, index: number) => (
 						<ProductSuggest key={index} productDtl={product} handleClear={handleClear}/>
 					))}
