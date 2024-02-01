@@ -5,10 +5,11 @@ import { ProductSuggest } from './ProductSuggest'
 import './ProductSuggestList.css'
 
 type ProductSuggestListProps = {
-	searchTerm: string
+	searchTerm: string,
+	handleClear: (e: React.MouseEvent<HTMLElement>) => void
 }
 
-const ProductSuggestList = ({ searchTerm }: ProductSuggestListProps) => {
+const ProductSuggestList = ({ searchTerm, handleClear }: ProductSuggestListProps) => {
 	const [productSearchData, setProductSearchData] = useState<ProductObj[]>([])
 
 	const getSearchResults = async (searchterm: string) => {
@@ -55,7 +56,7 @@ const ProductSuggestList = ({ searchTerm }: ProductSuggestListProps) => {
 			{productSearchData.length !== 0 ?
 				<div className='search-suggest'>
 					{productSearchData.map((product: ProductObj, index: number) => (
-						<ProductSuggest key={index} productDtl={product}/>
+						<ProductSuggest key={index} productDtl={product} handleClear={handleClear}/>
 					))}
 				</div>
 				: <></>
