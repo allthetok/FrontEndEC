@@ -3,7 +3,6 @@ import axios from 'axios'
 import { ProductObj } from '@/helpers/types/fetypes'
 import { ProductSuggest } from './ProductSuggest'
 import './ProductSuggestList.css'
-import { searchBigResults } from '@/helpers/mockdata'
 
 type ProductSuggestListProps = {
 	searchTerm: string
@@ -53,17 +52,14 @@ const ProductSuggestList = ({ searchTerm }: ProductSuggestListProps) => {
 	return (
 		// <div className='mt-[-1.275rem] z-10 fixed ml-[37.5%] mr-[70%]'>
 		<div className='mt-[-1.275rem] z-10 fixed search-x-y-align'>
-			{/* {productSearchData.length !== 0 ? */}
-			<div className='search-suggest'>
-				{/* {productSearchData.map((product: ProductObj, index: number) => (
+			{productSearchData.length !== 0 ?
+				<div className='search-suggest'>
+					{productSearchData.map((product: ProductObj, index: number) => (
 						<ProductSuggest key={index} productDtl={product}/>
-					))} */}
-				{searchBigResults.map((product: ProductObj, index: number) => (
-					<ProductSuggest key={index} productDtl={product}/>
-				))}
-			</div>
-			{/* : <></>
-			} */}
+					))}
+				</div>
+				: <></>
+			}
 		</div>
 	)
 }
