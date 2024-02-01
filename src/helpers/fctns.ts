@@ -1,5 +1,5 @@
 /* eslint-disable no-case-declarations */
-import { Brands, FullBrandConfig, FullModelConfig, FullProductConfig, Models, ProductObj } from './types/fetypes'
+import { Brands, FullBrandConfig, FullModelConfig, FullProductConfig, Models, ProductObj, SearchConfig } from './types/fetypes'
 
 const formatDate = (inpDate: Date) => `${inpDate.toLocaleDateString('default', { month: 'long' })} ${inpDate.getUTCDate()}, ${inpDate.getFullYear()}`
 
@@ -65,7 +65,7 @@ const createModelDtlConfig = (method: string, endpoint: string, modelReq: string
 	}
 }
 
-const createProductSearchConfig = (method: string, endpoint: string, searchterm: string) => {
+const createProductSearchConfig = (method: string, endpoint: string, searchterm: string): SearchConfig => {
 	return {
 		method: method,
 		url: `http://localhost:4000/api/shoes/${endpoint}`,
@@ -195,4 +195,4 @@ const retrieveSubOptions: (brandDtl: Brands[], specified: string) => Models[] | 
 }
 
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions }
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions }

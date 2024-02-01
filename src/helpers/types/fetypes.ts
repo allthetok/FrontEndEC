@@ -47,6 +47,15 @@ interface FullModelConfig {
 	}
 }
 
+interface SearchConfig {
+	method: string,
+	url: string,
+	headers: object,
+	data: {
+		searchterm: string
+	}
+}
+
 interface Colors {
 	color: string,
 	images: string[]
@@ -94,4 +103,4 @@ interface HomePageConfig {
 }
 
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig }
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig }

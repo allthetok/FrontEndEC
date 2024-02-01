@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import { ProductObj } from '@/helpers/types/fetypes'
+import axios, { AxiosResponse } from 'axios'
+import { ProductObj, SearchConfig } from '@/helpers/types/fetypes'
 import { ProductSuggest } from './ProductSuggest'
 import './ProductSuggestList.css'
+import { createProductSearchConfig } from '@/helpers/fctns'
 
 type ProductSuggestListProps = {
 	searchTerm: string,
@@ -12,40 +13,22 @@ type ProductSuggestListProps = {
 const ProductSuggestList = ({ searchTerm, handleClear }: ProductSuggestListProps) => {
 	const [productSearchData, setProductSearchData] = useState<ProductObj[]>([])
 
-	const getSearchResults = async (searchterm: string) => {
-		let resProduct: ProductObj[] = []
-		if (searchterm === '') {
-			return resProduct
-		}
-		else {
-			const searchConfig = {
-				method: 'post',
-				url: 'http://localhost:4000/api/shoes/productSearch',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				data: {
-					searchterm: searchterm as string
-				}
-			}
-			resProduct = await axios(searchConfig).then((response: any) => {
-				return response.data.products
+	const fetchSearchResults = async (searchterm: string) => {
+		const searchConfig: SearchConfig = createProductSearchConfig('post', 'productSearch', searchterm)
+		await axios(searchConfig)
+			.then((response: AxiosResponse) => {
+				setProductSearchData(response.data.products)
 			})
-				.catch((err: any) => {
-					console.error(err)
-					return []
-				})
-		}
-		return resProduct
+			.catch((err: any) => {
+				console.error(err)
+				setProductSearchData([])
+			})
 	}
 
 	useEffect(() => {
-		const fetchData = async () => {
-			const resultProducts = await getSearchResults(searchTerm)
-			setProductSearchData(resultProducts)
-		}
-		fetchData()
+		searchTerm !== '' ? fetchSearchResults(searchTerm) : setProductSearchData([])
 	}, [searchTerm])
+
 
 	return (
 		<div className='mt-[-1.275rem] z-10 fixed search-x-y-align'>
