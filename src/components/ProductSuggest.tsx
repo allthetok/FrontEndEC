@@ -21,7 +21,7 @@ const ProductSuggest = ({ productDtl }: ProductSuggestProps ) => {
 	return (
 		<Link href={`/product/${productDtl.name}`} className='no-text-dec'>
 			<div className='group flex flex-row items-center justify-between gap-[0.5rem] w-[634px] bg-[#d1d5db] rounded-[60px] py-0 px-[0.5rem] mb-0 h-[75px] border-black border-[1px] hover:bg-[#daddeb] hover:border-gray-700 hover:cursor-pointer'>
-				<div className='pl-[5px] text-md text-gray-700 font-bold max-w-[150px] group-hover:opacity-75'>
+				<div className='pl-[5px] text-md text-gray-700 font-bold max-w-[150px] min-w-[150px] group-hover:opacity-75'>
 					<h3 className='overflow-hidden whitespace-nowrap overflow-ellipsis'>
 						{productDtl.name}
 					</h3>
@@ -57,7 +57,7 @@ const ProductSuggest = ({ productDtl }: ProductSuggestProps ) => {
 						${productDtl.price}
 					</span>
 					<span className='inline-block whitespace-nowrap align-middle ps-2 pe-2 uppercase font-bold text-gray-700 bg-[#daddeb] shadow-md text-[0.625rem] rounded-[4px]'>
-						{productDtl.releaseDate.toLocaleString()}
+						{new Date(productDtl.releaseDate).toISOString().split('T')[0]}
 					</span>
 				</div>
 			</div>

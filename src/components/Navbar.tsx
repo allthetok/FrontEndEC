@@ -6,8 +6,8 @@ import Link from 'next/link'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { IconButton } from '@mui/material'
 import { Search } from './Search'
-import { Font50Sx } from '@/sx/styling'
 import { ProductSuggestList } from './ProductSuggestList'
+import { Font50Sx } from '@/sx/styling'
 
 
 const Navbar = () => {
@@ -52,11 +52,5 @@ const Navbar = () => {
 		</>
 	)
 }
-
-{/* <Search />
-	<h1 className='font-bold text-6xl ml-[-1000px]'>
-		AT KICKS
-	</h1>
-*/}
 
 export { Navbar }

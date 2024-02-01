@@ -1809,4 +1809,1914 @@ const searchResults = [
 	}
 ]
 
-export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy700, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk, nikeBlazer, NMD, AJ1, AJ4, AJ5, NB2002R, NB530, NB5740, sizes, searchResults }
+const searchBigResults = [
+	{
+		"id": 8,
+		"brand": "Yeezy",
+		"brandId": 2,
+		"modelId": 6,
+		"modelName": "Yeezy Boost 500",
+		"name": "Yeezy Boost 500 High Boot",
+		"releaseDate": "2023-08-14T00:00:00.000Z",
+		"colors": [
+			{
+				"color": "Tyrian/Tyrian/Tyrian",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/products/FY4269_600x.jpg?v=1591403009"
+				]
+			}
+		],
+		"price": 300,
+		"description": "The adidas Yeezy 500 Tactical Boot, Utility Black, showcases a black ballistic mesh upper with matching suede overlays, and is fastened with speed lacing for quick adjustments. The rubber mudguard seamlessly integrates with the podular adiPRENE+ midsole, which is borrowed from the original Yeezy 500 design. The boots extended padded collar reaches up to the calf for optimal fit.",
+		"sizes": [
+			{
+				"color": "Tyrian/Tyrian/Tyrian",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": 9,
+		"brand": "Yeezy",
+		"brandId": 2,
+		"modelId": 7,
+		"modelName": "Yeezy Boost 700",
+		"name": "Yeezy Boost 700 V3 Fade Carbon",
+		"releaseDate": "2022-05-21T00:00:00.000Z",
+		"colors": [
+			{
+				"color": "Fade Carbon/Fade Carbon-Fade Carbon",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/files/FRONT-WEB-ADIDAS-YEEZY-700-V3-FADE-CARBON_600x.jpg?v=1694542672",
+					"https://stayfresh.ca/cdn/shop/files/SIDE-WEB-ADIDAS-YEEZY-700-V3-FADE-CARBON_600x.jpg?v=1694542672"
+				]
+			}
+		],
+		"price": 210,
+		"description": "Distinguished by a fade gradient that moves from a mauve hue to a bright magenta at the heel, the adidas Yeezy 700 V3 Fade Carbon is a lifestyle runner in an eyecatching colorway. A translucent RPU cage overlays the engineered mesh upper. An interior bootie offers a snug, comfortable fit while traction and grip are assured from the herringbone-patterned rubber outsole.",
+		"sizes": [
+			{
+				"color": "Fade Carbon/Fade Carbon-Fade Carbon",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": 23,
+		"brand": "Yeezy",
+		"brandId": 2,
+		"modelId": 5,
+		"modelName": "Yeezy Boost 350",
+		"name": "Yeezy Boost 350 V2",
+		"releaseDate": "2022-03-21T00:00:00.000Z",
+		"colors": [
+			{
+				"color": "Bone/Bone/Bone",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/products/YEEZYBOOST350V2BONEaHQ6316_600x.jpg?v=1653542654",
+					"https://stayfresh.ca/cdn/shop/products/YEEZYBOOST350V2BONEbHQ6316_600x.jpg?v=1653542654",
+					"https://stayfresh.ca/cdn/shop/products/YEEZYBOOST350V2BONEcHQ6316_300x.jpg?v=1653542654"
+				]
+			},
+			{
+				"color": "Onyx/Onyx/Onyx",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/products/YEEZYBOOST350V2ONYX2022aHQ4540_600x.jpg?v=1657061101",
+					"https://stayfresh.ca/cdn/shop/products/YEEZYBOOST350V2ONYX2022bHQ4540_600x.jpg?v=1657061101"
+				]
+			},
+			{
+				"color": "White/Core Black/Red",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/products/ADIDASYEEZYBOOST350V2BLACKREDbCP9652_600x.jpg?v=1667867388",
+					"https://stayfresh.ca/cdn/shop/products/ADIDASYEEZYBOOST350V2BLACKREDaCP9652_600x.jpg?v=1667867388",
+					"https://stayfresh.ca/cdn/shop/products/ADIDASYEEZYBOOST350V2BLACKREDbCP9652_300x.jpg?v=1667867388"
+				]
+			},
+			{
+				"color": "Beluga Reflective/Steeple Gray/Solar Red",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/products/YeezyBoost350V2BelugaReflectiveaGW1229_600x.jpg?v=1659467371",
+					"https://stayfresh.ca/cdn/shop/products/YeezyBoost350V2BelugaReflectivebGW1229_600x.jpg?v=1659467371"
+				]
+			}
+		],
+		"price": 450,
+		"description": "The YEEZY BOOST 350 V2 is the lifestyle runner from adidas and Kanye West. It features an upper composed of re-engineered Primeknit. The post-dyed monofilament side stripe is woven into the upper. Reflective threads are woven into the laces. The midsole utilizes adidas innovative BOOST™ technology. The Yeezy Boost 350 V2 treats the lifestyle runner to a refined makeover. A monofilament side stripe adds a see-through element to the minimalist design, while a webbing pull tab at the heel provides easy on and off. Inside the shoe, three-stripe branding on the interior heel is accompanied by Yeezy stamped on the sockliner. Responsive cushioning comes courtesy of a TPU-wrapped full-length Boost midsole.",
+		"sizes": [
+			{
+				"color": "Bone/Bone/Bone",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			},
+			{
+				"color": "Onyx/Onyx/Onyx",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			},
+			{
+				"color": "White/Core Black/Red",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			},
+			{
+				"color": "Beluga Reflective/Steeple Gray/Solar Red",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": 24,
+		"brand": "Yeezy",
+		"brandId": 2,
+		"modelId": 6,
+		"modelName": "Yeezy Boost 500",
+		"name": "Yeezy Boost 500",
+		"releaseDate": "2018-07-07T00:00:00.000Z",
+		"colors": [
+			{
+				"color": "Utility Black/Utility Black/Utility Black",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/products/SF_Adidas_Yeezy_500_Utility_Black_F36640-1_600x.jpg?v=1571278055",
+					"https://stayfresh.ca/cdn/shop/products/SF_Adidas_Yeezy_500_Utility_Black_F36640-4_600x.jpg?v=1571278055"
+				]
+			},
+			{
+				"color": "Bone White/Bone White/Bone White",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/products/adidasYeezy500BoneWhiteFV3573-1_600x.jpg?v=1610674749",
+					"https://stayfresh.ca/cdn/shop/products/adidasYeezy500BoneWhiteFV3573-4_600x.jpg?v=1610674761"
+				]
+			}
+		],
+		"price": 200,
+		"description": "In July 2018, Kanye West and adidas released the Yeezy 500. The retro-inspired silhouette counterbalances a sleek design with its bulky form. What distinguishes this colorway from the standard triple-black finish is a unique use of tone – its a semi-faded black that coats the combination of mesh and upper suede, as opposed to the pitch-black variety more common in the firmament of the sneaker.",
+		"sizes": [
+			{
+				"color": "Utility Black/Utility Black/Utility Black",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			},
+			{
+				"color": "Bone White/Bone White/Bone White",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": 25,
+		"brand": "Yeezy",
+		"brandId": 2,
+		"modelId": 6,
+		"modelName": "Yeezy Boost 500",
+		"name": "Yeezy Boost 500 High",
+		"releaseDate": "2019-12-16T00:00:00.000Z",
+		"colors": [
+			{
+				"color": "Slate/Slate/Slate",
+				"images": [
+					"https://cdn.flightclub.com/750/TEMPLATE/160081/1.jpg"
+				]
+			}
+		],
+		"price": 220,
+		"description": "Celebrity Kanye West retools the 500 profile with the adidas Yeezy 500 High. Debuted in December 2019, this revamp boasts a Slate-colored neoprene base layered with suede and tumbled leather elements. Utility laces secure the tongue and a patterned mudguard bolsters the sidewall. The molded midsole is supported by Adiprene cushioning while the robust rubber outsole utilizes a wavy tread pattern.",
+		"sizes": [
+			{
+				"color": "Slate/Slate/Slate",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": 26,
+		"brand": "Yeezy",
+		"brandId": 2,
+		"modelId": 7,
+		"modelName": "Yeezy Boost 700",
+		"name": "Yeezy Boost 700 V2 Tephra",
+		"releaseDate": "2019-06-15T00:00:00.000Z",
+		"colors": [
+			{
+				"color": "Tephra/Tephra/Tephra",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/products/SF_Yeezy_Boost_700_V2_Tephra_FU7914-1_600x.jpg?v=1571278647",
+					"https://stayfresh.ca/cdn/shop/products/SF_Yeezy_Boost_700_V2_Tephra_FU7914-4_600x.jpg?v=1571278647",
+					"https://stayfresh.ca/cdn/shop/products/SF_Yeezy_Boost_700_V2_Tephra_FU7914-5_600x.jpg?v=1571278647"
+				]
+			}
+		],
+		"price": 300,
+		"description": "The Yeezy Boost 700 V2, Tephra, brings a subdued colorway to the second iteration of the Yeezy 700 line. The shoes upper is built with a layered mix of mesh and suede,finished in neutral hues. A darker look emerges on the signature bulky sole unit, which houses a full-length Boost midsole for cushioning. Underfoot, a gum rubber outsole provides traction while offering an elevated finish.",
+		"sizes": [
+			{
+				"color": "Tephra/Tephra/Tephra",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": 27,
+		"brand": "Yeezy",
+		"brandId": 2,
+		"modelId": 7,
+		"modelName": "Yeezy Boost 700",
+		"name": "Yeezy Boost 700 Hi-Res",
+		"releaseDate": "2022-08-02T00:00:00.000Z",
+		"colors": [
+			{
+				"color": "Hi-Res Blue/Hi-Res Blue-Hi-Res Blue",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/products/ezgif-4-0dff0c086b_600x.jpg?v=1678130147"
+				]
+			},
+			{
+				"color": "Hi-Res Red/Hi-Res Red/Hi-Res Red",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/products/ezgif-4-0dff0c086b_600x.jpg?v=1678130147"
+				]
+			}
+		],
+		"price": 300,
+		"description": "The adidas Yeezy Boost 700 Hi-Res Blue/Hi-Res Red features a vibrant shade across most of the lifestyle runner designed by Kanye West. Hi-Res Blue/Red appears on parts of the upper and midsole, contrasted by black suede overlays and grey near the front of the shoe and toe cap. The sculpted midsole features a hit of red near the front, while full-length Boost cushioning is embedded right above the gum rubber outsole.",
+		"sizes": [
+			{
+				"color": "Hi-Res Blue/Hi-Res Blue-Hi-Res Blue",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			},
+			{
+				"color": "Hi-Res Red/Hi-Res Red/Hi-Res Red",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": 28,
+		"brand": "Yeezy",
+		"brandId": 2,
+		"modelId": 8,
+		"modelName": "Yeezy Foam Runner - Yeezy Slides",
+		"name": "Yeezy Foam Runner",
+		"releaseDate": "2022-04-16T00:00:00.000Z",
+		"colors": [
+			{
+				"color": "Slate Grey/Slate Grey/ Slate Grey",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/products/ezgif.com-gif-maker_32_600x.jpg?v=1654716126"
+				]
+			},
+			{
+				"color": "Granite/Granite/Granite",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/products/ipad_adidas-yeezy-foam-runner-mx-sand-grey_600x.jpg?v=1648660004"
+				]
+			},
+			{
+				"color": "Bone/Bone/Bone",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/files/ezgif-1-fe30e3d09a_600x.jpg?v=1691526188"
+				]
+			}
+		],
+		"price": 90,
+		"description": "The Yeezy Foam Runner features a unique look, utilizing a one-piece foam upper with a porous design, crafted from environmentally friendly algae. Kanye West and adidas unleashed a lifestyle slip-on with no shoelaces, arriving in many different colorways. Explore a selection of Foam RNRs including Carbon, Stone Salt, Stone Taupe and Desert Sand.",
+		"sizes": [
+			{
+				"color": "Slate Grey/Slate Grey/ Slate Grey",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			},
+			{
+				"color": "Bone/Bone/Bone",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": 29,
+		"brand": "Yeezy",
+		"brandId": 2,
+		"modelId": 8,
+		"modelName": "Yeezy Foam Runner - Yeezy Slides",
+		"name": "Yeezy Slides",
+		"releaseDate": "2022-03-07T00:00:00.000Z",
+		"colors": [
+			{
+				"color": "Slate Grey/Slate Grey/ Slate Grey",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/files/adidas-yeezy-slides-slate-grey-ID2350-release-date-4_600x.jpg?v=1692392595"
+				]
+			},
+			{
+				"color": "Pure/Pure/Pure",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/products/YeezySlidePureAGZ5554_4476b59f-e892-4fd2-a085-8caa4143371c_600x.jpg?v=1642794272",
+					"https://stayfresh.ca/cdn/shop/products/YeezySlidePureCGZ5554_876119bc-b976-454a-939c-1ddedd910aba_600x.jpg?v=1642794272",
+					"https://stayfresh.ca/cdn/shop/products/YeezySlidePureDGZ5554_8ce2827f-aa1d-4fe9-9f80-a7b2bf906a0f_600x.jpg?v=1642794272"
+				]
+			},
+			{
+				"color": "Azure/Azure/Azure",
+				"images": [
+					"https://stayfresh.ca/cdn/shop/files/FRONT-WEB-ADIDAS-YEEZY-SLIDE-AZURE-2023_600x.jpg?v=1686890698",
+					"https://stayfresh.ca/cdn/shop/files/SIDE-WEB-ADIDAS-YEEZY-SLIDE-AZURE-2023_600x.jpg?v=1686890698",
+					"https://stayfresh.ca/cdn/shop/files/BACK-WEB-ADIDAS-YEEZY-SLIDE-AZURE-2023_600x.jpg?v=1686890911"
+				]
+			}
+		],
+		"price": 60,
+		"description": "As part of Yeezys sixth collection, Kanye West and adidas introduced the Yeezy Slide in 2018. Featuring monotone colorways, the Yeezy Slide is an elevated pool slide design, featuring injection-molded construction, a shark-tooth outsole, and a forefoot strap. The Yeezy Slides maintain the look and feel of a classic sandal, but with a few design touches to set them apart. Key colorways of the Yeezy Slides include Bone, Sand and Azure.",
+		"sizes": [
+			{
+				"color": "Slate Grey/Slate Grey/ Slate Grey",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			},
+			{
+				"color": "Pure/Pure/Pure",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			},
+			{
+				"color": "Azure/Azure/Azure",
+				"sizes": [
+					{
+						"size": "M 4.5",
+						"amount": 5
+					},
+					{
+						"size": "M 5.0",
+						"amount": 5
+					},
+					{
+						"size": "M 5.5",
+						"amount": 5
+					},
+					{
+						"size": "M 6.0",
+						"amount": 5
+					},
+					{
+						"size": "M 6.5",
+						"amount": 5
+					},
+					{
+						"size": "M 7.0",
+						"amount": 5
+					},
+					{
+						"size": "M 7.5",
+						"amount": 5
+					},
+					{
+						"size": "M 8.0",
+						"amount": 5
+					},
+					{
+						"size": "M 8.5",
+						"amount": 5
+					},
+					{
+						"size": "M 9.0",
+						"amount": 5
+					},
+					{
+						"size": "M 9.5",
+						"amount": 5
+					},
+					{
+						"size": "M 10.0",
+						"amount": 5
+					},
+					{
+						"size": "M 10.5",
+						"amount": 5
+					},
+					{
+						"size": "M 11.0",
+						"amount": 5
+					},
+					{
+						"size": "M 11.5",
+						"amount": 5
+					},
+					{
+						"size": "M 12.0",
+						"amount": 5
+					},
+					{
+						"size": "M 12.5",
+						"amount": 5
+					},
+					{
+						"size": "M 13.0",
+						"amount": 5
+					},
+					{
+						"size": "M 14.0",
+						"amount": 5
+					},
+					{
+						"size": "M 15.0",
+						"amount": 5
+					},
+					{
+						"size": "M 16.0",
+						"amount": 5
+					},
+					{
+						"size": "M 17.0",
+						"amount": 5
+					},
+					{
+						"size": "M 18.0",
+						"amount": 5
+					}
+				]
+			}
+		]
+	}
+]
+
+export { ultraBoost, superStar, stanSmith, yeezy350, yeezy500, yeezy700, yeezyOpen, nikeAF1, nikeAirM97, nikeDunk, nikeBlazer, NMD, AJ1, AJ4, AJ5, NB2002R, NB530, NB5740, sizes, searchResults, searchBigResults }
