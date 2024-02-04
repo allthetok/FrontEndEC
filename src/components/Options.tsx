@@ -7,6 +7,7 @@ import { Button } from '@mui/material'
 import { SizeButton } from './SizeButton'
 import { ActiveSizeButtonSx, AddToCartSx, AdditionalCartSx, SizeButtonSx } from '@/sx/styling'
 import './FullProduct.css'
+import { prodToStripeProd } from '@/helpers/fctns'
 
 
 type OptionsProps = {
@@ -17,10 +18,8 @@ type OptionsProps = {
 const Options = ({ colorQuery, productDtl }: OptionsProps) => {
 	const [sizeOption ,setSizeOption] = useState('')
 
-	console.log(productDtl)
-
 	const router = useRouter()
-	const { addItem } = useShoppingCart()
+	const { addItem, clearCart, cartDetails } = useShoppingCart()
 
 	const sizesFiltered: ColorSizes[] = productDtl.sizes.filter((indSize: ColorSizes) => indSize.color === colorQuery)
 
@@ -32,6 +31,10 @@ const Options = ({ colorQuery, productDtl }: OptionsProps) => {
 	const handleAdd = (e: any) => {
 		e.preventDefault()
 		console.log('added to cart')
+		// addItem(productDtl)
+		addItem(prodToStripeProd(productDtl, colorQuery, sizeOption))
+		// console.log(prodToStripeProd(productDtl, colorQuery, sizeOption))
+		// clearCart()
 	}
 
 	return (

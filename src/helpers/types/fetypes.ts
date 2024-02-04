@@ -103,4 +103,5 @@ interface HomePageConfig {
 }
 
 
+
 export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig }

@@ -1,5 +1,6 @@
 /* eslint-disable no-case-declarations */
-import { Brands, FullBrandConfig, FullModelConfig, FullProductConfig, Models, ProductObj, SearchConfig } from './types/fetypes'
+import { Product } from 'use-shopping-cart/core'
+import { Brands, Colors, FullBrandConfig, FullModelConfig, FullProductConfig, Models, ProductObj, SearchConfig } from './types/fetypes'
 
 const formatDate = (inpDate: Date) => `${inpDate.toLocaleDateString('default', { month: 'long' })} ${inpDate.getUTCDate()}, ${inpDate.getFullYear()}`
 
@@ -194,5 +195,23 @@ const retrieveSubOptions: (brandDtl: Brands[], specified: string) => Models[] | 
 	}
 }
 
+const prodToStripeProd: (inputProd: ProductObj, colorSelect: string | string[], sizeSelect: string) => Product = (inputProd: ProductObj, colorSelect: string | string[], sizeSelect: string) => {
+	const stripeProduct: Product = {
+		name: inputProd.name,
+		description: inputProd.description,
+		id: inputProd.id.toString(),
+		// price: inputProd.price,
+		price: inputProd.price * 100,
+		quantity: '1',
+		currency: 'USD',
+		image: inputProd.colors.filter((indColor: Colors) => indColor.color === colorSelect)[0].images[0],
+		product_data: {
+			colorSelected: colorSelect,
+			sizeSelected: sizeSelect
+		}
+	}
+	return stripeProduct
+}
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions }
+
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd }
