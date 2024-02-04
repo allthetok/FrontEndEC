@@ -30,6 +30,19 @@ const Options = ({ colorQuery, productDtl }: OptionsProps) => {
 		router.push(`/product/${productDtl.name}?color=${e.target.value}`)
 	}
 
+	// const handleAdd = (e: any) => {
+	// 	e.preventDefault()
+	// 	const isInCart = !!cartDetails?.[productDtl.id.toString()]
+	// 	if (isInCart) {
+	// 		removeItem(productDtl.id.toString())
+	// 	}
+	// 	addItem(prodToStripeProd(productDtl, colorQuery, sizeOption))
+	// 	// clearCart()
+	// }
+
+	const [open, setOpen] = useState(false)
+	const timerRef = useRef(0)
+
 	const handleAdd = (e: any) => {
 		e.preventDefault()
 		const isInCart = !!cartDetails?.[productDtl.id.toString()]
@@ -37,11 +50,12 @@ const Options = ({ colorQuery, productDtl }: OptionsProps) => {
 			removeItem(productDtl.id.toString())
 		}
 		addItem(prodToStripeProd(productDtl, colorQuery, sizeOption))
-		// clearCart()
+		setOpen(false)
+		window.clearTimeout(timerRef.current)
+		timerRef.current = window.setTimeout(() => {
+			setOpen(true)
+		}, 100)
 	}
-
-	const [open, setOpen] = useState(false)
-	const timerRef = useRef(0)
 
 	useEffect(() => {
 		return () => clearTimeout(timerRef.current)
@@ -75,15 +89,26 @@ const Options = ({ colorQuery, productDtl }: OptionsProps) => {
 				</div> */}
 
 				<Toast.Provider swipeDirection='right'>
-
 					<div className='mx-auto flex flex-col items-center'>
-						<Button  disabled={sizeOption === '' || (sizeOption !== '' ? sizesFiltered[0].sizes.filter((shoeSize: ProductSizes) => shoeSize.size === sizeOption)[0].amount === 0 : true)} sx={AdditionalCartSx} onClick={handleAdd}>
+						<Button disabled={sizeOption === '' || (sizeOption !== '' ? sizesFiltered[0].sizes.filter((shoeSize: ProductSizes) => shoeSize.size === sizeOption)[0].amount === 0 : true)} sx={AdditionalCartSx} onClick={handleAdd}>
 							Add to Cart
 						</Button>
 						<p className='text-gray-600 text-center pt-2 text-xs'>
 							{sizeOption !== '' ? `${sizesFiltered[0].sizes.filter((shoeSize: ProductSizes) => shoeSize.size === sizeOption)[0].amount}` : ''} In stock
 						</p>
 					</div>
+					<Toast.Root className={'bg-white rounded-md shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] p-[15px] grid [grid-template-areas:_\'title_action\'_\'description_action\'] grid-cols-[auto_max-content] gap-x-[15px] items-center data-[state=open]:animate-slideIn data-[state=closed]:animate-hide data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=cancel]:translate-x-0 data-[swipe=cancel]:transition-[transform_200ms_ease-out] data-[swipe=end]:animate-swipeOut'}
+						open={open} onOpenChange={setOpen}>
+						<Toast.Title className={'[grid-area:_title] mb-[5px] font-medium text-slate12 text-[15px]'}>
+							Added to Cart:
+						</Toast.Title>
+						<Toast.Description asChild>
+							<p className={'[grid-area:_description] m-0 text-slate11 text-[11px] leading-[1.3]'}>
+								{productDtl.name} - {colorQuery as string} - {sizeOption}
+							</p>
+						</Toast.Description>
+					</Toast.Root>
+					<Toast.Viewport className={'[--viewport-padding:_25px] fixed bottom-0 right-0 flex flex-col p-[var(--viewport-padding)] gap-[10px] w-[390px] max-w-[100vw] m-0 list-none z-[2147483647] outline-none'} />
 				</Toast.Provider>
 
 			</div>
