@@ -19,7 +19,7 @@ const Options = ({ colorQuery, productDtl }: OptionsProps) => {
 	const [sizeOption ,setSizeOption] = useState('')
 
 	const router = useRouter()
-	const { addItem, clearCart, cartDetails } = useShoppingCart()
+	const { addItem, removeItem, cartDetails, clearCart } = useShoppingCart()
 
 	const sizesFiltered: ColorSizes[] = productDtl.sizes.filter((indSize: ColorSizes) => indSize.color === colorQuery)
 
@@ -30,10 +30,11 @@ const Options = ({ colorQuery, productDtl }: OptionsProps) => {
 
 	const handleAdd = (e: any) => {
 		e.preventDefault()
-		console.log('added to cart')
-		// addItem(productDtl)
+		const isInCart = !!cartDetails?.[productDtl.id.toString()]
+		if (isInCart) {
+			removeItem(productDtl.id.toString())
+		}
 		addItem(prodToStripeProd(productDtl, colorQuery, sizeOption))
-		// console.log(prodToStripeProd(productDtl, colorQuery, sizeOption))
 		// clearCart()
 	}
 
