@@ -65,6 +65,27 @@ const AddToCartSx = {
 	textTransform: 'capitalize'
 }
 
+const AdditionalCartSx = {
+	textTransform: 'capitalize',
+	font: 'bold',
+	display: 'flex',
+	color: 'white',
+	backgroundColor: 'rgb(99 102 241 / 1)',
+	borderWidth: '0px',
+	padding: '0.75rem 2.5rem',
+	fontSize: '1.125rem',
+	lineHeight: '1.75rem',
+	borderRadius: '9999px',
+	'&:focus': {
+		outline: '2px solid transparent',
+		outlineOffset: '2px'
+	},
+	'&:hover': {
+		backgroundColor: 'rgb(79 70 229 / 1)'
+	}
+}
+
+
 const LabelSx = {
 	maxWidth: '320px'
 }
@@ -73,8 +94,4 @@ const OpacitySx = {
 	opacity: '0.9'
 }
 
-const PlaceHolderSx = {
-	opacity: '1'
-}
-
-export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx, SizeButtonSx, ActiveSizeButtonSx, AddToCartSx, LabelSx, OpacitySx }
+export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx, SizeButtonSx, ActiveSizeButtonSx, AddToCartSx, LabelSx, OpacitySx, AdditionalCartSx }

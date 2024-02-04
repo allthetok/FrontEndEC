@@ -51,7 +51,7 @@ const FullProductServer = ({ productDtl, colorQuery, similarProducts }: FullProd
 									<p className='leading-relaxed'>
 										{productDtl.description}
 									</p>
-									<Options sizes={productDtl.sizes} modelName={productDtl.name} colorQuery={colorQuery}/>
+									<Options colorQuery={colorQuery} productDtl={productDtl}/>
 								</div>
 							</div>
 						</div>

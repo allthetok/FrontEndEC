@@ -12,17 +12,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 	return (
-		// <CartProvider cartMode='checkout-session' stripe={process.env.STRIPE_API_PUBLISHABLE_KEY as string} currency='USD' shouldPersist={true}>
-		<CartProvider>
-			<html lang="en">
-				<>
-					<body className={inter.className}>
+		<html lang="en">
+			<>
+				<body className={inter.className}>
+					<CartProvider>
 						<Navbar />
 						{children}
 						<Footer />
-					</body>
-				</>
-			</html>
-		</CartProvider>
+					</CartProvider>
+				</body>
+			</>
+		</html>
 	)
 }
