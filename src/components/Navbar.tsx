@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { useShoppingCart } from 'use-shopping-cart'
 import Image from 'next/image'
 import Link from 'next/link'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
@@ -12,6 +13,7 @@ import { Font50Sx } from '@/sx/styling'
 
 const Navbar = () => {
 	const [searchProduct, setSearchProduct] = useState('')
+	const { cartCount } = useShoppingCart()
 	const router = useRouter()
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLElement>) => {
@@ -43,9 +45,14 @@ const Navbar = () => {
 								AT KICKS
 							</h1>
 						</div>
-						<IconButton onClick={() => console.log('clicked cart')}>
-							<ShoppingCartIcon sx={Font50Sx} htmlColor='black'/>
-						</IconButton>
+						<Link className='no-underline flex flex-row' href='/cart'>
+							<h3 className='inline-block align-baseline font-black text-4xl pt-3 text-black'>
+								{cartCount !== undefined ? cartCount : 0}
+							</h3>
+							<IconButton>
+								<ShoppingCartIcon sx={Font50Sx} htmlColor='black'/>
+							</IconButton>
+						</Link>
 					</div>
 				</div>
 			</header>

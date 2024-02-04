@@ -1,13 +1,15 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useShoppingCart } from 'use-shopping-cart'
 import { ColorSizes, ProductObj, ProductSizes } from '@/helpers/types/fetypes'
+import { prodToStripeProd } from '@/helpers/fctns'
 import { Button } from '@mui/material'
+import * as Toast from '@radix-ui/react-toast'
 import { SizeButton } from './SizeButton'
 import { ActiveSizeButtonSx, AddToCartSx, AdditionalCartSx, SizeButtonSx } from '@/sx/styling'
+
 import './FullProduct.css'
-import { prodToStripeProd } from '@/helpers/fctns'
 
 
 type OptionsProps = {
@@ -38,6 +40,13 @@ const Options = ({ colorQuery, productDtl }: OptionsProps) => {
 		// clearCart()
 	}
 
+	const [open, setOpen] = useState(false)
+	const timerRef = useRef(0)
+
+	useEffect(() => {
+		return () => clearTimeout(timerRef.current)
+	}, [])
+
 	return (
 		<>
 			<div className='flex flex-col gap-6 mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5'>
@@ -56,15 +65,27 @@ const Options = ({ colorQuery, productDtl }: OptionsProps) => {
 				<div className='flex'>
 					<SizeButton sizeOption={sizeOption} setSizeOption={setSizeOption}/>
 				</div>
-				<div className='mx-auto flex flex-col items-center'>
-					{/* <Button className='font-bold flex text-white bg-indigo-500 border-0 py-3 px-10 text-lg focus:outline-none hover:bg-indigo-600 rounded-full' disabled={sizeOption === '' || (sizeOption !== '' ? sizesFiltered[0].sizes.filter((shoeSize: ProductSizes) => shoeSize.size === sizeOption)[0].amount === 0 : true)} sx={AddToCartSx} onClick={handleAdd}> */}
+				{/* <div className='mx-auto flex flex-col items-center'>
 					<Button  disabled={sizeOption === '' || (sizeOption !== '' ? sizesFiltered[0].sizes.filter((shoeSize: ProductSizes) => shoeSize.size === sizeOption)[0].amount === 0 : true)} sx={AdditionalCartSx} onClick={handleAdd}>
-					Add to Cart
+						Add to Cart
 					</Button>
 					<p className='text-gray-600 text-center pt-2 text-xs'>
 						{sizeOption !== '' ? `${sizesFiltered[0].sizes.filter((shoeSize: ProductSizes) => shoeSize.size === sizeOption)[0].amount}` : ''} In stock
 					</p>
-				</div>
+				</div> */}
+
+				<Toast.Provider swipeDirection='right'>
+
+					<div className='mx-auto flex flex-col items-center'>
+						<Button  disabled={sizeOption === '' || (sizeOption !== '' ? sizesFiltered[0].sizes.filter((shoeSize: ProductSizes) => shoeSize.size === sizeOption)[0].amount === 0 : true)} sx={AdditionalCartSx} onClick={handleAdd}>
+							Add to Cart
+						</Button>
+						<p className='text-gray-600 text-center pt-2 text-xs'>
+							{sizeOption !== '' ? `${sizesFiltered[0].sizes.filter((shoeSize: ProductSizes) => shoeSize.size === sizeOption)[0].amount}` : ''} In stock
+						</p>
+					</div>
+				</Toast.Provider>
+
 			</div>
 		</>
 	)
