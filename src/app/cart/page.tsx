@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 'use client'
 import React from 'react'
 import axios, { AxiosError, AxiosResponse } from 'axios'
@@ -33,28 +34,14 @@ const CartPage = () => {
 		// 		{/* Cart Summary */}
 		// 	</form>
 		// </main>
-		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
-			{/* <h2 className='text-3xl font-bold'>{cartCount}</h2> */}
+		<main className='flex min-h-screen flex-col items-center justify-between p-24 gap-10 mt-5'>
+			{cartCount! > 0 ?
+				<h2 className='relative text-3xl font-bold top-[50px] p-[70px]'>You have {cartCount} items in your cart:</h2>
+				: <></>
+			}
 			<CartProductList names={cartProductNames} ids={cartProductIds} />
 		</main>
 	)
 }
-
-// const getData = async (products: string[]) => {
-// 	const resProducts: ProductObj[] = []
-// 	for (const product in products) {
-// 		const productSearchConfig = createProductDtlConfig('post', 'product', formatPageQuery(product))
-// 		resProducts.push(await getProductDtl(productSearchConfig))
-// 	}
-// 	return resProducts
-// }
-
-// const getProductDtl = async (productConfig: FullProductConfig) => {
-// 	const resultProductObj = await axios(productConfig)
-// 		.then((response: AxiosResponse) => {
-// 			return response.data.productReq as ProductObj
-// 		})
-// 	return resultProductObj
-// }
 
 export default CartPage
