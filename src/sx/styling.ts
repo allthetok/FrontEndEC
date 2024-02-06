@@ -94,4 +94,9 @@ const OpacitySx = {
 	opacity: '0.9'
 }
 
-export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx, SizeButtonSx, ActiveSizeButtonSx, AddToCartSx, LabelSx, OpacitySx, AdditionalCartSx }
+const Font35Sx = {
+	fontSize: '35px',
+	paddingTop: '5px'
+}
+
+export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, Font35Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx, SizeButtonSx, ActiveSizeButtonSx, AddToCartSx, LabelSx, OpacitySx, AdditionalCartSx }
