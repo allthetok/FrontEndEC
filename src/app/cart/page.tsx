@@ -36,7 +36,7 @@ const CartPage = () => {
 		// </main>
 		<main className='flex min-h-screen flex-col items-center justify-between p-24 gap-10'>
 			{cartCount! > 0 ?
-				<h2 className='static mt-[50px] text-4xl font-bold'>You have {cartCount} items in your cart:</h2>
+				<h2 className='header-cart-count text-4xl font-bold'>You have {cartCount} items in your cart:</h2>
 				: <></>
 			}
 			<CartProductList names={cartProductNames} ids={cartProductIds} />

@@ -43,5 +43,9 @@ body {
 	background: url(../../public/nike-white.jpg);
 	height: 600px;
 	background-position: 45% 50%;
+}
 
+.header-cart-count {
+	position: relative;
+	top: 40px;
 }
