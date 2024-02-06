@@ -55,9 +55,9 @@ const CartProductList = ({ names, ids }: CartProductProps) => {
 					{productCartList.map((product: ProductObj, index: number) => (
 						<div className='flex flex-col p-10 justify-center' key={index}>
 							<Product product={product} key={index} />
-							<button className='flex flex-row justify-center items-center bg-[#a9a9a9] py-[0.5rem] mx-auto px-2 max-w-[120px] rounded-xl' onClick={() => removeItem(product.id.toString())}>
-								<HighlightOffIcon sx={Font35Sx} />
-								<p className='text-lg font-bold pt-[0.375rem] text-white uppercase'>Remove</p>
+							<button className='group flex flex-row justify-center items-center bg-gray-300 pb-2 mx-auto px-2 max-w-[120px] rounded-xl border border-black hover:bg-gray-700 hover:border-white hover:text-white' onClick={() => removeItem(product.id.toString())}>
+								<HighlightOffIcon sx={Font35Sx} className='group-hover:text-white'/>
+								<p className='text-lg font-bold pt-[0.375rem] text-black uppercase group-hover:text-white'>Remove</p>
 							</button>
 						</div>
 					))}
