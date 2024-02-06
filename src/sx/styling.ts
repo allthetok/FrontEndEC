@@ -85,6 +85,29 @@ const AdditionalCartSx = {
 	}
 }
 
+const RemoveCartSx = {
+	display: 'flex',
+	flexDirection: 'row',
+	justifyContent: 'center',
+	alignItems: 'center',
+	textTransform: 'capitalize',
+	font: 'bold',
+	color: 'white',
+	backgroundColor: '#a9a9a9',
+	borderWidth: '0px',
+	padding: '0.75rem 2.5rem',
+	fontSize: '1.125rem',
+	borderRadius: '9999px',
+	maxWidth: '120px',
+	'&:focus': {
+		outline: '2px solid transparent',
+		outlineOffset: '2px'
+	},
+	'&:hover': {
+		backgroundColor: 'rgb(79 70 229 / 1)'
+	}
+}
+
 
 const LabelSx = {
 	maxWidth: '320px'
@@ -99,4 +122,4 @@ const Font35Sx = {
 	paddingTop: '5px'
 }
 
-export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, Font35Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx, SizeButtonSx, ActiveSizeButtonSx, AddToCartSx, LabelSx, OpacitySx, AdditionalCartSx }
+export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, Font35Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx, SizeButtonSx, ActiveSizeButtonSx, AddToCartSx, LabelSx, OpacitySx, AdditionalCartSx, RemoveCartSx }

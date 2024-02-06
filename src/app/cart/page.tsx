@@ -34,9 +34,9 @@ const CartPage = () => {
 		// 		{/* Cart Summary */}
 		// 	</form>
 		// </main>
-		<main className='flex min-h-screen flex-col items-center justify-between p-24 gap-10 mt-5'>
+		<main className='flex min-h-screen flex-col items-center justify-between p-24 gap-10'>
 			{cartCount! > 0 ?
-				<h2 className='text-3xl font-bold pt-[70px] pb-[40px]'>You have {cartCount} items in your cart:</h2>
+				<h2 className='static mt-[50px] text-4xl font-bold'>You have {cartCount} items in your cart:</h2>
 				: <></>
 			}
 			<CartProductList names={cartProductNames} ids={cartProductIds} />
