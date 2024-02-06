@@ -1,6 +1,7 @@
 'use client'
 import { Font30Sx, Font50Sx, PaddingNoneSx } from '@/sx/styling'
-import { IconButton, Link } from '@mui/material'
+import { IconButton } from '@mui/material'
+import Link from 'next/link'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
@@ -44,8 +45,8 @@ const Footer = () => {
 										</Link>
 									</li>
 									<li>
-										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative no-underline' href='/wishlist'>
-											Wishlist
+										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative no-underline' href='/cart'>
+											My Cart
 										</Link>
 									</li>
 									<li>

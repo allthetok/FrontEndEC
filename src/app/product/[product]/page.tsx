@@ -9,7 +9,7 @@ const ProductPage = async ({ params, searchParams }: { params: { product: string
 	const { productObj } = await getData(params.product)
 	const color = searchParams.color !== undefined ? searchParams.color : productObj.productReq.colors[0].color
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
+		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
 			<FullProductServer productDtl={productObj.productReq} colorQuery={color} similarProducts={productObj.similarProducts}/>
 		</main>
 	)
