@@ -31,9 +31,6 @@ const getProductDtl = async (productConfig: FullProductConfig) => {
 			}
 			return productObj
 		})
-		// .catch((err: AxiosError) => {
-		// 	console.error(err)
-		// })
 	return resultProductObj
 }
 

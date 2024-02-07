@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation'
 import { useShoppingCart } from 'use-shopping-cart'
 import { ColorSizes, Colors, ProductObj, ProductSizes } from '@/helpers/types/fetypes'
 import { prodToStripeProd } from '@/helpers/fctns'
-import { Button } from '@mui/material'
 import { ToastProvider, Root as ToastRoot, Title, Description, Viewport } from '@radix-ui/react-toast'
+import { Button } from '@mui/material'
 import { SizeButton } from './SizeButton'
 import { ActiveSizeButtonSx, AddToCartSx, AdditionalCartSx, SizeButtonSx } from '@/sx/styling'
 import './FullProduct.css'
@@ -18,9 +18,11 @@ type OptionsProps = {
 
 const Options = ({ colorQuery, productDtl }: OptionsProps) => {
 	const [sizeOption ,setSizeOption] = useState('')
+	const [open, setOpen] = useState(false)
+	const timerRef = useRef(0)
 
 	const router = useRouter()
-	const { addItem, removeItem, cartDetails, clearCart } = useShoppingCart()
+	const { addItem, removeItem, cartDetails } = useShoppingCart()
 
 	const sizesFiltered: ColorSizes[] = productDtl.sizes.filter((indSize: ColorSizes) => indSize.color === colorQuery)
 
@@ -28,19 +30,6 @@ const Options = ({ colorQuery, productDtl }: OptionsProps) => {
 		e.preventDefault()
 		router.push(`/product/${productDtl.name}?color=${e.target.value}`)
 	}
-
-	// const handleAdd = (e: any) => {
-	// 	e.preventDefault()
-	// 	const isInCart = !!cartDetails?.[productDtl.id.toString()]
-	// 	if (isInCart) {
-	// 		removeItem(productDtl.id.toString())
-	// 	}
-	// 	addItem(prodToStripeProd(productDtl, colorQuery, sizeOption))
-	// 	// clearCart()
-	// }
-
-	const [open, setOpen] = useState(false)
-	const timerRef = useRef(0)
 
 	const handleAdd = (e: any) => {
 		e.preventDefault()
