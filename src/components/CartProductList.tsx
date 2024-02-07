@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useShoppingCart } from 'use-shopping-cart'
-import axios, { AxiosError, AxiosResponse } from 'axios'
+import axios, { AxiosResponse } from 'axios'
 import { FullProductConfig, ProductObj } from '@/helpers/types/fetypes'
-import { createProductDtlConfig, formatPageQuery } from '@/helpers/fctns'
-import { ToastProvider, Root as ToastRoot, Title, Description, Viewport } from '@radix-ui/react-toast'
+import { createProductDtlConfig } from '@/helpers/fctns'
 import { Product } from './Product'
+import { ToastRemove } from './ToastRemove'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 import { Font35Sx } from '@/sx/styling'
@@ -76,20 +76,45 @@ const CartProductList = ({ cartAttributes }: CartProductProps) => {
 	return (
 		<>
 			{productCartList.length !== 0 ?
+				(<section className='pb-24 pt-6 bg-gray-100 border-2 rounded-lg border-black mt-5' aria-labelledby='products-heading'>
+					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:col-span-3 lg:gap-x-8'>
+						{productCartList.map((product: ProductObj, index: number) => (
+							<div className='flex flex-col p-10 justify-center' key={index}>
+								<Product product={product} key={index} />
+								<button className='group flex flex-row justify-center items-center mt-5 bg-gray-300 pb-2 mx-auto px-2 max-w-[120px] rounded-xl border border-black hover:bg-gray-700 hover:text-white' onClick={() => handleRemove(product.id.toString(), product.name)}>
+									<HighlightOffIcon sx={Font35Sx} className='group-hover:text-white'/>
+									<p className='text-lg font-bold pt-[0.375rem] text-black uppercase group-hover:text-white'>Remove</p>
+								</button>
+							</div>
+						))}
+					</div>
+				</section> )
+				: (
+					<section className='pb-24 pt-6 bg-gray-100 mt-5' aria-labelledby='products-heading'>
+						<Link className='fixed ml-[-250px] text-3xl leading-10 font-extrabold uppercase text-gray-500 hover:text-gray-700 flex flex-row' href='/products'>
+							<p>Shop Products to Checkout</p>
+							<ArrowCircleRightIcon sx={Font35Sx} />
+						</Link>
+					</section>
+				)}
+			<ToastRemove open={open} setOpen={setOpen} recentRemove={recentRemove} />
+		</>
+	)
+}
+
+
+{/* <>
+			{productCartList.length !== 0 ?
 				( <section className='pb-24 pt-6 bg-gray-100 border-2 rounded-lg border-black mt-5' aria-labelledby='products-heading'>
 					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:col-span-3 lg:gap-x-8'>
 						{productCartList.map((product: ProductObj, index: number) => (
 							<div className='flex flex-col p-10 justify-center' key={index}>
 								<Product product={product} key={index} />
-								{/* <button className='group flex flex-row justify-center items-center mt-5 bg-gray-300 pb-2 mx-auto px-2 max-w-[120px] rounded-xl border border-black hover:bg-gray-700 hover:text-white' onClick={() => removeItem(product.id.toString())}>
-								<HighlightOffIcon sx={Font35Sx} className='group-hover:text-white'/>
-								<p className='text-lg font-bold pt-[0.375rem] text-black uppercase group-hover:text-white'>Remove</p>
-							</button> */}
+								<button className='group flex flex-row justify-center items-center mt-5 bg-gray-300 pb-2 mx-auto px-2 max-w-[120px] rounded-xl border border-black hover:bg-gray-700 hover:text-white' onClick={() => handleRemove(product.id.toString(), product.name)}>
+									<HighlightOffIcon sx={Font35Sx} className='group-hover:text-white'/>
+									<p className='text-lg font-bold pt-[0.375rem] text-black uppercase group-hover:text-white'>Remove</p>
+								</button>
 								<ToastProvider swipeDirection='right'>
-									<button className='group flex flex-row justify-center items-center mt-5 bg-gray-300 pb-2 mx-auto px-2 max-w-[120px] rounded-xl border border-black hover:bg-gray-700 hover:text-white' onClick={() => handleRemove(product.id.toString(), product.name)}>
-										<HighlightOffIcon sx={Font35Sx} className='group-hover:text-white'/>
-										<p className='text-lg font-bold pt-[0.375rem] text-black uppercase group-hover:text-white'>Remove</p>
-									</button>
 									<ToastRoot className={'bg-white rounded-md shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] p-[15px] grid [grid-template-areas:_\'title_action\'_\'description_action\'] grid-cols-[auto_max-content] gap-x-[15px] items-center data-[state=open]:animate-slideIn data-[state=closed]:animate-hide data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=cancel]:translate-x-0 data-[swipe=cancel]:transition-[transform_200ms_ease-out] data-[swipe=end]:animate-swipeOut'}
 										open={open} onOpenChange={setOpen}>
 										<Title className={'[grid-area:_title] mb-[30px] font-bold text-slate12 text-lg'}>
@@ -139,8 +164,12 @@ const CartProductList = ({ cartAttributes }: CartProductProps) => {
 						</ToastProvider>
 					</section>
 				)}
-		</>
-	)
-}
+		</> */}
+
+
+{/* <button className='group flex flex-row justify-center items-center mt-5 bg-gray-300 pb-2 mx-auto px-2 max-w-[120px] rounded-xl border border-black hover:bg-gray-700 hover:text-white' onClick={() => removeItem(product.id.toString())}>
+								<HighlightOffIcon sx={Font35Sx} className='group-hover:text-white'/>
+								<p className='text-lg font-bold pt-[0.375rem] text-black uppercase group-hover:text-white'>Remove</p>
+							</button> */}
 
 export { CartProductList }
