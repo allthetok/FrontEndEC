@@ -9,13 +9,8 @@ import { CartProductList } from '@/components/CartProductList'
 
 const CartPage = () => {
 	const { removeItem, cartDetails, clearCart, cartCount } = useShoppingCart()
-	// const productCartItems = Object.entries(cartDetails!).map(([_, product]) => product)
-	// console.log(productCartItems)
-	const cartProductNames: string[] = Object.entries(cartDetails!).map(([_, product]) => product.name)
-	const cartProductIds: string[] = Object.entries(cartDetails!).map(([_, product]) => product.id)
 
-	// const cartProducts = await getData(productCartStripeItems)
-	// console.log(cartProducts)
+	const cartProducts: {name: string, id: string}[] = Object.entries(cartDetails!).map(([_, product]) => ( { name: product.name, id: product.id } ))
 	return (
 		// <main className='flex min-h-screen flex-col items-center justify-between p-24'>
 		// 	<p>{cartCount}</p>
@@ -39,7 +34,7 @@ const CartPage = () => {
 				<h2 className='header-cart-count text-4xl font-bold'>You have {cartCount} items in your cart:</h2>
 				: <></>
 			}
-			<CartProductList names={cartProductNames} ids={cartProductIds} />
+			<CartProductList cartAttributes={cartProducts} />
 		</main>
 	)
 }
