@@ -6,6 +6,7 @@ import { useShoppingCart } from 'use-shopping-cart'
 import { createProductDtlConfig, formatPageQuery } from '@/helpers/fctns'
 import { FullProductConfig, MetaProductData, ProductObj } from '@/helpers/types/fetypes'
 import { CartProductList } from '@/components/CartProductList'
+import { CartSummary } from '@/components/CartSummary'
 
 const CartPage = () => {
 	const { cartDetails, clearCart, cartCount } = useShoppingCart()
@@ -34,7 +35,10 @@ const CartPage = () => {
 				<h2 className='header-cart-count text-4xl font-bold'>You have {cartCount} items in your cart:</h2>
 				: <></>
 			}
-			<CartProductList cartAttributes={cartProducts} />
+			<div className='flex flex-row'>
+				<CartProductList cartAttributes={cartProducts} />
+				<CartSummary />
+			</div>
 		</main>
 	)
 }
