@@ -1,5 +1,7 @@
 import React from 'react'
 import { formatCurrencyString, useShoppingCart } from 'use-shopping-cart'
+import { Button } from '@mui/material'
+import { CheckOutSx } from '@/sx/styling'
 
 
 const CartSummary = () => {
@@ -38,9 +40,10 @@ const CartSummary = () => {
 				</div>
 			</dl>
 			<div className='mt-6'>
-				<button onClick={() => console.log('checkout')} className='inline-flex items-center justify-center rounded-md text-sm font-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-[rgb(15,23,42)] text-white hover:bg-[rgb(15,23,42)]/90 h-10 py-2 px-4 w-full hover:font-bold'>
-					Checkout
-				</button>
+				{/* <Button onClick={() => console.log('checkout')} className='inline-flex items-center justify-center rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-[rgb(15,23,42)] text-white hover:bg-[rgb(15,23,42)]/90 h-10 py-2 px-4 w-full hover:font-bold'> */}
+				<Button onClick={() => console.log('checkout')} sx={CheckOutSx} disabled={cartCount! === 0}>
+					{cartCount! === 0 ? 'Fill Cart' : 'Checkout'}
+				</Button>
 			</div>
 		</section>
 	)

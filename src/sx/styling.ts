@@ -122,4 +122,38 @@ const Font35Sx = {
 	paddingTop: '5px'
 }
 
-export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, Font35Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx, SizeButtonSx, ActiveSizeButtonSx, AddToCartSx, LabelSx, OpacitySx, AdditionalCartSx, RemoveCartSx }
+const CheckOutSx = {
+	display: 'inline-flex',
+	alignItem: 'center',
+	justifyContent: 'center',
+	borderRadius: '0.375rem',
+	lineHeight: '1.25rem',
+	letterSpacing: '0px',
+	fontSize: '0.875rem',
+	textTransform: 'capitalize',
+	transitionProperty: 'color, background-color, border-color, text-decoration-color, fill, stroke',
+	transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+	transitionDuration: '150ms',
+	'&:focus-visible': {
+		outline: '2px solid transparent',
+		outlineOffset: '2px',
+		ringOffsetWidth: '2px',
+
+	},
+	'&:disabled': {
+		opacity: '0.5',
+		pointerEvents: 'none',
+		color: 'rgb(255,255,255,1)'
+	},
+	backgroundColor: 'rgb(15,23,42,1)',
+	color: 'rgb(255,255,255,1)',
+	'&:hover': {
+		backgroundColor: 'rgb(15,23,42,0.9)',
+		fontWeight: '700',
+	},
+	height: '2.5rem',
+	padding: '0.5rem 1rem',
+	width: '100%',
+}
+
+export { Font25Sx, Font30Sx, PaddingNoneSx, Font50Sx, Font35Sx, AutoCompleteSx, DropDownOptionsSx, CheckBoxSx, SizeButtonSx, ActiveSizeButtonSx, AddToCartSx, LabelSx, OpacitySx, AdditionalCartSx, RemoveCartSx, CheckOutSx }
