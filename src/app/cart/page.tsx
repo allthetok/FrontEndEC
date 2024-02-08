@@ -8,9 +8,9 @@ import { FullProductConfig, ProductObj } from '@/helpers/types/fetypes'
 import { CartProductList } from '@/components/CartProductList'
 
 const CartPage = () => {
-	const { removeItem, cartDetails, clearCart, cartCount } = useShoppingCart()
+	const { cartDetails, clearCart, cartCount } = useShoppingCart()
 
-	const cartProducts: {name: string, id: string}[] = Object.entries(cartDetails!).map(([_, product]) => ( { name: product.name, id: product.id } ))
+	const cartProducts: {name: string, id: string, productData: object}[] = Object.entries(cartDetails!).map(([_, product]) => ( { name: product.name, id: product.id, productData: product.product_data! } ))
 	return (
 		// <main className='flex min-h-screen flex-col items-center justify-between p-24'>
 		// 	<p>{cartCount}</p>

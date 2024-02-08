@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useShoppingCart } from 'use-shopping-cart'
 import axios, { AxiosResponse } from 'axios'
-import { FullProductConfig, ProductObj } from '@/helpers/types/fetypes'
+import { FullProductConfig, MetaProductData, ProductObj } from '@/helpers/types/fetypes'
 import { createProductDtlConfig } from '@/helpers/fctns'
 import { Product } from './Product'
 import { ToastRemove } from './ToastRemove'
@@ -14,7 +14,7 @@ import './ProductList.css'
 
 
 type CartProductProps = {
-	cartAttributes: {name: string, id: string}[]
+	cartAttributes: {name: string, id: string, productData: object}[]
 }
 
 const CartProductList = ({ cartAttributes }: CartProductProps) => {
@@ -25,6 +25,8 @@ const CartProductList = ({ cartAttributes }: CartProductProps) => {
 
 
 	const { removeItem } = useShoppingCart()
+
+	cartAttributes = cartAttributes.map((val: any) => { name: val.name, id: val.id, productData: val.productData as MetaProductData})
 
 	const getData = async (products: string[]) => {
 		const resProducts: ProductObj[] = []
@@ -82,16 +84,15 @@ const CartProductList = ({ cartAttributes }: CartProductProps) => {
 						{productCartList.map((product: ProductObj, index: number) => (
 							<div className='flex flex-col p-10 justify-center' key={index}>
 								<Product product={product} key={index} />
-								{/* <button className='group flex flex-row justify-center items-center mt-5 bg-gray-300 pb-2 mx-auto px-2 max-w-[120px] rounded-xl border border-black hover:bg-gray-700 hover:text-white' onClick={() => handleRemove(product.id.toString(), product.name)}>
-									<HighlightOffIcon sx={Font35Sx} className='group-hover:text-white'/>
-									<p className='text-lg font-bold pt-[0.375rem] text-black uppercase group-hover:text-white'>Remove</p>
-								</button> */}
-								<div className='flex flex-row justify-center space-between mt-5'>
-									<span className='flex flex-row space-between gap-2 align-baseline'>
+								<div className='font-md mt-5'>
+									{/* {cartAttributes.filter((val: { name: string; id: string; productData: object} ) => val.id === product.id.toString())[0].productData as unknown as MetaProductData['colorSelected']} */}
+								</div>
+								<div className='flex flex-row space-between mt-5'>
+									<span className='flex flex-row space-between gap-2 align-baseline pt-2'>
 										<AccessTimeIcon sx={Font30Sx} />
 										<p className='font-md pt-1'>Ships in 1 week</p>
 									</span>
-									<button className='group flex flex-row justify-center items-center bg-gray-300 pb-2 mx-auto px-2 max-w-[120px] rounded-xl border border-black hover:bg-gray-700 hover:text-white' onClick={() => handleRemove(product.id.toString(), product.name)}>
+									<button className='group flex flex-row justify-center items-center bg-gray-300 pb-2 ml-auto px-2 max-w-[120px] rounded-xl border border-black hover:bg-gray-700 hover:text-white' onClick={() => handleRemove(product.id.toString(), product.name)}>
 										<HighlightOffIcon sx={Font35Sx} className='group-hover:text-white'/>
 										<p className='text-lg font-bold pt-[0.375rem] text-black uppercase group-hover:text-white'>Remove</p>
 									</button>

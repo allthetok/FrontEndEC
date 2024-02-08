@@ -708,6 +708,10 @@ video {
   margin-top: -1.275rem;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .block {
   display: block;
 }

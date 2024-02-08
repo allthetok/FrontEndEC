@@ -102,6 +102,10 @@ interface HomePageConfig {
 	src: string
 }
 
+interface MetaProductData {
+	colorSelected: string,
+	sizeSelected: string
+}
 
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig }
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig, type MetaProductData }
