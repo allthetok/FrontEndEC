@@ -8,7 +8,8 @@ import { Product } from './Product'
 import { ToastRemove } from './ToastRemove'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
-import { Font35Sx } from '@/sx/styling'
+import AccessTimeIcon from '@mui/icons-material/AccessTime'
+import { Font30Sx, Font35Sx } from '@/sx/styling'
 import './ProductList.css'
 
 
@@ -81,10 +82,20 @@ const CartProductList = ({ cartAttributes }: CartProductProps) => {
 						{productCartList.map((product: ProductObj, index: number) => (
 							<div className='flex flex-col p-10 justify-center' key={index}>
 								<Product product={product} key={index} />
-								<button className='group flex flex-row justify-center items-center mt-5 bg-gray-300 pb-2 mx-auto px-2 max-w-[120px] rounded-xl border border-black hover:bg-gray-700 hover:text-white' onClick={() => handleRemove(product.id.toString(), product.name)}>
+								{/* <button className='group flex flex-row justify-center items-center mt-5 bg-gray-300 pb-2 mx-auto px-2 max-w-[120px] rounded-xl border border-black hover:bg-gray-700 hover:text-white' onClick={() => handleRemove(product.id.toString(), product.name)}>
 									<HighlightOffIcon sx={Font35Sx} className='group-hover:text-white'/>
 									<p className='text-lg font-bold pt-[0.375rem] text-black uppercase group-hover:text-white'>Remove</p>
-								</button>
+								</button> */}
+								<div className='flex flex-row justify-center space-between mt-5'>
+									<span className='flex flex-row space-between gap-2 align-baseline'>
+										<AccessTimeIcon sx={Font30Sx} />
+										<p className='font-md pt-1'>Ships in 1 week</p>
+									</span>
+									<button className='group flex flex-row justify-center items-center bg-gray-300 pb-2 mx-auto px-2 max-w-[120px] rounded-xl border border-black hover:bg-gray-700 hover:text-white' onClick={() => handleRemove(product.id.toString(), product.name)}>
+										<HighlightOffIcon sx={Font35Sx} className='group-hover:text-white'/>
+										<p className='text-lg font-bold pt-[0.375rem] text-black uppercase group-hover:text-white'>Remove</p>
+									</button>
+								</div>
 							</div>
 						))}
 					</div>

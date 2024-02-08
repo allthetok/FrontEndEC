@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { Dispatch } from 'react'
 import { ProductObj } from '@/helpers/types/fetypes'
 import { ToastProvider, Root as ToastRoot, Title, Description, Viewport } from '@radix-ui/react-toast'
@@ -14,7 +15,7 @@ const ToastRemove = ({ open, setOpen, recentRemove }: ToastRemoveProps) => {
 				open={open} onOpenChange={setOpen}>
 				<Title className={'[grid-area:_title] mb-[30px] font-bold text-slate12 text-lg'}>
 					<div className='leading-8 ml-[30px]'>
-							Removed from Cart:
+						Removed from Cart:
 					</div>
 				</Title>
 				<Description asChild>
