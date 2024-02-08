@@ -14,7 +14,7 @@ import './ProductList.css'
 
 
 type CartProductProps = {
-	cartAttributes: {name: string, id: string, productData: object}[]
+	cartAttributes: {name: string, id: string, productData: MetaProductData}[]
 }
 
 const CartProductList = ({ cartAttributes }: CartProductProps) => {
@@ -23,10 +23,9 @@ const CartProductList = ({ cartAttributes }: CartProductProps) => {
 	const [recentRemove, setRecentRemove] = useState<ProductObj>()
 	const timerRef = useRef(0)
 
-
 	const { removeItem } = useShoppingCart()
 
-	cartAttributes = cartAttributes.map((val: any) => { name: val.name, id: val.id, productData: val.productData as MetaProductData})
+	// cartAttributes = cartAttributes.map((val: any) => return { name: val.name, id: val.id, productData: val.productData as MetaProductData})
 
 	const getData = async (products: string[]) => {
 		const resProducts: ProductObj[] = []
@@ -84,13 +83,19 @@ const CartProductList = ({ cartAttributes }: CartProductProps) => {
 						{productCartList.map((product: ProductObj, index: number) => (
 							<div className='flex flex-col p-10 justify-center' key={index}>
 								<Product product={product} key={index} />
-								<div className='font-md mt-5'>
-									{/* {cartAttributes.filter((val: { name: string; id: string; productData: object} ) => val.id === product.id.toString())[0].productData as unknown as MetaProductData['colorSelected']} */}
-								</div>
+								{
+									cartAttributes.filter((cartItem: { name: string; id: string; productData: MetaProductData} ) => cartItem.id === product.id.toString()).length !== 0 ? (
+										<div className='text-sm mt-5 flex flex-row justify-between gap-2 border-b border-black text-gray-500'>
+											<p>{cartAttributes.filter((cartItem: { name: string; id: string; productData: MetaProductData} ) => cartItem.id === product.id.toString())[0].productData.colorSelected.replaceAll(' / ','/')}</p>
+											<p> - </p>
+											<p>{cartAttributes.filter((cartItem: { name: string; id: string; productData: MetaProductData} ) => cartItem.id === product.id.toString())[0].productData.sizeSelected}</p>
+										</div>
+									) : <></>
+								}
 								<div className='flex flex-row space-between mt-5'>
-									<span className='flex flex-row space-between gap-2 align-baseline pt-2'>
+									<span className='flex flex-row justify-between gap-2 align-baseline pt-2'>
 										<AccessTimeIcon sx={Font30Sx} />
-										<p className='font-md pt-1'>Ships in 1 week</p>
+										<p className='text-md pt-1'>Ships in 1 week</p>
 									</span>
 									<button className='group flex flex-row justify-center items-center bg-gray-300 pb-2 ml-auto px-2 max-w-[120px] rounded-xl border border-black hover:bg-gray-700 hover:text-white' onClick={() => handleRemove(product.id.toString(), product.name)}>
 										<HighlightOffIcon sx={Font35Sx} className='group-hover:text-white'/>
