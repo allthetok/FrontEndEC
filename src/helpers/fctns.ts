@@ -79,6 +79,20 @@ const createProductSearchConfig = (method: string, endpoint: string, searchterm:
 	}
 }
 
+const createUserExistConfig = (method: string, endpoint: string, email: string, provider: string) => {
+	return {
+		method: method,
+		url: `http://localhost:4000/api/user/${endpoint}`,
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		data: {
+			email: email,
+			provider: provider
+		}
+	}
+}
+
 const handleParamConform = (inputReq: string | string[], spec: string) => {
 	switch (spec) {
 	case 'string':
@@ -213,5 +227,10 @@ const prodToStripeProd: (inputProd: ProductObj, colorSelect: string | string[], 
 	return stripeProduct
 }
 
+const regexValidEmail = (email: string) => {
+	const emailRegex = /\S+@\S+\.\S+/
+	return emailRegex.test(email)
+}
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd }
+
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail }

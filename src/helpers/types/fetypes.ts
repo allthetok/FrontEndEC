@@ -56,6 +56,16 @@ interface SearchConfig {
 	}
 }
 
+interface UserExistConfig {
+	method: string,
+	url: string,
+	headers: object,
+	data: {
+		email: string,
+		provider: string
+	}
+}
+
 interface Colors {
 	color: string,
 	images: string[]
@@ -108,4 +118,4 @@ interface MetaProductData {
 }
 
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig, type MetaProductData }
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig, type MetaProductData, type UserExistConfig }
