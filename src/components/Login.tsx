@@ -4,7 +4,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios'
 import { signIn } from 'next-auth/react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { Checkbox, FormControlLabel } from '@mui/material'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import SvgIcon from '@mui/icons-material/ArrowForward'
@@ -54,7 +54,7 @@ const Login = () => {
 			<header className='logo-header'>
 				<div>
 					<Link href='/'>
-						<Image src='/AT Kicks-logos_transparent.png' alt='AT Kicks Logo' width={150} height={150} className='scale-150'/>
+						<Image src='/AT Kicks-logos_white.png' alt='AT Kicks Logo' width={150} height={150} className='scale-150'/>
 					</Link>
 				</div>
 			</header>
@@ -85,6 +85,8 @@ const Login = () => {
 								<div className='field-area'>
 									<div className='field-input field field-wrapper'>
 										<input name='existing-password' id='eisting-pass' type='password' autoComplete='new-password' value={password} onChange={handlePasswordChange} />
+										<label>Password</label>
+										<span>Password</span>
 									</div>
 								</div>
 							</div>

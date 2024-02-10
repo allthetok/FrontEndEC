@@ -109,7 +109,8 @@
 	font-size: 16px;
 	font-weight: 700;
 	cursor: pointer;
-} :hover {
+} 
+.google:hover {
 	background: rgb(247,247,247);
 }
 
@@ -121,7 +122,8 @@
 	font-size: 16px;
 	font-weight: 700;
 	cursor: pointer;
-} :hover {
+} 
+.github:hover {
 	background: rgb(247, 247, 247);
 }
 
@@ -133,7 +135,8 @@
 	font-size: 16px;
 	font-weight: 700;
 	cursor: pointer;
-} :hover {
+} 
+.spotify:hover {
 	background: rgb(49, 185, 97);
 }
 
@@ -145,7 +148,8 @@
 	font-size: 16px;
 	font-weight: 700;
 	cursor: pointer	
-}:hover {
+}
+.discord:hover {
 	background: rgba(27, 27, 34, 0.8);
 }
 
@@ -157,7 +161,8 @@
 	font-size: 16px;
 	font-weight: 700;
 	cursor: pointer;
-}:hover {
+}
+.twitch:hover {
 	background: rgb(121, 38, 245);;
 }
 
