@@ -16,8 +16,201 @@
 	grid-column: 5 / span 4;
 }
 
-.form-field {
+.field-area {
+	margin-bottom: 12px;
+}
+
+.field-area input {
+	height: 44px;
+	padding: 21px 8px 8px;
+	line-height: 19.2px;
+	font-size: 16px;
+	background: transparent;
+	border: none;
+	box-sizing: border-box;
+	display: block;
+	outline: none;
+	width: 100%;
+	font-weight: 700;
+}
+
+.field-area label {
+	top: 14px;
+	font-size: 10.24px;
+	line-height: normal;
+	color: rgb(102,102,102);
+	position: absolute;
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	left: 16px;
+	opacity: 0;
+	height: 17.33px;
+	pointer-events: none;
+	transition: transform 0.25 cubic-bezier(0.4, 0, 0.2, 1) 0s, opacity;
+}
+
+.field-area span {
+	top: 5.33px;
+	font-size: 9.1px;
+	color: rgb(102,102,102);
+	position: absolute;
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	line-height: 100%;
+	left: 8px;
+	opacity: 1;
+	pointer-events: none;
+	transform-origin: left top;
+	transition: all 0.25s cubic-bezier(0.4,0,0.2,1) 0s;
+	transform: translateY(0px);
+}
+.field-input {
+	min-width: 255px;
+}
+
+.field {
+	flex-wrap: nowrap;
 	margin-bottom: initial;
+	background: rgba(126,126,126,0.1);
+	color: #525252;
 	transition: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 	border: 2px solid rgba(126,126,126,0.1);
+	background-clip: padding-box;
+	width: 100%;
+	font-size: 2.1rem;
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	line-height: 100%;
+	padding: 0;
+}
+
+.field-wrapper {
+	height: 48px;
+	position: relative;
+	background-color: rgba(186,186,186,0.1);
+	border-style: solid;
+	border-width: 2px;
+	border-color: transparent;
+	border-radius: 4px;
+	box-sizing: border-box;
+	display: inline-flex;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.google {
+	background: rgb(255,255,255);
+	display: block;
+	color: black;
+	border: 2px solid rgba(0, 0, 0, 0.05);
+	font-size: 16px;
+	font-weight: 700;
+	cursor: pointer;
+} :hover {
+	background: rgb(247,247,247);
+}
+
+.github {
+	background: rgb(255,255,255);
+	display: block;
+	color: black;
+	border: 2px solid rgba(0, 0, 0, 0.05);
+	font-size: 16px;
+	font-weight: 700;
+	cursor: pointer;
+} :hover {
+	background: rgb(247, 247, 247);
+}
+
+.spotify {
+	background: rgba(30, 215, 96, 1);
+	display: block;
+	color: black;
+	border: 2px solid rgba(0, 0, 0, 0.05);
+	font-size: 16px;
+	font-weight: 700;
+	cursor: pointer;
+} :hover {
+	background: rgb(49, 185, 97);
+}
+
+.discord {
+	background: rgba(9, 10, 17, 0.8);
+	display: block;
+	color: black;
+	border: 2px solid rgba(0, 0, 0, 0.05);
+	font-size: 16px;
+	font-weight: 700;
+	cursor: pointer	
+}:hover {
+	background: rgba(27, 27, 34, 0.8);
+}
+
+.twitch {
+	background: rgb(145 70 255);
+	display: block;
+	color: black;
+	border: 2px solid rgba(0, 0, 0, 0.05);
+	font-size: 16px;
+	font-weight: 700;
+	cursor: pointer;
+}:hover {
+	background: rgb(121, 38, 245);;
+}
+
+.enter-wrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 80px 240px 24px;
+	background: rgb(11, 196, 226);
+	color: rgb(10, 10, 10);
+    height: 72px;
+    border-radius: 27px;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 72px;
+	border: 2px solid transparent;
+}
+
+.enter-disabled-wrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 80px 240px 24px;
+	background: rgb(220, 220, 220);
+	color: rgb(10, 10, 10);
+    height: 72px;
+    border-radius: 27px;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: not-allowed;
+	pointer-events: all !important;
+    width: 72px;
+	border: 2px solid transparent;
+}
+
+.enter-disabled-wrap button{
+	cursor: not-allowed;
+	pointer-events: all !important;
+}
+
+.enter-wrap button {
+	cursor: pointer;
+}
+
+.enter-wrap:hover {
+	border: 2px solid rgb(10, 10, 10);
+}
+
+.text-inherit {
+	text-align: inherit;
 }

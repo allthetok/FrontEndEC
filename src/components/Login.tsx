@@ -11,15 +11,43 @@ import SvgIcon from '@mui/icons-material/ArrowForward'
 import { createUserExistConfig, regexValidEmail } from '../helpers/fctns'
 import './Login.css'
 
-const handleSubmit = () => {
-	console.log('handle submit handler')
-}
+
 
 const Login = () => {
 	const router = useRouter()
 	const [error, setError] = useState<string | null>(null)
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+
+	const handleSubmit = () => {
+		console.log('handle submit handler')
+	}
+
+	const handleEmailChange = (e: any) => {
+		setEmail(e.currentTarget.value)
+	}
+
+	const handlePasswordChange = (e: any) => {
+		setPassword(e.currentTarget.value)
+	}
+
+	const handleGoogle = () => {
+		signIn('google', { callbackUrl: '/' })
+	}
+	const handleSpotify = () => {
+		signIn('spotify', { callbackUrl: '/' })
+	}
+	const handleDiscord = () => {
+		signIn('discord', { callbackUrl: '/' })
+	}
+	const handleGithub = () => {
+		signIn('github', { callbackUrl: '/' })
+	}
+	const handleTwitch = () => {
+		signIn('twitch', { callbackUrl: '/' })
+	}
+
+
 	return (
 		<div className='max-h-[100vh] h-[100vh] overflow-y-scroll flex flex-col'>
 			<div className='background-image cover-background z-[-1] w-[100%] h-[100%] block bg-cover bg-no-repeat fixed'></div>
@@ -47,14 +75,66 @@ const Login = () => {
 							}
 							<div className='text-center pt-6 flex flex-col flex-1'>
 								<div></div>
-								<div className='mb-3'>
-									<div className='form-field min-w-[255px] flex-nowrap bg-[#7e7e7e1a] text-[#525252] w-[100%] text-[2.1rem] uppercase font-extrabold leading-[100%] tracking-[0.08em] p-0 bg-clip-padding h-12 relative'>
-										<input className='h-11 py-[21px] px-2 text-[16px] leading-[19.2px] bg-transparent border-none box-border block outline-none w-[100%] font-bold'
+								<div className='field-area'>
+									<div className='field-input field field-wrapper'>
+										<input name='existing-email' id='existing-email' type='text' autoComplete='new-password' value={email} onChange={handleEmailChange} />
+										<label>Email</label>
+										<span>Email</span>
 									</div>
 								</div>
-
+								<div className='field-area'>
+									<div className='field-input field field-wrapper'>
+										<input name='existing-password' id='eisting-pass' type='password' autoComplete='new-password' value={password} onChange={handlePasswordChange} />
+									</div>
+								</div>
 							</div>
 						</form>
+						<div className='flex gap-x-2 my-3 mr-0'>
+							<button className='h-8 rounded-[0.625rem] p-0 flex-1 google' onClick={handleGoogle}>
+								<div className='flex items-center relative justify-center'>
+									<Image src='/icons8-google-48.png' width={18} height={18} alt='Google Logo' />
+								</div>
+							</button>
+							<button className='h-8 rounded-[0.625rem] p-0 flex-1 spotify' onClick={handleSpotify}>
+								<div className='flex items-center relative justify-center'>
+									<Image src='/icons8-spotify-30.png' width={18} height={18} alt='Spotify Logo' />
+								</div>
+							</button>
+							<button className='h-8 rounded-[0.625rem] p-0 flex-1 discord' onClick={handleDiscord}>
+								<div className='flex items-center relative justify-center'>
+									<Image src='/icons8-discord-24.png' width={18} height={18} alt='Discord Logo' />
+								</div>
+							</button>
+							<button className='h-8 rounded-[0.625rem] p-0 flex-1 github' onClick={handleGithub}>
+								<div className='flex items-center relative justify-center'>
+									<Image src='/icons8-github-30.png' width={18} height={18} alt='Github Logo' />
+								</div>
+							</button>
+							<button className='h-8 rounded-[0.625rem] p-0 flex-1 twitch' onClick={handleTwitch}>
+								<div className='flex items-center relative justify-center'>
+									<Image src='/icons8-twitch-50.png' width={18} height={18} alt='Twitch Logo' />
+								</div>
+							</button>
+						</div>
+						<div className={email !== '' && password!== '' ? 'enter-wrap' : 'enter-disabled-wrap'}>
+							<button type='submit' className='p-0 relative border-none bg-transparent' onClick={handleSubmit}>
+								<SvgIcon fontSize='large'>
+									<ArrowForwardIcon />
+								</SvgIcon>
+							</button>
+						</div>
+						<div className='flex flex-col flex-1 justify-end'>
+							<span className='text-[10.24px] font-extrabold leading-[100%] tracking-[0.08em] uppercase text-black mb-2'>
+								<Link href='/forgotpass' className='flex flex-col items-center justify-center no-underline text-[#4a4a4a]'>
+									Forgot Password
+								</Link>
+							</span>
+							<span className='text-[10.24px] font-extrabold leading-[100%] tracking-[0.08em] uppercase text-black'>
+								<Link href='/signup' className='flex flex-col items-center justify-center no-underline text-[#4a4a4a]'>
+									Create Account
+								</Link>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
