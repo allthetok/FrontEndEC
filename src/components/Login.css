@@ -1,0 +1,23 @@
+.background-image {
+	background: url(../../public/ajbanner.jpg)
+}
+
+.cover-background {
+	background-position: center center;
+}
+
+.logo-header {
+	padding: 48px 72px 0px;
+	justify-content: flex-start;
+	-webkit-box-pack: start;
+}
+
+.form-col {
+	grid-column: 5 / span 4;
+}
+
+.form-field {
+	margin-bottom: initial;
+	transition: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+	border: 2px solid rgba(126,126,126,0.1);
+}
