@@ -1,6 +1,6 @@
 /* eslint-disable no-case-declarations */
 import { Product } from 'use-shopping-cart/core'
-import { Brands, Colors, FullBrandConfig, FullModelConfig, FullProductConfig, Models, ProductObj, SearchConfig } from './types/fetypes'
+import { Brands, Colors, FullBrandConfig, FullModelConfig, FullProductConfig, Models, OAuthConfig, ProductObj, SearchConfig } from './types/fetypes'
 
 const formatDate = (inpDate: Date) => `${inpDate.toLocaleDateString('default', { month: 'long' })} ${inpDate.getUTCDate()}, ${inpDate.getFullYear()}`
 
@@ -88,6 +88,22 @@ const createUserExistConfig = (method: string, endpoint: string, email: string, 
 		},
 		data: {
 			email: email,
+			provider: provider
+		}
+	}
+}
+
+const createOAuthConfig = (method: string, endpoint: string, email: string, emailVerified: boolean | null | undefined, externalId: string, provider: string): OAuthConfig => {
+	return {
+		method: method,
+		url: `http://localhost:4000/api/user/${endpoint}`,
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		data: {
+			email: email,
+			emailVerified: emailVerified ? emailVerified : false,
+			externalId: externalId,
 			provider: provider
 		}
 	}
@@ -233,4 +249,4 @@ const regexValidEmail = (email: string) => {
 }
 
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail }
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail }
