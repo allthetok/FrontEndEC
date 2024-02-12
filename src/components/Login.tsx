@@ -5,6 +5,7 @@ import { signIn } from 'next-auth/react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { UserExistConfig } from '@/helpers/types/fetypes'
 import { Checkbox, FormControlLabel } from '@mui/material'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import SvgIcon from '@mui/icons-material/ArrowForward'
@@ -19,8 +20,46 @@ const Login = () => {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 
-	const handleSubmit = () => {
-		console.log('handle submit handler')
+	const handleSubmit = async (e: any) => {
+		e.preventDefault()
+
+		if (email === '' && password === '') {
+			setError('Must fill both email and passowrd')
+			return
+		}
+		else if (!regexValidEmail(email)) {
+			setError('Invalid email')
+			return
+		}
+
+		const userStatusConfig: UserExistConfig = createUserExistConfig('post', 'resolveUser', email, 'ATKNative')
+		const userStatus = await axios(userStatusConfig)
+			.then((response: AxiosResponse) => {
+				return response.status === 200
+					? { userExists: response.data.userExists }
+					: { userExists: false }
+			})
+			.catch((err: AxiosError) => {
+				return { userExists: false }
+			})
+
+		if (!userStatus.userExists) {
+			setError(`There was no user found with email: ${email}`)
+			return
+		}
+
+		const signInResponse = await signIn('credentials', {
+			email: email,
+			password: password,
+			redirect: false
+		})
+		if (signInResponse && !signInResponse.error) {
+			router.push('/')
+		}
+		else {
+			setError('Incorrect password')
+			return
+		}
 	}
 
 	const handleEmailChange = (e: any) => {
