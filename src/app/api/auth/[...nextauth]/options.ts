@@ -199,7 +199,38 @@ export const options: NextAuthOptions = {
 		})
 	],
 	pages: {
-
+		signIn: '/signin',
+		newUser: '/signup'
 	},
-
+	session: {
+		strategy: 'jwt',
+		maxAge: 24 * 60 * 60,
+		updateAge: 60 * 60
+	},
+	callbacks: {
+		jwt: async ({ token, user }) => {
+			return {
+				...token,
+				...user
+			}
+		},
+		session: async ({ session, token }) => {
+			return {
+				...session,
+				user: {
+					...session.user,
+					id: token.sub,
+					externalId: token.externalId ? token.externalId : null,
+					provider: token.provider ? token.provider : null,
+					token: {
+						exp: token.exp,
+						iat: token.iat,
+						jti: token.jti
+					}
+				},
+			}
+		}
+	},
 }
+
+export default NextAuth(options)
