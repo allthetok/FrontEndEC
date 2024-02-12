@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import NextAuth, { NextAuthOptions } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
@@ -7,8 +8,8 @@ import GithubProvider from 'next-auth/providers/github'
 import TwitchProvider from 'next-auth/providers/twitch'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import axios, { AxiosError, AxiosResponse } from 'axios'
-import { createOAuthConfig } from '@/helpers/fctns'
-import { OAuthConfig } from '@/helpers/types/fetypes'
+import { createNativeLoginConfig, createOAuthConfig, createUserExistConfig } from '@/helpers/fctns'
+import { OAuthConfig, UserExistConfig } from '@/helpers/types/fetypes'
 
 export const options: NextAuthOptions = {
 	providers: [
@@ -140,6 +141,61 @@ export const options: NextAuthOptions = {
 					prevLogin: internalDBUser?.prevLogin
 				}
 			}
+		}),
+		CredentialsProvider({
+			name: 'Credentials',
+			credentials: {
+				email: {
+					label: 'Email:',
+					type: 'email',
+					placeholder: 'example@example.com'
+				},
+				password: {
+					label: 'Password:',
+					type: 'password'
+				}
+			},
+			authorize: async (credentials) => {
+				const userStatusConfig: UserExistConfig = createUserExistConfig('post', 'resolveUser', credentials!.email, 'ATKNative')
+				const userStatus = await axios(userStatusConfig)
+					.then((response: AxiosResponse) => {
+						return response.status === 200 ?
+							{ userExists: response.data.userExists } : { userExists: false }
+					})
+					.catch((err: AxiosError) => {
+						return { userExists: false }
+					})
+				// if (userStatus.userExists) {
+				// 	const loginConfig = createNativeLoginConfig('post', 'login', credentials!.email, credentials!.password, 'ATKNative')
+				// 	userObj = await axios(loginConfig)
+				// 		.then((response: AxiosResponse) => {
+				// 			return response.status === 200 ?
+				// 				{
+				// 					id: response.data.id,
+				// 					email: response.data.email,
+				// 					provider: response.data.provider,
+				// 					prevLogin: response.data.prevlogin
+				// 				} : null
+				// 		})
+				// 		.catch((err: AxiosError) => null)
+				// }
+				// else {
+				// 	const signUpConfig = createNativeLoginConfig('post', 'createUser', credentials!.email, credentials!.password, 'ATKNative')
+				// }
+				const nativeAuthConfig = createNativeLoginConfig('post', userStatus.userExists ? 'login' : 'createUser', credentials!.email, credentials!.password, 'ATKNative')
+				const userObj = await axios(nativeAuthConfig)
+					.then((response: AxiosResponse) => {
+						return response.status === 200 ?
+							{
+								id: response.data.id,
+								email: response.data.email,
+								provider: response.data.provider,
+								prevLogin: response.data.prevlogin
+							} : null
+					})
+					.catch((err: AxiosError) => null)
+				return userObj
+			},
 		})
 	],
 	pages: {

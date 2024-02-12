@@ -1,6 +1,6 @@
 /* eslint-disable no-case-declarations */
 import { Product } from 'use-shopping-cart/core'
-import { Brands, Colors, FullBrandConfig, FullModelConfig, FullProductConfig, Models, OAuthConfig, ProductObj, SearchConfig } from './types/fetypes'
+import { Brands, Colors, FullBrandConfig, FullModelConfig, FullProductConfig, LoginConfig, Models, OAuthConfig, ProductObj, SearchConfig, UserExistConfig } from './types/fetypes'
 
 const formatDate = (inpDate: Date) => `${inpDate.toLocaleDateString('default', { month: 'long' })} ${inpDate.getUTCDate()}, ${inpDate.getFullYear()}`
 
@@ -79,7 +79,7 @@ const createProductSearchConfig = (method: string, endpoint: string, searchterm:
 	}
 }
 
-const createUserExistConfig = (method: string, endpoint: string, email: string, provider: string) => {
+const createUserExistConfig = (method: string, endpoint: string, email: string, provider: string): UserExistConfig => {
 	return {
 		method: method,
 		url: `http://localhost:4000/api/user/${endpoint}`,
@@ -104,6 +104,21 @@ const createOAuthConfig = (method: string, endpoint: string, email: string, emai
 			email: email,
 			emailVerified: emailVerified ? emailVerified : false,
 			externalId: externalId,
+			provider: provider
+		}
+	}
+}
+
+const createNativeLoginConfig = (method: string, endpoint: string, email: string, password: string, provider: string): LoginConfig => {
+	return {
+		method: method,
+		url: `http://localhost:4000/api/user/${endpoint}`,
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		data: {
+			email: email,
+			password: password,
 			provider: provider
 		}
 	}
@@ -249,4 +264,4 @@ const regexValidEmail = (email: string) => {
 }
 
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail }
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, createNativeLoginConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail }

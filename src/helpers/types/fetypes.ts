@@ -78,6 +78,17 @@ interface OAuthConfig {
 	}
 }
 
+interface LoginConfig {
+	method: string,
+	url: string,
+	headers: object,
+	data: {
+		email: string,
+		password: string,
+		provider: string
+	}
+}
+
 interface Colors {
 	color: string,
 	images: string[]
@@ -130,4 +141,4 @@ interface MetaProductData {
 }
 
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type OAuthConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig, type MetaProductData, type UserExistConfig }
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type OAuthConfig, type LoginConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig, type MetaProductData, type UserExistConfig }
