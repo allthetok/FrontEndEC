@@ -124,6 +124,23 @@ const createNativeLoginConfig = (method: string, endpoint: string, email: string
 	}
 }
 
+const createUserPatchConfig = (method: string, endpoint: string, email: string, password: string, specField: string, userId: string, provider: string) => {
+	return {
+		method: method,
+		url: `http://localhost:4000/api/user/${endpoint}`,
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		data: {
+			userid: Number(userId),
+			email: email,
+			password: password,
+			specField: specField,
+			provider: provider
+		}
+	}
+}
+
 const handleParamConform = (inputReq: string | string[], spec: string) => {
 	switch (spec) {
 	case 'string':
@@ -264,4 +281,4 @@ const regexValidEmail = (email: string) => {
 }
 
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, createNativeLoginConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail }
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, createNativeLoginConfig, createUserPatchConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail }

@@ -7,69 +7,87 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { UserExistConfig } from '@/helpers/types/fetypes'
-import { createUserExistConfig, regexValidEmail } from '../helpers/fctns'
+import { createUserExistConfig, createUserPatchConfig, regexValidEmail } from '../helpers/fctns'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import SvgIcon from '@mui/icons-material/ArrowForward'
 import './Login.css'
 
-
-
-const Signup = () => {
+const Forgot = () => {
 	const [error, setError] = useState<string | null>(null)
+	const [verificationStage, setVerificationStage] = useState('email')
 	const [email, setEmail] = useState('')
+	const [passcode, setPasscode] = useState('')
 	const [password, setPassword] = useState('')
 	const [verPassword, setVerPassword] = useState('')
+	const [userId, setUserId] = useState('')
 
 	const router = useRouter()
 
-	const handleSubmit = async (e: any) => {
+	const handleEmailSubmit = async (e: any) => {
 		e.preventDefault()
-
-		if (password !== verPassword) {
-			setError('Passwords do not match')
-			return
-		}
-		else if (email === '' || password === '' || verPassword === '') {
-			setError('Must provide all fields')
-			return
-		}
-		else if (!regexValidEmail(email)) {
-			setError('Invalid email')
-			return
-		}
 
 		const userStatusConfig: UserExistConfig = createUserExistConfig('post', 'resolveUser', email, 'ATKNative')
 		const userStatus = await axios(userStatusConfig)
 			.then((response: AxiosResponse) => {
 				return response.status === 200
 					? { userExists: response.data.userExists }
-					: { userExists: true }
+					: { userExists: false }
 			})
 			.catch((err: AxiosError) => {
-				return { userExists: true }
+				return { userExists: false }
 			})
 
-		if (userStatus.userExists) {
-			setError(`There already exists a user with email: ${email}`)
+		if (!userStatus.userExists) {
+			setError(`There was no user found with email: ${email}`)
 			return
 		}
+		userStatusConfig.url = userStatusConfig.url.replace('resolveUser', 'verificationCode')
+		await axios(userStatusConfig)
+			.then((response: AxiosResponse) => {
+				if (response.status === 200) {
+					setUserId(response.data.id)
+					setVerificationStage('emailcode')
+					setError('')
+				}
+			})
+	}
 
-		const signInResponse = await signIn('credentials', {
-			email: email,
-			password: password,
-			redirect: false
-		})
-		if (signInResponse && !signInResponse.error) {
-			router.push('/')
-		}
-		else {
-			setError('Invalid email or password')
+	const handlePasscodeSubmit = async (e: any) => {
+		e.preventDefault()
+
+		const userCodeConfig: UserExistConfig = createUserExistConfig('post', 'resolveCode', email, '')
+		await axios(userCodeConfig)
+			.then((response: any) => {
+				if (response.data.verificationcode === passcode) {
+					setVerificationStage('password')
+					setError('')
+				}
+				else {
+					setError('Incorrect passcode entered')
+				}
+			})
+	}
+
+	const handlePasswordSubmit = async (e: any) => {
+		e.preventDefault()
+
+		if (password !== verPassword) {
+			setError('Passwords do not match')
 			return
 		}
+		const patchPasswordConfig = createUserPatchConfig('patch', 'userDetails', '', password, 'password', userId, 'ATKNative')
+		await axios(patchPasswordConfig)
+			.then((response: any) => {
+				response.status === 200 ? router.push('/signin') : setError('Failed to update password')
+			})
 	}
 
 	const handleEmailChange = (e: any) => {
 		setEmail(e.currentTarget.value)
+	}
+
+	const handlePasscodeChange = (e: any) => {
+		setPasscode(e.currentTarget.value)
 	}
 
 	const handlePasswordChange = (e: any) => {
@@ -151,4 +169,4 @@ const Signup = () => {
 	)
 }
 
-export { Signup }
+export { Forgot }
