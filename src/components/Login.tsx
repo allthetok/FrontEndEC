@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 import React, { useState } from 'react'
 import axios, { AxiosError, AxiosResponse } from 'axios'
@@ -6,19 +7,19 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { UserExistConfig } from '@/helpers/types/fetypes'
-import { Checkbox, FormControlLabel } from '@mui/material'
+import { createUserExistConfig, regexValidEmail } from '../helpers/fctns'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import SvgIcon from '@mui/icons-material/ArrowForward'
-import { createUserExistConfig, regexValidEmail } from '../helpers/fctns'
 import './Login.css'
 
 
 
 const Login = () => {
-	const router = useRouter()
 	const [error, setError] = useState<string | null>(null)
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+
+	const router = useRouter()
 
 	const handleSubmit = async (e: any) => {
 		e.preventDefault()
@@ -123,7 +124,7 @@ const Login = () => {
 								</div>
 								<div className='field-area'>
 									<div className='field-input field field-wrapper'>
-										<input name='existing-password' id='eisting-pass' type='password' autoComplete='new-password' value={password} onChange={handlePasswordChange} />
+										<input name='existing-password' id='existing-password' type='password' autoComplete='new-password' value={password} onChange={handlePasswordChange} />
 										<label>Password</label>
 										<span>Password</span>
 									</div>
@@ -157,7 +158,7 @@ const Login = () => {
 								</div>
 							</button>
 						</div>
-						<div className={email !== '' && password!== '' ? 'enter-wrap' : 'enter-disabled-wrap'}>
+						<div className={email !== '' && password !== '' ? 'enter-wrap' : 'enter-disabled-wrap'}>
 							<button type='submit' className='p-0 relative border-none bg-transparent' onClick={handleSubmit}>
 								<SvgIcon fontSize='large'>
 									<ArrowForwardIcon />
