@@ -1,20 +1,23 @@
 'use client'
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { signOut, signIn, useSession } from 'next-auth/react'
 import { useShoppingCart } from 'use-shopping-cart'
 import Image from 'next/image'
 import Link from 'next/link'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import LoginIcon from '@mui/icons-material/Login'
 import { IconButton } from '@mui/material'
 import { Search } from './Search'
 import { ProductSuggestList } from './ProductSuggestList'
-import { Font50Sx } from '@/sx/styling'
+import { Font25Sx, Font50Sx } from '@/sx/styling'
 
 
 const Navbar = () => {
 	const [searchProduct, setSearchProduct] = useState('')
 	const { cartCount } = useShoppingCart()
 	const router = useRouter()
+	const authData = useSession()
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLElement>) => {
 		e.preventDefault()
@@ -53,6 +56,15 @@ const Navbar = () => {
 								<ShoppingCartIcon sx={Font50Sx} htmlColor='black'/>
 							</IconButton>
 						</Link>
+						{authData.status === 'authenticated' ?
+							<div className='' onClick={() => signOut()}>
+								<LoginIcon sx={Font25Sx} /> Logout
+							</div>
+							:
+							<div className='' onClick={() => signIn()}>
+								<LoginIcon sx={Font25Sx} /> Login
+							</div>
+						}
 					</div>
 				</div>
 			</header>

@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
-import CartProvider from '@/components/Providers'
+import AuthProvider from '../context/AuthProvider'
+import CartProvider from '../context/CartProvider/index'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import '../globals.css'
@@ -15,11 +16,13 @@ export default function RootLayout({
 		<html lang="en">
 			<>
 				<body className={inter.className}>
-					<CartProvider>
-						<Navbar />
-						{children}
-						<Footer />
-					</CartProvider>
+					<AuthProvider>
+						<CartProvider>
+							<Navbar />
+							{children}
+							<Footer />
+						</CartProvider>
+					</AuthProvider>
 				</body>
 			</>
 		</html>
