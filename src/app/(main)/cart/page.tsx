@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 'use client'
 import React from 'react'
-import axios, { AxiosError, AxiosResponse } from 'axios'
+import { useRouter } from 'next/navigation'
+import { useSession } from 'next-auth/react'
 import { useShoppingCart } from 'use-shopping-cart'
+import axios, { AxiosError, AxiosResponse } from 'axios'
 import { createProductDtlConfig, formatPageQuery } from '@/helpers/fctns'
 import { FullProductConfig, MetaProductData, ProductObj } from '@/helpers/types/fetypes'
 import { CartProductList } from '@/components/CartProductList'
@@ -10,6 +13,13 @@ import { CartSummary } from '@/components/CartSummary'
 
 const CartPage = () => {
 	const { cartDetails, clearCart, cartCount } = useShoppingCart()
+	const router = useRouter()
+	const { data: session } = useSession({
+		required: true,
+		onUnauthenticated() {
+			router.push('/signin')
+		}
+	})
 
 	const cartProducts: {name: string, id: string, productData: MetaProductData}[] = Object.entries(cartDetails!).map(([_, product]) => ( { name: product.name, id: product.id, productData: product.product_data! as MetaProductData } ))
 	return (

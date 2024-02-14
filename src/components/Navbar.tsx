@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import LoginIcon from '@mui/icons-material/Login'
+import AccountBoxIcon from '@mui/icons-material/AccountBox'
 import { IconButton } from '@mui/material'
 import { Search } from './Search'
 import { ProductSuggestList } from './ProductSuggestList'
@@ -48,7 +49,36 @@ const Navbar = () => {
 								AT KICKS
 							</h1>
 						</div>
-						<Link className='no-underline flex flex-row' href='/cart'>
+						<div className='flex flex-row'>
+							<Link className='no-underline flex flex-row' href='/cart'>
+								<h3 className='inline-block align-baseline font-black text-4xl pt-3 text-black'>
+									{cartCount !== undefined ? cartCount : 0}
+								</h3>
+								<IconButton>
+									<ShoppingCartIcon sx={Font50Sx} htmlColor='black'/>
+								</IconButton>
+							</Link>
+							{authData.status === 'authenticated' ?
+								<div className='no-underline flex flex-row pt-2' onClick={() => signOut()}>
+									<LoginIcon sx={Font50Sx} htmlColor='black' />
+									<h3 className='inline-block align-baseline font-black text-4xl pt-2 text-black'>Logout</h3>
+								</div>
+								:
+								<div className='no-underline flex flex-row pt-2' onClick={() => signIn()}>
+									<LoginIcon sx={Font50Sx} htmlColor='black' />
+									<h3 className='inline-block align-baseline font-black text-3xl pt-2 text-black'>Login</h3>
+								</div>
+							}
+						</div>
+					</div>
+				</div>
+			</header>
+			<ProductSuggestList searchTerm={searchProduct} handleClear={handleClear} />
+		</>
+	)
+}
+
+{/* <Link className='no-underline flex flex-row' href='/cart'>
 							<h3 className='inline-block align-baseline font-black text-4xl pt-3 text-black'>
 								{cartCount !== undefined ? cartCount : 0}
 							</h3>
@@ -64,13 +94,6 @@ const Navbar = () => {
 							<div className='' onClick={() => signIn()}>
 								<LoginIcon sx={Font25Sx} /> Login
 							</div>
-						}
-					</div>
-				</div>
-			</header>
-			<ProductSuggestList searchTerm={searchProduct} handleClear={handleClear} />
-		</>
-	)
-}
+						} */}
 
 export { Navbar }

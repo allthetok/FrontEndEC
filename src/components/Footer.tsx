@@ -14,9 +14,9 @@ const Footer = () => {
 				<div className='container px-8 h-full py-16 flex justify-center lg:block mx-auto'>
 					<div className='grid grid-cols-3 row-gap-8 col-gap-16'>
 						<div className='sm:col-span-3 lg:col-span-1 flex sm:justify-center lg:justify-start items-start'>
-							<IconButton onClick={() => console.log('clicked cart')}>
+							<Link className='no-underline flex flex-row' href='/cart'>
 								<ShoppingCartIcon sx={Font50Sx} htmlColor='black'/>
-							</IconButton>
+							</Link>
 						</div>
 						<div>
 							<h2 className='font-semibold text-lg'>About Us</h2>
@@ -40,7 +40,7 @@ const Footer = () => {
 							<nav className='pt-2 leading-loose'>
 								<ul>
 									<li>
-										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative no-underline' href='/order'>
+										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative no-underline' href='/account'>
 											Order Status
 										</Link>
 									</li>
@@ -50,7 +50,7 @@ const Footer = () => {
 										</Link>
 									</li>
 									<li>
-										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative no-underline' href='/userinfo'>
+										<Link className='text-gray-600 hover:text-gray-800 text-sm group relative no-underline' href='/account'>
 											My Account
 										</Link>
 									</li>

@@ -1,5 +1,5 @@
 import { Inter } from 'next/font/google'
-import CartProvider from '@/components/Providers'
+import CartProvider from '../context/CartProvider/index'
 import { Footer } from '@/components/Footer'
 import '../globals.css'
 

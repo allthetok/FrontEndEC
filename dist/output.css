@@ -670,6 +670,10 @@ video {
   margin-left: 5rem;
 }
 
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
 .ml-\[-250px\] {
   margin-left: -250px;
 }
@@ -736,18 +740,6 @@ video {
 
 .mt-\[10px\] {
   margin-top: 10px;
-}
-
-.ml-4 {
-  margin-left: 1rem;
-}
-
-.ml-0 {
-  margin-left: 0px;
-}
-
-.ml-5 {
-  margin-left: 1.25rem;
 }
 
 .block {

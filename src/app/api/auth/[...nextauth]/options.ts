@@ -195,7 +195,7 @@ export const options: NextAuthOptions = {
 					})
 					.catch((err: AxiosError) => null)
 				return userObj
-			},
+			}
 		})
 	],
 	pages: {
@@ -233,4 +233,4 @@ export const options: NextAuthOptions = {
 	},
 }
 
-export default NextAuth(options)
+// export default NextAuth(options)
