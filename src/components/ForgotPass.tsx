@@ -163,7 +163,8 @@ const Forgot = () => {
 									</Link>
 								</span>
 							</div>
-						</div> : <></>}
+						</div>
+						: <></>}
 					{verificationStage === 'emailcode' ?
 						<div className='min-h-[auto] px-12 pb-6 bg-[#ffffff] p-8 flex flex-col'>
 							<form onSubmit={handlePasscodeSubmit}>
@@ -203,11 +204,11 @@ const Forgot = () => {
 									</Link>
 								</span>
 							</div>
-						</div> : <></>}
-					
+						</div>
+						: <></>}
 					{verificationStage === 'password' ?
 						<div className='min-h-[auto] px-12 pb-6 bg-[#ffffff] p-8 flex flex-col'>
-							<form onSubmit={handlePasscodeSubmit}>
+							<form onSubmit={handlePasswordSubmit}>
 								<h5 className='m-0 pt-12 text-center text-[25px] font-bold leading-[120%] tracking-tight normal-case text-black'>
 									Enter New Password
 								</h5>
@@ -237,7 +238,7 @@ const Forgot = () => {
 									</div>
 								</div>
 							</form>
-							<div className={password.length === verPassword.length ? 'enter-wrap' : 'enter-disabled-wrap'}>
+							<div className={password !== '' && verPassword !== '' && password.length === verPassword.length ? 'enter-wrap' : 'enter-disabled-wrap'}>
 								<button type='submit' className='p-0 relative border-none bg-transparent' onClick={handlePasswordSubmit}>
 									<SvgIcon fontSize='large'>
 										<ArrowForwardIcon />
