@@ -110,59 +110,168 @@ const Forgot = () => {
 			</header>
 			<div className='grid-cols-12 gap-x-6 w-[624px] my-[200px] mx-auto'>
 				<div className='form-col'>
-					<div className='min-h-[auto] px-12 pb-6 bg-[#ffffff] p-8 flex flex-col'>
-						<form onSubmit={handleSubmit}>
-							<h5 className='m-0 pt-12 text-center text-[25px] font-bold leading-[120%] tracking-tight normal-case text-black'>
+					{verificationStage === 'email' ?
+						<div className='min-h-[auto] px-12 pb-6 bg-[#ffffff] p-8 flex flex-col'>
+							<form onSubmit={handleEmailSubmit}>
+								<h5 className='m-0 pt-12 text-center text-[25px] font-bold leading-[120%] tracking-tight normal-case text-black'>
 								Signup to AT Kicks
-							</h5>
-							{error ? (
-								<div className='flex items-center justify-center mt-[10px] flex-nowrap'>
-									<span className='bg-[#ff9494] font-bold text-[16px] rounded max-w-[400px] leading-5 text-center align-middle p-[5px]'>
+								</h5>
+								{error ? (
+									<div className='flex items-center justify-center mt-[10px] flex-nowrap'>
+										<span className='bg-[#ff9494] font-bold text-[16px] rounded max-w-[400px] leading-5 text-center align-middle p-[5px]'>
 										Error: {error}
-									</span>
-								</div>
-							) : <></>
-							}
-							<div className='text-center pt-6 flex flex-col flex-1'>
-								<div></div>
-								<div className='field-area'>
-									<div className='field-input field field-wrapper'>
-										<input name='new-email' id='new-email' type='text' autoComplete='new-password' value={email} onChange={handleEmailChange} />
-										<label>Email</label>
-										<span>Email</span>
+										</span>
+									</div>
+								) : <></>
+								}
+								<div className='text-center pt-6 flex flex-col flex-1'>
+									<div></div>
+									<div className='field-area'>
+										<div className='field-input field field-wrapper'>
+											<input name='new-email' id='new-email' type='text' autoComplete='new-password' value={email} onChange={handleEmailChange} />
+											<label>Email</label>
+											<span>Email</span>
+										</div>
+									</div>
+									<div className='field-area'>
+										<div className='field-input field field-wrapper'>
+											<input name='new-password' id='new-password' type='password' autoComplete='new-password' value={password} onChange={handlePasswordChange} />
+											<label>Password</label>
+											<span>Password</span>
+										</div>
+									</div>
+									<div className='field-area'>
+										<div className='field-input field field-wrapper'>
+											<input name='new-passwordver' id='new-passwordver' type='password' autoComplete='off' value={verPassword} onChange={handleVerPasswordChange} />
+											<label>Verify Password</label>
+											<span>Verify Password</span>
+										</div>
 									</div>
 								</div>
-								<div className='field-area'>
-									<div className='field-input field field-wrapper'>
-										<input name='new-password' id='new-password' type='password' autoComplete='new-password' value={password} onChange={handlePasswordChange} />
-										<label>Password</label>
-										<span>Password</span>
-									</div>
-								</div>
-								<div className='field-area'>
-									<div className='field-input field field-wrapper'>
-										<input name='new-passwordver' id='new-passwordver' type='password' autoComplete='off' value={verPassword} onChange={handleVerPasswordChange} />
-										<label>Verify Password</label>
-										<span>Verify Password</span>
-									</div>
-								</div>
+							</form>
+							<div className={email !== '' && password !== '' && verPassword !== '' ? 'enter-wrap' : 'enter-disabled-wrap'}>
+								<button type='submit' className='p-0 relative border-none bg-transparent' onClick={handleSubmit}>
+									<SvgIcon fontSize='large'>
+										<ArrowForwardIcon />
+									</SvgIcon>
+								</button>
 							</div>
-						</form>
-						<div className={email !== '' && password !== '' && verPassword !== '' ? 'enter-wrap' : 'enter-disabled-wrap'}>
-							<button type='submit' className='p-0 relative border-none bg-transparent' onClick={handleSubmit}>
-								<SvgIcon fontSize='large'>
-									<ArrowForwardIcon />
-								</SvgIcon>
-							</button>
-						</div>
-						<div className='flex flex-col flex-1 justify-end'>
-							<span className='text-[10.24px] font-extrabold leading-[100%] tracking-[0.08em] uppercase text-black mb-2'>
-								<Link href='/signin' className='flex flex-col items-center justify-center no-underline text-[#4a4a4a] ml-5'>
+							<div className='flex flex-col flex-1 justify-end'>
+								<span className='text-[10.24px] font-extrabold leading-[100%] tracking-[0.08em] uppercase text-black mb-2'>
+									<Link href='/signin' className='flex flex-col items-center justify-center no-underline text-[#4a4a4a] ml-5'>
 									Back to Login Page
-								</Link>
-							</span>
-						</div>
-					</div>
+									</Link>
+								</span>
+							</div>
+						</div> : <></>}
+					{verificationStage === 'emailcode' ?
+						<div className='min-h-[auto] px-12 pb-6 bg-[#ffffff] p-8 flex flex-col'>
+							<form onSubmit={handleEmailSubmit}>
+								<h5 className='m-0 pt-12 text-center text-[25px] font-bold leading-[120%] tracking-tight normal-case text-black'>
+								Signup to AT Kicks
+								</h5>
+								{error ? (
+									<div className='flex items-center justify-center mt-[10px] flex-nowrap'>
+										<span className='bg-[#ff9494] font-bold text-[16px] rounded max-w-[400px] leading-5 text-center align-middle p-[5px]'>
+										Error: {error}
+										</span>
+									</div>
+								) : <></>
+								}
+								<div className='text-center pt-6 flex flex-col flex-1'>
+									<div></div>
+									<div className='field-area'>
+										<div className='field-input field field-wrapper'>
+											<input name='new-email' id='new-email' type='text' autoComplete='new-password' value={email} onChange={handleEmailChange} />
+											<label>Email</label>
+											<span>Email</span>
+										</div>
+									</div>
+									<div className='field-area'>
+										<div className='field-input field field-wrapper'>
+											<input name='new-password' id='new-password' type='password' autoComplete='new-password' value={password} onChange={handlePasswordChange} />
+											<label>Password</label>
+											<span>Password</span>
+										</div>
+									</div>
+									<div className='field-area'>
+										<div className='field-input field field-wrapper'>
+											<input name='new-passwordver' id='new-passwordver' type='password' autoComplete='off' value={verPassword} onChange={handleVerPasswordChange} />
+											<label>Verify Password</label>
+											<span>Verify Password</span>
+										</div>
+									</div>
+								</div>
+							</form>
+							<div className={email !== '' && password !== '' && verPassword !== '' ? 'enter-wrap' : 'enter-disabled-wrap'}>
+								<button type='submit' className='p-0 relative border-none bg-transparent' onClick={handleSubmit}>
+									<SvgIcon fontSize='large'>
+										<ArrowForwardIcon />
+									</SvgIcon>
+								</button>
+							</div>
+							<div className='flex flex-col flex-1 justify-end'>
+								<span className='text-[10.24px] font-extrabold leading-[100%] tracking-[0.08em] uppercase text-black mb-2'>
+									<Link href='/signin' className='flex flex-col items-center justify-center no-underline text-[#4a4a4a] ml-5'>
+									Back to Login Page
+									</Link>
+								</span>
+							</div>
+						</div> : <></>}
+					{verificationStage === 'password' ?
+						<div className='min-h-[auto] px-12 pb-6 bg-[#ffffff] p-8 flex flex-col'>
+							<form onSubmit={handleEmailSubmit}>
+								<h5 className='m-0 pt-12 text-center text-[25px] font-bold leading-[120%] tracking-tight normal-case text-black'>
+								Signup to AT Kicks
+								</h5>
+								{error ? (
+									<div className='flex items-center justify-center mt-[10px] flex-nowrap'>
+										<span className='bg-[#ff9494] font-bold text-[16px] rounded max-w-[400px] leading-5 text-center align-middle p-[5px]'>
+										Error: {error}
+										</span>
+									</div>
+								) : <></>
+								}
+								<div className='text-center pt-6 flex flex-col flex-1'>
+									<div></div>
+									<div className='field-area'>
+										<div className='field-input field field-wrapper'>
+											<input name='new-email' id='new-email' type='text' autoComplete='new-password' value={email} onChange={handleEmailChange} />
+											<label>Email</label>
+											<span>Email</span>
+										</div>
+									</div>
+									<div className='field-area'>
+										<div className='field-input field field-wrapper'>
+											<input name='new-password' id='new-password' type='password' autoComplete='new-password' value={password} onChange={handlePasswordChange} />
+											<label>Password</label>
+											<span>Password</span>
+										</div>
+									</div>
+									<div className='field-area'>
+										<div className='field-input field field-wrapper'>
+											<input name='new-passwordver' id='new-passwordver' type='password' autoComplete='off' value={verPassword} onChange={handleVerPasswordChange} />
+											<label>Verify Password</label>
+											<span>Verify Password</span>
+										</div>
+									</div>
+								</div>
+							</form>
+							<div className={email !== '' && password !== '' && verPassword !== '' ? 'enter-wrap' : 'enter-disabled-wrap'}>
+								<button type='submit' className='p-0 relative border-none bg-transparent' onClick={handleSubmit}>
+									<SvgIcon fontSize='large'>
+										<ArrowForwardIcon />
+									</SvgIcon>
+								</button>
+							</div>
+							<div className='flex flex-col flex-1 justify-end'>
+								<span className='text-[10.24px] font-extrabold leading-[100%] tracking-[0.08em] uppercase text-black mb-2'>
+									<Link href='/signin' className='flex flex-col items-center justify-center no-underline text-[#4a4a4a] ml-5'>
+									Back to Login Page
+									</Link>
+								</span>
+							</div>
+						</div> : <></>}
 				</div>
 			</div>
 		</div>
