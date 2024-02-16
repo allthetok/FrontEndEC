@@ -8,6 +8,10 @@ const CartSummary = () => {
 	const { formattedTotalPrice, totalPrice, cartDetails, cartCount } = useShoppingCart()
 	const shippingAmount = cartCount! > 0 ? 500 : 0
 	const totalAmount = totalPrice! + shippingAmount
+
+	const onCheckout = () => {
+		console.log('checkout handler')
+	}
 	return (
 		<section className='mt-5 rounded-lg border-2 border-gray-200 bg-gray-50 px-4 py-6 shadow-md sm:p-6 lg:col-span-5 lg:p-8 ml-20 h-[350px] w-[470px]'>
 			<h2 className='text-lg font-medium flex flex-row justify-center border-b-2 border-black'>
@@ -41,7 +45,7 @@ const CartSummary = () => {
 			</dl>
 			<div className='mt-6'>
 				{/* <Button onClick={() => console.log('checkout')} className='inline-flex items-center justify-center rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-[rgb(15,23,42)] text-white hover:bg-[rgb(15,23,42)]/90 h-10 py-2 px-4 w-full hover:font-bold'> */}
-				<Button onClick={() => console.log('checkout')} sx={CheckOutSx} disabled={cartCount! === 0}>
+				<Button onClick={onCheckout} sx={CheckOutSx} disabled={cartCount! === 0}>
 					{cartCount! === 0 ? 'Fill Cart' : 'Checkout'}
 				</Button>
 			</div>
