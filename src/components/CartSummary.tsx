@@ -2,12 +2,14 @@ import React from 'react'
 import { formatCurrencyString, useShoppingCart } from 'use-shopping-cart'
 import { Button } from '@mui/material'
 import { CheckOutSx } from '@/sx/styling'
+import { redirect } from 'next/navigation'
 
 
 const CartSummary = () => {
 	const { formattedTotalPrice, totalPrice, cartDetails, cartCount, redirectToCheckout } = useShoppingCart()
 	const shippingAmount = cartCount! > 0 ? 500 : 0
 	const totalAmount = totalPrice! + shippingAmount
+	console.log(cartDetails)
 
 	const onCheckout = async () => {
 		const response = await fetch('/api/checkout', {
@@ -15,7 +17,10 @@ const CartSummary = () => {
 			body: JSON.stringify(cartDetails)
 		})
 		const data = await response.json()
-		const result = await redirectToCheckout(data.id)
+		console.log(data)
+		const result = data.url
+		redirect(result)
+		// const result = await redirectToCheckout(data.id)
 		if (result?.error) {
 			console.error(result)
 		}

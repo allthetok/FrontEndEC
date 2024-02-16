@@ -280,5 +280,25 @@ const regexValidEmail = (email: string) => {
 	return emailRegex.test(email)
 }
 
+const formatLineItems = (input: any) => {
+	const lineKeys: string[] = Object.keys(input)
+	const resultLineItems = []
+	for (const lineKey of lineKeys) {
+		resultLineItems.push({
+			price_data: {
+				currency: input[lineKey].currency,
+				unit_amount: input[lineKey].price,
+				product_data: {
+					description: input[lineKey].description,
+					images: [input[lineKey].image],
+					name: input[lineKey].name
+				}
+			},
+			quantity: input[lineKey].quantity
+		})
+	}
+	return resultLineItems
+}
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, createNativeLoginConfig, createUserPatchConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail }
+
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, createNativeLoginConfig, createUserPatchConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail, formatLineItems }

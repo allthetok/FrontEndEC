@@ -1,11 +1,17 @@
 import { NextResponse } from 'next/server'
 import { stripe } from '../../../../lib/stripe'
+import { formatLineItems } from '@/helpers/fctns'
 
 export async function POST(request: Request) {
 	const cartDetails = await request.json()
-	const lineItems = cartDetails
+	const lineItems = formatLineItems(cartDetails)
 	console.log(lineItems)
+	// console.log(formatLineItems(lineItems))
+	// console.log(cartDetails)
+	// console.log(lineItems)
 	const origin = request.headers.get('origin')
+	// const data = await request.json()
+	// const priceId = data.priceId
 	const session = await stripe.checkout.sessions.create({
 		submit_type: 'pay',
 		mode: 'payment',
@@ -20,6 +26,7 @@ export async function POST(request: Request) {
 			}
 		],
 		billing_address_collection: 'auto',
+		// success_url: `${origin}/cart`,
 		success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
 		cancel_url: `${origin}/cart`
 	})
