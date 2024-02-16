@@ -5,12 +5,20 @@ import { CheckOutSx } from '@/sx/styling'
 
 
 const CartSummary = () => {
-	const { formattedTotalPrice, totalPrice, cartDetails, cartCount } = useShoppingCart()
+	const { formattedTotalPrice, totalPrice, cartDetails, cartCount, redirectToCheckout } = useShoppingCart()
 	const shippingAmount = cartCount! > 0 ? 500 : 0
 	const totalAmount = totalPrice! + shippingAmount
 
-	const onCheckout = () => {
-		console.log('checkout handler')
+	const onCheckout = async () => {
+		const response = await fetch('/api/checkout', {
+			method: 'POST',
+			body: JSON.stringify(cartDetails)
+		})
+		const data = await response.json()
+		const result = await redirectToCheckout(data.id)
+		if (result?.error) {
+			console.error(result)
+		}
 	}
 	return (
 		<section className='mt-5 rounded-lg border-2 border-gray-200 bg-gray-50 px-4 py-6 shadow-md sm:p-6 lg:col-span-5 lg:p-8 ml-20 h-[350px] w-[470px]'>

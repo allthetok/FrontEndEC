@@ -59,12 +59,12 @@ const Navbar = () => {
 								</IconButton>
 							</Link>
 							{authData.status === 'authenticated' ?
-								<div className='no-underline flex flex-row pt-2' onClick={() => signOut()}>
+								<div className='no-underline flex flex-row pt-2 cursor-pointer' onClick={() => signOut()}>
 									<LoginIcon sx={Font50Sx} htmlColor='black' />
 									<h3 className='inline-block align-baseline font-black text-4xl pt-2 text-black'>Logout</h3>
 								</div>
 								:
-								<div className='no-underline flex flex-row pt-2' onClick={() => signIn()}>
+								<div className='no-underline flex flex-row pt-2 cursor-pointer' onClick={() => signIn()}>
 									<LoginIcon sx={Font50Sx} htmlColor='black' />
 									<h3 className='inline-block align-baseline font-black text-3xl pt-2 text-black'>Login</h3>
 								</div>
