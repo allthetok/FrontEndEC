@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 /* eslint-disable no-case-declarations */
+import Stripe from 'stripe'
 import { Product } from 'use-shopping-cart/core'
 import { Brands, Colors, FullBrandConfig, FullModelConfig, FullProductConfig, LoginConfig, Models, OAuthConfig, ProductObj, SearchConfig, UserExistConfig } from './types/fetypes'
 
@@ -294,7 +297,9 @@ const formatLineItems = (input: any) => {
 					name: input[lineKey].name,
 					metadata: {
 						colorSelected: input[lineKey].product_data.colorSelected,
-						sizeSelected: input[lineKey].product_data.sizeSelected
+						sizeSelected: input[lineKey].product_data.sizeSelected,
+						id: lineKey,
+						name: input[lineKey].name
 					}
 				}
 			},
@@ -304,5 +309,19 @@ const formatLineItems = (input: any) => {
 	return resultLineItems
 }
 
+const formatLineItemsToObj = (lineItems: Stripe.ApiList<Stripe.LineItem>) => {
+	const resultArr = []
+	for (const lineItem of lineItems.data) {
+		const resultmetadata = lineItems.data.entries
+		resultArr.push({
+			id: lineItem.price?.metadata!.id,
+			name: lineItem.price?.metadata!.name,
+			colorSelected: lineItem.price?.metadata!.colorSelected,
+			sizeSelected: lineItem.price?.metadata!.sizeSelected
+		})
+	}
+	return resultArr
+}
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, createNativeLoginConfig, createUserPatchConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail, formatLineItems }
+
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, createNativeLoginConfig, createUserPatchConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail, formatLineItems, formatLineItemsToObj }
