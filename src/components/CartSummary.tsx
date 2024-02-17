@@ -9,7 +9,6 @@ import { useSession } from 'next-auth/react'
 
 const CartSummary = () => {
 	const { data } = useSession()
-	console.log(data)
 	const { formattedTotalPrice, totalPrice, cartDetails, cartCount, redirectToCheckout } = useShoppingCart()
 	const shippingAmount = cartCount! > 0 ? 500 : 0
 	const totalAmount = totalPrice! + shippingAmount
@@ -23,7 +22,6 @@ const CartSummary = () => {
 		const response = await fetch('/api/checkout', {
 			method: 'POST',
 			body: JSON.stringify(formattedCartBody)
-			// body: JSON.stringify(cartDetails)
 		})
 		const stripeData = await response.json()
 		const result = await redirectToCheckout(stripeData.id as string)
