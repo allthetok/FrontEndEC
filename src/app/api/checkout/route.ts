@@ -3,9 +3,9 @@ import { stripe } from '../../../../lib/stripe'
 import { formatLineItems } from '@/helpers/fctns'
 
 export async function POST(request: Request) {
-	const cartDetails = await request.json()
-	const lineItems = formatLineItems(cartDetails)
-	console.log(lineItems)
+	const stripeCartBody = await request.json()
+	console.log(stripeCartBody)
+	const lineItems = formatLineItems(stripeCartBody.cartItems)
 	const origin = request.headers.get('origin')
 	const session = await stripe.checkout.sessions.create({
 		submit_type: 'pay',
@@ -20,10 +20,11 @@ export async function POST(request: Request) {
 				shipping_rate: 'shr_1OkFq8Axh7i3puODwPB0zLsi'
 			}
 		],
+		customer_email: stripeCartBody.email,
 		billing_address_collection: 'auto',
 		// success_url: `${origin}/cart`,
 		success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
-		cancel_url: `${origin}/cart`
+		cancel_url: `${origin}/cart`,
 	})
 	return NextResponse.json(session)
 }

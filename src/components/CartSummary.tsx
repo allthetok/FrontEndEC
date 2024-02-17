@@ -1,18 +1,29 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import React from 'react'
 import { formatCurrencyString, useShoppingCart } from 'use-shopping-cart'
 import { Button } from '@mui/material'
 import { CheckOutSx } from '@/sx/styling'
+import { useSession } from 'next-auth/react'
 
 
 const CartSummary = () => {
+	const { data } = useSession()
+	console.log(data)
 	const { formattedTotalPrice, totalPrice, cartDetails, cartCount, redirectToCheckout } = useShoppingCart()
 	const shippingAmount = cartCount! > 0 ? 500 : 0
 	const totalAmount = totalPrice! + shippingAmount
 
 	const onCheckout = async () => {
+		const formattedCartBody = {
+			cartItems: cartDetails,
+			email: data?.user?.email,
+			userid: data?.user?.id
+		}
 		const response = await fetch('/api/checkout', {
 			method: 'POST',
-			body: JSON.stringify(cartDetails)
+			body: JSON.stringify(formattedCartBody)
+			// body: JSON.stringify(cartDetails)
 		})
 		const stripeData = await response.json()
 		const result = await redirectToCheckout(stripeData.id as string)
