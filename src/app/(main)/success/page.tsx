@@ -9,6 +9,7 @@ import { FullProductServer } from '@/components/Server/FullProductServer'
 import { getServerSession } from 'next-auth'
 import { options } from '@/app/api/auth/[...nextauth]/options'
 import { SuccessProductList } from '@/components/SuccessProductList'
+import { SuccessHeader } from '@/components/SuccessHeader'
 
 interface Props {
 	searchParams: {
@@ -22,6 +23,7 @@ const SuccessPage = async ({ searchParams }: Props) => {
 	const lineItems = await stripe.checkout.sessions.listLineItems(sessionId)
 	const resultCheckoutItems = formatLineItemsToName(lineItems)
 	const userDetails = await getServerSession(options)
+	const stripeCustDetails = checkoutSession!.customer_details
 
 	const { paymentObj } = await getData(userDetails!.user.id, resultCheckoutItems, sessionId)
 
@@ -29,7 +31,13 @@ const SuccessPage = async ({ searchParams }: Props) => {
 		<main className='flex min-h-screen flex-col items-center justify-between p-24 gap-10'>
 			<h2 className='header-cart-count text-4xl font-bold'>Order ${sessionId} successful </h2>
 			<div className='flex flex-row'>
+				<SuccessHeader customerDetails={stripeCustDetails!} paymentId={paymentObj.paymentDetails.paymentid} />
 				<SuccessProductList products={paymentObj.productsOrder} />
+				<div className='mt-10 flex items-center justify-center gap-x-6'>
+					<Link href='/account' className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
+						Go to your Account & Orders
+					</Link>
+				</div>
 			</div>
 		</main>
 	)
@@ -54,16 +62,6 @@ const getPaymentDtl = async (paymentConfig: FullPaymentConfig) => {
 	return resultPaymentObj
 }
 
-
-// const ProductPage = async ({ params, searchParams }: { params: { product: string | string[] }, searchParams: { color: string | string[] | undefined } }) => {
-// 	const { productObj } = await getData(params.product)
-// 	const color = searchParams.color !== undefined ? searchParams.color : productObj.productReq.colors[0].color
-// 	return (
-// 		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
-// 			<FullProductServer productDtl={productObj.productReq} colorQuery={color} similarProducts={productObj.similarProducts}/>
-// 		</main>
-// 	)
-// }
 
 
 

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-'use client'
+// 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import Stripe from 'stripe'
 import Link from 'next/link'
@@ -20,7 +20,7 @@ type SuccessProductListProps = {
 }
 
 const SuccessProductList = ({ products }: SuccessProductListProps) => {
-	const { clearCart } = useShoppingCart()
+	// const { clearCart } = useShoppingCart()
 	// const [productList, setProductList] = useState<ProductObj[]>([])
 
 	// const getData = async (products: string[]) => {
