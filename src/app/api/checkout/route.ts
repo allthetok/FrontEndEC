@@ -6,12 +6,7 @@ export async function POST(request: Request) {
 	const cartDetails = await request.json()
 	const lineItems = formatLineItems(cartDetails)
 	console.log(lineItems)
-	// console.log(formatLineItems(lineItems))
-	// console.log(cartDetails)
-	// console.log(lineItems)
 	const origin = request.headers.get('origin')
-	// const data = await request.json()
-	// const priceId = data.priceId
 	const session = await stripe.checkout.sessions.create({
 		submit_type: 'pay',
 		mode: 'payment',

@@ -9,6 +9,9 @@ const nextConfig = {
 				pathname: '/**',
 			},
 		],
+	},
+	env: {
+		STRIPE_API_PUBLISHABLE_KEY: process.env.STRIPE_API_PUBLISHABLE_KEY
 	}
 }
 

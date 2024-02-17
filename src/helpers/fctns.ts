@@ -291,7 +291,11 @@ const formatLineItems = (input: any) => {
 				product_data: {
 					description: input[lineKey].description,
 					images: [input[lineKey].image],
-					name: input[lineKey].name
+					name: input[lineKey].name,
+					metadata: {
+						colorSelected: input[lineKey].product_data.colorSelected,
+						sizeSelected: input[lineKey].product_data.sizeSelected
+					}
 				}
 			},
 			quantity: input[lineKey].quantity
