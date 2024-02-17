@@ -89,6 +89,17 @@ interface LoginConfig {
 	}
 }
 
+interface FullPaymentConfig {
+	method: string,
+	url: string,
+	headers: object,
+	data: {
+		userid: number,
+		products: string[],
+		sessionId: string
+	}
+}
+
 interface Colors {
 	color: string,
 	images: string[]
@@ -140,5 +151,16 @@ interface MetaProductData {
 	sizeSelected: string
 }
 
+interface PaymentResponseObj {
+	paymentDetails: {
+		paymentid: number,
+		userid: number,
+		stripeid: string,
+		productList: string[]
+	},
+	productsOrder: ProductObj[]
+}
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type OAuthConfig, type LoginConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig, type MetaProductData, type UserExistConfig }
+
+
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type OAuthConfig, type LoginConfig, type FullPaymentConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig, type MetaProductData, type UserExistConfig, type PaymentResponseObj }

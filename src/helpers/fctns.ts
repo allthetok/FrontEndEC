@@ -3,7 +3,7 @@
 /* eslint-disable no-case-declarations */
 import Stripe from 'stripe'
 import { Product } from 'use-shopping-cart/core'
-import { Brands, Colors, FullBrandConfig, FullModelConfig, FullProductConfig, LoginConfig, Models, OAuthConfig, ProductObj, SearchConfig, UserExistConfig } from './types/fetypes'
+import { Brands, Colors, FullBrandConfig, FullModelConfig, FullPaymentConfig, FullProductConfig, LoginConfig, Models, OAuthConfig, ProductObj, SearchConfig, UserExistConfig } from './types/fetypes'
 
 const formatDate = (inpDate: Date) => `${inpDate.toLocaleDateString('default', { month: 'long' })} ${inpDate.getUTCDate()}, ${inpDate.getFullYear()}`
 
@@ -140,6 +140,21 @@ const createUserPatchConfig = (method: string, endpoint: string, email: string, 
 			password: password,
 			specField: specField,
 			provider: provider
+		}
+	}
+}
+
+const createUserPaymentConfig = (method: string, endpoint: string, userId: string, products: string[], sessionId: string): FullPaymentConfig => {
+	return {
+		method: method,
+		url: `http://localhost:4000/api/user/${endpoint}`,
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		data: {
+			userid: Number(userId),
+			products: products,
+			sessionId: sessionId
 		}
 	}
 }
@@ -309,19 +324,9 @@ const formatLineItems = (input: any) => {
 	return resultLineItems
 }
 
-const formatLineItemsToObj = (lineItems: Stripe.ApiList<Stripe.LineItem>) => {
-	const resultArr = []
-	for (const lineItem of lineItems.data) {
-		const resultmetadata = lineItems.data.entries
-		resultArr.push({
-			id: lineItem.price?.metadata!.id,
-			name: lineItem.price?.metadata!.name,
-			colorSelected: lineItem.price?.metadata!.colorSelected,
-			sizeSelected: lineItem.price?.metadata!.sizeSelected
-		})
-	}
-	return resultArr
+const formatLineItemsToName = (lineItems: Stripe.ApiList<Stripe.LineItem>) => {
+	return lineItems.data.map((indItem: Stripe.LineItem) => indItem.description)
 }
 
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, createNativeLoginConfig, createUserPatchConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail, formatLineItems, formatLineItemsToObj }
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, createNativeLoginConfig, createUserPatchConfig, createUserPaymentConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail, formatLineItems, formatLineItemsToName }
