@@ -3,11 +3,10 @@ import React from 'react'
 import Link from 'next/link'
 import { stripe } from '../../../../lib/stripe'
 import axios, { AxiosError, AxiosResponse } from 'axios'
-import { createProductDtlConfig, createUserPaymentConfig, formatLineItemsToName, formatPageQuery } from '@/helpers/fctns'
-import { FullPaymentConfig, FullProductConfig, PaymentResponseObj, ProductObj, ProductResponseObj } from '@/helpers/types/fetypes'
-import { FullProductServer } from '@/components/Server/FullProductServer'
 import { getServerSession } from 'next-auth'
 import { options } from '@/app/api/auth/[...nextauth]/options'
+import { createUserPaymentConfig, formatLineItemsToName } from '@/helpers/fctns'
+import { FullPaymentConfig, PaymentResponseObj } from '@/helpers/types/fetypes'
 import { SuccessProductList } from '@/components/SuccessProductList'
 import { SuccessHeader } from '@/components/SuccessHeader'
 
@@ -29,13 +28,13 @@ const SuccessPage = async ({ searchParams }: Props) => {
 
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-24 gap-10'>
-			<h2 className='header-cart-count text-4xl font-bold'>Order ${sessionId} successful </h2>
+			{/* <h2 className='header-cart-count text-4xl font-bold'>Order ${sessionId} successful </h2> */}
 			<div className='flex flex-row'>
 				<SuccessHeader customerDetails={stripeCustDetails!} paymentId={paymentObj.paymentDetails.paymentid} />
 				<SuccessProductList products={paymentObj.productsOrder} />
 				<div className='mt-10 flex items-center justify-center gap-x-6'>
 					<Link href='/account' className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
-						Go to your Account & Orders
+						See your Account
 					</Link>
 				</div>
 			</div>

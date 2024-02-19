@@ -22,7 +22,6 @@ export async function POST(request: Request) {
 		],
 		customer_email: stripeCartBody.email,
 		billing_address_collection: 'auto',
-		// success_url: `${origin}/cart`,
 		success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
 		cancel_url: `${origin}/cart`,
 	})
