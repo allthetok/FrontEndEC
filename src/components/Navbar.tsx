@@ -61,12 +61,12 @@ const Navbar = () => {
 							{authData.status === 'authenticated' ?
 								<div className='no-underline flex flex-row pt-2 cursor-pointer' onClick={() => signOut()}>
 									<LoginIcon sx={Font50Sx} htmlColor='black' />
-									<h3 className='inline-block align-baseline font-black text-4xl pt-2 text-black'>Logout</h3>
+									<h3 className='inline-block align-baseline font-black text-3xl pt-[0.375rem] text-black'>Logout</h3>
 								</div>
 								:
 								<div className='no-underline flex flex-row pt-2 cursor-pointer' onClick={() => signIn()}>
 									<LoginIcon sx={Font50Sx} htmlColor='black' />
-									<h3 className='inline-block align-baseline font-black text-3xl pt-2 text-black'>Login</h3>
+									<h3 className='inline-block align-baseline font-black text-3xl pt-[0.375rem] text-black'>Login</h3>
 								</div>
 							}
 						</div>
@@ -77,23 +77,5 @@ const Navbar = () => {
 		</>
 	)
 }
-
-{/* <Link className='no-underline flex flex-row' href='/cart'>
-							<h3 className='inline-block align-baseline font-black text-4xl pt-3 text-black'>
-								{cartCount !== undefined ? cartCount : 0}
-							</h3>
-							<IconButton>
-								<ShoppingCartIcon sx={Font50Sx} htmlColor='black'/>
-							</IconButton>
-						</Link>
-						{authData.status === 'authenticated' ?
-							<div className='' onClick={() => signOut()}>
-								<LoginIcon sx={Font25Sx} /> Logout
-							</div>
-							:
-							<div className='' onClick={() => signIn()}>
-								<LoginIcon sx={Font25Sx} /> Login
-							</div>
-						} */}
 
 export { Navbar }
