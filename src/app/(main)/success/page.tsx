@@ -34,7 +34,7 @@ const SuccessPage = async ({ searchParams }: Props) => {
 				<SuccessProductList products={paymentObj.productsOrder} />
 				<div className='mt-10 flex items-center justify-center gap-x-6'>
 					<Link href='/account' className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
-						See your Account
+						Go to Account
 					</Link>
 				</div>
 			</div>
@@ -60,9 +60,6 @@ const getPaymentDtl = async (paymentConfig: FullPaymentConfig) => {
 		})
 	return resultPaymentObj
 }
-
-
-
 
 
 export default SuccessPage

@@ -37,7 +37,6 @@ const Navbar = () => {
 	return (
 		<>
 			<header className='h-32'>
-				{/* <div className='text-gray-700 bg-white w-full shadow fixed'> */}
 				<div className='text-gray-700 bg-white w-full shadow absolute'>
 					<div className='flex flex-wrap justify-between px-8 h-auto flex-col md:flex-row items-center'>
 						<Link className='flex items-center mb-4 md:mb-0' href='/'>
@@ -59,9 +58,15 @@ const Navbar = () => {
 								</IconButton>
 							</Link>
 							{authData.status === 'authenticated' ?
-								<div className='no-underline flex flex-row pt-2 cursor-pointer' onClick={() => signOut()}>
-									<LoginIcon sx={Font50Sx} htmlColor='black' />
-									<h3 className='inline-block align-baseline font-black text-3xl pt-[0.375rem] text-black'>Logout</h3>
+								<div className='flex flex-row'>
+									<Link className='no-underline flex flex-row pt-2 cursor-pointer' href='/account'>
+										<AccountBoxIcon sx={Font50Sx} htmlColor='black' />
+										<h3 className='inline-block align-baseline font-black text-3xl pt-[0.375rem] text-black'>Account</h3>
+									</Link>
+									<div className='no-underline flex flex-row pt-2 cursor-pointer' onClick={() => signOut()}>
+										<LoginIcon sx={Font50Sx} htmlColor='black' />
+										<h3 className='inline-block align-baseline font-black text-3xl pt-[0.375rem] text-black'>Logout</h3>
+									</div>
 								</div>
 								:
 								<div className='no-underline flex flex-row pt-2 cursor-pointer' onClick={() => signIn()}>
