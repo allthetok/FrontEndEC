@@ -4,7 +4,6 @@ import { getServerSession } from 'next-auth'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { options } from '@/app/api/auth/[...nextauth]/options'
 import { AccountHeader } from '@/components/Server/AccountHeader'
-import { formatDate } from '@/helpers/fctns'
 
 
 const AccountPage = async () => {
