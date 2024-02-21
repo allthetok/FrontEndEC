@@ -2,7 +2,11 @@
 import React from 'react'
 import { Session } from 'next-auth'
 import { formatDate } from '@/helpers/fctns'
+import { Font50Sx } from '@/sx/styling'
+import { signOut } from 'next-auth/react'
+import LoginIcon from '@mui/icons-material/Login'
 import './AccountHeader.css'
+import { LogoutBtn } from '../LogoutBtn'
 
 type AccountHeaderProps = {
 	userDetails: Session
@@ -16,6 +20,7 @@ const AccountHeader = ({ userDetails }: AccountHeaderProps) => {
 			</div>
 			<div className='flex pt-16 items-center justify-center'>
 				<div className='mx-5 overflow-hidden'>
+					<LogoutBtn />
 					<div className='flex items-center flex-grow-0 flex-shrink-0 basis-auto justify-center max-w-[100%]'>
 						<span className='text-2xl whitespace-nowrap overflow-hidden text-ellipsis font-bold'>{userDetails.user.email}</span>
 					</div>

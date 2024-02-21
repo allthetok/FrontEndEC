@@ -10,8 +10,9 @@ type SuccessHeaderProps = {
 }
 
 const SuccessHeader = ({ customerDetails, paymentId }: SuccessHeaderProps) => {
-	const { clearCart } = useShoppingCart()
+	const { clearCart, cartDetails } = useShoppingCart()
 
+	//patch request here to PATCH: /product with array of ProductPatch: name: string, id: number, color: string, size: string
 	// useEffect(() => {
 	// 	if (customerDetails) {
 	// 		clearCart()

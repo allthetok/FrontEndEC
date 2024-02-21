@@ -1,18 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 // 'use client'
-import React, { useEffect, useRef, useState } from 'react'
-import Stripe from 'stripe'
-import Link from 'next/link'
-import { useShoppingCart } from 'use-shopping-cart'
-import axios, { AxiosResponse } from 'axios'
-import { FullProductConfig, MetaProductData, ProductObj } from '@/helpers/types/fetypes'
-import { createProductDtlConfig } from '@/helpers/fctns'
+import React from 'react'
+import { ProductObj } from '@/helpers/types/fetypes'
 import { Product } from './Product'
-import { ToastRemove } from './ToastRemove'
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
-import HighlightOffIcon from '@mui/icons-material/HighlightOff'
-import AccessTimeIcon from '@mui/icons-material/AccessTime'
-import { Font30Sx, Font35Sx } from '@/sx/styling'
 import './ProductList.css'
 
 type SuccessProductListProps = {
