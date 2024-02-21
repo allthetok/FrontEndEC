@@ -18,7 +18,7 @@ const AccountHeader = ({ userDetails }: AccountHeaderProps) => {
 			</div>
 			<div className='flex pt-16 items-center justify-center'>
 				<div className='mx-5 overflow-hidden'>
-					<LogoutBtn />
+					{/* <LogoutBtn /> */}
 					<div className='w-[68px] mx-auto border-2 rounded-md border-white m-4'>
 						<img className='h-[64px] w-[64px]' src='/icons8-user-64.png' alt='User Avatar'/>
 					</div>
@@ -34,6 +34,7 @@ const AccountHeader = ({ userDetails }: AccountHeaderProps) => {
 					<div className='flex flex-col items-center flex-grow-0 flex-shrink-0 basis-auto content-center max-w-[100%] leading-6'>
 						<span className='text-sm font-extralight whitespace-nowrap overflow-hidden text-ellipsis'>Previous Login: {formatDate(new Date(userDetails.user.token.iat * 1000))}</span>
 					</div>
+					<LogoutBtn />
 				</div>
 			</div>
 		</div>

@@ -21,7 +21,7 @@ const AccountPage = async () => {
 				<h2 className='flex justify-center text-black font-extrabold text-4xl order-dec'>
 				Your Orders to Date:
 				</h2>
-				<div className='flex flex-col z-50'>
+				<div className='flex flex-col'>
 					{ordersObj.map((order: IndOrder) => (
 						<div className='flex flex-row' key={order.order.paymentid}>
 							<div className='pb-24 pt-6 bg-gray-100 border-2 rounded-lg border-black mt-5' aria-labelledby='products-heading'>
