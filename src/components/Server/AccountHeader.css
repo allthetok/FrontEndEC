@@ -9,21 +9,6 @@
 	margin-top: 10%;
 }
 
-.intro-avatar {
-	flex: 0 0 11.25%;
-	text-align: center;
-	position: relative;
-}
-
-.intro-img {
-	cursor: pointer;
-	height: 140px;
-	width: 140px;
-	border: 5px solid var(--text-color);
-	border-radius: 15px;
-	vertical-align: middle;
-}
-
 
 .account-details-wrapper {
 	/* margin-left: 500px; */

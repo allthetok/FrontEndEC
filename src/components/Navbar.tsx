@@ -63,10 +63,6 @@ const Navbar = () => {
 										<AccountBoxIcon sx={Font50Sx} htmlColor='black' />
 										<h3 className='inline-block align-baseline font-black text-3xl pt-[0.375rem] text-black'>Account</h3>
 									</Link>
-									<div className='no-underline flex flex-row pt-2 cursor-pointer' onClick={() => signOut()}>
-										<LoginIcon sx={Font50Sx} htmlColor='black' />
-										<h3 className='inline-block align-baseline font-black text-3xl pt-[0.375rem] text-black'>Logout</h3>
-									</div>
 								</div>
 								:
 								<div className='no-underline flex flex-row pt-2 cursor-pointer' onClick={() => signIn()}>
