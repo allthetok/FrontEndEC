@@ -19,7 +19,7 @@ const AccountHeader = ({ userDetails }: AccountHeaderProps) => {
 			<div className='flex pt-16 items-center justify-center'>
 				<div className='mx-5 overflow-hidden'>
 					<LogoutBtn />
-					<div className='intro-avatar w-[68px] mx-auto border-2 rounded-md border-white m-4'>
+					<div className='w-[68px] mx-auto border-2 rounded-md border-white m-4'>
 						<img className='h-[64px] w-[64px]' src='/icons8-user-64.png' alt='User Avatar'/>
 					</div>
 					<div className='flex items-center flex-grow-0 flex-shrink-0 basis-auto justify-center max-w-[100%]'>

@@ -100,6 +100,15 @@ interface FullPaymentConfig {
 	}
 }
 
+interface UserOrdersConfig {
+	method: string,
+	url: string,
+	headers: object,
+	data: {
+		userid: number
+	}
+}
+
 interface Colors {
 	color: string,
 	images: string[]
@@ -161,6 +170,18 @@ interface PaymentResponseObj {
 	productsOrder: ProductObj[]
 }
 
+interface Order {
+	paymentid: number,
+	userid: number,
+	stripeid: string,
+	productlist: string[],
+	datecreated: Date
+}
+
+interface IndOrder {
+	order: Order,
+	productsOrder: ProductObj[]
+}
 
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type OAuthConfig, type LoginConfig, type FullPaymentConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig, type MetaProductData, type UserExistConfig, type PaymentResponseObj }
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type OAuthConfig, type LoginConfig, type FullPaymentConfig, type UserOrdersConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig, type MetaProductData, type UserExistConfig, type PaymentResponseObj, type Order, type IndOrder }
