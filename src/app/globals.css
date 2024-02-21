@@ -49,3 +49,7 @@ body {
 	position: relative;
 	top: 40px;
 }
+
+.order-dec {
+	text-decoration: underline;
+}
