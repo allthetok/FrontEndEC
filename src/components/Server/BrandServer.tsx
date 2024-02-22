@@ -42,19 +42,11 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		const oldResults: ProductObj[] = [...originalProducts]
 		const currentActiveEditions: string[] = editionResults.filter((indEdition: ProductObj) => indEdition.active).map((activeEdition: ProductObj) => activeEdition.name)
 		const currentActiveModels: string[] = modelResults.filter((indModel: Models) => indModel.active).map((activeModel: Models) => activeModel.name)
-		console.log(currentActiveEditions)
 		const activeResults: ProductObj[] = oldResults.filter((indProduct: ProductObj) => currentActiveEditions.includes(indProduct.name) && currentActiveModels.includes(indProduct.modelName))
 		activeResults.sort(compareBySortOption(sortBy))
 		setFilteredResults(activeResults)
 	}, [editionResults])
 
-
-	// console.log(originalProducts)
-	// console.log(filteredResults)
-	// console.log(editionResults)
-	// console.log(brandDtl.map((indBrand: Brands) => indBrand.allModels.map((indModel: Models) => indModel.allProducts)))
-	// console.log(filteredResults)
-	// console.log(modelResults)
 
 	const onSortChange = (e: SyntheticEvent<Element, Event>, value: string | null): void => {
 		e.preventDefault()
@@ -120,9 +112,7 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 				oldModelResults[modelsMatch].active = true
 				setModelResults(oldModelResults)
 			}
-			else if (oldModelResults[modelsMatch].active && oldEditionResults.filter((indEdition: ProductObj) => indEdition.active && indEdition.modelName === oldModelResults[modelsMatch].name).length === 0) { //model is active,
-				console.log('model is active')
-				console.log(oldEditionResults.filter((indEdition: ProductObj) => indEdition.active && indEdition.name === value))
+			else if (oldModelResults[modelsMatch].active && oldEditionResults.filter((indEdition: ProductObj) => indEdition.active && indEdition.modelName === oldModelResults[modelsMatch].name).length === 0) {
 				oldModelResults[modelsMatch].active = false
 				setModelResults(oldModelResults)
 			}

@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react'
 import Stripe from 'stripe'
 import { useShoppingCart } from 'use-shopping-cart'
+import { CartDetails } from 'use-shopping-cart/core'
 import { createProductPatchConfig, formatCartItemsToProductPatch } from '@/helpers/fctns'
 import { ProductPatch } from '@/helpers/types/fetypes'
 import { CheckCheck } from 'lucide-react'
@@ -20,15 +21,24 @@ const SuccessHeader = ({ customerDetails, paymentId }: SuccessHeaderProps) => {
 	//patch request here to PATCH: /product with array of ProductPatch: name: string, id: number, color: string, size: string
 	useEffect(() => {
 		if (cartDetails) {
-			const productsToPatch: ProductPatch[] = formatCartItemsToProductPatch(cartDetails)
-			console.log(productsToPatch)
-			const res = updateProductSizes(productsToPatch)
-			console.log(res)
+			// const productsToPatch: ProductPatch[] = formatCartItemsToProductPatch(cartDetails)
+			// console.log(productsToPatch)
+			// const res = updateProductSizes(productsToPatch)
+			// console.log(res)
 			// if (res) {
 			// clearCart()
 			// }
+			emptyCart(cartDetails)
 		}
 	}, [])
+
+	const emptyCart = async (cartDetails: CartDetails) => {
+		const productsToPatch: ProductPatch[] = formatCartItemsToProductPatch(cartDetails)
+		const patchSuccess = await updateProductSizes(productsToPatch)
+		if (patchSuccess) {
+			clearCart()
+		}
+	}
 
 	const updateProductSizes = async (products: ProductPatch[]) => {
 		const productPatchConfig = createProductPatchConfig('patch', 'product', products)
