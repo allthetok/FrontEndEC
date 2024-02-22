@@ -32,7 +32,6 @@ const BrandServer = ({ brandDtl, brandsParam }: BrandProps) => {
 		const currentActiveEditions: string[] = editionResults.filter((indEdition: ProductObj) => indEdition.active).map((activeEdition: ProductObj) => activeEdition.name)
 
 
-		// console.log(currentActiveModels)
 		const activeResults: ProductObj[] = oldResults.filter((indProduct: ProductObj) => currentActiveModels.includes(indProduct.modelName))
 		activeResults.sort(compareBySortOption(sortBy))
 		setFilteredResults(activeResults)

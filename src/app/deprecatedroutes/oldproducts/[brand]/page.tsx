@@ -7,9 +7,6 @@ import { BrandServer } from '@/components/Server/BrandServer'
 
 const ProductsPage = async ({ params, searchParams }: { params: { brand: string | string[] }, searchParams: { brandReq: string | string[] | undefined } }) => {
 	const { brandObj } = await getData(params.brand)
-	console.log(params.brand)
-	console.log(searchParams)
-	// console.log(brandObj.brandReq)
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
 			{/* <BrandServer brandDtl={brandObj.brandReq} /> */}

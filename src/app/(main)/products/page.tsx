@@ -1,17 +1,13 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React, { useEffect } from 'react'
-import axios, { AxiosError, AxiosResponse } from 'axios'
-import { createBrandDtlConfig, createProductDtlConfig, formatPageQuery } from '@/helpers/fctns'
-import { Brands, FullBrandConfig, ProductObj, ProductResponseObj } from '@/helpers/types/fetypes'
+import React from 'react'
+import axios, { AxiosResponse } from 'axios'
+import { createBrandDtlConfig } from '@/helpers/fctns'
+import { Brands, FullBrandConfig } from '@/helpers/types/fetypes'
 import { BrandServer } from '@/components/Server/BrandServer'
 
 const ProductsPage = async ({ params, searchParams }: { params: { brand: string[] | undefined }, searchParams: { brand: string[] | undefined } }) => {
 	const { brandObj } = await getData(searchParams.brand)
-	// console.log(params)
-	console.log(searchParams)
 	const brandsParam = brandObj.brandReq.map((indBrand: Brands) => indBrand.name)
-	// console.log(searchParams.brand)
-	// console.log(brandObj.brandReq)
 
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">

@@ -23,7 +23,6 @@ const FullProduct = () => {
 
 	const handleAdd = (e: any) => {
 		e.preventDefault()
-		console.log('added to cart')
 	}
 
 	return (

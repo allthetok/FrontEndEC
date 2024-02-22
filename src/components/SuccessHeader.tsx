@@ -21,13 +21,6 @@ const SuccessHeader = ({ customerDetails, paymentId }: SuccessHeaderProps) => {
 	//patch request here to PATCH: /product with array of ProductPatch: name: string, id: number, color: string, size: string
 	useEffect(() => {
 		if (cartDetails) {
-			// const productsToPatch: ProductPatch[] = formatCartItemsToProductPatch(cartDetails)
-			// console.log(productsToPatch)
-			// const res = updateProductSizes(productsToPatch)
-			// console.log(res)
-			// if (res) {
-			// clearCart()
-			// }
 			emptyCart(cartDetails)
 		}
 	}, [])
