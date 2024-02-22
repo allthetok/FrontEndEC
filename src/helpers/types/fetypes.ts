@@ -109,6 +109,22 @@ interface UserOrdersConfig {
 	}
 }
 
+interface ProductPatch {
+	name: string,
+	id: number,
+	color: string,
+	size: string
+}
+
+interface ProductPatchConfig {
+	method: string,
+	url: string,
+	headers: object,
+	data: {
+		selectedProducts: ProductPatch[]
+	}
+}
+
 interface Colors {
 	color: string,
 	images: string[]
@@ -184,4 +200,4 @@ interface IndOrder {
 }
 
 
-export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type OAuthConfig, type LoginConfig, type FullPaymentConfig, type UserOrdersConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig, type MetaProductData, type UserExistConfig, type PaymentResponseObj, type Order, type IndOrder }
+export { type ProductPreview, type ProductObj, type FullProductConfig, type Colors, type ColorSizes, type ProductSizes, type ProductResponseObj, type FullBrandConfig, type FullModelConfig, type OAuthConfig, type LoginConfig, type FullPaymentConfig, type UserOrdersConfig, type ProductPatchConfig, type Brands, type Models, type ModelPageConfig, type HomePageConfig, type SearchConfig, type MetaProductData, type UserExistConfig, type PaymentResponseObj, type Order, type IndOrder, type ProductPatch }

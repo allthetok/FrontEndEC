@@ -3,7 +3,7 @@
 /* eslint-disable no-case-declarations */
 import Stripe from 'stripe'
 import { Product } from 'use-shopping-cart/core'
-import { Brands, Colors, FullBrandConfig, FullModelConfig, FullPaymentConfig, FullProductConfig, LoginConfig, Models, OAuthConfig, ProductObj, SearchConfig, UserExistConfig, UserOrdersConfig } from './types/fetypes'
+import { Brands, Colors, FullBrandConfig, FullModelConfig, FullPaymentConfig, FullProductConfig, LoginConfig, Models, OAuthConfig, ProductObj, ProductPatch, ProductPatchConfig, SearchConfig, UserExistConfig, UserOrdersConfig } from './types/fetypes'
 
 const formatDate = (inpDate: Date) => `${inpDate.toLocaleDateString('default', { month: 'long' })} ${inpDate.getUTCDate()}, ${inpDate.getFullYear()}`
 
@@ -168,6 +168,19 @@ const createUserOrdersConfig = (method: string, endpoint: string, userId: string
 		},
 		data: {
 			userid: Number(userId)
+		}
+	}
+}
+
+const createProductPatchConfig = (method: string, endpoint: string, products: ProductPatch[]): ProductPatchConfig => {
+	return {
+		method: method,
+		url: `http://localhost:4000/api/shoes/${endpoint}`,
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		data: {
+			selectedProducts: products
 		}
 	}
 }
@@ -342,4 +355,4 @@ const formatLineItemsToName = (lineItems: Stripe.ApiList<Stripe.LineItem>) => {
 }
 
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, createNativeLoginConfig, createUserPatchConfig, createUserPaymentConfig, createUserOrdersConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail, formatLineItems, formatLineItemsToName }
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, createNativeLoginConfig, createUserPatchConfig, createUserPaymentConfig, createUserOrdersConfig, createProductPatchConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail, formatLineItems, formatLineItemsToName }
