@@ -18,7 +18,7 @@ const HomeContent = () => {
 					<h1 className='text-6xl font-bold'>Hello there</h1>
 					<p className='text-xl pt-4 opacity-75'>The world is cold. But you want the <b>heat</b>.</p>
 					<Link className='inline-flex mt-8 bg-white rounded text-black font-bold text-xl uppercase tracking-wide py-5 px-8 items-center shadow-lg hover:bg-black hover:text-white' href='/products'>
-					Shop Shoes
+						Shop Shoes
 						<LoginIcon sx={Font25Sx} />
 					</Link>
 				</div>

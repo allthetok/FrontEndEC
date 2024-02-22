@@ -8,6 +8,10 @@ import { options } from '@/app/api/auth/[...nextauth]/options'
 import { createUserOrdersConfig, formatDate } from '@/helpers/fctns'
 import { AccountHeader } from '@/components/Server/AccountHeader'
 import { Product } from '@/components/Product'
+import Link from 'next/link'
+import { Font25Sx } from '@/sx/styling'
+import LoginIcon from '@mui/icons-material/Login'
+
 
 
 const AccountPage = async () => {
@@ -22,6 +26,14 @@ const AccountPage = async () => {
 					<h2 className='flex justify-center text-black font-extrabold text-4xl order-dec'>
 						{ordersObj.length === 0 ? `You've made no Orders to Date` : `Your Orders to Date:`}
 					</h2>
+					{ordersObj.length === 0 ? (
+						<div className='flex justify-center'>
+							<Link className='inline-flex mt-8 border-2 border-slate-900 bg-white rounded-xl text-black font-bold text-xl uppercase tracking-wide py-5 px-8 items-center shadow-lg hover:bg-black hover:text-white' href='/products'>
+							Shop Shoes
+								<LoginIcon sx={Font25Sx} />
+							</Link>
+						</div>)
+						: <></>}
 					<div className='flex flex-col'>
 						{ordersObj.map((order: IndOrder) => (
 							<div className='flex flex-row' key={order.order.paymentid}>
