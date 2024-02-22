@@ -5,7 +5,7 @@ import { Login } from '@/components/Login'
 const SignInPage = () => {
 	return (
 		<main>
-			<Suspense fallback={<div>Loading Page...</div>}>
+			<Suspense fallback={<div>Loading Content...</div>}>
 				<Login />
 			</Suspense>
 		</main>

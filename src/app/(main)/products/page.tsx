@@ -10,7 +10,8 @@ const ProductsPage = async ({ params, searchParams }: { params: { brand: string[
 	const brandsParam = brandObj.brandReq.map((indBrand: Brands) => indBrand.name)
 
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
+		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
+			<Suspense fallback={<div>Loading Content...</div>}>
 			<BrandServer brandDtl={brandObj.brandReq} brandsParam={brandsParam} />
 		</main>
 	)

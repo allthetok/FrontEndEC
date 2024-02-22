@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React from 'react'
+import React, { Suspense } from 'react'
 import Link from 'next/link'
 import { stripe } from '../../../../lib/stripe'
 import axios, { AxiosError, AxiosResponse } from 'axios'
@@ -28,21 +28,18 @@ const SuccessPage = async ({ searchParams }: Props) => {
 
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-24 gap-10'>
-			<div className='flex flex-col'>
-				<div className='flex flex-col justify-center items-center mt-10'>
-					<Link href='/account' className='flex flex-row justify-center rounded-md account-link bg-black text-white text-2xl font-bold'>
+			<Suspense fallback={<div>Loading Content...</div>}>
+				<div className='flex flex-col'>
+					<div className='flex flex-col justify-center items-center mt-10'>
+						<Link href='/account' className='flex flex-row justify-center rounded-md account-link bg-black text-white text-2xl font-bold'>
 						Go to Account
-					</Link>
+						</Link>
+					</div>
+					<SuccessHeader customerDetails={stripeCustDetails!} paymentId={paymentObj.paymentDetails.paymentid} />
+					<h2 className='flex flex-row justify-center mt-5 text-3xl font-bold'>Here are your order details:</h2>
+					<SuccessProductList products={paymentObj.productsOrder} paymentId={paymentObj.paymentDetails.paymentid} />
 				</div>
-				<SuccessHeader customerDetails={stripeCustDetails!} paymentId={paymentObj.paymentDetails.paymentid} />
-				{/* <div className='flex flex-col justify-center items-center mt-4'>
-					<Link href='/account' className='flex flex-row justify-center rounded-md account-link bg-black text-white text-2xl font-bold'>
-						Go to Account
-					</Link>
-				</div> */}
-				<h2 className='flex flex-row justify-center mt-5 text-3xl font-bold'>Here are your order details:</h2>
-				<SuccessProductList products={paymentObj.productsOrder} paymentId={paymentObj.paymentDetails.paymentid} />
-			</div>
+			</Suspense>
 		</main>
 	)
 }

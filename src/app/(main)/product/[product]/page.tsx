@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React from 'react'
+import React, { Suspense } from 'react'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { createProductDtlConfig, formatPageQuery } from '@/helpers/fctns'
 import { FullProductConfig, ProductObj, ProductResponseObj } from '@/helpers/types/fetypes'
@@ -10,7 +10,9 @@ const ProductPage = async ({ params, searchParams }: { params: { product: string
 	const color = searchParams.color !== undefined ? searchParams.color : productObj.productReq.colors[0].color
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
-			<FullProductServer productDtl={productObj.productReq} colorQuery={color} similarProducts={productObj.similarProducts}/>
+			<Suspense fallback={<div>Loading Content...</div>}>
+				<FullProductServer productDtl={productObj.productReq} colorQuery={color} similarProducts={productObj.similarProducts}/>
+			</Suspense>
 		</main>
 	)
 }

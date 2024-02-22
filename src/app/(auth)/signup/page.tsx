@@ -5,7 +5,7 @@ import { Signup } from '@/components/Signup'
 const SignUpPage = () => {
 	return (
 		<main>
-			<Suspense fallback={<div>Loading Page...</div>}>
+			<Suspense fallback={<div>Loading Content...</div>}>
 				<Signup />
 			</Suspense>
 		</main>

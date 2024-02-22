@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React from 'react'
+import React, { Suspense } from 'react'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { createModelDtlConfig, formatPageQuery } from '@/helpers/fctns'
 import { FullModelConfig, Models } from '@/helpers/types/fetypes'
@@ -9,7 +9,9 @@ const ModelPage = async ({ params }: { params: { model: string | string[] } }) =
 	const { modelObj } = await getData(params.model)
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<ModelServer brandName={modelObj.brand} modelName={modelObj.name} modelProducts={modelObj.allProducts} />
+			<Suspense fallback={<div>Loading Content...</div>}>
+				<ModelServer brandName={modelObj.brand} modelName={modelObj.name} modelProducts={modelObj.allProducts} />
+			</Suspense>
 		</main>
 	)
 }
