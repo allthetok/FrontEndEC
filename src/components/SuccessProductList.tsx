@@ -53,7 +53,7 @@ const SuccessProductList = ({ products, paymentId }: SuccessProductListProps) =>
 				</section>) : <></>}
 			<section className='mt-5 rounded-lg border-2 border-gray-200 bg-gray-50 px-4 py-6 shadow-md sm:p-6 lg:col-span-5 lg:p-8 ml-20 h-[350px] w-[470px]'>
 				<h2 className='text-lg font-medium flex flex-row justify-center border-b-2 border-black'>
-					Payment Details for Order: #{paymentId}
+					Payment Details for Order #{paymentId}
 				</h2>
 				<dl className='mt-6 space-y-4'>
 					<div className='flex items-center justify-between'>

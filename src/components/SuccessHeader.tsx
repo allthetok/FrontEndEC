@@ -21,7 +21,7 @@ const SuccessHeader = ({ customerDetails, paymentId }: SuccessHeaderProps) => {
 
 	return (
 		<div className=''>
-			<div className='flex flex-row mt-16 items-center justify-center gap-x-2'>
+			<div className='flex flex-row mt-6 items-center justify-center gap-x-2'>
 				<CheckCheck className='ml-8 h-10 w-10 text-green-600' />
 				<h1 className='mr-8 text-3xl font-bold tracking-tight text-green-600 sm:text-5xl'>
 					Order #{paymentId} Successful!
@@ -32,7 +32,7 @@ const SuccessHeader = ({ customerDetails, paymentId }: SuccessHeaderProps) => {
 			</h3>
 			<p className='flex flex-row justify-center mt-6'>
 				Check your purchase email,
-				<span className='mx-1 font-extrabold text-indigo-500'>{customerDetails.email}</span> for your invoice.
+				<span className='mx-1 font-extrabold text-indigo-500'>{customerDetails.email}</span>for your invoice.
 			</p>
 		</div>
 	)

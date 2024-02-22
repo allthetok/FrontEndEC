@@ -28,16 +28,22 @@ const SuccessPage = async ({ searchParams }: Props) => {
 
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-24 gap-10'>
-			{/* <h2 className='header-cart-count text-4xl font-bold'>Order ${sessionId} successful </h2> */}
 			<div className='flex flex-col'>
-				<SuccessHeader customerDetails={stripeCustDetails!} paymentId={paymentObj.paymentDetails.paymentid} />
-				<h2 className='flex flex-row justify-center mt-5 text-3xl font-bold'>Here are your order details:</h2>
-				<SuccessProductList products={paymentObj.productsOrder} paymentId={paymentObj.paymentDetails.paymentid} />
-				<div className='flex items-center justify-center gap-x-6'>
-					<Link href='/account' className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
+				<div className='flex flex-col justify-center items-center mt-10'>
+					<Link href='/account' className='flex flex-row justify-center rounded-md account-link bg-black text-white text-2xl font-bold'>
 						Go to Account
 					</Link>
 				</div>
+				<SuccessHeader customerDetails={stripeCustDetails!} paymentId={paymentObj.paymentDetails.paymentid} />
+				{/* <div className='rounded-md w-60 bg-black text-white text-sm font-bold'> */}
+				{/* <div className='flex flex-col justify-center items-center mt-4'>
+					<Link href='/account' className='flex flex-row justify-center rounded-md account-link bg-black text-white text-2xl font-bold'>
+						Go to Account
+					</Link>
+				</div> */}
+				{/* </div> */}
+				<h2 className='flex flex-row justify-center mt-5 text-3xl font-bold'>Here are your order details:</h2>
+				<SuccessProductList products={paymentObj.productsOrder} paymentId={paymentObj.paymentDetails.paymentid} />
 			</div>
 		</main>
 	)
@@ -62,5 +68,8 @@ const getPaymentDtl = async (paymentConfig: FullPaymentConfig) => {
 	return resultPaymentObj
 }
 
+{/* <Link href='/account' className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
+						Go to Account
+					</Link> */}
 
 export default SuccessPage

@@ -53,3 +53,12 @@ body {
 .order-dec {
 	text-decoration: underline;
 }
+
+.account-link {
+	padding: 1rem;
+	background: rgb(99 102 241);
+}
+
+.account-link:hover {
+	background: rgb(49 46 129);
+}
