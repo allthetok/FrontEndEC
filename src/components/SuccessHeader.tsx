@@ -20,19 +20,21 @@ const SuccessHeader = ({ customerDetails, paymentId }: SuccessHeaderProps) => {
 	// }, [customerDetails])
 
 	return (
-		<>
-			<CheckCheck className='mx-auto h-10 w-10 text-purple-500' />
-			<h1 className='mt-4 text-3xl font-bold tracking-tight text-purple-500 sm:text-5xl'>
-				Order #${paymentId} Successful!
-			</h1>
-			<h3 className="mt-8 text-2xl leading-7">
-				Thank you, <span className="font-extrabold">{customerDetails.name}</span>!
+		<div className=''>
+			<div className='flex flex-row mt-16 items-center justify-center gap-x-2'>
+				<CheckCheck className='ml-8 h-10 w-10 text-green-600' />
+				<h1 className='mr-8 text-3xl font-bold tracking-tight text-green-600 sm:text-5xl'>
+					Order #{paymentId} Successful!
+				</h1>
+			</div>
+			<h3 className='flex flex-row justify-center mt-8 text-2xl leading-7'>
+				Thank you for shopping with ATKicks, <span className="font-extrabold">&nbsp;{customerDetails.name}.</span>
 			</h3>
-			<p className="mt-8">
-				Check your purchase email {' '}
-				<span className="mx-1 font-extrabold text-indigo-500">${customerDetails.email}</span> for your invoice.
+			<p className='flex flex-row justify-center mt-6'>
+				Check your purchase email,
+				<span className='mx-1 font-extrabold text-indigo-500'>{customerDetails.email}</span> for your invoice.
 			</p>
-		</>
+		</div>
 	)
 }
 
