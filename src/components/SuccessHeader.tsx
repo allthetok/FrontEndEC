@@ -22,12 +22,13 @@ const SuccessHeader = ({ customerDetails, paymentId }: SuccessHeaderProps) => {
 		if (cartDetails) {
 			const productsToPatch: ProductPatch[] = formatCartItemsToProductPatch(cartDetails)
 			console.log(productsToPatch)
-			// const res = updateProductSizes(productsToPatch)
+			const res = updateProductSizes(productsToPatch)
+			console.log(res)
 			// if (res) {
 			// clearCart()
 			// }
 		}
-	}, [cartDetails])
+	}, [])
 
 	const updateProductSizes = async (products: ProductPatch[]) => {
 		const productPatchConfig = createProductPatchConfig('patch', 'product', products)
