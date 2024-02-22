@@ -5,7 +5,6 @@ import { formatLineItems } from '@/helpers/fctns'
 export async function POST(request: Request) {
 	const stripeCartBody = await request.json()
 	const lineItems = formatLineItems(stripeCartBody.cartItems)
-	// console.log(lineItems[0].price_data)
 	const origin = request.headers.get('origin')
 	const session = await stripe.checkout.sessions.create({
 		submit_type: 'pay',

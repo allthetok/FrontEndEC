@@ -25,7 +25,7 @@ const AccountPage = async () => {
 					{ordersObj.map((order: IndOrder) => (
 						<div className='flex flex-row' key={order.order.paymentid}>
 							<div className='pb-24 pt-6 bg-gray-100 border-2 rounded-lg border-black mt-5' aria-labelledby='products-heading'>
-								<h2 className='flex ml-20 text-3xl text-black font-bold order-dec'>Items ordered:</h2>
+								<h2 className='flex ml-20 text-3xl text-gray-700'>Items ordered:</h2>
 								<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:col-span-3 lg:gap-x-8'>
 									{order.productsOrder.map((product: ProductObj, index: number) => (
 										<div className='flex flex-col p-10 justify-center' key={index}>
