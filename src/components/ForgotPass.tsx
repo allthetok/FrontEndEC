@@ -36,7 +36,6 @@ const Forgot = () => {
 			.catch((err: AxiosError) => {
 				return { userExists: false }
 			})
-
 		if (!userStatus.userExists) {
 			setError(`There was no user found with email: ${email}`)
 			return
@@ -114,7 +113,7 @@ const Forgot = () => {
 						<div className='min-h-[auto] px-12 pb-6 bg-[#ffffff] p-8 flex flex-col'>
 							<form onSubmit={handleEmailSubmit}>
 								<h5 className='m-0 pt-12 text-center text-[25px] font-bold leading-[120%] tracking-tight normal-case text-black'>
-								Reset Your Password
+									Reset Your Password
 								</h5>
 								{error ? (
 									<div className='flex items-center justify-center mt-[10px] flex-nowrap'>
@@ -133,7 +132,7 @@ const Forgot = () => {
 											<span>Email</span>
 										</div>
 									</div>
-									<div className='field-area'>
+									{/* <div className='field-area'>
 										<div className='field-input field field-wrapper'>
 											<input name='new-password' id='new-password' type='password' autoComplete='new-password' value={password} onChange={handlePasswordChange} />
 											<label>Password</label>
@@ -146,7 +145,7 @@ const Forgot = () => {
 											<label>Verify Password</label>
 											<span>Verify Password</span>
 										</div>
-									</div>
+									</div> */}
 								</div>
 							</form>
 							<div className={email !== '' && regexValidEmail(email) ? 'enter-wrap' : 'enter-disabled-wrap'}>

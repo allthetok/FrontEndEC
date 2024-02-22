@@ -8,7 +8,7 @@ import { Font50Sx } from '@/sx/styling'
 
 const LogoutBtn = () => {
 	return (
-		<div className='no-underline flex flex-row cursor-pointer border-2 border-black rounded-md gap-5 bg-purple-300 mt-10 hover:bg-red-800' onClick={() => signOut()}>
+		<div className='no-underline flex flex-row cursor-pointer border-2 border-black rounded-md gap-5 bg-purple-300 mt-10 hover:bg-red-800 w-64 mx-auto' onClick={() => signOut()}>
 			<CancelPresentationIcon sx={Font50Sx} htmlColor='black' className='ml-8' />
 			<h3 className='inline-block align-baseline font-black text-3xl pt-[0.375rem] text-black'>Logout</h3>
 		</div>

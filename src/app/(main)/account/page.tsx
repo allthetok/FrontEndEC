@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { Suspense } from 'react'
 import { getServerSession } from 'next-auth'
@@ -7,7 +8,6 @@ import { options } from '@/app/api/auth/[...nextauth]/options'
 import { createUserOrdersConfig, formatDate } from '@/helpers/fctns'
 import { AccountHeader } from '@/components/Server/AccountHeader'
 import { Product } from '@/components/Product'
-
 
 
 const AccountPage = async () => {
@@ -20,7 +20,7 @@ const AccountPage = async () => {
 				<AccountHeader userDetails={userDetails!} />
 				<div>
 					<h2 className='flex justify-center text-black font-extrabold text-4xl order-dec'>
-				Your Orders to Date:
+						{ordersObj.length === 0 ? `You've made no Orders to Date` : `Your Orders to Date:`}
 					</h2>
 					<div className='flex flex-col'>
 						{ordersObj.map((order: IndOrder) => (
@@ -37,15 +37,15 @@ const AccountPage = async () => {
 								</div>
 								<section className='mt-5 rounded-lg border-2 border-gray-200 bg-gray-50 px-4 py-6 shadow-md sm:p-6 lg:col-span-5 lg:p-8 ml-20 h-[350px] w-[470px]'>
 									<h2 className='text-lg font-medium flex flex-row justify-center border-b-2 border-black'>
-								Order #{order.order.paymentid} placed on {formatDate(new Date(order.order.datecreated))}
+										Order #{order.order.paymentid} placed on {formatDate(new Date(order.order.datecreated))}
 									</h2>
 									<dl className='mt-6 space-y-4'>
 										<div className='flex items-center justify-between'>
 											<dt className='text-sm'>
-										Subtotal
+												Subtotal
 											</dt>
 											<dd className='text-sm font-medium'>
-										${order.productsOrder.map((indProduct: ProductObj) => indProduct.price).reduce((a, b) => a + b).toFixed(2)} USD
+												${order.productsOrder.map((indProduct: ProductObj) => indProduct.price).reduce((a, b) => a + b).toFixed(2)} USD
 											</dd>
 										</div>
 										<div className='flex items-center justify-between border-t border-gray-200 pt-4'>
@@ -53,15 +53,15 @@ const AccountPage = async () => {
 												<span>Shipping estimate</span>
 											</dt>
 											<dd className='text-sm font-medium'>
-										$5.00 USD
+												$5.00 USD
 											</dd>
 										</div>
 										<div className='flex items-center justify-between border-t border-gray-200 pt-4'>
 											<dt className='text-base font-medium'>
-									Order Total
+												Order Total
 											</dt>
 											<dd className='text-base font-medium'>
-										${(order.productsOrder.map((indProduct: ProductObj) => indProduct.price).reduce((a, b) => a + b) + 5).toFixed(2)} USD
+												${(order.productsOrder.map((indProduct: ProductObj) => indProduct.price).reduce((a, b) => a + b) + 5).toFixed(2)} USD
 											</dd>
 										</div>
 									</dl>

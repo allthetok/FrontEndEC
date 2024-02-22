@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React from 'react'
+import React, { Suspense } from 'react'
 import axios, { AxiosResponse } from 'axios'
 import { createBrandDtlConfig } from '@/helpers/fctns'
 import { Brands, FullBrandConfig } from '@/helpers/types/fetypes'
@@ -12,7 +12,8 @@ const ProductsPage = async ({ params, searchParams }: { params: { brand: string[
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
 			<Suspense fallback={<div>Loading Content...</div>}>
-			<BrandServer brandDtl={brandObj.brandReq} brandsParam={brandsParam} />
+				<BrandServer brandDtl={brandObj.brandReq} brandsParam={brandsParam} />
+			</Suspense>
 		</main>
 	)
 }
