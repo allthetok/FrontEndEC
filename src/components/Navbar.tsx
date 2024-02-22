@@ -40,7 +40,7 @@ const Navbar = () => {
 				<div className='text-gray-700 bg-white w-full shadow absolute'>
 					<div className='flex flex-wrap justify-between px-8 h-auto flex-col md:flex-row items-center'>
 						<Link className='flex items-center mb-4 md:mb-0' href='/'>
-							<Image src='/AT Kicks-logos_transparent.png' alt='AT Kicks Logo' width={150} height={150} className='scale-150'/>
+							<Image src='/AT Kicks-logos_transparent.png' alt='AT Kicks Logo' width={150} height={150} className='scale-150' priority/>
 						</Link>
 						<div className='flex flex-row gap-16'>
 							<Search searchProduct={searchProduct} handleSubmit={handleSubmit} handleClear={handleClear} handleChange={handleChange} />
@@ -51,7 +51,7 @@ const Navbar = () => {
 						<div className='flex flex-row'>
 							<Link className='no-underline flex flex-row' href='/cart'>
 								<h3 className='inline-block align-baseline font-black text-4xl pt-3 text-black'>
-									{cartCount !== undefined ? cartCount : 0}
+									{cartCount ? cartCount : 0}
 								</h3>
 								<IconButton>
 									<ShoppingCartIcon sx={Font50Sx} htmlColor='black'/>
