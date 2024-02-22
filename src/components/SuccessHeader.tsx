@@ -1,8 +1,12 @@
 'use client'
 import React, { useEffect } from 'react'
-import { useShoppingCart } from 'use-shopping-cart'
 import Stripe from 'stripe'
+import { useShoppingCart } from 'use-shopping-cart'
+import { createProductPatchConfig, formatCartItemsToProductPatch } from '@/helpers/fctns'
+import { ProductPatch } from '@/helpers/types/fetypes'
 import { CheckCheck } from 'lucide-react'
+import axios, { AxiosError, AxiosResponse } from 'axios'
+
 
 type SuccessHeaderProps = {
 	customerDetails: Stripe.Checkout.Session.CustomerDetails,
@@ -12,12 +16,31 @@ type SuccessHeaderProps = {
 const SuccessHeader = ({ customerDetails, paymentId }: SuccessHeaderProps) => {
 	const { clearCart, cartDetails } = useShoppingCart()
 
+
 	//patch request here to PATCH: /product with array of ProductPatch: name: string, id: number, color: string, size: string
-	// useEffect(() => {
-	// 	if (customerDetails) {
-	// 		clearCart()
-	// 	}
-	// }, [customerDetails])
+	useEffect(() => {
+		if (cartDetails) {
+			const productsToPatch: ProductPatch[] = formatCartItemsToProductPatch(cartDetails)
+			console.log(productsToPatch)
+			// const res = updateProductSizes(productsToPatch)
+			// if (res) {
+			// clearCart()
+			// }
+		}
+	}, [cartDetails])
+
+	const updateProductSizes = async (products: ProductPatch[]) => {
+		const productPatchConfig = createProductPatchConfig('patch', 'product', products)
+		const patchResult = await axios(productPatchConfig)
+			.then((response: AxiosResponse) => {
+				return response.status === 200
+			})
+			.catch((err: AxiosError) => {
+				console.error(err)
+				return false
+			})
+		return patchResult
+	}
 
 	return (
 		<div className=''>

@@ -306,7 +306,6 @@ const prodToStripeProd: (inputProd: ProductObj, colorSelect: string | string[], 
 		name: inputProd.name,
 		description: inputProd.description,
 		id: inputProd.id.toString(),
-		// price: inputProd.price,
 		price: inputProd.price * 100,
 		quantity: '1',
 		currency: 'USD',
@@ -350,9 +349,23 @@ const formatLineItems = (input: any) => {
 	return resultLineItems
 }
 
+const formatCartItemsToProductPatch = (cartItems: any) => {
+	const cartKeys: string[] = Object.keys(cartItems)
+	const resultLineItems: ProductPatch[] = []
+	for (const cartKey of cartKeys) {
+		resultLineItems.push({
+			name: cartItems[cartKey].name,
+			id: Number(cartItems[cartKey].id),
+			color: cartItems[cartKey].product_data.colorSelected,
+			size: cartItems[cartKey].product_data.sizeSelected
+		})
+	}
+	return resultLineItems
+}
+
 const formatLineItemsToName = (lineItems: Stripe.ApiList<Stripe.LineItem>) => {
 	return lineItems.data.map((indItem: Stripe.LineItem) => indItem.description)
 }
 
 
-export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, createNativeLoginConfig, createUserPatchConfig, createUserPaymentConfig, createUserOrdersConfig, createProductPatchConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail, formatLineItems, formatLineItemsToName }
+export { formatDate, createProductDtlConfig, createBrandDtlConfig, createDeprecatedBrandDtlConfig, createModelDtlConfig, createProductSearchConfig, createUserExistConfig, createOAuthConfig, createNativeLoginConfig, createUserPatchConfig, createUserPaymentConfig, createUserOrdersConfig, createProductPatchConfig, formatPageQuery, compareBySortOption, compareName, retrieveOriginalResults, retrieveSubOptions, prodToStripeProd, regexValidEmail, formatLineItems, formatLineItemsToName, formatCartItemsToProductPatch }
