@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Please visit [https://atkicks.allentok.com](https://atkicks.allentok.com) to enter ATKicks!
 
-## Getting Started
+This app was created and bootstraped by NextJS using NextJS v13.0 with the /app router. Please refer to [https://github.com/allthetok/GamesAtlas/tree/main/backendga](https://github.com/allthetok/ECommerce) to see the ExpressJS/Postgres/Caddy Dockerized REST API Container to serve API calls made here.
 
-First, run the development server:
+Frameworks and Libraries Used:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- NextJS v13.0 using the /app router, Server Components (getServerSideProps see /Components/Server) and Client Components (see /Components). Custom layout files for authentication based routes and main app routes for Navbar and Footer. Using the fetch API to retrieve data from the Dockerized ExpressJS, Postgres and Caddy container.
+- ReactJS v18.2.0 with ES6 Arrow Function Components, Custom Hooks (see /hooks) and Standard React Hooks (useState, useEffect, useCallback, useMemo, useContext). As well as Custom Context Providers for Stripe Cart Items, and Authentication from NextAuth.
+- Stripe for payment authorization in TEST mode, which processes payments based on a user's profile info, custom handlers for tracking payments and sends custom invoices to user's emails upon successful checkout. useShoppingCart hook from Stripe was also largely used for handling Cart state around the app.
+- NextAuth with internal Authentication as well as OAuth2.0 integration on: Google, Spotify, Discord, Github, Twitch. Using the /app wrapper for requests, and getServerSession() hook for use in server components.
+- TypeScript (Interfaces/Types/Unions) for props, response objects and in use for functions as well as .map()
+- ESLint with Typescript Integration
+- MaterialUI V5 with sx prop styling.
+- TailwindCSS V3.4.1 used for lightweight bundling and fast, in-depth styling. As well as responsive design for any screen size.
+- Toast for custom notifications when adding and removing cart items as well as navigation to cart details.
+- Axios
+- CSS Component Stylesheets (Flexbox and Grid) for more detailed css attributes that are necessary (linear gradients, custom background images).
+- Icons8 for Static Assets
