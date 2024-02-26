@@ -37,14 +37,14 @@ const ProductList = () => {
 				<DropDown sortBy={sortBy} onSortChange={onSortChange} />
 			</div>
 			<section className='pb=24 pt-6' aria-labelledby='products-heading'>
-				<div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
+				{/* <div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4'>
 					<ProductFilter />
 					<div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8'>
 						{ultraBoost.map((product: ProductObj, index: number) => (
 							<Product product={product} key={index}/>
 						))}
 					</div>
-				</div>
+				</div> */}
 			</section>
 		</main>
 	)
