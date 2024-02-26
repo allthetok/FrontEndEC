@@ -16,7 +16,6 @@ export const options: NextAuthOptions = {
 		GoogleProvider({
 			clientId: process.env.GOOGLE_CLIENT_ID as string,
 			clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-			// profile: async function (profile) {
 			profile: async (profile) => {
 				const oauthProviderConfig: OAuthConfig = createOAuthConfig('post', 'loginExternal', profile.email, profile?.email_verified, profile.sub, 'Google')
 				const internalDBUser = await axios(oauthProviderConfig)
@@ -30,9 +29,6 @@ export const options: NextAuthOptions = {
 							} : null
 					})
 					.catch((err: AxiosError) => null)
-					// .catch((err: AxiosError) => {
-					// 	return null
-					// })
 				return {
 					id: internalDBUser?.id,
 					email: profile.email,

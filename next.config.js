@@ -11,7 +11,8 @@ const nextConfig = {
 		],
 	},
 	env: {
-		STRIPE_API_PUBLISHABLE_KEY: process.env.STRIPE_API_PUBLISHABLE_KEY
+		STRIPE_API_PUBLISHABLE_KEY: process.env.STRIPE_API_PUBLISHABLE_KEY,
+		PROD_API_ENDPOINT: process.env.PROD_API_ENDPOINT
 	}
 }
 

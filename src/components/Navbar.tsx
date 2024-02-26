@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { signOut, signIn, useSession } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 import { useShoppingCart } from 'use-shopping-cart'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -11,7 +11,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox'
 import { IconButton } from '@mui/material'
 import { Search } from './Search'
 import { ProductSuggestList } from './ProductSuggestList'
-import { Font25Sx, Font50Sx } from '@/sx/styling'
+import { Font50Sx } from '@/sx/styling'
 
 
 const Navbar = () => {

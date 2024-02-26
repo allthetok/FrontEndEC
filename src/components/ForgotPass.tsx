@@ -103,7 +103,7 @@ const Forgot = () => {
 			<header className='logo-header'>
 				<div>
 					<Link href='/'>
-						<Image src='/AT Kicks-logos_white.png' alt='AT Kicks Logo' width={150} height={150} className='scale-150'/>
+						<Image src='/AT Kicks-logos_white.png' alt='AT Kicks Logo' width={150} height={150} className='scale-150' priority/>
 					</Link>
 				</div>
 			</header>

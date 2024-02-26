@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 /* eslint-disable no-case-declarations */
@@ -10,7 +11,7 @@ const formatDate = (inpDate: Date) => `${inpDate.toLocaleDateString('default', {
 const createProductDtlConfig = (method: string, endpoint: string, productReq: string | string[]): FullProductConfig => {
 	return {
 		method: method,
-		url: `http://localhost:4000/api/shoes/${endpoint}`,
+		url: `https://${process.env.PROD_API_ENDPOINT}/api/shoes/${endpoint}/`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -24,7 +25,7 @@ const createDeprecatedBrandDtlConfig = (method: string, endpoint: string, brandR
 
 	return {
 		method: method,
-		url: `http://localhost:4000/api/shoes/${endpoint}`,
+		url: `https://${process.env.PROD_API_ENDPOINT}/api/shoes/${endpoint}/`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -37,7 +38,7 @@ const createDeprecatedBrandDtlConfig = (method: string, endpoint: string, brandR
 const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string | string[] | undefined): FullBrandConfig => {
 	return brandReq ? {
 		method: method,
-		url: `http://localhost:4000/api/shoes/${endpoint}`,
+		url: `https://${process.env.PROD_API_ENDPOINT}/api/shoes/${endpoint}/`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -46,7 +47,7 @@ const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string
 		}
 	} : {
 		method: method,
-		url: `http://localhost:4000/api/shoes/${endpoint}`,
+		url: `https://${process.env.PROD_API_ENDPOINT}/api/shoes/${endpoint}/`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -59,7 +60,7 @@ const createBrandDtlConfig = (method: string, endpoint: string, brandReq: string
 const createModelDtlConfig = (method: string, endpoint: string, modelReq: string | string[]): FullModelConfig => {
 	return {
 		method: method,
-		url: `http://localhost:4000/api/shoes/${endpoint}`,
+		url: `https://${process.env.PROD_API_ENDPOINT}/api/shoes/${endpoint}/`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -72,7 +73,7 @@ const createModelDtlConfig = (method: string, endpoint: string, modelReq: string
 const createProductSearchConfig = (method: string, endpoint: string, searchterm: string): SearchConfig => {
 	return {
 		method: method,
-		url: `http://localhost:4000/api/shoes/${endpoint}`,
+		url: `https://${process.env.PROD_API_ENDPOINT}/api/shoes/${endpoint}/`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -85,7 +86,7 @@ const createProductSearchConfig = (method: string, endpoint: string, searchterm:
 const createUserExistConfig = (method: string, endpoint: string, email: string, provider: string): UserExistConfig => {
 	return {
 		method: method,
-		url: `http://localhost:4000/api/user/${endpoint}`,
+		url: `https://${process.env.PROD_API_ENDPOINT}/api/user/${endpoint}/`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -99,7 +100,7 @@ const createUserExistConfig = (method: string, endpoint: string, email: string, 
 const createOAuthConfig = (method: string, endpoint: string, email: string, emailVerified: boolean | null | undefined, externalId: string, provider: string): OAuthConfig => {
 	return {
 		method: method,
-		url: `http://localhost:4000/api/user/${endpoint}`,
+		url: `https://${process.env.PROD_API_ENDPOINT}/api/user/${endpoint}/`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -115,7 +116,7 @@ const createOAuthConfig = (method: string, endpoint: string, email: string, emai
 const createNativeLoginConfig = (method: string, endpoint: string, email: string, password: string, provider: string): LoginConfig => {
 	return {
 		method: method,
-		url: `http://localhost:4000/api/user/${endpoint}`,
+		url: `https://${process.env.PROD_API_ENDPOINT}/api/user/${endpoint}/`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -130,7 +131,7 @@ const createNativeLoginConfig = (method: string, endpoint: string, email: string
 const createUserPatchConfig = (method: string, endpoint: string, email: string, password: string, specField: string, userId: string, provider: string) => {
 	return {
 		method: method,
-		url: `http://localhost:4000/api/user/${endpoint}`,
+		url: `https://${process.env.PROD_API_ENDPOINT}/api/user/${endpoint}/`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -147,7 +148,7 @@ const createUserPatchConfig = (method: string, endpoint: string, email: string, 
 const createUserPaymentConfig = (method: string, endpoint: string, userId: string, products: string[], sessionId: string): FullPaymentConfig => {
 	return {
 		method: method,
-		url: `http://localhost:4000/api/user/${endpoint}`,
+		url: `https://${process.env.PROD_API_ENDPOINT}/api/user/${endpoint}/`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -162,7 +163,7 @@ const createUserPaymentConfig = (method: string, endpoint: string, userId: strin
 const createUserOrdersConfig = (method: string, endpoint: string, userId: string): UserOrdersConfig => {
 	return {
 		method: method,
-		url: `http://localhost:4000/api/user/${endpoint}`,
+		url: `https://${process.env.PROD_API_ENDPOINT}/api/user/${endpoint}/`,
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -175,7 +176,7 @@ const createUserOrdersConfig = (method: string, endpoint: string, userId: string
 const createProductPatchConfig = (method: string, endpoint: string, products: ProductPatch[]): ProductPatchConfig => {
 	return {
 		method: method,
-		url: `http://localhost:4000/api/shoes/${endpoint}`,
+		url: `https://${process.env.PROD_API_ENDPOINT}/api/shoes/${endpoint}/`,
 		headers: {
 			'Content-Type': 'application/json'
 		},

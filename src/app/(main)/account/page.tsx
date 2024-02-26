@@ -3,7 +3,7 @@
 import React, { Suspense } from 'react'
 import Link from 'next/link'
 import { getServerSession } from 'next-auth'
-import axios, { AxiosError, AxiosResponse } from 'axios'
+import axios, { AxiosResponse } from 'axios'
 import { IndOrder, ProductObj, UserOrdersConfig } from '@/helpers/types/fetypes'
 import { options } from '@/app/api/auth/[...nextauth]/options'
 import { createUserOrdersConfig, formatDate } from '@/helpers/fctns'

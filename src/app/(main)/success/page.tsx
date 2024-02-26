@@ -2,7 +2,7 @@
 import React, { Suspense } from 'react'
 import Link from 'next/link'
 import { stripe } from '../../../../lib/stripe'
-import axios, { AxiosError, AxiosResponse } from 'axios'
+import axios, { AxiosResponse } from 'axios'
 import { getServerSession } from 'next-auth'
 import { options } from '@/app/api/auth/[...nextauth]/options'
 import { createUserPaymentConfig, formatLineItemsToName } from '@/helpers/fctns'

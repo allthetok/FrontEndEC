@@ -2,9 +2,9 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import Link from 'next/link'
-import { HomePageConfig, ModelPageConfig } from '@/helpers/types/fetypes'
+import { ModelPageConfig } from '@/helpers/types/fetypes'
 import LoginIcon from '@mui/icons-material/Login'
-import { homeLinkMap, homeLinks, modelNames } from '../helpers/pageconfig'
+import { homeLinkMap, modelNames } from '../helpers/pageconfig'
 import { Font25Sx } from '../sx/styling'
 import '../app/globals.css'
 
