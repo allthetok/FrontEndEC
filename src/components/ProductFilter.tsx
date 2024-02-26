@@ -55,7 +55,7 @@ const ProductFilter = ({ brandReq, brandSelect, modelsAvailable, handleModelClic
 		router.replace(queryPath, { scroll: false })
 		setTimeout(() => {
 			window.location.reload()
-		}, 200)
+		}, 500)
 	}
 
 	return (
