@@ -25,7 +25,7 @@ const homeLinks: HomePageConfig[] = [
 
 const homeLinkMap = new Map<string, string>([
 	['Adidas', '/adbanner.jpg'],
-	['Yeezy', '/ajbanner.jpg'],
+	['Yeezy', '/yzybanner.jpg'],
 	['Nike', '/nikebanner.jpg'],
 	['Air Jordan', '/ajbanner.jpg'],
 	['New Balance', '/nbbanner.jpg']
