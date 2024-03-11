@@ -1,8 +1,10 @@
+# AT Kicks NextJS/React Frontend:
+
 Please visit [https://atkicks.allentok.com](https://atkicks.allentok.com) to enter ATKicks!
 
 This app was created and bootstrapped by NextJS using NextJS v13.0 with the /app router. Please refer to https://github.com/allthetok/ECommerce to see the ExpressJS/Postgres/Caddy Dockerized REST API Container to serve API calls made here.
 
-Frameworks and Libraries Used:
+## Frameworks and Libraries Used:
 
 - NextJS v13.0 using the /app router, Server Components (getServerSideProps see /Components/Server) and Client Components (see /Components). Custom layout files for authentication based routes and main app routes for Navbar and Footer. Using the fetch API to retrieve data from the Dockerized ExpressJS, Postgres and Caddy container.
 - ReactJS v18.2.0 with ES6 Arrow Function Components, Custom Hooks (see /hooks) and Standard React Hooks (useState, useEffect, useCallback, useMemo, useContext). As well as Custom Context Providers for Stripe Cart Items, and Authentication from NextAuth.
@@ -17,7 +19,7 @@ Frameworks and Libraries Used:
 - CSS Component Stylesheets (Flexbox and Grid) for more detailed css attributes that are necessary (linear gradients, custom background images).
 - Icons8 for Static Assets
 
-Here are some screenshots from the web app:
+## Here are some screenshots from the web app:
 
 ![ss1](images/AK1.JPG)
 
