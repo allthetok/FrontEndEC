@@ -1,6 +1,6 @@
 Please visit [https://atkicks.allentok.com](https://atkicks.allentok.com) to enter ATKicks!
 
-This app was created and bootstraped by NextJS using NextJS v13.0 with the /app router. Please refer to [https://github.com/allthetok/GamesAtlas/tree/main/backendga](https://github.com/allthetok/ECommerce) to see the ExpressJS/Postgres/Caddy Dockerized REST API Container to serve API calls made here.
+This app was created and bootstraped by NextJS using NextJS v13.0 with the /app router. Please refer to https://github.com/allthetok/ECommerce to see the ExpressJS/Postgres/Caddy Dockerized REST API Container to serve API calls made here.
 
 Frameworks and Libraries Used:
 
@@ -16,3 +16,43 @@ Frameworks and Libraries Used:
 - Axios
 - CSS Component Stylesheets (Flexbox and Grid) for more detailed css attributes that are necessary (linear gradients, custom background images).
 - Icons8 for Static Assets
+
+Here are some screenshots from the web app:
+
+![ss1](images/AK1.JPG)
+
+![ss2](images/AK2.JPG)
+
+![ss3](images/AK3.JPG)
+
+![ss4](images/AK4.JPG)
+
+![ss5](images/AK5.JPG)
+
+![ss6](images/AK6.JPG)
+
+![ss7](images/AK7.JPG)
+
+![ss8](images/AK8.JPG)
+
+![ss9](images/AK9.JPG)
+
+![ss10](images/AK10.JPG)
+
+![ss11](images/AK11.JPG)
+
+![ss12](images/AK12.JPG)
+
+![ss13](images/AK13.JPG)
+
+![ss14](images/AK14.JPG)
+
+![ss15](images/AK15.JPG)
+
+![ss16](images/AK16.JPG)
+
+![ss17](images/AK17.JPG)
+
+![ss18](images/AK18.JPG)
+
+![ss19](images/AK19.JPG)
