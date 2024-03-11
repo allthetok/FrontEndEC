@@ -1,6 +1,6 @@
 Please visit [https://atkicks.allentok.com](https://atkicks.allentok.com) to enter ATKicks!
 
-This app was created and bootstraped by NextJS using NextJS v13.0 with the /app router. Please refer to https://github.com/allthetok/ECommerce to see the ExpressJS/Postgres/Caddy Dockerized REST API Container to serve API calls made here.
+This app was created and bootstrapped by NextJS using NextJS v13.0 with the /app router. Please refer to https://github.com/allthetok/ECommerce to see the ExpressJS/Postgres/Caddy Dockerized REST API Container to serve API calls made here.
 
 Frameworks and Libraries Used:
 
